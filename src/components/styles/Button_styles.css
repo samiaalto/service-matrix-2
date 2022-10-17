@@ -1,0 +1,226 @@
+:root {
+  --border-radius: 16px;
+  --reset-button-bg: #394b58;
+  --reset-button-border: 2px solid #394b58;
+  --reset-button-hover-color: rgb(255, 194, 38);
+  --clipboard-button-bg: #6c757d;
+  --clipboard-button-border: 2px solid #6c757d;
+  --select-button-bg: transparent !important;
+  --select-button-border: 0;
+  --select-button-hover-bg: #394b58;
+  --speed: 0.3s ease-in-out;
+}
+
+.btn-wrapper {
+  position: relative;
+  border-radius: var(--border-radius);
+  min-height: 35px;
+  height: 0;
+  color: white;
+  transition: all var(--speed);
+  cursor: pointer;
+}
+
+.reset {
+  background-color: var(--reset-button-bg);
+  border: var(--reset-button-border);
+}
+
+.btn-wrapper.reset:hover {
+  color: var(--reset-button-hover-color);
+}
+
+.btn-wrapper.reset:hover svg path {
+  fill: var(--reset-button-hover-color);
+}
+
+.btn-wrapper.reset:hover svg {
+  transform: rotate(-360deg) scaleX(-1);
+}
+
+.reset .btn-header_icon svg path {
+  transition: all var(--speed);
+  fill: white;
+}
+
+.reset .btn-header_icon svg {
+  transform: rotate(0) scaleX(-1);
+  transition: all var(--speed);
+}
+
+.reset .btn-header_icon {
+  margin-right: 10px;
+  margin: 4px 6px 0 0;
+  float: right;
+}
+
+.samples {
+  border: var(--reset-button-border);
+  border-radius: var(--border-radius);
+  min-height: 51px;
+}
+
+.samples .btn-header_icon svg path {
+  transition: all var(--speed);
+  fill: black;
+}
+
+.samples .btn-header_icon {
+  margin-right: 10px;
+  margin: 15px 0 0 0;
+  float: center;
+}
+
+.samples:hover {
+  background-color: var(--reset-button-bg);
+}
+
+.samples:hover .btn-header_icon svg path {
+  transition: all var(--speed);
+  fill: white;
+}
+
+.more .btn-header_icon svg {
+  transition: all 0.3s ease-in-out;
+  height: 28px;
+  width: 28px;
+  margin-top: 3px;
+}
+
+.more .btn-header_icon svg path {
+  transition: all var(--speed);
+  fill: var(--reset-button-bg);
+}
+
+.btn-wrapper.more:hover svg {
+  transform: scale(1.1);
+}
+
+.clipboard {
+  background-color: var(--clipboard-button-bg);
+  border: var(--clipboard-button-border);
+}
+
+.clipboard .btn-header_icon svg path {
+  transition: all var(--speed);
+  stroke-width: 1.3;
+}
+
+.clipboard .btn-header_icon {
+  margin: 3px 6px 0 0;
+  float: right;
+}
+
+.btn-wrapper.clipboard:hover {
+  border-color: #60686f;
+  background-color: #60686f;
+}
+
+.btn-header {
+  width: 100% !important;
+  height: 35px !important;
+}
+
+.btn-header_title--bold {
+  font-weight: 200;
+  margin: 6px 0 0 10px;
+  float: left;
+}
+
+.select {
+  background-color: var(--select-button-bg);
+  border: 0;
+  border-radius: 0;
+  height: 39px;
+  width: 39px;
+}
+
+.btn-wrapper.select:hover {
+  background-color: var(--select-button-hover-bg);
+  border: 0;
+}
+
+.btn-wrapper.select:hover svg {
+  fill: white;
+  filter: brightness(1.2);
+}
+
+.select .btn-header_icon svg {
+  transition: all 0.5s ease-in-out;
+  fill: black;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 8px;
+  top: 10px;
+}
+
+.select .btn-header_icon path {
+  stroke-width: 3 !important;
+}
+
+.selected {
+  background-color: var(--select-button-hover-bg);
+  border: 0;
+  border-radius: 0;
+  height: 39px;
+  width: 39px;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-wrapper.selected:hover {
+  background-color: var(--select-button-hover-bg);
+  border: 0;
+}
+
+.btn-wrapper.selected svg {
+  fill: white;
+  filter: brightness(1.2);
+}
+
+.selected .btn-header_icon svg {
+  transition: all 0.5s ease-in-out;
+  fill: white;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 8px;
+  top: 10px;
+}
+
+.selected .btn-header_icon path {
+  stroke-width: 3 !important;
+}
+
+.location {
+  background-color: var(--select-button-hover-bg);
+  border: 0;
+  border-radius: 0;
+  height: 39px;
+  width: 39px;
+}
+
+.btn-wrapper.location:hover {
+  background-color: var(--select-button-hover-bg);
+  border: 0;
+}
+
+.btn-wrapper.location svg {
+  fill: white;
+  filter: brightness(1.2);
+}
+
+.location .btn-header_icon svg {
+  transition: all 0.5s ease-in-out;
+  fill: white;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 8px;
+  top: 10px;
+}
+
+.location .btn-header_icon path {
+  stroke-width: 3 !important;
+}

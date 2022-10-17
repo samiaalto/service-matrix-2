@@ -1,0 +1,206 @@
+.labelPreview {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+  width: 45em;
+  padding: 15px;
+  font-size: 12px;
+  font-family: Arial;
+  margin-top: 5px;
+}
+
+.labelBorder {
+  margin: 10px;
+}
+
+.labelPreview .bringProduct {
+  padding-bottom: 5px;
+}
+
+.labelPreview .bringServiceName {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.bringParties {
+  margin-top: -30px;
+}
+
+.returnPostOffice,
+.senderPostOffice,
+.bringRecipientPostOffice {
+  margin-left: -33px;
+}
+
+.pcLabel {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bringServiceBarcode {
+  position: relative;
+  margin-top: -5px;
+  right: -30px;
+}
+
+.bringRecipient,
+.bringParties {
+  line-height: 120%;
+}
+
+.bringServiceCode {
+  text-align: center;
+  padding-left: 10px;
+  margin-top: -2px;
+  z-index: 1;
+}
+
+.bringReceiver-label,
+.bringReceiverPhone {
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.bringReceiver {
+  margin-top: 10px;
+}
+
+.freightReceiverAddress1,
+.freightReceiverAddress2,
+.freightReceiverName,
+.freightReceiverName2,
+.freightReceiverCountry {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.freightReceiverPostalCode,
+.freightReceiverPostOffice,
+.shipmentIdValue,
+.weightValue {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.bringDateLabel,
+.bringDateValue {
+  display: flex;
+  justify-content: right;
+  padding-right: 25px;
+}
+
+.freightReceiverPostOffice {
+  margin-left: -55px;
+}
+
+.bringAddons {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  min-height: 40px;
+}
+
+.bringProductInformation {
+  border-bottom: 1px solid #000;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.bringLogoIcon {
+  padding-top: 10px;
+  display: flex;
+}
+
+.bringLogoText {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.bringLogoIcon svg path {
+  height: 50px;
+  width: 50px;
+}
+
+.visualGuide {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.freightLabelLogo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.labelPreview .pcServiceName {
+  font-size: 18px;
+  text-align: left;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.pcTransportInstructionsValue {
+  margin-left: -21px;
+}
+
+.pcShipmentInformation,
+.products {
+  margin-top: 20px;
+}
+
+.pcTrackingBarcode,
+.pcRoutingBarcode {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.bringTrackingBarcodeValue {
+  z-index: 1;
+  margin-top: -68px;
+  text-align: center;
+}
+
+.customerInformationValue {
+  border-bottom: 1px solid #000;
+}
+
+.packageCount {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.volumelabel,
+.weightlabel {
+  font-weight: 700;
+}
+
+.additionalInfo {
+  border-top: 2px solid #000;
+  min-height: 130px;
+}
+
+.additionalInfoValue {
+  padding-left: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.bringTrackingBarcodeArea {
+  min-height: 180px;
+}
+
+.bringPostiGreen {
+  display: flex;
+  margin-bottom: -20px;
+}

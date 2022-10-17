@@ -1,0 +1,253 @@
+.labelPreview {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+  width: 45em;
+  padding: 15px;
+  font-size: 12px;
+  font-family: Arial;
+  margin-top: 5px;
+}
+
+.labelBorder {
+  margin: 10px;
+}
+
+.priorityLogo {
+  height: 35px;
+}
+
+.priorityParties {
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.priorityLabel {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.sender {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.prioritySenderPostOffice {
+  margin-left: -38px;
+}
+
+.sendersVatValue,
+.receiversVatValue {
+  margin-top: -2px;
+  margin-left: -47px;
+}
+
+.priorityReceiver {
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.receiverPostalCode {
+  font-weight: 900;
+}
+
+.priorityReceiverPostOffice {
+  margin-left: -32px;
+  font-weight: 900;
+}
+
+.receiverCountry {
+  font-weight: 900;
+}
+
+.phoneIcon {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.receiverPhoneValue {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 18px;
+  bottom: 1px;
+}
+
+.priorityEDISSI {
+  margin-top: -10px;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.processCode {
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.labelPreview .serviceName {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.labelPreview .priorityServiceCode,
+.labelPreview .priorityTrackingBarcodeValue {
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 1;
+  text-align: center;
+}
+
+.labelPreview .priorityServiceCode {
+  text-align: center;
+  padding-left: 35px;
+  margin-top: -8px;
+}
+
+.return .addonbox {
+  float: left;
+}
+
+.return .otherPayerHeading {
+  text-align: justify;
+}
+
+.return {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
+}
+
+.priorityTrackingBarcode {
+  margin-top: -10px;
+  margin-bottom: -12px;
+  display: flex;
+  justify-content: center;
+}
+
+.priorityServiceBarcode {
+  margin-top: -50px;
+  margin-left: 0px;
+}
+
+.box {
+  border: 2px solid #000;
+  border-right: 0;
+}
+
+.senderInformation,
+.recipientInformation,
+.customsInformation {
+  border-bottom: 2px solid #000;
+  white-space: nowrap;
+}
+
+.values {
+  font-size: 10px;
+  min-height: 100px;
+}
+
+.signature {
+  border-top: 2px solid #000;
+  min-height: 50px;
+}
+
+.zipBarcodeValue {
+  text-align: center;
+  margin-top: -8px;
+  z-index: 1;
+}
+
+.addonbox {
+  border: 1px solid #000;
+  min-height: 22px !important;
+  max-width: 20px !important;
+  margin: 4px;
+  padding-left: 8px;
+}
+
+.addonValue {
+  display: flex;
+  justify-content: center;
+  padding-left: 2px;
+  padding-top: 1px;
+}
+
+.priorityDateBox {
+  margin-top: -10px;
+  border-left: 2px solid #000;
+}
+
+.priorityPackages {
+  border-left: 2px solid #000;
+}
+
+.goodsTypeLabel {
+  font-size: 9px;
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+}
+
+.goodsType {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.goodsTypeCol {
+  padding-left: 10px;
+}
+
+.returnHandling {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.date,
+.date-label,
+.addon-label {
+  padding-left: 2px;
+}
+
+.addon-label {
+  font-weight: 400;
+}
+
+.packageCount {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.volumelabel,
+.weightlabel {
+  font-weight: 700;
+}
+
+.otherPayerHeading {
+  padding-left: 5px;
+  font-size: 9px;
+}
+
+.otherPayerValue {
+  padding-left: 5px;
+}
+
+.additionalInfo {
+  border-top: 2px solid #000;
+  min-height: 130px;
+}
+
+.additionalInfoValue {
+  padding-left: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
