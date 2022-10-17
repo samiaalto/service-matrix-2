@@ -1,0 +1,5000 @@
+{
+  "records": [
+    {
+      "ServiceCode": "2004",
+      "DisplayNameFI": "Posti Rahti",
+      "DisplayNameEN": "Posti Freight",
+      "DescriptionFI": "Digitaalinen, ympäristöystävällinen ja Suomen kattavin. Postin rahtipalveluilla tavoitat jopa 90 prosenttia Suomen yrityksistä seuraavaksi työpäiväksi. Käytämme kuljetuksissamme aina nopeimpia reittejä, jolloin sinä säästät aikaa ja rahaa. Kaikki rahtipalvelumme ovat hiilineutraaleja Posti Green -palveluita – ilman lisämaksua. Palvelu soveltuu raskaamman tavaran kuljettamiseen kollista koko kuormaan – kuljetusdokumenttina on rahtikirja ja kuljetusalustana on lava.",
+      "DescriptionEN": "Posti Freight",
+      "LabelType": "FREIGHT",
+      "LabelName": "Rahti",
+      "ServiceGroup": "FREIGHT",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "5100"
+        },
+        {
+          "Addon": "5102"
+        },
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5104"
+        },
+        {
+          "Addon": "5105"
+        },
+        {
+          "Addon": "5106"
+        },
+        {
+          "Addon": "5107"
+        },
+        {
+          "Addon": "5108"
+        },
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5214"
+        },
+        {
+          "Addon": "5222"
+        },
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        },
+        {
+          "Addon": "5230"
+        },
+        {
+          "Addon": "5234"
+        },
+        {
+          "Addon": "5235"
+        },
+        {
+          "Addon": "5236"
+        },
+        {
+          "Addon": "5237"
+        },
+        {
+          "Addon": "5238"
+        },
+        {
+          "Addon": "5502"
+        },
+        {
+          "Addon": "5503"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2004</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2004"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"POF1\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "POF1"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "BUN",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Bundle",
+          "DescriptionFI": "Nippu, kimppu",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CG",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Cage",
+          "DescriptionFI": "Häkki",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CW",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Roller cage",
+          "DescriptionFI": "Rullakko",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 81,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 63,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 250,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FIN",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
+          "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 100,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 500,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FPL",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "DescriptionEN": "Pallet, furniture pallet (variable size)",
+          "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2015",
+      "DisplayNameFI": "Priority",
+      "DisplayNameEN": "Priority",
+      "DescriptionFI": "Priority-paketti tavoittaa kenet tahansa missä tahansa maailmassa. Asiakkaat saavat paketin kätevästi itseään lähinnä olevaan palvelupisteeseen, ja monissa maissa se kuljetetaan perille vastaanottajan osoitteeseen. Kuljetukset Pohjoismaihin 3–5, muualle Eurooppaan 2–7 ja muualle maailmaan 6–14 arkipäivässä. Posti ei vastaa kohdemaan tullin toimenpiteiden lähetyksille aiheuttamista viivästymisistä.",
+      "DescriptionEN": "Priority parcel reaches anyone anywhere in the world. Customers receive the parcel at the nearest service point, and in many countries it is delivered to a recipient's address. Shipments to the Nordic countries 3–5, the rest of Europe 2–7, and the rest of the world 6–14 working days. Posti is not responsible for delays caused by customs measures in the destination country.",
+      "LabelType": "UPU",
+      "LabelName": "Priority",
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2015</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2015"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2015",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2015"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"ITPR\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "ITPR"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 25,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 3,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 30,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2017",
+      "DisplayNameFI": "EMS",
+      "DisplayNameEN": "EMS",
+      "DescriptionFI": "EMS (Express Mail Service) on pikapalvelu noin 180 maahan. EMS kulkee vastaanottajan osoitteeseen nopeinta mahdollista reittiä käyttäen. Kuljetukset EU-alueelle 1–3 arkipäivässä ja muualle maailmaan 2–8 arkipäivässä. Posti ei vastaa kohdemaan tullin toimenpiteiden lähetyksille aiheuttamista viivästymisistä.",
+      "DescriptionEN": "EMS (Express Mail Service) is an express service for about 180 countries. EMS travels to the recipient's address using the fastest possible route. Shipments to the EU in 1–3 working days and to the rest of the world in 2–8 working days. Posti is not responsible for delays caused by customs procedures in the country of destination.",
+      "LabelType": "UPU",
+      "LabelName": "EMS",
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2017</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2017"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2017",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2017"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2017\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2017"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 25,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 3,
+          "MaxHeight_cm": 120,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 30,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2101",
+      "DisplayNameFI": "Express-Paketti Aamuksi",
+      "DisplayNameEN": "Express Parcel Morning",
+      "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Express 09-pakettitoimitus toimitetaan  seuraavana arkiaamuna klo 9 mennessä ja tämän palvelun piirissä on yli 70% Suomen yrityksistä.",
+      "DescriptionEN": "Express parcel deliveries are mainly intended for business recipients and include the most versatile parcel solutions in the country for different needs. The customer can choose e.g. several different delivery speeds as well as delivery methods. Express packages are delivered to the destination or vending machine of the customer's choice. The Express 09 parcels delivery will be delivered by 9 am the next weekday morning and more than 70% of Finnish companies are covered by this service.",
+      "LabelType": "PARCEL",
+      "LabelName": "Express-Paketti Aamuksi",
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "09",
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3155"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2101</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2101"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2101",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2101"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2102\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2102"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLV09\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLV09"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2102",
+      "DisplayNameFI": "Express-Paketti",
+      "DisplayNameEN": "Express Parcel",
+      "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Express 14-paketti toimitetaan klo 8–16 välillä seuraavana arkipäivänä ja tämän palvelun piirissä on yli 95% Suomen yrityksistä.",
+      "DescriptionEN": "Express parcel deliveries are mainly intended for business recipients and include the most versatile parcel solutions in the country for different needs. The customer can choose e.g. several different delivery speeds as well as delivery methods. Express packages are delivered to the destination or vending machine of the customer's choice. The Express 14 parcels will be delivered between 8 am and 4 pm on the next working day and this service covers more than 95% of Finnish companies.",
+      "LabelType": "PARCEL",
+      "LabelName": "Express-Paketti",
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "14",
+      "Pudo": true,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3137"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3155"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3165"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3184"
+        },
+        {
+          "Addon": "3185"
+        },
+        {
+          "Addon": "3411"
+        },
+        {
+          "Addon": "3412"
+        },
+        {
+          "Addon": "3413"
+        },
+        {
+          "Addon": "3415"
+        },
+        {
+          "Addon": "3416"
+        },
+        {
+          "Addon": "3417"
+        },
+        {
+          "Addon": "3418"
+        },
+        {
+          "Addon": "3419"
+        },
+        {
+          "Addon": "3420"
+        },
+        {
+          "Addon": "3421"
+        },
+        {
+          "Addon": "3422"
+        },
+        {
+          "Addon": "3423"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2102</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2102"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2102",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2102"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2102\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2102"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": {
+            "Addon": "3174"
+          }
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2103",
+      "DisplayNameFI": "Postipaketti",
+      "DisplayNameEN": "Postal Parcel",
+      "DescriptionFI": "Postipaketti on verkkokauppiaiden ylivoimaisesti suosituin verkkokauppaostosten toimitustapa. Tarjoamme ylivoimaisen toimituspisteverkoston noutamiseen yli 2000 omalla automaatilla ja yli 130000 lokerolla. Näiden lisäksi tarjoamme henkilökohtaisen palvelun noutopisteitä. Kuluttajat voivat kätevästi seurata paketin kulkua omaposti-sovelluksen kautta.",
+      "DescriptionEN": "The postal parcel is by far the most popular delivery method for e-commerce purchases. We offer a superior network of delivery points to pick up with over 2,000 own parcel machines and over 120,000 lockers. In addition to these, we offer personal service pick-up points. Consumers can conveniently track the progress of the parcel through the OmaPosti application.",
+      "LabelType": "PARCEL",
+      "LabelName": "Postipaketti",
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "16",
+      "Pudo": true,
+      "Home": false,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3105"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3146"
+        },
+        {
+          "Addon": "3151"
+        },
+        {
+          "Addon": "3155"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3165"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3176"
+        },
+        {
+          "Addon": "3376"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2103</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2103"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2103",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2103"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2103\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2103"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 60,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 40,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 260,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": {
+            "Addon": "3174"
+          }
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2104",
+      "DisplayNameFI": "Kotipaketti",
+      "DisplayNameEN": "Home Parcel",
+      "DescriptionFI": "Kotipaketti on helppo ratkaisu verkkokaupan asiakkaille. Olemme yhteydessä vastaanottajaan pääsääntöisesti seuraavana työpäivänä, jolloin sovimme jakeluajan. Sovittavat toimitusajat vaihtelevat alueittain klo 9–21 välillä.",
+      "DescriptionEN": "A home package is an easy solution for e-commerce customers. As a rule, we will contact the recipient on the next working day when we agreed on the delivery time. Agreed delivery times vary by region from 9 a.m. to 9 p.m.",
+      "LabelType": "PARCEL",
+      "LabelName": "Kotipaketti",
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "21",
+      "Pudo": false,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3176"
+        },
+        {
+          "Addon": "3358"
+        },
+        {
+          "Addon": "3410"
+        },
+        {
+          "Addon": "3411"
+        },
+        {
+          "Addon": "3412"
+        },
+        {
+          "Addon": "3413"
+        },
+        {
+          "Addon": "3415"
+        },
+        {
+          "Addon": "3416"
+        },
+        {
+          "Addon": "3417"
+        },
+        {
+          "Addon": "3418"
+        },
+        {
+          "Addon": "3419"
+        },
+        {
+          "Addon": "3420"
+        },
+        {
+          "Addon": "3421"
+        },
+        {
+          "Addon": "3422"
+        },
+        {
+          "Addon": "3423"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2104</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2104"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2104",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2104"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2104\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2104"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2108",
+      "DisplayNameFI": "Palautus",
+      "DisplayNameEN": "Return",
+      "DescriptionFI": "Verkkokauppaostoksen helppo palauttaminen poistaa kuluttajalta ostamisen esteitä ja kuuluu uskottavan verkkokauppiaan tarjoamaan. Helppo palauttaminen myös kattavan automaattiverkoston kautta antaa Postin asiakkaille selkeää helppoutta löytää itselle sopivin palautuspiste mahdollismman läheltä.",
+      "DescriptionEN": "Easily returning an ecommerce purchase removes barriers to the consumer from buying and is part of what a convincing online retailer has to offer. Also, easy return through a comprehensive parcel locker network gives Posti's customers a clear ease in finding the most suitable return point as close as possible.",
+      "LabelType": "PARCEL",
+      "LabelName": "Palautus",
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "14",
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3174"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2108</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2108"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2108",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2108"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2108\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2108"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2124",
+      "DisplayNameFI": "Express-Paketti Samana Päivänä",
+      "DisplayNameEN": "Express Parcel Same Day",
+      "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Nopeimpia toimitustarpeita varten on valittavissa myös erittäin aikaisia aamunoutoja tietyistä terminaaleista ja automaateista (klo 7 ja klo 8 mennessä) sekä alueellisia saman päivän toimituksia (Express 00). ",
+      "DescriptionEN": "Express parcel deliveries are mainly intended for business recipients and include the most versatile parcel solutions in the country for different needs. The customer can choose e.g. several different delivery speeds as well as delivery methods. Express packages are delivered to the destination or vending machine of the customer's choice. For the fastest delivery needs, very early morning pick-ups from certain terminals and parcel lockers (by 7 a.m. and 8 p.m.) as well as regional same-day deliveries (Express 00) are also available.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "00",
+      "Pudo": false,
+      "Home": true,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3155"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2124</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2124"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2124",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2124"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2102\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2102"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLV00\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLV00"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 100,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 25,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": {
+            "Addon": "3174"
+          }
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2142",
+      "DisplayNameFI": "Express-Rahti Samana Päivänä",
+      "DisplayNameEN": "Express Freight Same Day",
+      "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Express-rahti Samana päivänä -lähetys toimitetaan ovelta ovelle saman arkipäivän aikana. Palvelu on sopimusasiakkaille, joilla on tarve toimittaa lähetyksiä kaupunkien sisäisessä liikenteessä. Palvelu toimii saman päivän rytmillä, erikseen määritellyn palvelualueen sisällä. Lisäpalvelun käyttö edellyttää asiakkaalta EDI- sanoman lähettämistä Postille.",
+      "DescriptionEN": "Express freight is the right choice when you want to deliver large shipments or parcels in a ready-made transport unit with a familiar address card from the package. The transport platform is a trolley or a pallet. The Morning additional service is an express delivery service to contract customers delivered by 9 a.m. the next business day in separately defined areas. Thanks to the delivery time commitment and comprehensive network, the service is well suited for even the most demanding express transport needs.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "TRANSPORTUNIT",
+      "ProcessNumber": "00",
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3137"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3171"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2142</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2142"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2142",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2142"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2144\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2144"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLV00\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLV00"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CG",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Cage",
+          "DescriptionFI": "Häkki",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CW",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Roller cage",
+          "DescriptionFI": "Rullakko",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 81,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 63,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 250,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "ZPE",
+          "MessageFormat": "WAYBILD16A",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FIN",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
+          "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 100,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 500,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FPL",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, furniture pallet (variable size)",
+          "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2143",
+      "DisplayNameFI": "Express-Rahti Aamuksi",
+      "DisplayNameEN": "Express Freight Morning",
+      "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Aamuksi-lisäpalvelu on erikseen määritellyillä alueilla seuraavaksi työpäiväksi klo 9 mennessä jaettava pikakuljetuspalvelu sopimusasiakkaille. Toimitusaikasitoumuksen ja kattavan verkon ansiosta palvelu sopii hyvin vaativiinkin​ pikakuljetustarpeisiin.",
+      "DescriptionEN": "Express freight is the right choice when you want to deliver large shipments or parcels in a ready-made transport unit with a familiar address card from the package. The transport platform is a trolley or a pallet. Express Freight Same Day shipment is delivered door-to-door on the same business day. The service is for contract customers who need to deliver shipments in intra-urban traffic. The service operates on the same day phase, within a separately defined service area. Use of the additional service requires the customer to send an EDI message to Posti.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "TRANSPORTUNIT",
+      "ProcessNumber": "09",
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3171"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2143</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2143"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2143",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2143"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2144\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2144"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLV09\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLV09"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CG",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Cage",
+          "DescriptionFI": "Häkki",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CW",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Roller cage",
+          "DescriptionFI": "Rullakko",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 81,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 63,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 250,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "ZPE",
+          "MessageFormat": "WAYBILD16A",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FIN",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
+          "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 100,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 500,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FPL",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, furniture pallet (variable size)",
+          "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2144",
+      "DisplayNameFI": "Express-Rahti",
+      "DisplayNameEN": "Express Freight",
+      "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Lähetys on perillä vastaanottajalla lähetyksestä seuraavana arkipäivänä klo 16 mennessä. Osassa Pohjois-Suomea jakelu tehdään klo 17 mennessä ja pisimmillä yhteysväleillä toimitus vie kaksi arkipäivää. ",
+      "DescriptionEN": "Express freight is the right choice when you want to deliver large shipments or parcels in a ready-made transport unit with a familiar address card from the package. The transport platform is a trolley or a pallet. The shipment will reach the recipient by 4 pm on the next working day after the shipment. In some parts of Northern Finland, delivery is made by before 5 pm and delivery takes two working days at the longest contact intervals. ",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "TRANSPORTUNIT",
+      "ProcessNumber": "14",
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3171"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3198"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2144</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2144"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2144",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2144"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2144\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2144"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CG",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Cage",
+          "DescriptionFI": "Häkki",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CW",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Roller cage",
+          "DescriptionFI": "Rullakko",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 81,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 63,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 250,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "ZPE",
+          "MessageFormat": "WAYBILD16A",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FIN",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
+          "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 100,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 500,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FPL",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, furniture pallet (variable size)",
+          "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2145",
+      "DisplayNameFI": "Express-Rahti Illaksi",
+      "DisplayNameEN": "Express Freight Evening",
+      "DescriptionFI": null,
+      "DescriptionEN": null,
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "TRANSPORTUNIT",
+      "ProcessNumber": "21",
+      "Pudo": false,
+      "Home": true,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3137"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3180"
+        },
+        {
+          "Addon": "3181"
+        },
+        {
+          "Addon": "3182"
+        },
+        {
+          "Addon": "3183"
+        },
+        {
+          "Addon": "3184"
+        },
+        {
+          "Addon": "3185"
+        },
+        {
+          "Addon": "3186"
+        },
+        {
+          "Addon": "3187"
+        },
+        {
+          "Addon": "3188"
+        },
+        {
+          "Addon": "3189"
+        },
+        {
+          "Addon": "3190"
+        },
+        {
+          "Addon": "3191"
+        },
+        {
+          "Addon": "3192"
+        },
+        {
+          "Addon": "3193"
+        },
+        {
+          "Addon": "3194"
+        },
+        {
+          "Addon": "3358"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2145</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2145"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2145",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2145"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2144\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2144"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLV21\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLV21"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CG",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Cage",
+          "DescriptionFI": "Häkki",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CW",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Roller cage",
+          "DescriptionFI": "Rullakko",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 81,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 63,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 250,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "ZPE",
+          "MessageFormat": "WAYBILD16A",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FIN",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
+          "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 100,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 500,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "FPL",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, furniture pallet (variable size)",
+          "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 240,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2317",
+      "DisplayNameFI": "Express Business Day Parcel",
+      "DisplayNameEN": "Express Business Day Parcel",
+      "DescriptionFI": "Express Business Day -paketilla (EBD) tilaukset toimitetaan yritysasiakkaille ympäri Eurooppaa. Baltiassa myös kuluttajatoimitukset ovat mahdollisia. Express Business Day -paketit kulkevat 27 Euroopan maahan. Kuljetukset 1–8 arkipäivässä maasta riippuen. ",
+      "DescriptionEN": "With the Express Business Day parcel (EBD), orders are delivered to business customers across Europe. In the Baltic countries, consumer deliveries are also possible. Express Business Day parcels can be shipped to 27 European countries. Deliveries in 1–8 business days depending on the destination address.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3401"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "AT",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "AT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "AT",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "AT",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "BE",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "BE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "BE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "BE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "CH",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "CZ",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "CZ",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "CZ",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "CZ",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "DE",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "DE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "DE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "DE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "CH"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FR"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "GB"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "GR"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "IE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "IT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "RO"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "CH"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FR"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "GB"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "GR"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "IE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "IT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "NO"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "RO"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "FR",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "FR",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "FR",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "FR",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "GB",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "GB",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "GB",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "GB",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "GR",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "GR",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "GR",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "GR",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "IE",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "IE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "IE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "IE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "IT",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "IT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "IT",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "IT",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "CH"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FR"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "GB"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "GR"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "IE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "IT"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "RO"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "LU",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "LU",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LU",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "LU",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "CH"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FR"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "GB"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "GR"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "IE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "IT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "RO"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "NL",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "NL",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "NL",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "NL",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "NO",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "RO",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "RO",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "RO",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "RO",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "SK",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "SK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SK",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "SK",
+          "DestinationCountry": "LV"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2317</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2317"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2317",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2317"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"IT14I\" ",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "IT14I"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 25,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 3,
+          "MaxHeight_cm": 120,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 120,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2318",
+      "DisplayNameFI": "Express Business Day Pallet",
+      "DisplayNameEN": "Express Business Day Pallet",
+      "DescriptionFI": "Express Business Day -lavalla (EBD) toimitat isommat tilaukset yritysasiakkaillesi Baltiaan, Pohjoismaihin ja Puolaan. Baltiassa myös kuluttajatoimitukset ovat mahdollisia. Kuljetukset 1–6 arkipäivässä maasta riippuen.",
+      "DescriptionEN": "With Express Business Day (EBD) Pallet, larger orders will be delivered to business customers in the Baltic and Nordic countries, and Poland. In the Baltics, consumer deliveries are also possible. Shipments in 1–6 working days depending on the country.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3169"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "NO"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "NO",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "NO",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "NO",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "NO",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "PL",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "LT"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "LV"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2318</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2318"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2318",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2318"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"ITKY14I\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "ITKY14I"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 740,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 370,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2329",
+      "DisplayNameFI": "Express Business Day Pallet Morning",
+      "DisplayNameEN": "Express Business Day Pallet Morning",
+      "DescriptionFI": "Express Business Day Pallet Morning",
+      "DescriptionEN": "Express Business Day Pallet Morning",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3169"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2329</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2329"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2329",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2329"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2329\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2329"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 740,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 370,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2330",
+      "DisplayNameFI": "Express Business Day Pallet Home Delivery",
+      "DisplayNameEN": "Express Business Day Pallet Home Delivery",
+      "DescriptionFI": "Express Business Day Pallet Home Delivery",
+      "DescriptionEN": "Express Business Day Pallet Home Delivery",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3137"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3180"
+        },
+        {
+          "Addon": "3181"
+        },
+        {
+          "Addon": "3182"
+        },
+        {
+          "Addon": "3183"
+        },
+        {
+          "Addon": "3184"
+        },
+        {
+          "Addon": "3185"
+        },
+        {
+          "Addon": "3186"
+        },
+        {
+          "Addon": "3187"
+        },
+        {
+          "Addon": "3188"
+        },
+        {
+          "Addon": "3189"
+        },
+        {
+          "Addon": "3190"
+        },
+        {
+          "Addon": "3191"
+        },
+        {
+          "Addon": "3192"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2330</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2330"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2330",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2330"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2330\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2330"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 740,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 370,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2331",
+      "DisplayNameFI": "Posti Parcel Baltic",
+      "DisplayNameEN": "Posti Parcel Baltic",
+      "DescriptionFI": "Postipaketti Baltiaan on erinomainen palvelu asiakkaiden palvelemiseksi Virossa, Latviassa ja Liettuassa. Palvelu tuotetaan yhteistyössä Posti-konsernin Itella-yhtiöiden kanssa. Lähetykset toimitetaan 1–3 arkipäivässä.",
+      "DescriptionEN": "Posti Parcel Baltic is an excellent service for serving customers in Estonia, Latvia and Lithuania. The service is produced in co-operation with the Itella companies of the Posti Group. Parcels will be delivered to pickup points and parcel lockers in 1–3 business days.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": true,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3174"
+        },
+        {
+          "Addon": "3401"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "EE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LV"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2331</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2331"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2331",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2331"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2331\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2331"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 60,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 36,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2338",
+      "DisplayNameFI": "Posti Parcel Baltic Return",
+      "DisplayNameEN": "Posti Parcel Baltic Return",
+      "DescriptionFI": "Posti Parcel Baltic Return",
+      "DescriptionEN": "Posti Parcel Baltic Return",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3104"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3174"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2338</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2338"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2338",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2338"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2338\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2338"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 60,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 36,
+          "MinDepth_cm": 15,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 35,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2341",
+      "DisplayNameFI": "Express Business Day Pallet Arrival Day",
+      "DisplayNameEN": "Express Business Day Pallet Arrival Day",
+      "DescriptionFI": "Express Business Day Pallet Arrival Day",
+      "DescriptionEN": "Express Business Day Pallet Arrival Day",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3102"
+        },
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3162"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3170"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2341</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2341"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2341",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2341"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2341\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2341"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 740,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 210,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 370,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2351",
+      "DisplayNameFI": "Pickup Parcel",
+      "DisplayNameEN": "Pickup Parcel",
+      "DescriptionFI": "PickUp Parcel -paketit toimitetaan kuluttajille Ruotsissa ja Tanskassa. Paketit toimitetaan noutopisteisiin ja pakettiautomaatteihin Ruotsiin 2–5 ja Tanskaan 2–​​​​​​​4 arkipäivässä. ",
+      "DescriptionEN": "PickUp Parcels are delivered to consumers in Sweden and Denmark. Parcels will be delivered to Sweden in 2–5 and to Denmark in 2–4 working days for collection from pick-up points and parcel lockers.",
+      "LabelType": "BRING",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": true,
+      "Home": false,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3143"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2351</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2351"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2351",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2351"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2351\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2351"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 60,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 40,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 40,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2352",
+      "DisplayNameFI": "Home Parcel",
+      "DisplayNameEN": "Home Parcel",
+      "DescriptionFI": "Home Parcel -paketit toimitetaan kuluttajan kotiin Ruotsissa ja Tanskassa. Toimitukset Ruotsiin tehdään 2–5 ja Tanskaan 2–4 arkipäivän kuluessa. ",
+      "DescriptionEN": "Home Parcels are delivered to a consumer's home in Sweden and Denmark. Deliveries will be made to Sweden in 2–5 and to Denmark in 2–4 working days.",
+      "LabelType": "BRING",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3372"
+        },
+        {
+          "Addon": "3373"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DK"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2352</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2352"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2352",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2352"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2352\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2352"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2354",
+      "DisplayNameFI": "Home Pallet",
+      "DisplayNameEN": "Home Pallet",
+      "DescriptionFI": "Home Pallet -palvelu vie suuret lähetykset kuluttajien kotiosoitteisiin Ruotsissa. Lavatoimitukset ovat perillä 2–5 arkipäivässä. ",
+      "DescriptionEN": "Home Pallet service takes large shipments to consumers' home addresses in Sweden. Pallet deliveries will arrive in 2–5 working days. ",
+      "LabelType": "BRING",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3137"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3175"
+        },
+        {
+          "Addon": "3372"
+        },
+        {
+          "Addon": "3373"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2354</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2354"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2354",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2354"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2354\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2354"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 200,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 750,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 150,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 400,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2358",
+      "DisplayNameFI": "Customer Return",
+      "DisplayNameEN": "Customer Return",
+      "DescriptionFI": "Customer Return",
+      "DescriptionEN": "Customer Return",
+      "LabelType": "BRING",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3174"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2358</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2358"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2358",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2358"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2358\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2358"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 60,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 40,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 40,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 23,
+          "MaxWidth_cm": 150,
+          "MinHeight_cm": 13,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 20,
+          "Circumference_cm": 300,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2359",
+      "DisplayNameFI": "Customer Return Pallet",
+      "DisplayNameEN": "Customer Return Pallet",
+      "DescriptionFI": "Customer Return Pallet",
+      "DescriptionEN": "Customer Return Pallet",
+      "LabelType": "BRING",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "SE",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2359</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2359"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2359",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2359"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2359\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2359"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "EUR",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
+          "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 200,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 80,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 750,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "HP",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
+          "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 80,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 150,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 400,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2461",
+      "DisplayNameFI": "Pikkupaketti",
+      "DisplayNameEN": "Small Parcel",
+      "DescriptionFI": "Pikkupaketti on kuluttajille vaivattomin tapa vastaanottaa verkkokaupan pieniä lähetyksiä. Pikkupaketti voidaan toimittaa yli kolmeen miljoonaan postiluukkuun/-laatikkoon 1-3:ssa arkipäivässä.",
+      "DescriptionEN": "A small parcel is the easiest way for consumers to receive small shipments from an online store. The small parcel can be delivered to more than three million mailboxes in 1-3 working days.",
+      "LabelType": "PARCEL",
+      "LabelName": null,
+      "ServiceGroup": "PARCEL",
+      "ProcessNumber": "P",
+      "Pudo": false,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2461</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2461"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2461",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2461"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2461\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2461"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 0,
+          "MaxWidth_cm": 25,
+          "MinHeight_cm": 0,
+          "MaxHeight_cm": 35.3,
+          "MinDepth_cm": 0,
+          "MaxDepth_cm": 3,
+          "MinWeight_kg": 0,
+          "MaxWeight_kg": 2,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2711",
+      "DisplayNameFI": "Parcel Connect",
+      "DisplayNameEN": "Parcel Connect",
+      "DescriptionFI": "Parcel Connect",
+      "DescriptionEN": "Parcel Connect",
+      "LabelType": "PARCELCONNECT",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": true,
+      "Business": false,
+      "AdditionalServices": [
+        {
+          "Addon": "3103"
+        },
+        {
+          "Addon": "3174"
+        }
+      ],
+      "Routes": [
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2711</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2711"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2711",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2711"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2711\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2711"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 11,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 31.5,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 11,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 31.5,
+          "Circumference_cm": 360,
+          "AdditionalServiceCode": {
+            "Addon": "3174"
+          }
+        }
+      ]
+    },
+    {
+      "ServiceCode": "2718",
+      "DisplayNameFI": "Parcel Connect Return",
+      "DisplayNameEN": "Parcel Connect Return",
+      "DescriptionFI": "Parcel Connect Return",
+      "DescriptionEN": "Parcel Connect Return",
+      "LabelType": "PARCELCONNECT",
+      "LabelName": null,
+      "ServiceGroup": "INTERNATIONAL",
+      "ProcessNumber": null,
+      "Pudo": false,
+      "Home": false,
+      "Business": true,
+      "AdditionalServices": [],
+      "Routes": [
+        {
+          "DepartureCountry": "BG",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "DK",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "EE",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "ES",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "BG"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HR"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "HU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "PT"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SI"
+        },
+        {
+          "DepartureCountry": "FI",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "HR",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "HU",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LT",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "AT"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "BE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "CZ"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "DE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "ES"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "LU"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "NL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "PL"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SE"
+        },
+        {
+          "DepartureCountry": "LV",
+          "DestinationCountry": "SK"
+        },
+        {
+          "DepartureCountry": "PT",
+          "DestinationCountry": "FI"
+        },
+        {
+          "DepartureCountry": "SI",
+          "DestinationCountry": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Product>2718</Product>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Product",
+          "PropertyValue": "2718"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "2718",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ServiceCode",
+          "PropertyValue": "2718"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PO2718\"",
+          "Mandatory": true,
+          "MessagePosition": "service",
+          "PropertyName": "id",
+          "PropertyValue": "PO2718"
+        }
+      ],
+      "PackageTypesAndDimensions": [
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 120,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 11,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 31.5,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PC",
+          "MessageFormat": "POSTRA_PARCEL",
+          "DescriptionEN": "Parcel, Package, packet, pack, ",
+          "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MinWidth_cm": 15,
+          "MaxWidth_cm": 200,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 60,
+          "MinDepth_cm": 11,
+          "MaxDepth_cm": 60,
+          "MinWeight_kg": 0.1,
+          "MaxWeight_kg": 31.5,
+          "Circumference_cm": 360,
+          "AdditionalServiceCode": {
+            "Addon": "3174"
+          }
+        }
+      ]
+    }
+  ]
+}
