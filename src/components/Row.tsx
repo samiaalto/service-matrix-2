@@ -10,12 +10,12 @@ import {
   ColumnDef,
   flexRender,
   RowData,
-  FilterFn
+  FilterFn,
 } from "@tanstack/react-table";
 import { useState, useCallback, memo } from "react";
 import { Cell } from "./Cell";
 
-const RowComponent = ({ row, selected, onCellClick, t }) => {
+const RowComponent = ({ row, onCellClick, t }) => {
   //console.log("render row", row.index);
 
   const handleClick = useCallback(
@@ -38,6 +38,8 @@ const RowComponent = ({ row, selected, onCellClick, t }) => {
             rowIndex={cell.row.index}
             onClick={handleClick}
             columnId={cell.column.id}
+            selected={(e) => console.log(e)}
+            width={(e) => console.log(e)}
           />
         );
       })}

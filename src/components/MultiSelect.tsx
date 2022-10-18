@@ -1,39 +1,87 @@
-import Select, { components } from "react-select";
+import Select, { components, StylesConfig } from "react-select";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import DepartureLogo from "./icons/Departure_logo.svg";
-import DestinationLogo from "./icons/Destination_logo.svg";
-import ServiceGroupLogo from "./icons/ServiceGroup_logo.svg";
-import WeightLogo from "./icons/Weight_logo.svg";
-import WidthLogo from "./icons/Width_logo.svg";
-import ServiceLogo from "./icons/Service_logo.svg";
-import AddonLogo from "./icons/Addon_logo.svg";
-import HomeLogo from "./icons/Home_logo.svg";
-import BusinessLogo from "./icons/Office_logo.svg";
-import PickupLogo from "./icons/Pickup_logo.svg";
+import { ReactComponent as DepartureLogo } from "./icons/Departure_logo.svg";
+import { ReactComponent as DestinationLogo } from "./icons/Destination_logo.svg";
+import { ReactComponent as ServiceGroupLogo } from "./icons/ServiceGroup_logo.svg";
+import { ReactComponent as WeightLogo } from "./icons/Weight_logo.svg";
+import { ReactComponent as WidthLogo } from "./icons/Width_logo.svg";
+import { ReactComponent as ServiceLogo } from "./icons/Service_logo.svg";
+import { ReactComponent as AddonLogo } from "./icons/Addon_logo.svg";
+import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
+import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
+import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
 
 const MultiSelect = ({ onChange, isMulti, data, t }) => {
   const renderSwitch = (param) => {
     switch (param) {
       case "Departure Country":
-        return <DepartureLogo />;
+        return (
+          <DepartureLogo
+            title="DepartureLogo"
+            className="DepartureLogo"
+            key="DepartureLogo"
+          />
+        );
       case "Destination Country":
-        return <DestinationLogo />;
+        return (
+          <DestinationLogo
+            title="DestinationLogo"
+            className="DestinationLogo"
+            key="DestinationLogo"
+          />
+        );
       case "Service Group":
-        return <ServiceGroupLogo />;
+        return (
+          <ServiceGroupLogo
+            title="ServiceGroupLogo"
+            className="ServiceGroupLogo"
+            key="ServiceGroupLogo"
+          />
+        );
       case "Weight":
-        return <WeightLogo />;
+        return (
+          <WeightLogo
+            title="WeightLogo"
+            className="WeightLogo"
+            key="WeightLogo"
+          />
+        );
       case "Longest Side":
-        return <WidthLogo />;
+        return (
+          <WidthLogo title="WidthLogo" className="WidthLogo" key="WidthLogo" />
+        );
       case "Service":
-        return <ServiceLogo />;
+        return (
+          <ServiceLogo
+            title="ServiceLogo"
+            className="ServiceLogo"
+            key="ServiceLogo"
+          />
+        );
       case "Additional Service":
-        return <AddonLogo />;
+        return (
+          <AddonLogo title="AddonLogo" className="AddonLogo" key="AddonLogo" />
+        );
       case "HomeDelivery":
-        return <HomeLogo />;
+        return (
+          <HomeLogo title="HomeLogo" className="HomeLogo" key="HomeLogo" />
+        );
       case "BusinessDelivery":
-        return <BusinessLogo />;
+        return (
+          <BusinessLogo
+            title="BusinessLogo"
+            className="BusinessLogo"
+            key="BusinessLogo"
+          />
+        );
       case "Pickup":
-        return <PickupLogo />;
+        return (
+          <PickupLogo
+            title="PickupLogo"
+            className="PickupLogo"
+            key="PickupLogo"
+          />
+        );
       default:
         return "";
     }
@@ -85,7 +133,7 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
     );
   };
 
-  const customStyles: StylesConfig = {
+  const customStyles: StylesConfig<any, false> = {
     multiValue: (styles, { data }) => {
       return {
         ...styles,
@@ -121,17 +169,17 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
             ? "hsl(200, 100%, 90%)"
             : data.optGroup === "Delivery Location"
             ? "hsl(20, 100%, 90%)"
-            : "hsl(0, 0%, 90%)"
+            : "hsl(0, 0%, 90%)",
       };
     },
     multiValueRemove: (styles) => ({
       ...styles,
       borderRadius: "16px",
-      paddingBottom: "1px"
+      paddingBottom: "1px",
     }),
     menu: (styles) => ({
       ...styles,
-      borderRadius: "16px"
+      borderRadius: "16px",
     }),
     option: (provided, state) => ({
       ...provided,
@@ -139,8 +187,8 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
       backgroundColor:
         state.isFocused || state.isSelected ? "#e0e0e0" : "transparent",
       "&:hover": {
-        backgroundColor: "#e0e0e0"
-      }
+        backgroundColor: "#e0e0e0",
+      },
     }),
     groupHeading: (provided, state) => ({
       ...provided,
@@ -148,7 +196,7 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
       backgroundColor: "#fff",
       color: "#000",
       textAlign: "left",
-      fontWeight: 700
+      fontWeight: 700,
     }),
     control: (provided: Record<string, unknown>, state: any) => ({
       ...provided,
@@ -162,8 +210,8 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
       // },
       "&:hover": {
         border: "2px solid #3b4a57",
-        boxShadow: "none"
-      }
+        boxShadow: "none",
+      },
       // "&:focus": {
       //   border: "1px solid #ff8b67",
       //   boxShadow: "0px 0px 6px #ff8b67"
@@ -172,7 +220,7 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
       //   border: "1px solid #ff8b67",
       //   boxShadow: "0px 0px 6px #ff8b67"
       // }
-    })
+    }),
   };
 
   return (
@@ -185,7 +233,7 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
       placeholder={t("'Filter data'")}
       className={"matrix"}
       classNamePrefix="lp-copy-sel"
-      getOptionLabel={(options) => {
+      getOptionLabel={(options: any) => {
         return `${options.title} ${options.subTitle}`;
       }}
       components={{ MultiValue, Option }}

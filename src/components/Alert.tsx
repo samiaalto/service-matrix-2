@@ -33,7 +33,6 @@ const Alert = ({ data, t }) => {
               autohide
             >
               <Toast.Header>
-                <SvgIcon Icon={AlertIcon} key={i} className="alert-icon" />
                 <strong className="me-auto">
                   {item.title ? t(item.title) : t("Error")}
                 </strong>

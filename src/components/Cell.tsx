@@ -10,7 +10,7 @@ const CellComponent = ({
   selected,
   columnId,
   width,
-  t
+  t,
 }) => {
   //console.log("render", columnId);
   const onCellClick = useCallback(() => {
@@ -41,7 +41,11 @@ const CellComponent = ({
         </td>
       ) : columnId === "serviceButton" ? (
         <td className="serviceButton" onClick={onCellClick}>
-          <Button title="" type="select" />
+          <Button
+            title=""
+            type="select"
+            onClick={(e) => console.log("click")}
+          />
         </td>
       ) : value !== undefined && value !== null ? (
         <td className="">

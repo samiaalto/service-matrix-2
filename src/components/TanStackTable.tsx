@@ -10,7 +10,7 @@ import {
   ColumnDef,
   flexRender,
   RowData,
-  FilterFn
+  FilterFn,
 } from "@tanstack/react-table";
 import {
   useState,
@@ -18,10 +18,9 @@ import {
   useEffect,
   useCallback,
   useRef,
-  useMemo
+  useMemo,
 } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { useVirtual } from "@tanstack/react-virtual";
 import "./styles/Table_styles.css";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
@@ -50,7 +49,8 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   let itemRank;
   if (columnId === "routes") {
     let passed;
-    for (let item of row.getValue(columnId)) {
+    let array: any = row.getValue(columnId);
+    for (let item of array) {
       if (item === value) {
         passed = item;
         break;
@@ -61,7 +61,8 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
     let passed;
     let count = 0;
     let items = [];
-    for (let item of row.getValue(columnId)) {
+    let array: any = row.getValue(columnId);
+    for (let item of array) {
       if (value.includes(item)) {
         count++;
         items.push(item);
@@ -83,7 +84,7 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   //console.log(itemRank);
   // Store the itemRank info
   addMeta({
-    itemRank
+    itemRank,
   });
 
   // Return if the item should be filtered in/out
@@ -124,7 +125,7 @@ function TanStackTable({
   route,
   reset,
   setReset,
-  serviceSelection
+  serviceSelection,
 }) {
   const [data, setData] = useState(() => [...defaultData]);
   const [rows, setRows] = useState(0);
@@ -140,11 +141,11 @@ function TanStackTable({
     data: dataMemo,
     columns: columnsMemo,
     filterFns: {
-      fuzzy: fuzzyFilter
+      fuzzy: fuzzyFilter,
     },
     state: {
       columnVisibility,
-      columnFilters
+      columnFilters,
     },
     onColumnVisibilityChange: setColumnVisibility,
     onColumnFiltersChange: setColumnFilters,
@@ -164,7 +165,7 @@ function TanStackTable({
             if (index === rowIndex) {
               return {
                 ...old[rowIndex]!,
-                [columnId]: value
+                [columnId]: value,
               };
             }
             return row;
@@ -176,10 +177,10 @@ function TanStackTable({
           row: rowIndex,
           service: data[rowIndex].serviceCode,
           addon: columnId,
-          value: value
+          value: value,
         });
-      }
-    }
+      },
+    },
   });
 
   const onCellClick = useCallback((rowIndex, columnId, value) => {
@@ -361,16 +362,13 @@ function TanStackTable({
             </thead>
             <tbody>
               {table.getRowModel().rows.map((row) => {
-                const cells = row.getVisibleCells();
+                //const cells = row.getVisibleCells();
                 //const rowProps = row.getRowProps();
                 return (
                   <Row
                     t={t}
                     key={row.index}
                     row={row}
-                    rowIndex={row.index}
-                    className="tr"
-                    cells={cells}
                     onCellClick={onCellClick}
                   />
                 );
