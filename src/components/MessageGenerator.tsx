@@ -155,7 +155,7 @@ const MessageGenerator = (
             property: field.PropertyName,
             value: field.PropertyValue,
             position: field.MessagePosition,
-            mandatory: field.Mandatory
+            mandatory: field.Mandatory,
           });
         }
       }
@@ -166,7 +166,7 @@ const MessageGenerator = (
       if (addonArr.includes(record.ServiceCode)) {
         labelAddons.push({
           labelName: record.DisplayNameFI,
-          labelMarking: record.LabelMarking
+          labelMarking: record.LabelMarking,
         });
         if (record.Fields.length > 0) {
           for (const field of record.Fields) {
@@ -178,7 +178,7 @@ const MessageGenerator = (
                   property: field.PropertyName,
                   value: field.PropertyValue,
                   position: field.MessagePosition,
-                  mandatory: field.Mandatory
+                  mandatory: field.Mandatory,
                 });
               } else {
                 serviceProps.push({
@@ -187,7 +187,7 @@ const MessageGenerator = (
                     addons[addons.length - 1] + "-" + field.PropertyName,
                   value: field.PropertyValue,
                   position: field.MessagePosition,
-                  mandatory: field.Mandatory
+                  mandatory: field.Mandatory,
                 });
               }
             } else {
@@ -196,7 +196,7 @@ const MessageGenerator = (
                 property: field.PropertyName,
                 value: field.PropertyValue,
                 position: field.MessagePosition,
-                mandatory: field.Mandatory
+                mandatory: field.Mandatory,
               });
             }
           }
@@ -331,7 +331,8 @@ const MessageGenerator = (
                 if (sampleValues) {
                   if (obj.ExampleValue === "dateTime") {
                     value = Object.assign(value, {
-                      "#text": new Date().toISOString().split(".")[0] + "+03:00"
+                      "#text":
+                        new Date().toISOString().split(".")[0] + "+03:00",
                     });
                   } else {
                     value = Object.assign(value, { "#text": obj.ExampleValue });
@@ -363,7 +364,7 @@ const MessageGenerator = (
                           ? val
                           : sampleValues
                           ? new Date().toISOString().split(".")[0]
-                          : ""
+                          : "",
                     };
                   } else {
                     value = {
@@ -372,7 +373,7 @@ const MessageGenerator = (
                           ? record.Records[next].ExampleValue
                           : "",
                       "#text":
-                        val !== "" ? val : sampleValues ? obj.ExampleValue : ""
+                        val !== "" ? val : sampleValues ? obj.ExampleValue : "",
                     };
                   }
 
@@ -385,7 +386,7 @@ const MessageGenerator = (
                         : "",
                       "#text": sampleValues
                         ? record.Records[i].ExampleValue
-                        : ""
+                        : "",
                     };
 
                     let path = record.Records[i].Path.split(".");
@@ -412,7 +413,7 @@ const MessageGenerator = (
                           : "",
                         "#text": sampleValues
                           ? new Date().toISOString().split("T")[0]
-                          : ""
+                          : "",
                       });
                     } else {
                       value = Object.assign(value, {
@@ -421,7 +422,7 @@ const MessageGenerator = (
                           : "",
                         "#text": sampleValues
                           ? record.Records[i].ExampleValue
-                          : ""
+                          : "",
                       });
                     }
                   }
@@ -480,7 +481,7 @@ const MessageGenerator = (
             if (sampleValues) {
               if (obj.ExampleValue === "dateTime") {
                 value = Object.assign(value, {
-                  "#text": new Date().toISOString().split(".")[0] + "+03:00"
+                  "#text": new Date().toISOString().split(".")[0] + "+03:00",
                 });
               } else {
                 value = Object.assign(value, { "#text": obj.ExampleValue });
@@ -512,7 +513,7 @@ const MessageGenerator = (
                       ? val
                       : sampleValues
                       ? new Date().toISOString().split(".")[0]
-                      : ""
+                      : "",
                 };
               } else {
                 value = {
@@ -521,7 +522,7 @@ const MessageGenerator = (
                       ? record.Records[next].ExampleValue
                       : "",
                   "#text":
-                    val !== "" ? val : sampleValues ? obj.ExampleValue : ""
+                    val !== "" ? val : sampleValues ? obj.ExampleValue : "",
                 };
               }
 
@@ -532,7 +533,7 @@ const MessageGenerator = (
                   ["@" + record.Records[i + 1].Name]: sampleValues
                     ? record.Records[i + 1].ExampleValue
                     : "",
-                  "#text": sampleValues ? record.Records[i].ExampleValue : ""
+                  "#text": sampleValues ? record.Records[i].ExampleValue : "",
                 };
 
                 let path = record.Records[i].Path.split(".");
@@ -579,14 +580,14 @@ const MessageGenerator = (
                       : "",
                     "#text": sampleValues
                       ? new Date().toISOString().split("T")[0]
-                      : ""
+                      : "",
                   });
                 } else {
                   value = Object.assign(value, {
                     ["@" + record.Records[next + 1].Name]: sampleValues
                       ? record.Records[next + 1].ExampleValue
                       : "",
-                    "#text": sampleValues ? record.Records[i].ExampleValue : ""
+                    "#text": sampleValues ? record.Records[i].ExampleValue : "",
                   });
                 }
               }
@@ -814,9 +815,9 @@ const MessageGenerator = (
                   .split("T")[1]
                   .replace(/\.\d+Z/, "");
               } else if (obj.ExampleValue === "TRUE") {
-                value = true;
+                value = "true";
               } else if (obj.ExampleValue === "FALSE") {
-                value = false;
+                value = "false";
               } else {
                 value = obj.ExampleValue;
               }
@@ -1036,7 +1037,7 @@ const MessageGenerator = (
     POSTRA: [beautifiedXML],
     SMARTSHIP: beautifiedJSON,
     WAYBILD16A: outTXT,
-    labelData: labelData
+    labelData: labelData,
   };
 };
 

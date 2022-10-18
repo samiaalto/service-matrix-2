@@ -8,6 +8,7 @@ type item = { id: number; value: string; additionalInfo: string };
 interface dropdownProps {
   title: string;
   value: string;
+  className: string;
   items: item[];
   multiSelect: boolean;
   onChange: (item) => void;
@@ -20,7 +21,7 @@ function Dropdown({
   multiSelect,
   onChange,
   value,
-  t
+  t,
 }: dropdownProps) {
   const [open, setOpen] = useState(false);
   const [handle, setHandle] = useState(-90);
@@ -98,12 +99,7 @@ function Dropdown({
           </p>
         </div>
         <div className="dd-header_action">
-          <p>
-            <ChevronIcon
-              className="chevron"
-              style={{ transform: "rotate(" + [handle] + "deg)" }}
-            />
-          </p>
+          <p></p>
         </div>
       </div>
       <CSSTransition

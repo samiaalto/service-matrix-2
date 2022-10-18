@@ -1,9 +1,9 @@
-import Redo from "./icons/Redo.svg";
-import Clipboard from "./icons/Clipboard.svg";
-import Select from "./icons/Select.svg";
-import Samples from "./icons/Samples.svg";
-import Location from "./icons/Location.svg";
-import More from "./icons/More.svg";
+import { ReactComponent as Redo } from "./icons/Redo.svg";
+import { ReactComponent as Clipboard } from "./icons/Clipboard.svg";
+import { ReactComponent as Select } from "./icons/Select.svg";
+import { ReactComponent as Samples } from "./icons/Samples.svg";
+import { ReactComponent as Location } from "./icons/Location.svg";
+import { ReactComponent as More } from "./icons/More.svg";
 import "./styles/Button_styles.css";
 
 interface buttonProps {
@@ -21,19 +21,23 @@ function ResetButton({ title, type, onClick }: buttonProps) {
   function renderSwitch(param) {
     switch (param) {
       case "samples":
-        return <Samples />;
+        return <Samples title="Samples" className="Samples" key="Samples" />;
       case "clipboard":
-        return <Clipboard />;
+        return (
+          <Clipboard title="Clipboard" className="Clipboard" key="Clipboard" />
+        );
       case "select":
-        return <Select />;
+        return <Select title="Select" className="Select" key="Select" />;
       case "selected":
-        return <Select />;
+        return <Select title="Select" className="Select" key="Select" />;
       case "location":
-        return <Location />;
+        return (
+          <Location title="Location" className="Location" key="Location" />
+        );
       case "more":
-        return <More />;
+        return <More title="More" className="More" key="More" />;
       default:
-        return <Redo />;
+        return <Redo title="Redo" className="Redo" key="Redo" />;
     }
   }
 
