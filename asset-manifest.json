@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/service-matrix-2/static/css/main.adc22cbb.chunk.css",
+    "main.js": "/service-matrix-2/static/js/main.c180ec03.chunk.js",
+    "main.js.map": "/service-matrix-2/static/js/main.c180ec03.chunk.js.map",
+    "runtime-main.js": "/service-matrix-2/static/js/runtime-main.bdd32e7a.js",
+    "runtime-main.js.map": "/service-matrix-2/static/js/runtime-main.bdd32e7a.js.map",
+    "static/css/2.c0897e43.chunk.css": "/service-matrix-2/static/css/2.c0897e43.chunk.css",
+    "static/js/2.4fffb040.chunk.js": "/service-matrix-2/static/js/2.4fffb040.chunk.js",
+    "static/js/2.4fffb040.chunk.js.map": "/service-matrix-2/static/js/2.4fffb040.chunk.js.map",
+    "index.html": "/service-matrix-2/index.html",
+    "static/css/2.c0897e43.chunk.css.map": "/service-matrix-2/static/css/2.c0897e43.chunk.css.map",
+    "static/css/main.adc22cbb.chunk.css.map": "/service-matrix-2/static/css/main.adc22cbb.chunk.css.map",
+    "static/js/2.4fffb040.chunk.js.LICENSE.txt": "/service-matrix-2/static/js/2.4fffb040.chunk.js.LICENSE.txt",
+    "static/media/Addon_logo.8c1f24cb.svg": "/service-matrix-2/static/media/Addon_logo.8c1f24cb.svg",
+    "static/media/BringLogo.d1d0fb78.svg": "/service-matrix-2/static/media/BringLogo.d1d0fb78.svg",
+    "static/media/Clipboard.88eabf1c.svg": "/service-matrix-2/static/media/Clipboard.88eabf1c.svg",
+    "static/media/Departure_logo.c3be31ed.svg": "/service-matrix-2/static/media/Departure_logo.c3be31ed.svg",
+    "static/media/Destination_logo.18279fc9.svg": "/service-matrix-2/static/media/Destination_logo.18279fc9.svg",
+    "static/media/ExpressFreight.582e5411.svg": "/service-matrix-2/static/media/ExpressFreight.582e5411.svg",
+    "static/media/ExpressParcel.0f0879f1.svg": "/service-matrix-2/static/media/ExpressParcel.0f0879f1.svg",
+    "static/media/Home_logo.23c7ee42.svg": "/service-matrix-2/static/media/Home_logo.23c7ee42.svg",
+    "static/media/Location.45f5618e.svg": "/service-matrix-2/static/media/Location.45f5618e.svg",
+    "static/media/More.34a418fc.svg": "/service-matrix-2/static/media/More.34a418fc.svg",
+    "static/media/Office_logo.ad902257.svg": "/service-matrix-2/static/media/Office_logo.ad902257.svg",
+    "static/media/Pickup_logo.59adcb8f.svg": "/service-matrix-2/static/media/Pickup_logo.59adcb8f.svg",
+    "static/media/Redo.7dd3937c.svg": "/service-matrix-2/static/media/Redo.7dd3937c.svg",
+    "static/media/Samples.f3c40c1e.svg": "/service-matrix-2/static/media/Samples.f3c40c1e.svg",
+    "static/media/Select.2f9e8920.svg": "/service-matrix-2/static/media/Select.2f9e8920.svg",
+    "static/media/ServiceGroup_logo.27670f7d.svg": "/service-matrix-2/static/media/ServiceGroup_logo.27670f7d.svg",
+    "static/media/Service_logo.d1fe5f29.svg": "/service-matrix-2/static/media/Service_logo.d1fe5f29.svg",
+    "static/media/SmallParcel.a01c2501.svg": "/service-matrix-2/static/media/SmallParcel.a01c2501.svg",
+    "static/media/Weight_logo.6a08586f.svg": "/service-matrix-2/static/media/Weight_logo.6a08586f.svg",
+    "static/media/Width_logo.19df2731.svg": "/service-matrix-2/static/media/Width_logo.19df2731.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bdd32e7a.js",
+    "static/css/2.c0897e43.chunk.css",
+    "static/js/2.4fffb040.chunk.js",
+    "static/css/main.adc22cbb.chunk.css",
+    "static/js/main.c180ec03.chunk.js"
+  ]
+}
