@@ -9,7 +9,7 @@ const ModalWindow = ({
   t,
   selected,
   setSelected,
-  updateSearchParams
+  updateSearchParams,
 }) => {
   return (
     <>
@@ -221,7 +221,7 @@ const ModalWindow = ({
                   updateSearchParams("modalTab", k);
                   setSelected((prevState) => ({
                     ...prevState,
-                    modalTab: k
+                    modalTab: k,
                   }));
                 }}
                 className="mb-3 modal-tabs"

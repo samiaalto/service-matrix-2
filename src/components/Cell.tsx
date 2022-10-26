@@ -3,15 +3,33 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 
-const CellComponent = ({ value, rowIndex, onClick, columnId, t }) => {
+const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
   //console.log("render", columnId);
+  //let row = service.original;
   const onCellClick = useCallback(() => {
     onClick(rowIndex, columnId, value);
   }, [onClick, rowIndex, columnId, value]);
 
   return (
     <>
-      {columnId === "serviceName" ? (
+      {columnId === "serviceName" && service.original.serviceButton === true ? (
+        <OverlayTrigger
+          key={"tooltip_" + columnId + rowIndex}
+          placement="right"
+          overlay={
+            <Tooltip key={columnId + rowIndex}>
+              <b> {t(value)} </b> {" (" + value + ")"}
+              <br />
+              {t(value + "_tooltip")}
+            </Tooltip>
+          }
+        >
+          <td className="service selected" onClick={onCellClick}>
+            {t(value)}
+          </td>
+        </OverlayTrigger>
+      ) : columnId === "serviceName" &&
+        service.original.serviceButton !== true ? (
         <OverlayTrigger
           key={"tooltip_" + columnId + rowIndex}
           placement="right"
@@ -27,11 +45,25 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t }) => {
             {t(value)}
           </td>
         </OverlayTrigger>
-      ) : columnId === "serviceCode" ? (
+      ) : columnId === "serviceCode" &&
+        service.original.serviceButton === true ? (
+        <td className="serviceCode selected" onClick={onCellClick}>
+          {value}
+        </td>
+      ) : columnId === "serviceCode" &&
+        service.original.serviceButton !== true ? (
         <td className="serviceCode" onClick={onCellClick}>
           {value}
         </td>
-      ) : columnId === "serviceButton" ? (
+      ) : columnId === "serviceButton" && value === true ? (
+        <td className="serviceButton selected" onClick={onCellClick}>
+          <Button
+            title=""
+            type="select"
+            onClick={(e) => console.log("click")}
+          />
+        </td>
+      ) : columnId === "serviceButton" && value !== true ? (
         <td className="serviceButton" onClick={onCellClick}>
           <Button
             title=""
@@ -59,8 +91,8 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t }) => {
               <b> {t(columnId)} </b> {" (" + columnId + ")"}
               <br /> {t("'is not available for'")}
               <br />
-              <b>{t(rowIndex)}</b>
-              {" (" + rowIndex + ")"}
+              <b>{t(service.original.serviceCode)}</b>
+              {" (" + service.original.serviceCode + ")"}
             </Tooltip>
           }
         >

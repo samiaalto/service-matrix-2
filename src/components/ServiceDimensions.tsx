@@ -1,9 +1,9 @@
 import "./styles/ServiceDimensions_styles.css";
-import SmallParcel from "./icons/SmallParcel.svg";
-import PostalParcel from "./icons/PostalParcel.svg";
-import HomeParcel from "./icons/HomeParcel.svg";
-import ExpressParcel from "./icons/ExpressParcel.svg";
-import ExpressFreight from "./icons/ExpressFreight.svg";
+import { ReactComponent as SmallParcel } from "./icons/SmallParcel.svg";
+import { ReactComponent as PostalParcel } from "./icons/PostalParcel.svg";
+import { ReactComponent as HomeParcel } from "./icons/HomeParcel.svg";
+import { ReactComponent as ExpressParcel } from "./icons/ExpressParcel.svg";
+import { ReactComponent as ExpressFreight } from "./icons/ExpressFreight.svg";
 
 const ServiceDimensions = ({ service, dimensions }) => {
   const renderSwitch = (param) => {
@@ -11,7 +11,11 @@ const ServiceDimensions = ({ service, dimensions }) => {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
-            <SmallParcel />
+            <SmallParcel
+              title="SmallParcel"
+              className="SmallParcel"
+              key="SmallParcel"
+            />
             {dimensions
               ? dimensions.map((dimension) => (
                   <>
@@ -49,7 +53,11 @@ const ServiceDimensions = ({ service, dimensions }) => {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
-            <ExpressParcel />
+            <ExpressParcel
+              title="ExpressParcel"
+              className="ExpressParcel"
+              key="ExpressParcel"
+            />
             {dimensions
               ? dimensions.map((dimension) => (
                   <>
@@ -96,7 +104,11 @@ const ServiceDimensions = ({ service, dimensions }) => {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
-            <ExpressFreight />
+            <ExpressFreight
+              title="ExpressFreight"
+              className="ExpressFreight"
+              key="ExpressFreight"
+            />
             {dimensions
               ? dimensions.map((dimension) => (
                   <>
