@@ -91,7 +91,6 @@ const App = (props: AppProps) => {
     WAYBILD16A: {},
   });
 
-  const [formats, setFormats] = useState([]);
   const [ffRowData, setFfRowData] = useState([]);
   const [ffColumnData, setFfColumnData] = useState([
     {
@@ -293,27 +292,6 @@ const App = (props: AppProps) => {
     return setColumnData(columns);
   };
 
-  const populateDropdown = (filteredRows) => {
-    let out = [];
-    let formats = [];
-    for (let row of filteredRows) {
-      if (!formats || !formats.includes(row.format)) {
-        formats.push(row.format);
-      }
-    }
-
-    let index = 0;
-    for (let format of formats) {
-      out.push({
-        id: index,
-        value: format,
-        additionalInfo: format + "_desc",
-      });
-      index++;
-    }
-    setFormats(out);
-  };
-
   const updateSearchParams = (param, value) => {
     //console.log(param + ' ' + value);
     let updatedSearchParams = new URLSearchParams(params.toString());
@@ -389,6 +367,7 @@ const App = (props: AppProps) => {
     let service;
     let update = [];
     console.log(index + " " + isSelected);
+    console.log(filteredRowData["rows"]);
     if (isSelected) {
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
@@ -492,12 +471,10 @@ const App = (props: AppProps) => {
     }));
 
     setDataLoaded(true);
-    console.log("TÄÄLLÄ");
   };
 
   useEffect(() => {
     getData();
-    console.log("TÄÄL");
   }, []);
 
   useEffect(() => {
@@ -516,8 +493,6 @@ const App = (props: AppProps) => {
   }, [data, dataLoaded]);
 
   useEffect(() => {
-    console.log(ffRowData);
-    populateDropdown(ffRowData);
     PopulateSelect(ffRowData, setSelectData);
   }, [ffRowData]);
 
