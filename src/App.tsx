@@ -11,7 +11,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams, Route, Routes, Navigate } from "react-router-dom";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import FileFormats from "./components/FileFormats";
 import Select from "./components/MultiSelect";
 import populateMultiSelect from "./components/PopulateMultiSelect";
@@ -363,13 +370,12 @@ const App = (props: AppProps) => {
     setReset(true);
   };
 
-  const handleServiceSelection = (index, isSelected) => {
+  const handleServiceSelection = (index, isSelected, filteredRows) => {
     let service;
     let update = [];
-    console.log(index + " " + isSelected);
-    console.log(filteredRowData["rows"]);
+
     if (isSelected) {
-      for (const row of filteredRowData["rows"]) {
+      for (const row of filteredRows["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
           if (
             row.index !== index &&
@@ -1053,17 +1059,27 @@ const App = (props: AppProps) => {
                         }}
                       />
                     </Col>
-                    <Col
-                      xs={2}
-                      sm={{ span: 2, offset: 0 }}
-                      md={{ span: 1, offset: 0 }}
+                    <OverlayTrigger
+                      key={"tooltip_samples"}
+                      placement="top"
+                      overlay={
+                        <Tooltip key={"tooltip_samples"}>
+                          {t("samples_tooltip")}
+                        </Tooltip>
+                      }
                     >
-                      <Button
-                        title={""}
-                        type="samples"
-                        onClick={openOffCanvas}
-                      />
-                    </Col>
+                      <Col
+                        xs={2}
+                        sm={{ span: 2, offset: 0 }}
+                        md={{ span: 1, offset: 0 }}
+                      >
+                        <Button
+                          title={""}
+                          type="samples"
+                          onClick={openOffCanvas}
+                        />
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                   <Row>
                     <Col className="pickupOptions">
