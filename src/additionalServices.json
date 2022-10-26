@@ -1,0 +1,5078 @@
+{
+  "records": [
+    {
+      "ServiceCode": "3101",
+      "DisplayNameEN": "Cash On Delivery",
+      "DisplayNameFI": "Postiennakko",
+      "DescriptionEN": "The shipment is handed over to the recipient against the payment specified by the Customer. Posti remits the payment to the Customer’s account at a bank operating in SEPA countries within two to four (2–4) weekdays of payment. COD additional service is only available for parcels and pallets from/to Baltics. The maximum sum of a COD is EUR 2,000.",
+      "DescriptionFI": "Postiennakolla lähettämisellä vastaanottaja saa paketin vasta maksettuaan lähettäjän valitseman summan. Lähettäjä valitsee summan, joka vastaanottajan täytyy maksaa lunastaakseen paketin. Postiennakon maksimisumma on 2000 €. Vastaanottaja saa paketin vasta, kun on maksanut postiennakkosumman. Pakettia ei ole mahdollista avata ennen maksamista.",
+      "LabelMarking": "1",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3164"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3101</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3101"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<CodIBAN>FI2112345600000785</CodIBAN>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "CodIBAN",
+          "PropertyValue": "FI2112345600000785"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<CodBIC>NDEAFIHH</CodBIC>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "CodBIC",
+          "PropertyValue": "NDEAFIHH"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<CodValue currencyCode=\"EUR\">123.50</CodValue>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "CodValue",
+          "PropertyValue": "123.50"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "Inside <CodValue /> -element",
+          "Sample": "<CodValue currencyCode=\"EUR\">123.50</CodValue>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "currencyCode",
+          "PropertyValue": "EUR"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<CodReference>1234123456898</CodReference>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "CodReference",
+          "PropertyValue": "1234123456898"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3101",
+          "Mandatory": true,
+          "MessagePosition": "AdditionalServices",
+          "PropertyName": "AdditionalService",
+          "PropertyValue": "3101"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "NDEAFIHH",
+          "Mandatory": true,
+          "MessagePosition": "Shipment",
+          "PropertyName": "CodBIC",
+          "PropertyValue": "NDEAFIHH"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "FI2112345600000785",
+          "Mandatory": true,
+          "MessagePosition": "Shipment",
+          "PropertyName": "CodIBAN",
+          "PropertyValue": "FI2112345600000785"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "00012350",
+          "Mandatory": true,
+          "MessagePosition": "Shipment",
+          "PropertyName": "CodValue",
+          "PropertyValue": "00012350"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "EUR",
+          "Mandatory": true,
+          "MessagePosition": "CodValue",
+          "PropertyName": "CurrencyCode",
+          "PropertyValue": "EUR"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "1234123456898",
+          "Mandatory": false,
+          "MessagePosition": "Shipment",
+          "PropertyName": "CodReference",
+          "PropertyValue": "1234123456898"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"COD\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "COD"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"amount\": \"123.50\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "amount",
+          "PropertyValue": "123.50"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"accounttype\": \"IBAN\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "accounttype",
+          "PropertyValue": "IBAN"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"account\": \"FI2112345600000785\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "account",
+          "PropertyValue": "FI2112345600000785"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"bank\": \"BANKFIHH\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "bank",
+          "PropertyValue": "BANKFIHH"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3102",
+      "DisplayNameEN": "Multi-Parcel Shipment",
+      "DisplayNameFI": "Monipakettilähetys",
+      "DescriptionEN": null,
+      "DescriptionFI": null,
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3102</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3102"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3102",
+          "Mandatory": true,
+          "MessagePosition": "AdditionalServices",
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3102"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"CONS\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "CONS"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3103",
+      "DisplayNameEN": "Paid by other than sender",
+      "DisplayNameFI": "Maksaja muu kuin lähettäjä",
+      "DescriptionEN": "Transportation and additional services can be paid by other than the sender.",
+      "DescriptionFI": null,
+      "LabelMarking": "3",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3103</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3103"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3103",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3103"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"OPAY\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "OPAY"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3104",
+      "DisplayNameEN": "Fragile",
+      "DisplayNameFI": "Särkyvä",
+      "DescriptionEN": "With the service, you can ensure the careful handling of your products vulnerable to damage. Using the additional service requires a marking on the shipment and the EDI message.",
+      "DescriptionFI": null,
+      "LabelMarking": "4",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3104",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3104"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"FRAG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "FRAG"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3104</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3104"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3105",
+      "DisplayNameEN": "Registration",
+      "DisplayNameFI": "Kirjaaminen",
+      "DescriptionEN": "The parcel will be handed over against acknowledgment only to the recipient or a person which is authorized. The shipment may not be handed over except to the recipient indicated in person on the address card or to a person authorized by him or her by proxy. Proof of identity is provided by a driving license, passport or photo ID. Registered shipments addressed to an individual may not be taken with the pick-up and delivery service, but recipient information must also be found in the recipient information.",
+      "DescriptionFI": "Paketti luovutetaan kuittausta vastaan vain vastaanottajalle tai hänen valtuuttamalleen henkilölle. Lähetystä ei saa luovuttaa kuin henkilökohtaisesti osoitekorttiin merkitylle vastaanottajalle tai hänen valtakirjalla valtuuttamalleen henkilölle. Henkilöllisyyden todisteeksi käy ajokortti, passi tai kuvallinen henkilötodistus. Yksityishenkilölle osoitettuja kirjattuja lähetyksiä ei saa viedä nouto- ja jakelupalvelun mukana, vaan vastaanottajatiedoista tulee tällöin löytyä myös yritystiedot.",
+      "LabelMarking": "5",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3105</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3105"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3105",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3105"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"REG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "REG"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3106",
+      "DisplayNameEN": "Saturday Delivery",
+      "DisplayNameFI": "Lauantaijakelu",
+      "DescriptionEN": "In the additional service Saturday delivery, a shipment sent on Friday will be delivered to the recipient on weekdays in the areas specified in the delivery time inquiry.",
+      "DescriptionFI": "Lauantaijakelu-lisäpalvelussa perjantaina lähetetty lähetys jaetaan vastaanottajalle arkilauantaisin Toimitusaikakyselyssä määritellyillä alueilla ja yhteysväleillä.",
+      "LabelMarking": "6",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3106</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3106"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3106",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3106"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSAT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSAT"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3115",
+      "DisplayNameEN": "Delivery to Specific Location",
+      "DisplayNameFI": "Täsmäpaikkajakelu",
+      "DescriptionEN": "With delivery to specific location, the shipment is taken to a pre-arranged, single location at the recipient, such as inside a store or office. When transporting shipments, take into account traffic restrictions.",
+      "DescriptionFI": "Täsmäpaikkajakelulla lähetys viedään ennalta sovittuun, yhteen paikkaan vastaanottajan luona, esimerkiksi sisälle myymälään tai työhuoneeseen. Kuljetusyksikkölähetyksissä huomioi kulkurajoitteet.",
+      "LabelMarking": "15",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3198"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        },
+        {
+          "Country": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3115</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3115"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3115",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3115"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSPC\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSPC"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3116",
+      "DisplayNameEN": "Installation, Ready for Use",
+      "DisplayNameFI": "Käyttökuntoon asennus",
+      "DescriptionEN": "The additional service includes carrying the product to the apartment / destination to the designated place. The shipment is unloaded from the transport platform. The driver unpacks the product and completes the installation of the product. Packaging waste is taken away for proper recycling.",
+      "DescriptionFI": "Lisäpalvelu sisältää tuotteen viennin huoneistoon/kohteeseen sille tarkoitetulle paikalle. Lähetys puretaan kuljetusalustalta. Kuljettaja purkaa lähetyksen tuotepakkauksesta ja suorittaa tuotteen käyttökuntoon asennuksen. Pakkausjätteet viedään pois asianmukaiseen kierrätykseen.",
+      "LabelMarking": "16",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3116</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3116"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3116",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3116"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINST\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINST"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3119",
+      "DisplayNameEN": "Shelving Service",
+      "DisplayNameFI": "Hyllytyspalvelu",
+      "DescriptionEN": "The additional service Shelving service appears on the address card or waybill. In the shelving service, the shipment is delivered to a specific location on the premises of the receiving customer, unpacked and shelved in place. The service also includes the removal of packaging waste and, if necessary, placing replenishment orders. Work instructions are made for the items in the shelving service and their delivery schedule is preferably agreed in advance.",
+      "DescriptionFI": "Hyllytyspalvelu lisäpalvelu ilmenee osoitekortilta tai rahtikirjasta. Hyllytyspalvelussa lähetys toimitetaan tiettyyn paikkaan vastaanottavan asiakkaan tiloissa, se puretaan pakkauksesta ja hyllytetään paikoilleen. Palvelu sisältää myös pakkausjätteen pois viemisen ja tarvittaessa täydennystilausten tekemisen. Hyllytyspalvelun kohteista tehdään työohjeet ja niiden toimitusaikataulu sovitaan mielellään etukäteen.",
+      "LabelMarking": "19",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3166"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3119</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3119"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3119",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3119"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSORT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSORT"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3137",
+      "DisplayNameEN": "Transport to Recycling",
+      "DisplayNameFI": "Kuljetus kierrätykseen",
+      "DescriptionEN": "​​​​​The additional service transport to recycling is intended for the waste transport of electronic - and furniture -waste from consumers for proper recycling or disposal. For one new product, you can order the transport for one similar product for recycling. The additional service label is printed on the transport document, so the recycled product does not need its own transport document.",
+      "DescriptionFI": "​​​​​Kuljetus kierrätykseen -lisäpalvelu on tarkoitettu kuluttajilta tulevan sähkö-, elektroniikka- ja huonekaluromun kuljettamiseen asianmukaiseen kierrätykseen tai hävitykseen.​​ Yhtä uutta tuotetta vastaan voi tilata yhden vastaavan tuotteen kuljetuksen kierrätykseen. Lisäpalvelumerkintä tulostuu kuljetusdokumentille, joten kierrätystuote ei tarvitse omaa kuljetusdokumenttia. ",
+      "LabelMarking": "37",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        },
+        {
+          "Country": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3137</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3137"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3137",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3137"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"RECYCLE\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "RECYCLE"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3139",
+      "DisplayNameEN": "Electronic notice of arrival",
+      "DisplayNameFI": "Sähköinen saapumisilmoitus",
+      "DescriptionEN": "The recipient will receive a notification of the arrival of the parcel picked up from the service point by text message and / or e-mail. The notification is sent automatically when the shipment is shelved at the pick-up point. The recipient will also receive an email reminder of the last pick-up date of the shipment if the order has an email address (4 days from arrival).",
+      "DescriptionFI": "Vastaanottaja saa toimipisteestä noudettavan paketin saapumisilmoituksen tekstiviestinä ja/tai sähköpostitse. Ilmoitus lähtee automaattisesti, kun lähetys hyllytetään noutopisteessä. Vastaanottaja saa myös sähköpostimuistutuksen lähetyksen viimeisestä noutopäivästä, jos tilauksella on sähköpostiosoite (4vrk saapumisesta).",
+      "LabelMarking": "39",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3139</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3139"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3139",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3139"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"NOT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "NOT"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3143",
+      "DisplayNameEN": "LQ Process permit",
+      "DisplayNameFI": "LQ prosessilupa",
+      "DescriptionEN": "Additional service LQ Process Permit can be used to send products, VAK classifications and quantities of substances specified by the Posti, packed in a cardboard box. Unlike other transport services for dangerous goods, the LQ Process Permit supplementary service allows shipments to be taken to a collection point and does not use Posti's VAK tape. And there is no need to load shipments in their own transport unit.",
+      "DescriptionFI": "LQ Prosessilupa -lisäpalvelulla voidaan lähettää Postin erikseen määrittelemiä tuotteita, VAK-luokituksia ja ainemääriä pahvilaatikkoon pakattuna. Toisin kuin muut vaarallisten aineiden kuljetuspalvelut, LQ Prosessilupa -lisäpalvelulla lähetyksiä voidaan viedä noutopisteeseen eikä lähetyksessä käytetä Postin VAK-teippiä. Eikä lähetyksiä tarvitse lastata omaan kuljetusyksikköönsä.",
+      "LabelMarking": "43",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        },
+        {
+          "Country": "DK"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3143</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3143"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<LimitedQuantityWeight>0.234</LimitedQuantityWeight>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "LimitedQuantityWeight",
+          "PropertyValue": "0.234"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3143",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3143"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "00000234",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "LimitedQuantityWeight",
+          "PropertyValue": "00000234"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"FDNGPP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "FDNGPP"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"netWeight\": 0.234",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "netWeight",
+          "PropertyValue": "0.234"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3146",
+      "DisplayNameEN": "Pickup reminder by mail",
+      "DisplayNameFI": "Noutomuistutus kirjeenä",
+      "DescriptionEN": "The sender can confirm the pick-up of the shipment with a separate reminder and give the recipient extra time to pick it up. The recipient will be sent a reminder letter from the pick-up point if the recipient has not picked up the shipment within eight (8) days of its arrival. The pick-up reminder as letter service extends the retention period for shipments by seven (7) days.",
+      "DescriptionFI": "Lähettäjä voi varmistaa lähetyksen noudon erillisellä muistutuksella sekä antaa vastaanottajalle lisäaikaa noutamiseen. Lähetyksen vastaanottajalle toimitetaan noutopisteestä muistutuskirje, jos vastaanottaja ei ole noutanut lähetystä kahdeksan (8) päivän kuluessa sen saapumisesta. Noutomuistutus kirjeenä -lisäpalvelu pidentää lähetysten säilytysaikaa seitsemällä (7) vuorokaudella.",
+      "LabelMarking": "46",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3146</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3146"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3146",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3146"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"REMIPOST\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "REMIPOST"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3151",
+      "DisplayNameEN": "Recipient identification",
+      "DisplayNameFI": "Vastaanottajan tunnistaminen",
+      "DescriptionEN": "The additional service recipient identification allows the sender to verify the identity of the recipient before handing over the product. ",
+      "DescriptionFI": "Vastaanottajana tunnistaminen lisäpalvelun avulla lähettäjä voi varmentaa vastaanottajan henkilöllisyyden ennen tuotteen luovutusta.",
+      "LabelMarking": "51",
+      "Home": false,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3155",
+      "DisplayNameEN": "Blocker for Parcel Steering",
+      "DisplayNameFI": "Paketinohjauksen esto",
+      "DescriptionEN": "The blocker for parcel steering additional service blocks the steering of the SmartDynamic system.",
+      "DescriptionFI": "Paketinohjauksen esto lisäpalvelu estää SmartDynamic -järjestelmän ohjaukset.",
+      "LabelMarking": "55",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3155</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3155"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3155",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3155"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"RBLOCK\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "RBLOCK"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3162",
+      "DisplayNameEN": "Transport of Dangerous Goods",
+      "DisplayNameFI": "Vaarallisten aineiden kuljetus",
+      "DescriptionEN": "We handle the transport of any parcels classified as dangerous goods safely, reliably and in accordance with the applicable legislation. NOTE! At least two copies of the Transport of Dangerous Goods Appendix should be attached to the shipment when Dangerous Goods (ADR) additional service is used.",
+      "DescriptionFI": null,
+      "LabelMarking": "62",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3175"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3162</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3162"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<RegulationsCode>ADR</RegulationsCode>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "RegulationsCode",
+          "PropertyValue": "ADR"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<UnNo>0016</UnNo>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "UnNo",
+          "PropertyValue": "0016"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<MainDanger>2.1</MainDanger>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "MainDanger",
+          "PropertyValue": "2.1"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<TotalQuantity>5.000</TotalQuantity>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "TotalQuantity",
+          "PropertyValue": "5.000"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<TotalQuantity unit=\"LTR\">5.000</TotalQuantity>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "unit",
+          "PropertyValue": "LTR"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ProperShippingName>Alcohol, N.O.S.</ProperShippingName>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ProperShippingName",
+          "PropertyValue": "Alcohol, N.O.S."
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<SubsidiaryRisk>4.2</SubsidiaryRisk>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "SubsidiaryRisk",
+          "PropertyValue": "4.2"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<PackingGroup>II</PackingGroup>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "PackingGroup",
+          "PropertyValue": "II"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<NoDgPackages>1</NoDgPackages>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "NoDgPackages",
+          "PropertyValue": "1"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<PackingDescription>steel drum</PackingDescription>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "PackingDescription",
+          "PropertyValue": "steel drum"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<TechnicalDescription>Methanol dioxide</TechnicalDescription>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "TechnicalDescription",
+          "PropertyValue": "Methanol dioxide"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<MarinePollutant>false</MarinePollutant>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "MarinePollutant",
+          "PropertyValue": "false"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<TunnelCode>C5000D</TunnelCode>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "Provisions",
+          "PropertyValue": "C5000D"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3162",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3162"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "0016",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "UnNo",
+          "PropertyValue": "0016"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "Alcohols, N.O.S.",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ProperShippingName",
+          "PropertyValue": "Alcohols, N.O.S."
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "2.1",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "MainDanger",
+          "PropertyValue": "2.1"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "5",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "TotalQuantity",
+          "PropertyValue": "5"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "LTR",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "unit",
+          "PropertyValue": "LTR"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "4.2",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "SubsidiaryRisk",
+          "PropertyValue": "4.2"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "II",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "PackingGroup",
+          "PropertyValue": "II"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "1",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "NoDgPackages",
+          "PropertyValue": "1"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "steel drum",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "PackingDescription",
+          "PropertyValue": "steel drum"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "Methanol dioxide",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "TechnicalDescription",
+          "PropertyValue": "Methanol dioxide"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "N",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "MarinePollutant",
+          "PropertyValue": "N"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "DNG record",
+          "Sample": "C5000D",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "TunnelCode",
+          "PropertyValue": "C5000D"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DNG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DNG"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"unCode\": \"0016\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "unCode",
+          "PropertyValue": "0016"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"description\": \"Alcohols, N.O.S.\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "description",
+          "PropertyValue": "Alcohols, N.O.S."
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"adrClass\": \"2.1\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "adrClass",
+          "PropertyValue": "2.1"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"netWeight\": \"5\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "netWeight",
+          "PropertyValue": "5"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"declarant\": \"senders name\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "declarant",
+          "PropertyValue": "senders name"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"hazardCode\": \"4.2\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "hazardCode",
+          "PropertyValue": "4.2"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"packageCode\": \"II\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "packageCode",
+          "PropertyValue": "II"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"quantity\": \"1\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "quantity",
+          "PropertyValue": "1"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"packageType\": \"steel drum\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "packageType",
+          "PropertyValue": "steel drum"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"technicalDescr\": \"Methanol dioxide\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "technicalDescr",
+          "PropertyValue": "Methanol dioxide"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mpCode\": \"N\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "mpCode",
+          "PropertyValue": "N"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"trCode\": \"C5000D\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "trCode",
+          "PropertyValue": "C5000D"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3163",
+      "DisplayNameEN": "Handing over to the Addressee in Person",
+      "DisplayNameFI": "Henkilökohtaisesti luovutettava",
+      "DescriptionEN": "At the time of delivery, it is checked that the identity of the recipient matches the recipient's information entered on the address card or waybill. The shipment may not be handed over except to the recipient indicated in person on the address card / waybill. Proof of identity is provided by a driving license, passport or photo ID. Please note that a written power of attorney is never valid. The shipment must indeed be handed over in person.",
+      "DescriptionFI": "Luovutuksen yhteydessä tarkistetaan, että vastaanottajan henkilöllisyys täsmää osoitekortille tai rahtikirjalle merkittyihin vastaanottajan tietoihin. Lähetystä ei saa luovuttaa kuin henkilökohtaisesti osoitekorttiin/rahtikirjaan merkitylle vastaanottajalle. Henkilöllisyyden todisteeksi käy ajokortti, passi tai kuvallinen henkilötodistus. Huomioi, että kirjallinen valtakirja ei sovellu koskaan, vaan lähetys tulee todellakin luovuttaa henkilökohtaisesti.",
+      "LabelMarking": "63",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3164"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3163</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3163"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3163",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3163"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PERS\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PERS"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3164",
+      "DisplayNameEN": "Delivery without receivers signature",
+      "DisplayNameFI": "Luovuttaminen ilman vastaanottajan kuittausta",
+      "DescriptionEN": "With the delivery without receivers signature additional service, the customer authorizes the Posti's driver to register the delivery transaction and acknowledge it in his/her own name without the recipient's presence.",
+      "DescriptionFI": "Luovuttaminen ilman vastaanottajan kuittausta -lisäpalvelulla asiakas valtuuttaa Postin kuljettajan rekisteröimään luovutustapahtuman ja kuittaamaan se omalla nimellään ilman vastaanottajan läsnäoloa. ",
+      "LabelMarking": "64",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3101"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3163"
+        },
+        {
+          "Addon": "3167"
+        },
+        {
+          "Addon": "3168"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3164</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3164"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3164",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3164"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVNOPOD\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVNOPOD"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3165",
+      "DisplayNameEN": "Extended Storage Time",
+      "DisplayNameFI": "Säilytysajan pidennys",
+      "DescriptionEN": "With the extended storage time additional service, the retention period of shipment can be extended by seven (7) days. The service is available for Postal Parcels sent for collection to stores. It cannot therefore be used for shipments addressed to parcel lockers. ",
+      "DescriptionFI": "Säilytysajan pidennys –lisäpalvelulla voi pidentää lähetysten säilytysaikaa seitsemällä (7) vuorokaudella. Palvelu on käytettävissä Postipaketeille, jotka on lähetetty noudettavaksi myymälöihin. Sitä ei siis voi käyttää automaatteihin osoitetuissa lähetyksissä.",
+      "LabelMarking": "65",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3165</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3165"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3165",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3165"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"RETNEXT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "RETNEXT"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3166",
+      "DisplayNameEN": "Call Before Delivery",
+      "DisplayNameFI": "Soitto ennen jakelua",
+      "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
+      "DescriptionFI": "Soitto ennen jakelua/noutoa -lisäpalvelussa lähettäjään tai vastaanottajaan tulee ottaa yhteyttä ennen reitin alkua tai vähintään tunti ennen saapumista. Lähettäjälle tai vastaanottajalle informoidaan arvioitu saapumisaika. Palvelu sopii myös hyvin lähetyksille joita odottaa kohteessa asentaja.",
+      "LabelMarking": "66",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3115"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3166</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3166"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3166",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3166"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVCALL\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVCALL"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3167",
+      "DisplayNameEN": "Transport Packaging Removal",
+      "DisplayNameFI": "Purku kuljetuspakkauksesta",
+      "DescriptionEN": "The service is suitable for use when the recipient wants the parcel shipment to be unpacked from the transport package or the cargo consignment from the transport platform to a separately specified one place and the packaging materials to be removed, for proper recycling.",
+      "DescriptionFI": "Palvelu soveltuu käytettäväksi silloin, kun vastaanottaja haluaa, että pakettilähetys puretaan kuljetuspakkauksesta tai rahtilähetys kuljetusalustalta erikseen määriteltyyn yhteen paikkaan ja pakkausmateriaalit kuljetaan pois, asianmukaiseen kierrätykseen. ",
+      "LabelMarking": "67",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3168"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        },
+        {
+          "Country": "SE"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3167</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3167"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3167",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3167"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINPKG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINPKG"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3168",
+      "DisplayNameEN": "Product Packaging Removal",
+      "DisplayNameFI": "Purku tuotepakkauksesta",
+      "DescriptionEN": "The service is suitable for use when the recipient buys a new household appliance or furniture, etc. and wants it to be unpacked and the packaging waste removed. We unpack the shipment, take the packaging waste out of the customer and deliver it for proper recycling. The customer does not have to worry about disposing of packaging waste.",
+      "DescriptionFI": "​​​​​​Palvelu soveltuu käytettäväksi silloin, kun vastaanottaja ostaa uuden kodinkoneen tai huonekalun tms. ja haluaa sen purettavan pakkauksesta ja pakkausjätteen poisviennin. Puramme lähetyksen pakkauksesta, viemme pakkausjätteen pois asiakkaalta ja toimittamme asianmukaiseen kierrätykseen. Asiakkaan ei tarvitse huolehtia pakkausjätteiden hävittämisestä.",
+      "LabelMarking": "68",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3106"
+        },
+        {
+          "Addon": "3116"
+        },
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        },
+        {
+          "Addon": "3164"
+        },
+        {
+          "Addon": "3167"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3168</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3168"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3168",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3168"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINUNP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINUNP"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3169",
+      "DisplayNameEN": "Pick-up from Terminal",
+      "DisplayNameFI": "Nouto terminaalista",
+      "DescriptionEN": "The Customer can address the shipment directly to the terminal, from where the recipient will pick it up. Posti contacts the recipient once the shipment in question has arrived at the terminal.",
+      "DescriptionFI": "Nouto terminaalista",
+      "LabelMarking": "69",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3169</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3169"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3169",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3169"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PUPDEP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PUPDEP"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3170",
+      "DisplayNameEN": "Electronic Pre-notification",
+      "DisplayNameFI": "Sähköinen ennakkoilmoitus",
+      "DescriptionEN": "In the electronic pre-notification, Posti sends advance information about the shipment to be delivered to the mobile phone number or e-mail address provided by the sender in the EDI message at the same time as the shipment is loaded for delivery. A pre-message is sent when a shipment is taken into delivery event is registered for the shipment during transport. Shipments will be delivered to recipients according to the service promise of the selected rate.",
+      "DescriptionFI": "Sähköisessä ennakkoilmoituksessa Posti lähettää ennakkotiedon jaettavasta lähetyksestä lähettäjän EDI-sanomassa ilmoittamaan matkapuhelinnumeroon tai sähköpostiosoitteeseen samalla hetkellä, kun lähetys lastataan jakelukuljetukseen. Ennakkoviesti lähetetään silloin kun lähetykselle rekisteröidään kuljetuksessa \"Jakeluunotto\"-tapahtuma. Lähetykset toimitetaan vastaanottajille valitun kulkunopeuden palvelulupauksen mukaan.",
+      "LabelMarking": "70",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3119"
+        },
+        {
+          "Addon": "3139"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3170</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3170"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3170",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3170"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Party record, Role CN",
+          "Sample": "3580007654321",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "ContactMobile",
+          "PropertyValue": "3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PRENOT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PRENOT"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3171",
+      "DisplayNameEN": "Heated Transport",
+      "DisplayNameFI": "Lämminkuljetus",
+      "DescriptionEN": "Shipments are transported in a heated (> +0 ​​degrees) freight at different stages of the transport and terminal network. Note that, the heated transportation service applies to transport during the winter season (heated transport season 1st of October to 30th of April).",
+      "DescriptionFI": "Lähetykset kuljetetaan lämmitetyssä (> +0 astetta) kuormatilassa kuljetus- ja terminaaliverkoston erivaiheissa. Huom. Lämminkuljetuspalvelu koskee talvikautena (Lämminkuljetuskausi 1.10.–30.4.) suoritettavaa kuljettamista.",
+      "LabelMarking": "71",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3171</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3171"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3171",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3171"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"WARM\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "WARM"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3174",
+      "DisplayNameEN": "Bulky (oversized)",
+      "DisplayNameFI": "Suuri",
+      "DescriptionEN": "The Bulky additional service can be used to send shipments with address cards, the size of which exceeds the standard maximum size of the main product up to the maximum size of the Bulky additional service. ",
+      "DescriptionFI": "Suuri -lisäpalvelulla voi lähettää osoitekortillisia lähetyksiä, joiden koko ylittää päätuotteen tavallisen enimmäiskoon Suuri-lisäpalvelun enimmäiskokoon saakka. ",
+      "LabelMarking": "74",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "ALL"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3174</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3174"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3174",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3174"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"SPTR\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "SPTR"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3175",
+      "DisplayNameEN": "LQ Transport",
+      "DisplayNameFI": "LQ kuljetus",
+      "DescriptionEN": "The service enables the transport of dangerous goods to a limited extent in accordance with the Act on the Transport of Dangerous Goods (VAK) in accordance with the service area register of the main product. The additional service appears on the address card, which also shows the LQ gross weight and the number of items, as well as on the limited number of LQ labels and VAK tape.",
+      "DescriptionFI": "Palvelu mahdollistaa vaarallisten aineiden kuljetuksesta (VAK) annetussa laissa säädetyn rajoitetussa määrin pakattujen vaarallisten aineiden lain mukaisen kuljettamisen perille päätuotteen palvelualuerekisterin mukaisesti. Lisäpalvelu ilmenee osoitekortilta, josta käy ilmi myös LQ-bruttomassa ja kollimäärä sekä rajoitetun määrän mukaisesta LQ-lipukkeesta ja VAK-teipistä.",
+      "LabelMarking": "75",
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3162"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3175</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3175"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<LimitedQuantityWeight>0.234</LimitedQuantityWeight>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "LimitedQuantityWeight",
+          "PropertyValue": "0.234"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3175",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3175"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": "Package record",
+          "Sample": "00000234",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "LimitedQuantityWeight",
+          "PropertyValue": "00000234"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DNG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DNG"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"limitedQuantities\": true",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "limitedQuantities",
+          "PropertyValue": "TRUE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"declarant\": \"senders name\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "declarant",
+          "PropertyValue": "senders name"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"netWeight\": 0.234",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "netWeight",
+          "PropertyValue": "0.234"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3176",
+      "DisplayNameEN": "Arrival notification by mail",
+      "DisplayNameFI": "Saapumisilmoitus kirjeenä",
+      "DescriptionEN": "The recipient of the shipment will receive an arrival notification in paper form when the shipment shelved at the Posti's pick-up point.",
+      "DescriptionFI": "Lähetyksen vastaanottajalle toimitetaan saapumisilmoitus paperisena, kun lähetys hyllytetään Postin noutopisteessä.",
+      "LabelMarking": "76",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3139"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3176</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3176"
+        },
+        {
+          "MessageFormat": "WAYBILD16A",
+          "AdditionalInfo": null,
+          "Sample": "3176",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "AdditionalServices",
+          "PropertyValue": "3176"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"NOTLTR\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "NOTLTR"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "3180",
+      "DisplayNameEN": "Equipment Installation Washing machine",
+      "DisplayNameFI": "Laiteasennus Pesukone",
+      "DescriptionEN": "Equipment Installation Washing machine",
+      "DescriptionFI": "Laiteasennus Pesukone",
+      "LabelMarking": "80",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3181",
+      "DisplayNameEN": "Equipment Installation Dryer",
+      "DisplayNameFI": "Laiteasennus Kuivausrumpu",
+      "DescriptionEN": "Equipment Installation Dryer",
+      "DescriptionFI": "Laiteasennus Kuivausrumpu",
+      "LabelMarking": "81",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3182",
+      "DisplayNameEN": "Equipment Installation Refrigerator",
+      "DisplayNameFI": "Laiteasennus Jääkaappi",
+      "DescriptionEN": "Equipment Installation Refrigerator",
+      "DescriptionFI": "Laiteasennus Jääkaappi",
+      "LabelMarking": "82",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3183",
+      "DisplayNameEN": "Equipment Installation Freezer",
+      "DisplayNameFI": "Laiteasennus Pakastin",
+      "DescriptionEN": "Equipment Installation Freezer",
+      "DescriptionFI": "Laiteasennus Pakastin",
+      "LabelMarking": "83",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3184",
+      "DisplayNameEN": "Equipment Installation Microwave oven",
+      "DisplayNameFI": "Laiteasennus Mikroaaltouuni",
+      "DescriptionEN": "Equipment Installation Microwave oven",
+      "DescriptionFI": "Laiteasennus Mikroaaltouuni",
+      "LabelMarking": "84",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3185",
+      "DisplayNameEN": "Equipment Installation Television",
+      "DisplayNameFI": "Laiteasennus Televisio",
+      "DescriptionEN": "Equipment Installation Television",
+      "DescriptionFI": "Laiteasennus Televisio",
+      "LabelMarking": "85",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3186",
+      "DisplayNameEN": "Equipment Installation Dishwasher",
+      "DisplayNameFI": "Laiteasennus Astianpesukone",
+      "DescriptionEN": "Equipment Installation Dishwasher",
+      "DescriptionFI": "Laiteasennus Astianpesukone",
+      "LabelMarking": "86",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3187",
+      "DisplayNameEN": "Equipment Installation Hob",
+      "DisplayNameFI": "Laiteasennus Liesi- ja keittotaso",
+      "DescriptionEN": "Equipment Installation Hob",
+      "DescriptionFI": "Laiteasennus Liesi- ja keittotaso",
+      "LabelMarking": "87",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3188",
+      "DisplayNameEN": "Equipment Installation Built-in oven",
+      "DisplayNameFI": "Laiteasennus Kaluste- ja integroitava uuni",
+      "DescriptionEN": "Equipment Installation Built-in oven",
+      "DescriptionFI": "Laiteasennus Kaluste- ja integroitava uuni",
+      "LabelMarking": "88",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3189",
+      "DisplayNameEN": "Equipment Installation Cooker",
+      "DisplayNameFI": "Laiteasennus Lattialiesi",
+      "DescriptionEN": "Equipment Installation Cooker",
+      "DescriptionFI": "Laiteasennus Lattialiesi",
+      "LabelMarking": "89",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3190",
+      "DisplayNameEN": "Equipment Installation Sauna stove",
+      "DisplayNameFI": "Laiteasennus Kiuas",
+      "DescriptionEN": "Equipment Installation Sauna stove",
+      "DescriptionFI": "Laiteasennus Kiuas",
+      "LabelMarking": "90",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3191",
+      "DisplayNameEN": "Equipment Installation Drying cabinet",
+      "DisplayNameFI": "Laiteasennus Kuivauskaappi",
+      "DescriptionEN": "Equipment Installation Drying cabinet",
+      "DescriptionFI": "Laiteasennus Kuivauskaappi",
+      "LabelMarking": "91",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3192",
+      "DisplayNameEN": "Equipment Installation Side-by-side",
+      "DisplayNameFI": "Laiteasennus Side-by-side kaappi",
+      "DescriptionEN": "Equipment Installation Side-by-side",
+      "DescriptionFI": "Laiteasennus Side-by-side kaappi",
+      "LabelMarking": "92",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3193",
+      "DisplayNameEN": "Equipment Installation Reversing door on refrigerator",
+      "DisplayNameFI": "Laiteasennus Kätisyyden vaihto",
+      "DescriptionEN": "Equipment Installation Reversing door on refrigerator",
+      "DescriptionFI": "Laiteasennus Kätisyyden vaihto",
+      "LabelMarking": "93",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3194",
+      "DisplayNameEN": "Equipment Installation Reversing door on screen refrigerator",
+      "DisplayNameFI": "Laiteasennus Kätisyyden vaihto näytöllinen ovi",
+      "DescriptionEN": "Equipment Installation Reversing door on screen refrigerator",
+      "DescriptionFI": "Laiteasennus Kätisyyden vaihto näytöllinen ovi",
+      "LabelMarking": "94",
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3198",
+      "DisplayNameEN": "Carry in",
+      "DisplayNameFI": "Sisäänkanto",
+      "DescriptionEN": "We carry in the shipment to an agreed place near the recipient, for instance, inside a store or to an office. The exact delivery location will be agreed with the recipient via phone. Max 20 packages and maximum freight weight for each package is 35 kg.",
+      "DescriptionFI": "Sisäänkanto",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3115"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3358",
+      "DisplayNameEN": "Delivery time agreement by phone",
+      "DisplayNameFI": "Jakeluajankohdan sopiminen puhelimitse",
+      "DescriptionEN": "Delivery time agreement by phone disallow the digitized notification process and directs production to settle on delivery time agreement by phone. Terminal staff will settle on a delivery time with the recipient on the same day when the shipment arrives at the terminal. The delivery time window will be settled for the next few days.",
+      "DescriptionFI": "Jakeluajankohdan sopiminen puhelimitse estää digitalisoidun avisointiprosessin ja ohjaa tuotannon sopimaan jakeluajankohdan puhelimitse. Terminaalin henkilökunta sopii jakeluajankohdan vastaanottajan kanssa samana päivänä kun paketti saapuu terminaaliin. Jakeluaikaikkuna sovitaan tuleville lähipäiville.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3372",
+      "DisplayNameEN": "Signature Required",
+      "DisplayNameFI": "Allekirjoitus vaaditaan",
+      "DescriptionEN": "Signature Required additional service can be used with Home Parcel and Home Pallet deliveries to Sweden. The recipient of the shipment will sign upon delivery. In Sweden, standard delivery method is without signature. The additional service selected by the sender appears on the address label. ​​​​​​​Once the additional service is selected, it is not possible for the recipient to redirect Home Parcel to a pick-up point.",
+      "DescriptionFI": "Allekirjoitus vaaditaan -lisäpalvelua voidaan käyttää Home Parcel ja Home Pallet -toimituksissa Ruotsiin. Lähetyksen vastaanottajalta otetaan allekirjoitus toimituksen yhteydessä. Toimituksesta ei oletuksena oteta kuittausta Ruotsissa. Lähettäjän valitsema lisäpalvelu ilmenee osoitekortilta. Kun lisäpalvelu on valittu, vastaanottajan ei ole mahdollista ohjata Home Parcel -pakettia noutopisteeseen.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3373"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "SE"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3373",
+      "DisplayNameEN": "ID Required",
+      "DisplayNameFI": "Henkilöllisyyden todentaminen",
+      "DescriptionEN": "ID Required additional service can be used with Home Parcel and Home Pallet deliveries. The identity of the recipient of the shipment will be verified and the signature will be registered. The additional service selected by the sender appears on the address label. Once the additional service is selected, it is not possible for the recipient to redirect Home Parcel to a pick-up point.",
+      "DescriptionFI": "Henkilöllisyyden todentaminen -lisäpalvelua voidaan käyttää Home Parcel ja Home Pallet -toimituksissa. Lähetyksen vastaanottajan henkilöllisyys todennetaan ja allekirjoitus tallennetaan. Lähettäjän valitsema lisäpalvelu ilmenee osoitekortilta. Kun lisäpalvelu on valittu, vastaanottajan ei ole mahdollista ohjata Home Parcel -pakettia noutopisteeseen. ",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3372"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "DK"
+        },
+        {
+          "Country": "SE"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3376",
+      "DisplayNameEN": "Blocker for parcel steering to outdoor locker",
+      "DisplayNameFI": "Blocker for parcel steering to outdoor locker",
+      "DescriptionEN": "This additional service prevent parcel steering to outdoor parcel locker. Used for parcels that can't be stored in outdoor parcel locker such as medicines.",
+      "DescriptionFI": "Blocker for parcel steering to outdoor locker",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": true,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3401",
+      "DisplayNameEN": "Home Delivery",
+      "DisplayNameFI": "Kotijakelu",
+      "DescriptionEN": "Home Delivery additional service can be used in Posti Parcel Baltic and Express Business Day (EBD) parcel deliveries to the Baltic countries. Parcels will be delivered to a recipient's door. The Home Delivery VAS enables wider delivery options as Saturday and Sunday deliveries are available in Estonia and in the biggest cities in Latvia and Lithuania.",
+      "DescriptionFI": "Kotijakelu-lisäpalvelua voidaan käyttää Postipaketti Baltiaan ja Express Business Day (EBD) -paketin toimituksissa Baltian maihin. Lähetykset toimitetaan vastaanottajan osoitteeseen. Kotijakelu tarjoaa laajemmat toimitusmahdollisuudet, sillä se mahdollistaa lauantai- ja sunnuntaitoimitukset Virossa sekä Latvian ja Liettuan suurimmissa kaupungeissa.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3410",
+      "DisplayNameEN": "Equipment installation Game console",
+      "DisplayNameFI": "Laiteasennus Pelikonsoli",
+      "DescriptionEN": "Equipment installation Game console",
+      "DescriptionFI": "Laiteasennus Pelikonsoli",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3411",
+      "DisplayNameEN": "Equipment installation Coffee maker",
+      "DisplayNameFI": "Laiteasennus Kahvinkeitin",
+      "DescriptionEN": "Equipment installation Coffee maker",
+      "DescriptionFI": "Laiteasennus Kahvinkeitin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3412",
+      "DisplayNameEN": "Equipment installation Countertop dishwasher",
+      "DisplayNameFI": "Laiteasennus Pöytämallinen tiskikone",
+      "DescriptionEN": "Equipment installation Countertop dishwasher",
+      "DescriptionFI": "Laiteasennus Pöytämallinen tiskikone",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3413",
+      "DisplayNameEN": "Equipment installation Robot vacuum",
+      "DisplayNameFI": "Laiteasennus Robottipölynimuri",
+      "DescriptionEN": "Equipment installation Robot vacuum",
+      "DescriptionFI": "Laiteasennus Robottipölynimuri",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3415",
+      "DisplayNameEN": "Equipment installation Ceiling lamp",
+      "DisplayNameFI": "Laiteasennus Kattovalaisin",
+      "DescriptionEN": "Equipment installation Ceiling lamp",
+      "DescriptionFI": "Laiteasennus Kattovalaisin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3416",
+      "DisplayNameEN": "Equipment installation Fire/carbon dioxide alarm",
+      "DisplayNameFI": "Laiteasennus Palo- tai häkävaroitin",
+      "DescriptionEN": "Equipment installation Fire/carbon dioxide alarm",
+      "DescriptionFI": "Laiteasennus Palo- tai häkävaroitin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3417",
+      "DisplayNameEN": "Equipment installation Digital TV receiver",
+      "DisplayNameFI": "Laiteasennus Netti-TV/digivastaanotin",
+      "DescriptionEN": "Equipment installation Digital TV receiver",
+      "DescriptionFI": "Laiteasennus Netti-TV/digivastaanotin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3418",
+      "DisplayNameEN": "Equipment installation Medicine cabin",
+      "DisplayNameFI": "Laiteasennus Lääkekaappi",
+      "DescriptionEN": "Equipment installation Medicine cabin",
+      "DescriptionFI": "Laiteasennus Lääkekaappi",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3419",
+      "DisplayNameEN": "Equipment installation Electric tooth brush",
+      "DisplayNameFI": "Laiteasennus Sähköhammasharja",
+      "DescriptionEN": "Equipment installation Electric tooth brush",
+      "DescriptionFI": "Laiteasennus Sähköhammasharja",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3420",
+      "DisplayNameEN": "Equipment installation Water kettle",
+      "DisplayNameFI": "Laiteasennus Vedenkeitin",
+      "DescriptionEN": "Equipment installation Water kettle",
+      "DescriptionFI": "Laiteasennus Vedenkeitin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3421",
+      "DisplayNameEN": "Equipment installation Toaster",
+      "DisplayNameFI": "Laiteasennus Leivänpaahdin",
+      "DescriptionEN": "Equipment installation Toaster",
+      "DescriptionFI": "Laiteasennus Leivänpaahdin",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3422",
+      "DisplayNameEN": "Equipment installation Video projector",
+      "DisplayNameFI": "Laiteasennus Videotykki",
+      "DescriptionEN": "Equipment installation Video projector",
+      "DescriptionFI": "Laiteasennus Videotykki",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "3423",
+      "DisplayNameEN": "Equipment installation Wallmounting",
+      "DisplayNameFI": "Laiteasennus Seinäkiinnitys",
+      "DescriptionEN": "Equipment installation Wallmounting",
+      "DescriptionFI": "Laiteasennus Seinäkiinnitys",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        },
+        {
+          "Country": "EE"
+        },
+        {
+          "Country": "LV"
+        },
+        {
+          "Country": "LT"
+        }
+      ],
+      "Fields": []
+    },
+    {
+      "ServiceCode": "5100",
+      "DisplayNameEN": "Scheduled Delivery",
+      "DisplayNameFI": "Aikataulutettu jakelu",
+      "DescriptionEN": "Shipments are delivered to recipients according to the schedule. Postal code-specific time frames can be seen in the electronic order channel.",
+      "DescriptionFI": "Aikataulutettu jakelu",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5100</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5100"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id:\" \"DLVT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVT"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5102",
+      "DisplayNameEN": "Heated Transport",
+      "DisplayNameFI": "Lämminkuljetus",
+      "DescriptionEN": "Shipments are transported in a heated (> +0 ​​degrees) freight at different stages of the transport and terminal network. Note that, the heated transportation service applies to transport during the winter season (heated transport season 1st of October to 30th of April).",
+      "DescriptionFI": "Lähetykset kuljetetaan lämmitetyssä (> +0 astetta) kuormatilassa kuljetus- ja terminaaliverkoston erivaiheissa. Huom. Lämminkuljetuspalvelu koskee talvikautena (Lämminkuljetuskausi 1.10.–30.4.) suoritettavaa kuljettamista.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5102</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5102"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"WARM\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "WARM"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5103",
+      "DisplayNameEN": "Call Before Delivery",
+      "DisplayNameFI": "Soitto ennen jakelua",
+      "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
+      "DescriptionFI": "Soitto ennen jakelua/noutoa -lisäpalvelussa lähettäjään tai vastaanottajaan tulee ottaa yhteyttä ennen reitin alkua tai vähintään tunti ennen saapumista. Lähettäjälle tai vastaanottajalle informoidaan arvioitu saapumisaika. Palvelu sopii myös hyvin lähetyksille joita odottaa kohteessa asentaja.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5104"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5103</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5103"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVCALL\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVCALL"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5104",
+      "DisplayNameEN": "Consumer Delivery",
+      "DisplayNameFI": "Kuluttajajakelu",
+      "DescriptionEN": "Posti contacts the recipient to agree on a delivery date and, prior to delivery, calls the recipient’s number provided in the order.",
+      "DescriptionFI": "Kuluttajajakelu",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5104</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5104"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVPRIV\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVPRIV"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5105",
+      "DisplayNameEN": "Installation (Ready for Use)",
+      "DisplayNameFI": "Asennuspalvelu",
+      "DescriptionEN": "Installation (Ready for Use)",
+      "DescriptionFI": "Asennuspalvelu",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5105</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5105"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINST\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINST"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5106",
+      "DisplayNameEN": "Transport Packaging Removal",
+      "DisplayNameFI": "Purku kuljetuspakkauksesta",
+      "DescriptionEN": "The service is suitable for use when the recipient wants the parcel shipment to be unpacked from the transport package or the cargo consignment from the transport platform to a separately specified one place and the packaging materials to be removed, for proper recycling.",
+      "DescriptionFI": "Palvelu soveltuu käytettäväksi silloin, kun vastaanottaja haluaa, että pakettilähetys puretaan kuljetuspakkauksesta tai rahtilähetys kuljetusalustalta erikseen määriteltyyn yhteen paikkaan ja pakkausmateriaalit kuljetaan pois, asianmukaiseen kierrätykseen. ",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5106</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5106"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINPKG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINPKG"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5107",
+      "DisplayNameEN": "Transport to Recycling",
+      "DisplayNameFI": "Transport to Recycling",
+      "DescriptionEN": "Transport to Recycling",
+      "DescriptionFI": "Transport to Recycling",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5107</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5107"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"RECYCLE\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "RECYCLE"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5108",
+      "DisplayNameEN": "Packing of returned equipment",
+      "DisplayNameFI": "Packing of returned equipment",
+      "DescriptionEN": "Packing of returned equipment",
+      "DescriptionFI": "Packing of returned equipment",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5108</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5108"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"RETPACK\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "RETPACK"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5109",
+      "DisplayNameEN": "Delivery to Terminal",
+      "DisplayNameFI": "Delivery to Terminal",
+      "DescriptionEN": "The Customer can address the shipment directly from the Posti’s terminal, to where the Customer will deliver it for further transportation.",
+      "DescriptionFI": "Delivery to Terminal",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5109</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5109"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVDEP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVDEP"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5111",
+      "DisplayNameEN": "Pick-up from Terminal",
+      "DisplayNameFI": "Pick-up from Terminal",
+      "DescriptionEN": "The Customer can address the shipment directly to the terminal, from where the recipient will pick it up. Posti contacts the recipient once the shipment in question has arrived at the terminal.",
+      "DescriptionFI": "Pick-up from Terminal",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5100"
+        },
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5104"
+        },
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        },
+        {
+          "Addon": "5234"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5111</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5111"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PUPDEP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PUPDEP"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5214",
+      "DisplayNameEN": "Carry in",
+      "DisplayNameFI": "Sisäänkanto",
+      "DescriptionEN": "We carry in the shipment to an agreed place near the recipient, for instance, inside a store or to an office. The exact delivery location will be agreed with the recipient via phone. Max 20 packages and maximum freight weight for each package is 35 kg.",
+      "DescriptionFI": "Sisäänkanto",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5214</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5214"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"CARRYIN\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "CARRYIN"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5222",
+      "DisplayNameEN": "Deliverable in Person",
+      "DisplayNameFI": "Deliverable in Person",
+      "DescriptionEN": "The delivery is only handed to the person specified in the shipment. The identity of the person picking up the shipment is verified, and identity can be verified using a driver's license, passport or photo identity document. The recipient will be contacted before starting the route or at least an hour before delivery to the recipient.",
+      "DescriptionFI": "Deliverable in Person",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5222</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5222"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PERS\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PERS"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5223",
+      "DisplayNameEN": "Delivery without receivers signature",
+      "DisplayNameFI": "Luovuttaminen ilman vastaanottajan kuittausta",
+      "DescriptionEN": "With the delivery without receivers signature additional service, the customer authorizes the Posti's driver to register the delivery transaction and acknowledge it in his/her own name without the recipient's presence.",
+      "DescriptionFI": "Luovuttaminen ilman vastaanottajan kuittausta -lisäpalvelulla asiakas valtuuttaa Postin kuljettajan rekisteröimään luovutustapahtuman ja kuittaamaan se omalla nimellään ilman vastaanottajan läsnäoloa. ",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5222"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5223</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5223"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVNOPOD\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVNOPOD"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5224",
+      "DisplayNameEN": "Delivery to Specific Location",
+      "DisplayNameFI": "Täsmäpaikkajakelu",
+      "DescriptionEN": "With delivery to specific location, the shipment is taken to a pre-arranged, single location at the recipient, such as inside a store or office. When transporting shipments, take into account traffic restrictions.",
+      "DescriptionFI": "Täsmäpaikkajakelulla lähetys viedään ennalta sovittuun, yhteen paikkaan vastaanottajan luona, esimerkiksi sisälle myymälään tai työhuoneeseen. Kuljetusyksikkölähetyksissä huomioi kulkurajoitteet.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5100"
+        },
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5214"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5224</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5224"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSPC\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSPC"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5225",
+      "DisplayNameEN": "Shelving Service",
+      "DisplayNameFI": "Hyllytyspalvelu",
+      "DescriptionEN": "The additional service Shelving service appears on the address card or waybill. In the shelving service, the shipment is delivered to a specific location on the premises of the receiving customer, unpacked and shelved in place. The service also includes the removal of packaging waste and, if necessary, placing replenishment orders. Work instructions are made for the items in the shelving service and their delivery schedule is preferably agreed in advance.",
+      "DescriptionFI": "Hyllytyspalvelu lisäpalvelu ilmenee osoitekortilta tai rahtikirjasta. Hyllytyspalvelussa lähetys toimitetaan tiettyyn paikkaan vastaanottavan asiakkaan tiloissa, se puretaan pakkauksesta ja hyllytetään paikoilleen. Palvelu sisältää myös pakkausjätteen pois viemisen ja tarvittaessa täydennystilausten tekemisen. Hyllytyspalvelun kohteista tehdään työohjeet ja niiden toimitusaikataulu sovitaan mielellään etukäteen.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5100"
+        },
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5104"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5222"
+        },
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5225</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5225"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSORT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSORT"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5227",
+      "DisplayNameEN": "Product Packaging Removal",
+      "DisplayNameFI": "Purku tuotepakkauksesta",
+      "DescriptionEN": "The service is suitable for use when the recipient buys a new household appliance or furniture, etc. and wants it to be unpacked and the packaging waste removed. We unpack the shipment, take the packaging waste out of the customer and deliver it for proper recycling. The customer does not have to worry about disposing of packaging waste.",
+      "DescriptionFI": "​​​​​​Palvelu soveltuu käytettäväksi silloin, kun vastaanottaja ostaa uuden kodinkoneen tai huonekalun tms. ja haluaa sen purettavan pakkauksesta ja pakkausjätteen poisviennin. Puramme lähetyksen pakkauksesta, viemme pakkausjätteen pois asiakkaalta ja toimittamme asianmukaiseen kierrätykseen. Asiakkaan ei tarvitse huolehtia pakkausjätteiden hävittämisestä.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5227</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5227"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVINUNP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVINUNP"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5228",
+      "DisplayNameEN": "Crane Delivery Service",
+      "DisplayNameFI": "Crane Delivery Service",
+      "DescriptionEN": "Delivery of freight shipments is made using crane equipment. The Crane service is available for shipment batches weighing under 5,000 kg, and a single load cannot weigh more than 2,500 kg. One weekday of additional delivery time is reserved for Crane Delivery.",
+      "DescriptionFI": "Crane Delivery Service",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5102"
+        },
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5228</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5228"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"TECH\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "TECH"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5229",
+      "DisplayNameEN": "Waste Transport",
+      "DisplayNameFI": "Waste Transport",
+      "DescriptionEN": "Waste Transport",
+      "DescriptionFI": "Waste Transport",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5100"
+        },
+        {
+          "Addon": "5102"
+        },
+        {
+          "Addon": "5103"
+        },
+        {
+          "Addon": "5104"
+        },
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5111"
+        },
+        {
+          "Addon": "5222"
+        },
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5224"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5229</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5229"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"WASTE\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "WASTE"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5230",
+      "DisplayNameEN": "Long Shipment",
+      "DisplayNameFI": "Long Shipment",
+      "DescriptionEN": "You can send address-labeled items the size of which exceeds the normal maximum size of the main product, up to the maximum size for the Oversized additional service.",
+      "DescriptionFI": "Long Shipment",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5227"
+        },
+        {
+          "Addon": "5228"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5230</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5230"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"SPTR\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "SPTR"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5234",
+      "DisplayNameEN": "Chosen delivery day",
+      "DisplayNameFI": "Chosen delivery day",
+      "DescriptionEN": "Delivering the item on the selected delivery day according to the service register. The available options are 1–5 weekdays after the first possible delivery day.",
+      "DescriptionFI": "Chosen delivery day",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5236"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5234</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5234"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVTREQ\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVTREQ"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5235",
+      "DisplayNameEN": "Call Before Delivery",
+      "DisplayNameFI": "Soitto ennen jakelua",
+      "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
+      "DescriptionFI": "Soitto ennen jakelua/noutoa -lisäpalvelussa lähettäjään tai vastaanottajaan tulee ottaa yhteyttä ennen reitin alkua tai vähintään tunti ennen saapumista. Lähettäjälle tai vastaanottajalle informoidaan arvioitu saapumisaika. Palvelu sopii myös hyvin lähetyksille joita odottaa kohteessa asentaja.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5236"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5235</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5235"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DLVSORT\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DLVSORT"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5236",
+      "DisplayNameEN": "Consumer Pick-up",
+      "DisplayNameFI": "Consumer Pick-up",
+      "DescriptionEN": "Posti contacts the sender to agree on a pickup date and, prior to the scheduled pickup time, calls the sender’s phone number provided in the order",
+      "DescriptionFI": "Consumer Pick-up",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5235"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5236</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5236"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"PRIVPUP\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "PRIVPUP"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5237",
+      "DisplayNameEN": "Pickup from a specific location",
+      "DisplayNameFI": "Pickup from a specific location",
+      "DescriptionEN": "The service includes the pickup of the shipment from inside the sender’s premises at a specific location, such as floor, office, etc. The shipment is picked up from a place which can be accessed freely by a hand/pallet truck.",
+      "DescriptionFI": "Pickup from a specific location",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5109"
+        },
+        {
+          "Addon": "5228"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5237</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5237"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": true,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5238",
+      "DisplayNameEN": "Carry out",
+      "DisplayNameFI": "Carry out",
+      "DescriptionEN": "Carry out",
+      "DescriptionFI": "Carry out",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5223"
+        },
+        {
+          "Addon": "5225"
+        },
+        {
+          "Addon": "5229"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5238</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5238"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5502",
+      "DisplayNameEN": "LQ Transport",
+      "DisplayNameFI": "LQ kuljetus",
+      "DescriptionEN": "The service enables the transport of dangerous goods to a limited extent in accordance with the Act on the Transport of Dangerous Goods (VAK) in accordance with the service area register of the main product. The additional service appears on the address card, which also shows the LQ gross weight and the number of items, as well as on the limited number of LQ labels and VAK tape.",
+      "DescriptionFI": "Palvelu mahdollistaa vaarallisten aineiden kuljetuksesta (VAK) annetussa laissa säädetyn rajoitetussa määrin pakattujen vaarallisten aineiden lain mukaisen kuljettamisen perille päätuotteen palvelualuerekisterin mukaisesti. Lisäpalvelu ilmenee osoitekortilta, josta käy ilmi myös LQ-bruttomassa ja kollimäärä sekä rajoitetun määrän mukaisesta LQ-lipukkeesta ja VAK-teipistä.",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5229"
+        },
+        {
+          "Addon": "5503"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5502</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5502"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<LimitedQuantityWeight>0.234</LimitedQuantityWeight>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "LimitedQuantity",
+          "PropertyValue": "0.234"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DNG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DNG"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"limitedQuantities\": true",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "limitedQuantities",
+          "PropertyValue": "TRUE"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"declarant\": \"senders name\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "declarant",
+          "PropertyValue": "senders name"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"netWeight\": 0.234",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "netWeight",
+          "PropertyValue": "0.234"
+        }
+      ]
+    },
+    {
+      "ServiceCode": "5503",
+      "DisplayNameEN": "Transport of Dangerous Goods",
+      "DisplayNameFI": "Vaarallisten aineiden kuljetus",
+      "DescriptionEN": "We handle the transport of any parcels classified as dangerous goods safely, reliably and in accordance with the applicable legislation.",
+      "DescriptionFI": "Vaarallisten aineiden kuljetus",
+      "LabelMarking": null,
+      "Home": true,
+      "Pudo": false,
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "5229"
+        },
+        {
+          "Addon": "5502"
+        }
+      ],
+      "AvailableCountries": [
+        {
+          "Country": "FI"
+        }
+      ],
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<Service>5503</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "5503"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<RegulationsCode>ADR</RegulationsCode>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "DangerousGoodsItem",
+          "PropertyValue": "ADR"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<UnNo>0016</UnNo>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "RegulationsCode",
+          "PropertyValue": "0016"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<MainDanger>2.1</MainDanger>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "UnNo",
+          "PropertyValue": "2.1"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<TotalQuantity>5.000</TotalQuantity>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "PackingDescription",
+          "PropertyValue": "5.000"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<TotalQuantity unit=\"LTR\">5.000</TotalQuantity>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "TotalQuantity",
+          "PropertyValue": "LTR"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<ProperShippingName>Alcohol, N.O.S.</ProperShippingName>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "unit",
+          "PropertyValue": "Alcohol, N.O.S."
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<SubsidiaryRisk>4.2</SubsidiaryRisk>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "MainDanger",
+          "PropertyValue": "4.2"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<PackingGroup>II</PackingGroup>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "SubsidiaryRisk",
+          "PropertyValue": "II"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<NoDgPackages>1</NoDgPackages>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "PackingGroup",
+          "PropertyValue": "1"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<PackingDescription>steel drum</PackingDescription>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "NoDgPackages",
+          "PropertyValue": "steel drum"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<TechnicalDescription>Methanol dioxide</TechnicalDescription>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "ProperShippingName",
+          "PropertyValue": "Methanol dioxide"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<MarinePollutant>false</MarinePollutant>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "TechnicalDescription",
+          "PropertyValue": "false"
+        },
+        {
+          "MessageFormat": "POSTRA_FREIGHT",
+          "AdditionalInfo": null,
+          "Sample": "<TunnelCode>C5000D</TunnelCode>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "Waste",
+          "PropertyValue": "C5000D"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"DNG\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "DNG"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"unCode\": \"0016\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "unCode",
+          "PropertyValue": "0016"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"description\": \"Alcohols, N.O.S.\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "description",
+          "PropertyValue": "Alcohols, N.O.S."
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"adrClass\": \"2.1\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "adrClass",
+          "PropertyValue": "2.1"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"netWeight\": \"5\"",
+          "Mandatory": true,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "netWeight",
+          "PropertyValue": "5"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"declarant\": \"senders name\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "declarant",
+          "PropertyValue": "senders name"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mobile\": \"+3580007654321\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "mobile",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"hazardCode\": \"4.2\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "hazardCode",
+          "PropertyValue": "4.2"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"packageCode\": \"II\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "packageCode",
+          "PropertyValue": "II"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"quantity\": \"1\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "quantity",
+          "PropertyValue": "1"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"packageType\": \"steel drum\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "packageType",
+          "PropertyValue": "steel drum"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"technicalDescr\": \"Methanol dioxide\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "technicalDescr",
+          "PropertyValue": "Methanol dioxide"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"mpCode\": \"N\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "mpCode",
+          "PropertyValue": "N"
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"trCode\": \"C5000D\"",
+          "Mandatory": false,
+          "MessagePosition": "dangerousGoods",
+          "PropertyName": "trCode",
+          "PropertyValue": "C5000D"
+        }
+      ]
+    }
+  ]
+}
