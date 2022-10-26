@@ -1,9 +1,9 @@
 import { Offcanvas, Tabs, Tab, Form } from "react-bootstrap";
-import ParcelLabel from "./ParcelLabel";
-import UPULabel from "./UPULabel";
-import FreightLabel from "./FreightLabel";
-import ParcelConnectLabel from "./ParcelConnectLabel";
-import BringLabel from "./BringLabel";
+import ParcelLabel from "./labels/ParcelLabel";
+import UPULabel from "./labels/UPULabel";
+import FreightLabel from "./labels/FreightLabel";
+import ParcelConnectLabel from "./labels/ParcelConnectLabel";
+import BringLabel from "./labels/BringLabel";
 import SampleCodeView from "./SampleCodeView";
 import "./styles/OffCanvas_styles.css";
 
@@ -24,7 +24,7 @@ const OffCanvas = ({
   t,
   showOptional,
   showSamples,
-  setKey
+  setKey,
 }: offCanvasProps) => {
   const renderSwitch = (param) => {
     switch (param) {

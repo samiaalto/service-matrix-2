@@ -1,5 +1,6 @@
 const MapFFRows = (fileFormats, setFfRowData) => {
   let rows = [];
+  let index = 0;
   for (let record of fileFormats.records) {
     for (let attribute of record.Records) {
       let length = "";
@@ -58,15 +59,21 @@ const MapFFRows = (fileFormats, setFfRowData) => {
 
       rows.push({
         format: record.Name,
-        attribute: <pre className="attributeName">{indent + name}</pre>,
+        attribute: (
+          <pre key={"attributeName_" + index} className="attributeName">
+            {indent + name}
+          </pre>
+        ),
         moc: moc,
         repeat: repeat,
         type: type,
         position: position,
-        description: attribute.DescriptionEN
+        description: attribute.DescriptionEN,
       });
     }
+    index++;
   }
+  console.log(rows);
   return setFfRowData(rows);
 };
 

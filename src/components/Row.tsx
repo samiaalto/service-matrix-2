@@ -38,13 +38,12 @@ const RowComponent = ({ row, onCellClick, t }) => {
             rowIndex={cell.row.index}
             onClick={handleClick}
             columnId={cell.column.id}
-            selected={(e) => console.log(e)}
-            width={(e) => console.log(e)}
           />
         );
       })}
     </tr>
   );
 };
+export const Row = RowComponent;
 
-export const Row = memo(RowComponent);
+//export const Row = memo(RowComponent);

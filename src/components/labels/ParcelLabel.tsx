@@ -1,22 +1,24 @@
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 
-import "./styles/UPULabel_styles.css";
+import "../styles/ParcelLabel_styles.css";
 
-const UPULabel = ({ data }) => {
+const ParcelLabel = ({ data }) => {
   const Barcode = require("react-barcode");
   const addonboxes = [];
   let addonCount = 0;
-  if (data.labelData.addons.length > 0) {
-    for (const [i, addon] of data.labelData.addons.entries()) {
-      if (addon.labelMarking !== null && i <= 5) {
-        addonboxes.push({ id: i, marking: addon.labelMarking });
-        addonCount++;
+  if (Object.keys(data.labelData).length > 0) {
+    if (data.labelData.addons.length > 0) {
+      for (const [i, addon] of data.labelData.addons.entries()) {
+        if (addon.labelMarking !== null && i <= 5) {
+          addonboxes.push({ id: i, marking: addon.labelMarking });
+          addonCount++;
+        }
       }
     }
-  }
-  if (addonCount < 5) {
-    for (let i = addonCount; i < 5; i++) {
-      addonboxes.push({ id: i, marking: "" });
+    if (addonCount < 5) {
+      for (let i = addonCount; i < 5; i++) {
+        addonboxes.push({ id: i, marking: "" });
+      }
     }
   }
 
@@ -25,42 +27,73 @@ const UPULabel = ({ data }) => {
       <div className="labelPreview">
         <div className="labelBorder">
           <Row>
-            <Row className="serviceArea">
-              <OverlayTrigger
-                placement="top"
-                overlay={
-                  <Tooltip id="serviceName">
-                    <b>{"Name of service"}</b>
-                    <br />
-                    {"Mandatory: Yes"}
-                    <br />
-                    {"Font size: 10/12 bold"}
-                    <br />
-                    {
-                      "Description: Grouped according to the service-specific models"
-                    }
-                  </Tooltip>
-                }
-              >
-                <Col className="serviceName">
-                  {data.service === "2015" ? (
-                    <img
-                      className="priorityLogo"
-                      alt="priority logo"
-                      src={require("./icons/priority_logo.png")}
-                    />
-                  ) : (
-                    <img
-                      className="priorityLogo"
-                      alt="ems logo"
-                      src={require("./icons/ems_logo.png")}
-                    />
-                  )}
-                </Col>
-              </OverlayTrigger>
-            </Row>
-            <Col className="priorityParties" xs={7}>
+            <Col className="parties" xs={5}>
               <div className="sender">
+                <Row>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="labelLogo">
+                        <b>{"Posti logo"}</b>
+                        <br />
+                        {"Mandatory: Yes"}
+                        <br />
+                        {
+                          "Description: Printed in blue on address cards supplied by Posti. Printed in black (length: 12mm) in the customer's own address card materials, with a free space of 3mm on the left and the upper edge."
+                        }
+                      </Tooltip>
+                    }
+                  >
+                    <Col xs={4} className="labelLogo">
+                      <svg
+                        width="67"
+                        height="32"
+                        viewBox="0 0 67 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
+                        className="sc-2274bq-0 bEoFZP"
+                      >
+                        <path
+                          d="M23.0427 14.6937C23.3181 12.213 25.137 10.4494 27.6732 10.4494C30.2094 10.4494 32.0827 12.213 32.3037 14.6937H36.329C36.0536 10.1197 32.3581 6.59243 27.7276 6.59243C23.0972 6.59243 19.3472 10.1197 19.0718 14.6937H23.0427ZM13.724 15.6859C13.6152 18.3875 11.6298 20.2599 8.98137 20.2599C6.33636 20.2599 4.35089 18.3875 4.29649 15.6859H0.216797V31.4467H4.24211V22.241H4.29649C5.39801 23.342 6.94151 24.1134 9.14795 24.1134C13.8906 24.1134 17.5827 20.5317 17.6949 15.6825L13.724 15.6859ZM4.29649 14.6937C4.51748 12.1586 6.44515 10.4494 8.98137 10.4494C11.5176 10.4494 13.4486 12.213 13.724 14.6937H17.7493C17.4739 10.0654 13.9994 6.59243 9.36894 6.59243C7.1625 6.59243 5.39803 7.41819 4.3509 8.5226H4.24211V6.92545H0.216797V14.6971H4.29649V14.6937ZM60.2565 23.7872H64.2818V15.6859H60.2565V23.7872ZM51.4919 23.7872H55.5172V15.6859H51.4919V23.7872ZM46.8036 15.6859H38.974C39.8001 16.2365 41.1226 16.8991 41.9522 17.2287C43.6045 17.8336 44.213 18.221 44.213 18.9924C44.213 19.7638 43.3325 20.2055 42.2276 20.2055C40.9051 20.2055 39.9667 19.7094 39.0284 18.8836L36.3834 21.5274C37.9269 23.0702 39.5248 24.1168 42.282 24.1168C45.2024 24.1168 48.2349 22.0235 48.2349 18.8802C48.2383 17.504 47.6332 16.4573 46.8036 15.6859ZM32.3615 15.6859C32.2527 18.3875 30.376 20.2599 27.6766 20.2599C25.0316 20.2599 23.1006 18.3297 22.9918 15.6859H18.963C19.0718 20.3686 22.8762 24.1168 27.6188 24.1168C32.3615 24.1168 36.1658 20.3686 36.2746 15.6859H32.3615ZM64.2818 6.92206H60.2565V14.6937H64.2818V6.92206ZM51.4919 14.6937H55.5172V10.4494H59.2093V6.92206H55.5172V0.91748H51.4919V6.92545H48.4593V10.4528H51.4919V14.6937ZM45.7021 14.6937C44.9304 14.1975 43.992 13.8136 43.1659 13.5349C41.6224 12.9844 40.9051 12.597 40.9051 11.7169C40.9051 10.9999 41.6224 10.5037 42.5574 10.5037C43.5501 10.5037 44.5428 10.8911 45.3689 11.6625L47.9596 8.85222C46.4161 7.41819 44.8182 6.6468 42.5574 6.6468C40.2421 6.6468 37.1007 8.46483 37.1007 11.8834C37.1007 13.0422 37.4883 13.9767 38.0935 14.6937H45.7021Z"
+                          fill="#3B4A57"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          className="sc-2274bq-4 jFnDyb"
+                        ></path>
+                        <path
+                          d="M65.0435 2.26246C65.2203 3.23094 65.0163 4.00232 64.4893 4.38292C64.1323 4.63778 63.67 4.67176 63.3096 4.47127C63.2926 4.46108 63.279 4.45088 63.262 4.44069C63.7175 4.23 64.1493 3.72707 64.4247 3.06103C64.8225 2.09935 64.8361 0.926976 64.0847 0.546381C63.8468 0.424046 63.5714 0.413852 63.296 0.515797C62.9152 0.65852 62.4732 1.07989 62.2624 1.6236C62.0177 1.07989 61.6131 0.65852 61.2289 0.515797C60.9535 0.413852 60.6782 0.424046 60.4402 0.546381C59.6888 0.926976 59.7024 2.09935 60.1002 3.06103C60.3756 3.72707 60.8073 4.2334 61.2629 4.44069C61.2459 4.45088 61.2323 4.46448 61.2153 4.47127C60.855 4.67176 60.3926 4.63778 60.0356 4.38292C59.5052 4.00232 59.3047 3.23094 59.4814 2.26246H58.4955C58.3085 3.53677 58.6587 4.59361 59.4679 5.17469C59.8384 5.43975 60.2736 5.57568 60.7088 5.57568C61.0488 5.57568 61.3887 5.49412 61.6879 5.32421C61.9123 5.19848 62.1027 5.03197 62.2591 4.83827C62.4155 5.03197 62.6024 5.19848 62.8302 5.32421C63.1328 5.49412 63.4694 5.57568 63.8094 5.57568C64.2411 5.57568 64.6797 5.43975 65.0503 5.17469C65.8594 4.59361 66.2096 3.54017 66.0226 2.26586H65.0435V2.26246ZM61.7797 3.26152C61.7797 3.27851 61.7797 3.2955 61.7797 3.31589C61.7695 3.44842 61.7423 3.54017 61.7151 3.57755C61.5961 3.55037 61.2527 3.28191 61.0046 2.68723C60.7258 2.01779 60.804 1.51826 60.8788 1.41971C60.9978 1.4469 61.3411 1.71535 61.5893 2.31003C61.7253 2.63286 61.7729 2.91831 61.7831 3.13579C61.7797 3.17657 61.7763 3.22074 61.7797 3.26152ZM62.8234 3.57415C62.7894 3.52658 62.7622 3.41444 62.7554 3.25812C62.7554 3.21735 62.7554 3.17997 62.7554 3.13919C62.7622 2.9217 62.8132 2.63626 62.9492 2.31003C63.194 1.72215 63.5306 1.45369 63.6564 1.42311C63.7346 1.53865 63.806 2.03138 63.534 2.68723C63.2858 3.27172 62.9458 3.54357 62.8234 3.57415Z"
+                          fill="#3B4A57"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          className="sc-2274bq-4 jFnDyb"
+                        ></path>
+                      </svg>
+                    </Col>
+                  </OverlayTrigger>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="serviceName">
+                        <b>{"Name of service"}</b>
+                        <br />
+                        {"Mandatory: Yes"}
+                        <br />
+                        {"Font size: 10/12 bold"}
+                        <br />
+                        {
+                          "Description: Grouped according to the service-specific models"
+                        }
+                      </Tooltip>
+                    }
+                  >
+                    <Col xs={7} className="serviceName">
+                      {data.labelData.serviceName
+                        ? data.labelData.serviceName
+                        : "Postipaketti"}
+                    </Col>
+                  </OverlayTrigger>
+                </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
@@ -78,8 +111,8 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <div className="sender-label priorityLabel">
-                      Sender (name and address) / Expéditeur ( nom et adresse)
+                    <div className="sender-label label">
+                      Lähettäjä Avsändare From
                     </div>
                   </OverlayTrigger>
                 </Row>
@@ -142,8 +175,8 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <Col xs={3} className="senderPostalCode">
-                      00230
+                    <Col xs={5} className="senderPostalCode">
+                      FI-00230
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
@@ -160,7 +193,7 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <Col className="prioritySenderPostOffice">HELSINKI</Col>
+                    <Col className="senderPostOffice">HELSINKI</Col>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -178,42 +211,11 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <Col xs={4} className="senderCountry">
-                      Finland
-                    </Col>
+                    <div className="senderCountry">Finland</div>
                   </OverlayTrigger>
-                  <Col xs={6} className="sendersVat priorityLabel">
-                    Sender's business ID /
-                  </Col>
-                  <Col xs={2} className="sendersVatValue">
-                    12345678
-                  </Col>
-                </Row>
-                <Row>
-                  <OverlayTrigger
-                    placement="top"
-                    overlay={
-                      <Tooltip id="senderCountry">
-                        <b>{"Sender's country"}</b>
-                        <br />
-                        {"Mandatory: No"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's phone"}
-                      </Tooltip>
-                    }
-                  >
-                    <Col xs={4} className="prioritySenderPhone">
-                      +35812345679
-                    </Col>
-                  </OverlayTrigger>
-                  <Col xs={8} className="sendersVat priorityLabel">
-                    No de T.V.A de l'expéditeur
-                  </Col>
                 </Row>
               </div>
-              <div className="priorityReceiver">
+              <div className="receiver">
                 <Row>
                   <OverlayTrigger
                     placement="top"
@@ -231,9 +233,8 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <div className="receiver-label priorityLabel">
-                      Recipient (name and address) / Destinataire (nom et
-                      adresse)
+                    <div className="receiver-label label">
+                      Vastaanottaja Addressat To
                     </div>
                   </OverlayTrigger>
                 </Row>
@@ -313,8 +314,8 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <Col xs={3} className="receiverPostalCode">
-                      00230
+                    <Col xs={5} className="receiverPostalCode">
+                      FI-00230
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
@@ -331,7 +332,7 @@ const UPULabel = ({ data }) => {
                       </Tooltip>
                     }
                   >
-                    <Col xs={6} className="priorityReceiverPostOffice">
+                    <Col xs={6} className="receiverPostOffice">
                       HELSINKI
                     </Col>
                   </OverlayTrigger>
@@ -341,54 +342,75 @@ const UPULabel = ({ data }) => {
                     placement="top"
                     overlay={
                       <Tooltip id="receiverCountry">
-                        <b>{"Receiver's country"}</b>
+                        <b>{"Recipient's country"}</b>
+                        <br />
+                        {"Mandatory: Yes"}
+                        <br />
+                        {"Font size: 10 bold"}
+                        <br />
+                        {"Description: Recipient's country"}
+                      </Tooltip>
+                    }
+                  >
+                    <div className="receiverCountry">Finland</div>
+                  </OverlayTrigger>
+                </Row>
+              </div>
+            </Col>
+            <Col className="middle" xs={3}>
+              <Row>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="processCode">
+                      <b>{"The service's process number"}</b>
+                      <br />
+                      {"Mandatory: Yes"}
+                      <br />
+                      {"Font size: 20/24 bold"}
+                      <br />
+                      {
+                        "Description: Grouped according to the service-specific models"
+                      }
+                    </Tooltip>
+                  }
+                >
+                  <div className="processCode">
+                    {data.labelData.processNumber
+                      ? data.labelData.processNumber
+                      : "16"}
+                  </div>
+                </OverlayTrigger>
+              </Row>
+              <Row>
+                <Col className="receiverPhone">
+                  <Col xs={1} className="phoneIcon">
+                    <i className="fas fa-phone-square-alt"></i>
+                  </Col>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="receiverPhoneValue">
+                        <b>{"The recipient's mobile phone number"}</b>
                         <br />
                         {"Mandatory: Yes"}
                         <br />
                         {"Font size: 8"}
                         <br />
-                        {"Description: Receiver's country"}
+                        {
+                          "The recipient's mobile phone number and/or email address has to be given in the EDI message."
+                        }
                       </Tooltip>
                     }
                   >
-                    <Col xs={4} className="receiverCountry">
-                      Finland
+                    <Col xs={5} className="receiverPhoneValue label">
+                      04018234990
                     </Col>
                   </OverlayTrigger>
-                  <Col xs={6} className="receiversVat priorityLabel">
-                    Sender's business ID /
-                  </Col>
-                  <Col xs={2} className="receiversVatValue">
-                    12345678
-                  </Col>
-                </Row>
-                <Row>
-                  <OverlayTrigger
-                    placement="top"
-                    overlay={
-                      <Tooltip id="senderCountry">
-                        <b>{"Sender's country"}</b>
-                        <br />
-                        {"Mandatory: No"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Receiver's phone"}
-                      </Tooltip>
-                    }
-                  >
-                    <Col xs={4} className="priorityReceiverPhone">
-                      +35812345679
-                    </Col>
-                  </OverlayTrigger>
-                  <Col xs={8} className="receiversVat priorityLabel">
-                    No de T.V.A de l'expéditeur
-                  </Col>
-                </Row>
-              </div>
+                </Col>
+              </Row>
             </Col>
-
-            <Col xs={5} className="product">
+            <Col xs={4} className="product">
               <Row>
                 <OverlayTrigger
                   placement="top"
@@ -432,9 +454,9 @@ const UPULabel = ({ data }) => {
                     </Tooltip>
                   }
                 >
-                  <div className="priorityServiceBarcode">
+                  <div className="serviceBarcode">
                     <Barcode
-                      value={data.service ? "2W" + data.service : "2W2015"}
+                      value={data.service ? "2W" + data.service : "2W2103"}
                       displayValue={false}
                       height={70}
                       width={2}
@@ -459,16 +481,16 @@ const UPULabel = ({ data }) => {
                     </Tooltip>
                   }
                 >
-                  <div className="priorityServiceCode">
-                    {data.service ? "2W" + data.service : "2W2015"}
+                  <div className="serviceCode">
+                    {data.service ? "2W" + data.service : "2W2103"}
                   </div>
                 </OverlayTrigger>
               </Row>
               <Row>
-                <div className="priorityEDISSI">EDI</div>
+                <div className="EDISSI">EDI SSI</div>
               </Row>
               <Row>
-                <Col className="priorityDateBox">
+                <Col className="dateBox">
                   <Row>
                     <OverlayTrigger
                       placement="top"
@@ -484,8 +506,8 @@ const UPULabel = ({ data }) => {
                         </Tooltip>
                       }
                     >
-                      <div className="date-label priorityLabel">
-                        Date of posting / Date du dépôt
+                      <div className="date-label label">
+                        Päivämäärä Datum Date
                       </div>
                     </OverlayTrigger>
                   </Row>
@@ -517,9 +539,6 @@ const UPULabel = ({ data }) => {
               </Row>
               <Row>
                 <Col className="weight box">
-                  <Row className="priorityLabel">
-                    Shipment weight / Poids de l'envoi
-                  </Row>
                   <Row>
                     <OverlayTrigger
                       placement="top"
@@ -535,7 +554,7 @@ const UPULabel = ({ data }) => {
                         </Tooltip>
                       }
                     >
-                      <Col xs={7} className="priorityWeightValue">
+                      <Col xs={7} className="weightValue">
                         0,31
                       </Col>
                     </OverlayTrigger>
@@ -552,9 +571,6 @@ const UPULabel = ({ data }) => {
                   </Row>
                 </Col>
                 <Col className="volume box">
-                  <Row className="priorityLabel">
-                    Shipment volume / Volume de l'envoi
-                  </Row>
                   <Row>
                     <Col
                       xs={7}
@@ -578,196 +594,160 @@ const UPULabel = ({ data }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className="priorityPackages">
-                  <Row className="priorityLabel">Pieces Pièces</Row>
+                <Col className="packages  box">
                   <Row>
-                    <Col className="packageCount">1</Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row className="goodsType">
-                <Col xs={6} className="goodsTypeCol">
-                  <Row className="types">
-                    <Col xs={1} className="addonbox">
-                      X
+                    <Col xs={7} className="packageCount">
+                      1
                     </Col>
-                    <Col className="goodsTypeLabel">Sample / Enchatillon</Col>
-                  </Row>
-                  <Row>
-                    <Col xs={1} className="addonbox"></Col>
-                    <Col className="goodsTypeLabel">Gift / Cadeau</Col>
-                  </Row>
-                  <Row>
-                    <Col xs={1} className="addonbox"></Col>
-                    <Col className="goodsTypeLabel">Merchandise, valuen</Col>
-                  </Row>
-                </Col>
-                <Col xs={6} className="goodsTypeCol">
-                  <Row>
-                    <Col xs={1} className="addonbox"></Col>
-                    <Col className="goodsTypeLabel">Documents</Col>
+                    <Col xs={4} className="volumelabel">
+                      kpl/st
+                    </Col>
                   </Row>
                 </Col>
               </Row>
             </Col>
           </Row>
-          <Row className="returnHandling">
-            <div className="priorityLabel">
-              In case of non-delivery, please / En cas de non-livraison,
-              veuillez
-            </div>
-            <Col xs={3} className="return">
-              <Row className="otherPayerHeading">
-                treat item as abandoned traiter l'envoi comme abandonné
-                <Col className="addonbox"></Col>
+          <Row className="cod">
+            <Col xs={4} className="addon box">
+              <Row>
+                <div className="addon-label label">
+                  Lisäpalvelut Tilläggstjänster
+                </div>
+              </Row>
+              <Row>
+                {addonboxes.map((addon) => (
+                  <Col className="addonbox" key={"addonbox_" + addon.id}>
+                    <div className="addonValue" key={"addonvalue_" + addon.id}>
+                      {addon.marking}
+                    </div>
+                  </Col>
+                ))}
               </Row>
             </Col>
-            <Col xs={4} className="return">
-              <Row className="otherPayerHeading">
-                return to the sender immediately renvoyer à l'expéditeur
-                immédiatement
-                <Col xs={2} className="addonbox">
-                  X
-                </Col>
+            <Col xs={4} className="otherPayer box">
+              <Row>
+                <div className="otherPayerHeading">
+                  Maksaja muu kuin lähettäjä Betalaren annan än avsändaren
+                </div>
+              </Row>
+              <Row>
+                <Col className="otherPayerValue">661234</Col>
               </Row>
             </Col>
-            <Col xs={2} className="return">
-              <Row className="otherPayerHeading">
-                by air par avion
-                <Col className="addonbox"></Col>
+            <Col className="packages box">
+              <Row>
+                <div className="addon-label label">kpl st</div>
+              </Row>
+              <Row>
+                <div className="packageCount">1</div>
               </Row>
             </Col>
-            <Col xs={3} className="return">
-              <Row className="otherPayerHeading">
-                the most economical route par la route la plus économique
-                <Col className="addonbox"></Col>
+            <Col className="empty"></Col>
+          </Row>
+          <Row>
+            <Col className="codAmount box">
+              <Row>
+                <div className="addon-label label">PE-summa PF-belopp</div>
+              </Row>
+              <Row>
+                <div className="codAmountValue"></div>
+              </Row>
+            </Col>
+            <Col className="codIBAN box">
+              <Row>
+                <div className="addon-label label">Tilinumero Kontonummer</div>
+              </Row>
+              <Row>
+                <div className="codIBANvalue"></div>
+              </Row>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={8} className="codReference box">
+              <Row>
+                <div className="addon-label label">
+                  Pankkiviite Bankreferens
+                </div>
+              </Row>
+              <Row>
+                <div className="codReferenceValue"></div>
+              </Row>
+            </Col>
+            <Col className="codBIC box">
+              <Row>
+                <div className="addon-label label">BIC</div>
+              </Row>
+              <Row>
+                <div className="codBICvalue"></div>
               </Row>
             </Col>
           </Row>
           <Row>
             <div
-              className="priorityTrackingBarcodeValue"
+              className="trackingBarcodeValue"
               data-toggle="tooltip"
               data-placement="top"
               data-container=".labelPreview"
               title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
             >
-              CE800235453FI
+              JJFI 699999 12345 678901
             </div>
           </Row>
           <Row>
             <div
-              className="priorityTrackingBarcode"
+              className="trackingBarcode"
               data-toggle="tooltip"
               data-placement="top"
               data-container=".labelPreview"
               title="<b>Delivery ID as a barcode</b></br>Mandatory: Yes</br>Bar code type: Licence Plate code 128 a, b and c</br>The first 5 characters shall produced in type a or b and the remaining 16 even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code.</br>X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)</br>The minimum resolution in thermal transfer printer is 200 dots / inch.</br>The minimum resolution in laser reproduction is 600 dots / inch.</br>Free space at both sides of the bar code must be at least 5 mm</br>Minimum height is 25 mm</br>Use block capitals in bar codes"
             >
-              <Barcode value="CE800235453FI" displayValue={false} />
+              <Barcode value="JJFI69999912345678901" displayValue={false} />
             </div>
           </Row>
           <Row>
             <div
-              className="priorityTrackingBarcodeValue"
+              className="trackingBarcodeValue"
               data-toggle="tooltip"
               data-placement="top"
               data-container=".labelPreview"
               title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
             >
-              CE800235453FI
+              JJFI 699999 12345 678901
             </div>
           </Row>
-          <Row className="senderInformation">
-            <Row>
-              <Col xs={4} className="priorityLabel">
-                Sender / Expéditeur
-              </Col>
-              <Col>Sandy Sender 00230 HELSINKI</Col>
-            </Row>
-          </Row>
-          <Row className="recipientInformation">
-            <Row>
-              <Col xs={4} className="priorityLabel">
-                Recipient (name and address)
-              </Col>
-              <Col>Ricky Receiver</Col>
-            </Row>
-            <Row>
-              <Col xs={4} className="priorityLabel">
-                Destinataire (nom et adresse)
-              </Col>
-              <Col>Postintaival 7 00230 HELSINKI</Col>
-            </Row>
-          </Row>
-          <Row className="customsInformationEN">
-            <Col xs={4} className="priorityLabel">
-              Description of contents
-            </Col>
-            <Col className="priorityLabel">Number</Col>
-            <Col className="priorityLabel">Nett weight</Col>
-            <Col className="priorityLabel">Country of origin</Col>
-            <Col className="priorityLabel">Customs tariff no</Col>
-            <Col className="priorityLabel">Value</Col>
-          </Row>
-          <Row className="customsInformation">
-            <Col xs={4} className="priorityLabel">
-              Description détaillée du contenu
-            </Col>
-            <Col className="priorityLabel">Nombre</Col>
-            <Col className="priorityLabel">Poids net</Col>
-            <Col className="priorityLabel">Pays d'origine</Col>
-            <Col className="priorityLabel">No tarifaire</Col>
-            <Col className="priorityLabel">Valeur</Col>
-          </Row>
-          <Row className="values">
-            <Col xs={4} className="descriptionValue">
-              TESTI
-            </Col>
-            <Col className="numberValue">1</Col>
-            <Col className="priorityWeightValue">1</Col>
-            <Col className="originValue">FI</Col>
-            <Col className="tariffValue">6122234</Col>
-            <Col className="amountValue">100 EUR</Col>
-          </Row>
-          <Row className="signature">
-            <Col xs={2} className="priorityLabel">
-              Date
-            </Col>
-            <Col xs={2} className="priorityLabel">
-              Time/Heure
-            </Col>
-            <Col className="priorityLabel">
-              Recipient's signature Signature du destinataire
-            </Col>
-          </Row>
           <Row>
-            <Col xs={2} className="dateValue"></Col>
-            <Col xs={2} className="timeValue"></Col>
-            <Col className="signatureValue"></Col>
-          </Row>
-          <Row className="zipCodeBarcode">
-            <Col xs={7}></Col>
-            <Col xs={5}>
+            <Col className="additionalInfo">
               <Row>
                 <div
-                  className="zipBarcode"
+                  className="addon-label label"
                   data-toggle="tooltip"
                   data-placement="top"
                   data-container=".labelPreview"
-                  title="<b>Delivery ID as a barcode</b></br>Mandatory: Yes</br>Bar code type: Licence Plate code 128 a, b and c</br>The first 5 characters shall produced in type a or b and the remaining 16 even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code.</br>X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)</br>The minimum resolution in thermal transfer printer is 200 dots / inch.</br>The minimum resolution in laser reproduction is 600 dots / inch.</br>Free space at both sides of the bar code must be at least 5 mm</br>Minimum height is 25 mm</br>Use block capitals in bar codes"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
                 >
-                  <Barcode value="9V600170" displayValue={false} width={1.8} />
+                  Lisätiedot Tilläggsuppgifter
                 </div>
               </Row>
               <Row>
                 <div
-                  className="zipBarcodeValue"
+                  className="additionalInfoValue"
                   data-toggle="tooltip"
                   data-placement="top"
                   data-container=".labelPreview"
-                  title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+                  title="<b>Additional information</b></br>Mandatory: Yes</br>Font size: 12 Bold</br>Description: The name of the additional service is printed in the data field in large bold letters. If no additional services have been selected, you can print the destination postal code barcode in the data field (except when EDI is used). Otherwise, you can print transport instructions or free-form text in the space."
                 >
-                  9V600170
+                  {data.labelData.addons
+                    ? data.labelData.addons.map((addon, i) => (
+                        <div key={"addon_" + addon.id}>
+                          {addon.labelName.toUpperCase()}
+                        </div>
+                      ))
+                    : ""}
+                </div>
+              </Row>
+              <Row>
+                <div className="PostiGreen">
+                  Posti Green - ilmastoystävällinen kuljetus
                 </div>
               </Row>
             </Col>
@@ -778,4 +758,4 @@ const UPULabel = ({ data }) => {
   );
 };
 
-export default UPULabel;
+export default ParcelLabel;
