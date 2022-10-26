@@ -1,15 +1,14 @@
 import { Row, Col } from "react-bootstrap";
-import BringLogoIcon from "./icons/BringLogo.svg";
-import "./styles/BringLabel_styles.css";
+import "../styles/ParcelConnectLabel_styles.css";
 
-const BringLabel = ({ data }) => {
+const ParcelConnectLabel = ({ data }) => {
   const Barcode = require("react-barcode");
 
   return (
     <>
       <div className="labelPreview">
         <div className="labelBorder">
-          <Row className="bringProduct">
+          <Row className="pcProduct">
             <Col
               xs={4}
               className="pcLabelLogo"
@@ -44,113 +43,19 @@ const BringLabel = ({ data }) => {
               </svg>
             </Col>
             <Col
-              xs={4}
-              className="bringServiceName"
+              xs={8}
+              className="pcServiceName"
               data-toggle="tooltip"
               data-placement="top"
               data-container=".labelPreview"
               title="<b>Name of service</b></br>Mandatory: Yes</br>Font size: 10/12 bold</br>Description: Grouped according to the service-specific models"
             >
-              {data.serviceName ? data.serviceName : "PickUp Parcel"}
-            </Col>
-            <Col
-              xs={4}
-              className="bringServiceBarcode"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Name of service</b></br>Mandatory: Yes</br>Font size: 10/12 bold</br>Description: Grouped according to the service-specific models"
-            >
-              <div className="serviceBarcode">
-                <Barcode
-                  value={data.service ? "2W" + data.service : "2W2351"}
-                  displayValue={false}
-                  height={50}
-                  width={1.5}
-                />
-              </div>
-            </Col>
-          </Row>
-          <Row className="bringProductRow">
-            <Col xs={8}></Col>
-            <Col
-              xs={4}
-              className="bringServiceCode"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Name of service</b></br>Mandatory: Yes</br>Font size: 10/12 bold</br>Description: Grouped according to the service-specific models"
-            >
-              {data.service ? "2W" + data.service : "2W2351"}
+              {data.serviceName ? data.serviceName : "Parcel Connect"}
             </Col>
           </Row>
           <Row>
-            <Col className="bringParties" xs={4}>
-              <div className="bringReturn">
-                <Row>
-                  <div
-                    className="return-label pcLabel"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    data-container=".labelPreview"
-                    title="<b>Header for sender information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
-                  >
-                    Return to:
-                  </div>
-                </Row>
-                <Row>
-                  <div
-                    className="returnName"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    data-container=".labelPreview"
-                    title="<b>Sender's name 1</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's name"
-                  >
-                    Sandy Sender
-                  </div>
-                </Row>
-                <Row>
-                  <div className="senderName2"></div>
-                </Row>
-                <Row>
-                  <div
-                    className="returnAddress1"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    data-container=".labelPreview"
-                    title="<b>Sender's address 1</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's address"
-                  >
-                    Return Street 123
-                  </div>
-                </Row>
-                <Row>
-                  <div className="returnAddress2"></div>
-                </Row>
-                <Row>
-                  <Col
-                    xs={6}
-                    className="returnPostalCode"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    data-container=".labelPreview"
-                    title="<b>Sender's postal code</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's postal code with country code prefix"
-                  >
-                    FI-00230
-                  </Col>
-                  <Col
-                    className="returnPostOffice"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    data-container=".labelPreview"
-                    title="<b>Sender's city</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's city"
-                  >
-                    HELSINKI
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-            <Col className="bringParties" xs={4}>
-              <div className="bringSender">
+            <Col className="parties" xs={9}>
+              <div className="pcSender">
                 <Row>
                   <div
                     className="sender-label freightLabel"
@@ -192,7 +97,7 @@ const BringLabel = ({ data }) => {
                 </Row>
                 <Row>
                   <Col
-                    xs={6}
+                    xs={3}
                     className="senderPostalCode"
                     data-toggle="tooltip"
                     data-placement="top"
@@ -211,22 +116,83 @@ const BringLabel = ({ data }) => {
                     HELSINKI
                   </Col>
                 </Row>
+                <Row>
+                  <div
+                    className="senderContactName"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    data-container=".labelPreview"
+                    title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                  >
+                    Carl Consignor
+                  </div>
+                </Row>
               </div>
             </Col>
-          </Row>
-          <Row className="bringReceiver">
-            <Col xs={9}>
+            <Col xs={3} className="accounts">
               <Row>
-                <Col
-                  className="bringReceiver-label"
+                <Col className="AccountNumber">
+                  <Row>
+                    <div
+                      className="accountNumber pcLabel"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Header for printing date</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for printing date"
+                    >
+                      Account number:
+                    </div>
+                  </Row>
+                  <Row>
+                    <Col
+                      className="senderAccountValue"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                    >
+                      654321
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col
+                      className="senderPhone pcLabel"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                    >
+                      Phone:
+                    </Col>
+                    <Row>
+                      <Col
+                        className="senderPhoneValue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        data-container=".labelPreview"
+                        title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                      >
+                        04012345678
+                      </Col>
+                    </Row>
+                  </Row>
+                  <Row></Row>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row className="pcReceiver">
+            <Col xs={9} className="freightReceiver">
+              <Row>
+                <div
+                  className="receiver-label freightLabel"
                   data-toggle="tooltip"
                   data-placement="top"
                   data-container=".labelPreview"
                   title="<b>Header for recpient information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
                 >
                   To:
-                </Col>
-                <Col className="bringReceiverPhone">+123456789</Col>
+                </div>
               </Row>
               <Row>
                 <div
@@ -285,110 +251,81 @@ const BringLabel = ({ data }) => {
                 </Col>
               </Row>
               <Row>
-                <Col
-                  xs={4}
-                  className="freightReceiverCountry"
+                <div
+                  className="freightReceiverContact"
                   data-toggle="tooltip"
                   data-placement="top"
                   data-container=".labelPreview"
-                  title="<b>Recipient's postal code</b></br>Mandatory: Yes</br>Font size: 10 bold</br>Description: Recipient's postal code or postal code of the pickup point with the country code prefix"
+                  title="<b>Recipient's country</b></br>Mandatory: Yes</br>Font size: 10 bold</br>Description: Recipient's country"
                 >
-                  FINLAND
-                </Col>
+                  Rita Receiver
+                </div>
               </Row>
             </Col>
-            <Col xs={3} className="bringDate">
-              <Row
-                className="bringDateLabel"
-                data-toggle="tooltip"
-                data-placement="top"
-                data-container=".labelPreview"
-                title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-              >
-                Date
-              </Row>
-              <Row
-                className="bringDateValue"
-                data-toggle="tooltip"
-                data-placement="top"
-                data-container=".labelPreview"
-                title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-              >
-                {data.labelData.dateTime
-                  ? data.labelData.dateTime
-                  : "18.3.2021"}
+            <Col xs={3} className="accounts">
+              <Row>
+                <Col className="receiverAccountNumber">
+                  <Row>
+                    <div
+                      className="receiverAccountNumber pcLabel"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Header for printing date</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for printing date"
+                    >
+                      Account number:
+                    </div>
+                  </Row>
+                  <Row>
+                    <Col
+                      className="receiverAccountValue"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                    >
+                      654321
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col
+                      className="pcReceiverPhone pcLabel"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      data-container=".labelPreview"
+                      title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                    >
+                      Phone:
+                    </Col>
+                    <Row>
+                      <Col
+                        className="pcReceiverPhoneValue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        data-container=".labelPreview"
+                        title="<b>Sender's country</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Sender's country"
+                      >
+                        04012345678
+                      </Col>
+                    </Row>
+                  </Row>
+                </Col>
               </Row>
             </Col>
           </Row>
-          <Row className="bringShipmentInformation">
-            <Col xs={8}>
+
+          <Row className="nnd">
+            <Col className="nndLogo">
+              <div className="nndValue">NND</div>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row className="pcShipmentInformation">
+            <Col>
               <Row>
                 <Col
-                  xs={6}
-                  className="bringCustomerNo pcLabel"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  Customer No:
-                </Col>
-                <Col
-                  xs={3}
-                  className="weight pcLabel"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  Weight (kg):
-                </Col>
-                <Col
-                  xs={3}
-                  className="m3 pcLabel"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  m3:
-                </Col>
-              </Row>
-              <Row>
-                <Col
-                  xs={6}
-                  className="pcShipmentIdValue"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  174212345678
-                </Col>
-                <Col
-                  xs={3}
-                  className="pcWeightValue"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  0,31
-                </Col>
-                <Col
-                  xs={3}
-                  className="pcM3Value"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  0,05
-                </Col>
-              </Row>
-              <Row>
-                <Col
-                  xs={6}
+                  xs={5}
                   className="shipmentId pcLabel"
                   data-toggle="tooltip"
                   data-placement="top"
@@ -398,19 +335,7 @@ const BringLabel = ({ data }) => {
                   Shipment No:
                 </Col>
                 <Col
-                  xs={6}
-                  className="bringColli pcLabel"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  Package:
-                </Col>
-              </Row>
-              <Row>
-                <Col
-                  xs={6}
+                  xs={7}
                   className="pcShipmentIdValue"
                   data-toggle="tooltip"
                   data-placement="top"
@@ -419,179 +344,176 @@ const BringLabel = ({ data }) => {
                 >
                   174212345678
                 </Col>
+              </Row>
+              <Row>
                 <Col
-                  xs={6}
-                  className="bringColliValue"
+                  xs={5}
+                  className="dateLabel pcLabel"
                   data-toggle="tooltip"
                   data-placement="top"
                   data-container=".labelPreview"
                   title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
                 >
-                  1 / 1
+                  Date:
+                </Col>
+                <Col
+                  xs={7}
+                  className="dateValue"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                >
+                  {data.labelData.dateTime
+                    ? data.labelData.dateTime
+                    : "18.3.2021"}
+                </Col>
+              </Row>
+              <Row>
+                <Col
+                  xs={5}
+                  className="senderReferenceLabel pcLabel"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                >
+                  Senders Ref:
+                </Col>
+                <Col
+                  xs={7}
+                  className="senderReferenceValue"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                ></Col>
+              </Row>
+              <Row>
+                <Col
+                  xs={5}
+                  className="receiverReferenceLabel pcLabel"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                >
+                  Receivers Ref:
+                </Col>
+                <Col
+                  xs={7}
+                  className="receiverReferenceValue"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                ></Col>
+              </Row>
+              <Row>
+                <Col
+                  xs={5}
+                  className="weight pcLabel"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                >
+                  Weight (kg):
+                </Col>
+                <Col
+                  xs={7}
+                  className="pcWeightValue"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  data-container=".labelPreview"
+                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                >
+                  0,31
                 </Col>
               </Row>
             </Col>
-            <Col xs={4} className="bringRecipient">
-              <Col
-                xs={3}
-                className="bringRecipientLabel pcLabel"
+            <Col className="pcColliValue">2/2</Col>
+          </Row>
+          <Row className="pcTransportInstructions">
+            <Col xs={3}>
+              <div
+                className="pcTransportInstructionsLabel freightLabel"
                 data-toggle="tooltip"
                 data-placement="top"
                 data-container=".labelPreview"
                 title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
               >
-                Recipient:
-              </Col>
-              <Row>
-                <div
-                  className="bringRecipientName"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's name 1</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Recipient's name"
-                >
-                  Ricky Receiver
-                </div>
-              </Row>
-              <Row>
-                <div
-                  className="bringRecipientName2"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's name 2</b></br>Mandatory: When delivery to a pickup point is chosen</br>Font size: 8</br>Description: Care Of name of the pickup point"
-                ></div>
-              </Row>
-              <Row>
-                <div
-                  className="bringRecipientAddress1"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's address 1</b></br>Mandatory: Yes</br>Font size: 8</br>Description: Recipient's home address or address the pickup point"
-                >
-                  Postintaival 7
-                </div>
-              </Row>
-              <Row>
-                <div className="bringRecipientAddress2"></div>
-              </Row>
-              <Row>
-                <Col
-                  xs={6}
-                  className="bringRecipientPostalCode"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's postal code</b></br>Mandatory: Yes</br>Font size: 10 bold</br>Description: Recipient's postal code or postal code of the pickup point with the country code prefix"
-                >
-                  FI-00230
-                </Col>
-                <Col
-                  xs={6}
-                  className="bringRecipientPostOffice"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's city</b></br>Mandatory: Yes</br>Font size: 10 bold</br>Description: Recipient's city"
-                >
-                  HELSINKI
-                </Col>
-              </Row>
-              <Row>
-                <Col
-                  xs={4}
-                  className="bringRecipientCountry"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Recipient's postal code</b></br>Mandatory: Yes</br>Font size: 10 bold</br>Description: Recipient's postal code or postal code of the pickup point with the country code prefix"
-                >
-                  FINLAND
-                </Col>
-              </Row>
+                Delivery instr:
+              </div>
             </Col>
-          </Row>
-          <Row className="bringAddons">
-            <Row>
+            <Col xs={7}>
               <div
-                className="bringAddonsLabel"
+                className="pcTransportInstructionsValue"
                 data-toggle="tooltip"
                 data-placement="top"
                 data-container=".labelPreview"
                 title="<b>Additional information</b></br>Mandatory: Yes</br>Font size: 12 Bold</br>Description: The name of the additional service is printed in the data field in large bold letters. If no additional services have been selected, you can print the destination postal code barcode in the data field (except when EDI is used). Otherwise, you can print transport instructions or free-form text in the space."
               >
-                Services:
+                Please, be careful as always, thank you!
               </div>
-            </Row>
-            <Row>
-              <div
-                className="bringAddonsValue"
-                data-toggle="tooltip"
-                data-placement="top"
-                data-container=".labelPreview"
-                title="<b>Additional information</b></br>Mandatory: Yes</br>Font size: 12 Bold</br>Description: The name of the additional service is printed in the data field in large bold letters. If no additional services have been selected, you can print the destination postal code barcode in the data field (except when EDI is used). Otherwise, you can print transport instructions or free-form text in the space."
-              >
-                0011 Pickup Locker
-              </div>
-            </Row>
-          </Row>
-          <Row className="bringProductInformation">
-            <Col xs={2} className="bringLogo">
-              <Row className="bringLogoIcon">
-                <BringLogoIcon />
-              </Row>
-              <Row className="bringLogoText">bring</Row>
             </Col>
-            <Col xs={8}>
-              <Row>
-                <div
-                  className="bringProductName"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  Product:
-                </div>
-              </Row>
-              <Row>
-                <div
-                  className="bringServiceName"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  {data.serviceName ? data.serviceName : "PickUp Parcel"}
-                </div>
-              </Row>
-              <Row>
-                <div
-                  className="bringProductId"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  Product-ID:
-                </div>
-              </Row>
-              <Row>
-                <div
-                  className="bringServiceName"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
-                >
-                  {data.serviceName ? data.serviceName : "0340"}
-                </div>
-              </Row>
-            </Col>
-            <Col className="visualGuide">Ø</Col>
           </Row>
-          <Row className="bringTrackingBarcodeArea">
+          <Row className="disclaimer">
+            <div
+              className="disclaimerValue"
+              data-toggle="tooltip"
+              data-placement="top"
+              data-container=".labelPreview"
+              title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+            >
+              We are working exclusively on basis of our GTB in force and CMR
+            </div>
+          </Row>
+          <Row>
+            <div
+              className="customerInformation freightLabel"
+              data-toggle="tooltip"
+              data-placement="top"
+              data-container=".labelPreview"
+              title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+            >
+              Customer information:
+            </div>
+          </Row>
+          <Row>
+            <div
+              className="customerInformationValue"
+              data-toggle="tooltip"
+              data-placement="top"
+              data-container=".labelPreview"
+              title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+            >
+              Example information
+            </div>
+          </Row>
+          <Row>
+            <div
+              className="pcRoutingBarcode"
+              data-toggle="tooltip"
+              data-placement="top"
+              data-container=".labelPreview"
+              title="<b>Delivery ID as a barcode</b></br>Mandatory: Yes</br>Bar code type: Licence Plate code 128 a, b and c</br>The first 5 characters shall produced in type a or b and the remaining 16 even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code.</br>X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)</br>The minimum resolution in thermal transfer printer is 200 dots / inch.</br>The minimum resolution in laser reproduction is 600 dots / inch.</br>Free space at both sides of the bar code must be at least 5 mm</br>Minimum height is 25 mm</br>Use block capitals in bar codes"
+            >
+              <Barcode value="2LFI00230+7200000" displayValue={false} />
+            </div>
+          </Row>
+          <Row>
+            <div
+              className="pcRoutingBarcodeValue"
+              data-toggle="tooltip"
+              data-placement="top"
+              data-container=".labelPreview"
+              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+            >
+              (2L)FI00230+7200000
+            </div>
+          </Row>
+          <Row>
             <div
               className="pcTrackingBarcode"
               data-toggle="tooltip"
@@ -604,7 +526,7 @@ const BringLabel = ({ data }) => {
           </Row>
           <Row>
             <div
-              className="bringTrackingBarcodeValue"
+              className="pcTrackingBarcodeValue"
               data-toggle="tooltip"
               data-placement="top"
               data-container=".labelPreview"
@@ -613,21 +535,10 @@ const BringLabel = ({ data }) => {
               (00) 364300421903882843
             </div>
           </Row>
-          <Row>
-            <div
-              className="bringPostiGreen"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
-            >
-              Posti Green - Climate friendly delivery
-            </div>
-          </Row>
         </div>
       </div>
     </>
   );
 };
 
-export default BringLabel;
+export default ParcelConnectLabel;

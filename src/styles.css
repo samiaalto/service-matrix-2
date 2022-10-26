@@ -135,7 +135,7 @@ input[type="checkbox"].form-check-input:checked:focus {
   text-align: left;
 }
 .lp-copy-sel__value-container {
-  min-height: 35px;
+  min-height: 47px !important;
 }
 
 .lp-copy-sel__control {

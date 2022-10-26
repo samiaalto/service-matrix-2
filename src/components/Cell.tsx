@@ -3,15 +3,7 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 
-const CellComponent = ({
-  value,
-  rowIndex,
-  onClick,
-  selected,
-  columnId,
-  width,
-  t,
-}) => {
+const CellComponent = ({ value, rowIndex, onClick, columnId, t }) => {
   //console.log("render", columnId);
   const onCellClick = useCallback(() => {
     onClick(rowIndex, columnId, value);
@@ -31,12 +23,12 @@ const CellComponent = ({
             </Tooltip>
           }
         >
-          <td className="service" style={{ width }} onClick={onCellClick}>
+          <td className="service" onClick={onCellClick}>
             {t(value)}
           </td>
         </OverlayTrigger>
       ) : columnId === "serviceCode" ? (
-        <td className="serviceCode" style={{ width }} onClick={onCellClick}>
+        <td className="serviceCode" onClick={onCellClick}>
           {value}
         </td>
       ) : columnId === "serviceButton" ? (
@@ -79,4 +71,5 @@ const CellComponent = ({
   );
 };
 
+//export const Cell = CellComponent;
 export const Cell = memo(CellComponent);

@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams, Route, Routes, Navigate } from "react-router-dom";
 import { Container, Row, Col, Form } from "react-bootstrap";
-
+import FileFormats from "./components/FileFormats";
 import Select from "./components/MultiSelect";
 import populateMultiSelect from "./components/PopulateMultiSelect";
 import Dropdown from "./components/Dropdown";
@@ -27,6 +27,7 @@ import mapFfRows from "./components/MapFFRows";
 import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
 import TanStackTable from "./components/TanStackTable";
+import PopulateSelect from "./components/populateSelect";
 
 /* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
@@ -49,6 +50,7 @@ const App = (props: AppProps) => {
     { label: "Service", options: [] },
     { label: "Additional Service", options: [] },
   ]);
+  const [selectData, setSelectData] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
   const [columnVisibility, setColumnVisibility] = useState({});
   const [updateRows, setupdateRows] = useState([]);
@@ -94,40 +96,55 @@ const App = (props: AppProps) => {
   const [ffRowData, setFfRowData] = useState([]);
   const [ffColumnData, setFfColumnData] = useState([
     {
-      Header: "Format",
-      accessor: "format",
-      show: false,
+      id: "format",
+      header: () => <span>{t("Format")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "format",
+      enableGlobalFilter: false,
     },
     {
-      Header: "'Attribute Name'",
-      accessor: "attribute",
-      show: true,
-    },
-    {
-      Header: "'M/O/C'",
-      accessor: "moc",
-      show: true,
-    },
-    {
-      Header: "Repeat",
-      accessor: "repeat",
-      show: true,
-    },
+      id: "attribute",
+      header: () => <span>{t("'Attribute Name'")}</span>,
 
-    {
-      Header: "Position",
-      accessor: "position",
-      show: true,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "attribute",
+      enableGlobalFilter: false,
     },
     {
-      Header: "Type",
-      accessor: "type",
-      show: true,
+      id: "moc",
+      header: () => <span>{t("'M/O/C'")}</span>,
+
+      cell: (info: any) => info.getValue(),
+      accessorKey: "moc",
+      enableGlobalFilter: false,
     },
     {
-      Header: "Description",
-      accessor: "description",
-      show: true,
+      id: "repeat",
+      header: () => <span>{t("Repeat")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "repeat",
+      enableGlobalFilter: false,
+    },
+    {
+      id: "position",
+      header: () => <span>{t("Position")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "position",
+      enableGlobalFilter: false,
+    },
+    {
+      id: "type",
+      header: () => <span>{t("Type")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "type",
+      enableGlobalFilter: false,
+    },
+    {
+      id: "description",
+      header: () => <span>{t("Description")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "description",
+      enableGlobalFilter: true,
     },
   ]);
 
@@ -502,6 +519,7 @@ const App = (props: AppProps) => {
   useEffect(() => {
     console.log(ffRowData);
     populateDropdown(ffRowData);
+    PopulateSelect(ffRowData, setSelectData);
   }, [ffRowData]);
 
   useEffect(() => {
@@ -1141,7 +1159,22 @@ const App = (props: AppProps) => {
               </>
             }
           />
-
+          <Route
+            path="/FileFormats"
+            element={
+              <FileFormats
+                t={t}
+                selected={selected}
+                setSelected={setSelected}
+                formats={selectData}
+                ffColumnData={ffColumnData}
+                setFfColumnData={setFfColumnData}
+                ffRowData={ffRowData}
+                updateSearchParams={updateSearchParams}
+                fileFormats={data.fileFormats}
+              />
+            }
+          />
           <Route path="*" element={<Navigate to="/ServiceMatrix" replace />} />
         </Routes>
       </Container>
