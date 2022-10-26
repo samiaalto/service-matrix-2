@@ -195,7 +195,7 @@ function loadLanguages(language) {
       result[record.Name + "_desc"] = record.DescriptionFI;
     }
   }
-  console.log(result);
+  //console.log(result);
   return result;
 }
 
