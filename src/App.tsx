@@ -6,7 +6,6 @@ import servicesJSON from "./services.json";
 import labelInstructionsJSON from "./labelInstructions.json";
 import countriesJSON from "./countries.json";
 import fileFormatsJSON from "./fileFormats.json";
-
 import React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -15,7 +14,6 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import FileFormats from "./components/FileFormats";
 import Select from "./components/MultiSelect";
 import populateMultiSelect from "./components/PopulateMultiSelect";
-import Dropdown from "./components/Dropdown";
 import Button from "./components/Button";
 import Modal from "./components/Modal";
 import OffCanvas from "./components/OffCanvas";
