@@ -57,7 +57,9 @@ const SampleCodeView = ({ data }) => {
   return (
     <>
       <div className="codePreview">
-        <pre className="code">{data}</pre>
+        <pre className="code">
+          {Object.entries(data).length > 0 ? data : ""}
+        </pre>
       </div>
     </>
   );
