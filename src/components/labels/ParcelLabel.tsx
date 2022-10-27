@@ -615,9 +615,9 @@ const ParcelLabel = ({ data }) => {
                 </div>
               </Row>
               <Row>
-                {addonboxes.map((addon) => (
-                  <Col className="addonbox" key={"addonbox_" + addon.id}>
-                    <div className="addonValue" key={"addonvalue_" + addon.id}>
+                {addonboxes.map((addon, i) => (
+                  <Col className={"addonbox " + i} key={"addonbox_" + i}>
+                    <div className={"addonValue " + i} key={"addonvalue_" + i}>
                       {addon.marking}
                     </div>
                   </Col>
@@ -738,7 +738,7 @@ const ParcelLabel = ({ data }) => {
                 >
                   {data.labelData.addons
                     ? data.labelData.addons.map((addon, i) => (
-                        <div key={"addon_" + addon.id}>
+                        <div key={"addon_" + i}>
                           {addon.labelName.toUpperCase()}
                         </div>
                       ))

@@ -285,6 +285,7 @@ const App = (props: AppProps) => {
       return columns.push({
         id: record.ServiceCode,
         header: () => <div>{t(record.ServiceCode)}</div>,
+
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -734,7 +735,6 @@ const App = (props: AppProps) => {
             routes.push(route);
           }
           for (const field of record.Fields) {
-            
             if (field.MessageFormat.substring(0, 6) === "POSTRA") {
               messageFormat = "POSTRA";
             } else {

@@ -453,7 +453,7 @@
           "AdditionalInfo": "Package record",
           "Sample": "2101",
           "Mandatory": true,
-          "MessagePosition": null,
+          "MessagePosition": "GoodsItem",
           "PropertyName": "ServiceCode",
           "PropertyValue": "2101"
         },

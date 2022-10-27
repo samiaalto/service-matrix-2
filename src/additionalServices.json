@@ -95,7 +95,7 @@
           "Sample": "3101",
           "Mandatory": true,
           "MessagePosition": "AdditionalServices",
-          "PropertyName": "AdditionalService",
+          "PropertyName": "AdditionalServices",
           "PropertyValue": "3101"
         },
         {
@@ -265,7 +265,7 @@
           "AdditionalInfo": null,
           "Sample": "3103",
           "Mandatory": true,
-          "MessagePosition": null,
+          "MessagePosition": "AdditionalServices",
           "PropertyName": "AdditionalServices",
           "PropertyValue": "3103"
         },
@@ -977,7 +977,7 @@
           "AdditionalInfo": "Package record",
           "Sample": "00000234",
           "Mandatory": true,
-          "MessagePosition": null,
+          "MessagePosition": "DangerousGoodsItem",
           "PropertyName": "LimitedQuantityWeight",
           "PropertyValue": "00000234"
         },
