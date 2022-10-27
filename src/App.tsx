@@ -33,7 +33,7 @@ import mapFfRows from "./components/MapFFRows";
 import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
 import TanStackTable from "./components/TanStackTable";
-import PopulateSelect from "./components/populateSelect";
+import populateSelect from "./components/PopulateSelect";
 
 /* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
@@ -499,7 +499,7 @@ const App = (props: AppProps) => {
   }, [data, dataLoaded]);
 
   useEffect(() => {
-    PopulateSelect(ffRowData, setSelectData);
+    populateSelect(ffRowData, setSelectData);
   }, [ffRowData]);
 
   useEffect(() => {
@@ -566,8 +566,9 @@ const App = (props: AppProps) => {
       const URLparams = Object.fromEntries([...params]);
       let alertArray = [];
       let addonArray = [];
+      let selectedAddons = [];
       let serviceAddons = [];
-      let serviceIndex;
+      let serviceIndex = -1;
       let lang = "en";
       let languages = ["en", "fi"];
 
@@ -634,16 +635,24 @@ const App = (props: AppProps) => {
       }
 
       let update = [];
-      if (serviceIndex) {
+      if (serviceIndex > -1) {
         for (let addon of addonArray) {
           //updateRowData(serviceIndex, addon, true);
           if (!alertArray.some((e) => e.value === addon)) {
             update.push({ row: serviceIndex, column: addon, value: true });
+            selectedAddons.push(addon);
             disableExcluded(serviceIndex, addon, true);
           }
         }
       }
       setTimeout(() => {
+        if (getBool(URLparams.modalOpen) === true) {
+          callModal(
+            data.services["records"][serviceIndex].ServiceCode,
+            data.services,
+            data.additionalServices
+          );
+        }
         setupdateRows(update);
       }, 500);
 
@@ -654,7 +663,7 @@ const App = (props: AppProps) => {
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
         service: URLparams.service,
-        addons: addonArray,
+        addons: selectedAddons,
         departure: URLparams.departure,
         destination: URLparams.destination,
         filter: URLparams.filter,
@@ -725,7 +734,7 @@ const App = (props: AppProps) => {
             routes.push(route);
           }
           for (const field of record.Fields) {
-            console.log(field.MessageFormat.substring(0, 6));
+            
             if (field.MessageFormat.substring(0, 6) === "POSTRA") {
               messageFormat = "POSTRA";
             } else {
