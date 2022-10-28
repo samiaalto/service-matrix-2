@@ -486,11 +486,7 @@ const App = (props: AppProps) => {
 
   useEffect(() => {
     getData();
-    console.log(window.location.hash);
-    if (window.location.hash.length > 1) {
-      const path = "/service-matrix-2/" + window.location.hash.replace("#", "");
-      console.log(path);
-    }
+    console.log(window.location.search);
   }, []);
 
   useEffect(() => {
