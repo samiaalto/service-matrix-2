@@ -869,7 +869,7 @@ const MessageGenerator = (
         } else if (record.MessageFormat === "TXT") {
           let obj = record.Records[i];
           let splitPath = obj.Path.split(".");
-          let parent;
+          let parent = "";
           for (let j = splitPath.length - 3; j >= 0; j--) {
             if (splitPath[j] !== "0") {
               parent = splitPath[j];
@@ -902,10 +902,7 @@ const MessageGenerator = (
                   let addons = "";
                   addonsCheck = true;
                   for (const p of serviceProps) {
-                    if (
-                      p.property === "AdditionalServices" &&
-                      p.position === parent
-                    ) {
+                    if (p.property === "AdditionalServices") {
                       addons += p.value;
                     }
                   }
@@ -913,7 +910,6 @@ const MessageGenerator = (
                 } else if (prop.property !== "AdditionalServices") {
                   value = prop.value;
                 }
-                console.log(value);
                 if (value !== "") {
                   let calcLength = obj.Length - value.length;
                   if (calcLength > 1) {
@@ -960,8 +956,19 @@ const MessageGenerator = (
               } else {
                 outTXT += "\n" + value;
               }
+            } else if (
+              (parent === "DangerousGoodsItem" && !mandatoryOnly) ||
+              (parent === "CustomsDetail" && !mandatoryOnly) ||
+              (parent === "Party" &&
+                obj.ExampleValue === "PY" &&
+                !mandatoryOnly)
+            ) {
+              outTXT += "TESTI";
             } else if (obj.Name === "RowCount") {
-              let count = outTXT.split(/\n/).length;
+              let newOutTXT = outTXT.split(/\n/);
+              newOutTXT = newOutTXT.filter((v) => !v.includes("TESTI"));
+              let count = newOutTXT.length;
+              outTXT = newOutTXT.join("\n");
               outTXT +=
                 "0".repeat(obj.Length - count.toString().length) + count;
             } else {

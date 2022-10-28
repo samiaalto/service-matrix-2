@@ -188,8 +188,8 @@ function TanStackTable({
     if (columnId === "serviceName") {
       openModal(value);
     } else if (columnId === "serviceButton") {
-      serviceSelection(rowIndex, !value);
-    } else {
+      serviceSelection(rowIndex, !value, table.getFilteredRowModel());
+    } else if (columnId !== "serviceCode") {
       table.options.meta?.updateData(rowIndex, columnId, !value);
       table.options.meta?.selection(rowIndex, columnId, !value);
     }

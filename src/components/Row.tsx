@@ -36,6 +36,7 @@ const RowComponent = ({ row, onCellClick, t }) => {
             key={cell.id}
             value={cell.getValue()}
             rowIndex={cell.row.index}
+            service={cell.row}
             onClick={handleClick}
             columnId={cell.column.id}
           />

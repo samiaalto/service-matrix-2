@@ -18,7 +18,7 @@ const MapRows = (
     serviceGroup: [],
     keyWords: "keywords",
     departureCountries: " ",
-    destinationCountries: " "
+    destinationCountries: " ",
   };
   for (let record of services.records) {
     let service = {};
@@ -117,7 +117,7 @@ const MapRows = (
   //allAddons['serviceGroup'] = serviceGroups;
   //let out = (...allAddons ...rows)
   //rows = [allAddons, ...rows];
-  console.log(rows);
+  //console.log(rows);
   return setRowData(rows);
 };
 

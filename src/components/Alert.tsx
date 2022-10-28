@@ -1,7 +1,6 @@
 import { Toast, ToastContainer } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import AlertIcon from "./icons/Alert.svg";
-import SvgIcon from "./SvgIcon";
+import { ReactComponent as AlertIcon } from "./icons/Alert.svg";
 import "./styles/Alert_styles.css";
 
 const Alert = ({ data, t }) => {
@@ -33,6 +32,11 @@ const Alert = ({ data, t }) => {
               autohide
             >
               <Toast.Header>
+                <AlertIcon
+                  key={"alert_" + i}
+                  className="Alerticon"
+                  title="AlertIcon"
+                />
                 <strong className="me-auto">
                   {item.title ? t(item.title) : t("Error")}
                 </strong>

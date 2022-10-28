@@ -32,6 +32,7 @@ let en = {
   "'Pickup point chosen by the recipient'":
     "Pickup point chosen by the recipient",
   "'Pickup order'": "Pickup order",
+  samples_tooltip: "Show sample messages and labels",
   HomeDelivery: "Delivered home",
   BusinessDelivery: "Delivered to business",
   Pickup: "Delivered to a pickup point",
@@ -90,6 +91,7 @@ let fi = {
   "'Pickup point chosen by the recipient'":
     "Vastaanottajan valitsema noutopiste",
   "'Pickup order'": "Noutotilaus",
+  samples_tooltip: "Näytä mallisanomat ja osoitekorttimalli",
   HomeDelivery: "Kotiin toimitettava lähetys",
   BusinessDelivery: "Yritykseen toimitettava lähetys",
   BusinessDelivery_desc: "Toimitetaan yritykseen arkipäivinä klo 16 mennessä",
@@ -195,7 +197,7 @@ function loadLanguages(language) {
       result[record.Name + "_desc"] = record.DescriptionFI;
     }
   }
-  console.log(result);
+  //console.log(result);
   return result;
 }
 

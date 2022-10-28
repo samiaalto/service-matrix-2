@@ -24,6 +24,11 @@ const select = ({ onChange, data, t }) => {
     menu: (styles) => ({
       ...styles,
       borderRadius: "16px",
+      zIndex: 9999,
+    }),
+    singleValue: (styles) => ({
+      ...styles,
+      fontWeight: 700,
     }),
     option: (provided, state) => ({
       ...provided,
@@ -33,14 +38,6 @@ const select = ({ onChange, data, t }) => {
       "&:hover": {
         backgroundColor: "#e0e0e0",
       },
-    }),
-    groupHeading: (provided, state) => ({
-      ...provided,
-      borderBottom: "2px solid #e0e0e0",
-      backgroundColor: "#fff",
-      color: "#000",
-      textAlign: "left",
-      fontWeight: 700,
     }),
     control: (provided: Record<string, unknown>, state: any) => ({
       ...provided,

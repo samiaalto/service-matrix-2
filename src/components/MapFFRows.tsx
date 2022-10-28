@@ -73,7 +73,7 @@ const MapFFRows = (fileFormats, setFfRowData) => {
     }
     index++;
   }
-  console.log(rows);
+
   return setFfRowData(rows);
 };
 
