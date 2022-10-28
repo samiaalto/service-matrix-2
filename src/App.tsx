@@ -485,8 +485,11 @@ const App = (props: AppProps) => {
   };
 
   useEffect(() => {
+    if (window.location.hash.length > 1) {
+      console.log("TÄÄLLÄ");
+      const path = window.location.hash.replace("#", "");
+    }
     getData();
-    console.log(window.location.search);
   }, []);
 
   useEffect(() => {
@@ -1138,10 +1141,6 @@ const App = (props: AppProps) => {
                 fileFormats={data.fileFormats}
               />
             }
-          />
-          <Route
-            path="*"
-            element={<Navigate to="/service-matrix-2/ServiceMatrix" replace />}
           />
         </Routes>
       </Container>
