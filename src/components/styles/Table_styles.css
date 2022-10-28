@@ -2,7 +2,6 @@ table {
   font-size: 13px;
 }
 
-/*
 thead {
   background: white;
   margin: 0;
@@ -10,21 +9,60 @@ thead {
   top: 0;
   z-index: 1;
 }
-*/
+
+thead:first-child {
+  left: 0;
+  z-index: 100;
+}
+
+.serviceMatrix-table .service,
+.serviceMatrix-table .serviceHeader,
+.serviceMatrix-table th.headerTitleEmpty:nth-of-type(1) {
+  background: white;
+  margin: 0;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.serviceMatrix-table td.serviceButton,
+.serviceMatrix-table td.code:nth-of-type(2),
+.serviceMatrix-table th.headerTitleEmpty:nth-of-type(2) {
+  background: white;
+  margin: 0;
+  position: sticky;
+  left: 300px;
+  z-index: 1;
+}
+
+.serviceMatrix-table td.serviceCode,
+.serviceMatrix-table td.code:nth-of-type(3),
+.serviceMatrix-table th.headerTitleEmpty:nth-of-type(3) {
+  background: white;
+  margin: 0;
+  position: sticky;
+  left: 339px;
+  z-index: 1;
+}
 
 .serviceMatrix-table th.headerTitle {
-  height: 270px; /* header height */
+  height: 250px; /* header height */
   white-space: nowrap;
   font-weight: 700;
-  width: 35px !important;
+  width: 39px !important;
   cursor: pointer;
   opacity: 1;
 }
 
 .serviceMatrix-table th.headerTitle > div {
-  transform: translate(17px, 130px) rotate(270deg) !important;
-  /* rotate(315deg); for diagnol */
-  width: 0px !important;
+  /* transform: translate(17px, 130px) rotate(270deg) !important;
+  */
+  transform: translate(0px, 110px) rotate(270deg) !important;
+  width: 39px !important;
+}
+
+.serviceMatrix-table th.headerTitle > div > span {
+  padding: 10px 10px;
 }
 
 .serviceMatrix-table .service {
@@ -53,6 +91,14 @@ thead {
   border: 0;
 }
 
+.serviceMatrix-table td.serviceButton:hover {
+  background-color: #394b58;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
 .serviceMatrix-table td.code {
   border: 0;
   font-weight: 700;
@@ -63,6 +109,7 @@ thead {
   border-bottom: 0;
   border-top: 0;
   text-align: center;
+  pointer-events: none;
 }
 
 .serviceMatrix-table td.addonCode {
@@ -75,6 +122,14 @@ thead {
 
 .serviceMatrix-table tr {
   max-height: 39px !important;
+}
+
+.serviceMatrix-table td.selected {
+  background-color: #394b58;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
 }
 
 .serviceMatrix-table td {
@@ -96,6 +151,49 @@ thead {
   cursor: default !important;
 }
 
+.serviceMatrix-table tbody td:hover {
+  background-color: #394b58;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.serviceMatrix-table thead th:hover {
+  background-color: #394b58;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.serviceMatrix-table tbody td:hover::before {
+  background-color: rgba(57, 75, 88, 0.2);
+  content: "\00a0";
+  height: 100%;
+  /*left: -5000px;
+  left:90px;*/
+  right: 0px;
+  position: absolute;
+  top: 0;
+  width: 10000px;
+  z-index: -1;
+}
+
+.serviceMatrix-table tbody td:hover::after {
+  background-color: rgba(57, 75, 88, 0.2);
+  content: "\00a0";
+  height: 10000px;
+  left: 0;
+  position: absolute;
+  /*top: -5000px;
+  top:0;*/
+  bottom: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
+/*
 .serviceMatrix-table th:hover {
   background-color: #394b58;
   color: #fff;
@@ -122,18 +220,7 @@ thead {
   background-color: #394b58;
 }
 
-.serviceMatrix-table td,
-.serviceMatrix-table th,
-.serviceMatrix-table .row,
-.serviceMatrix-table .col {
-  cursor: pointer;
-  position: relative;
-}
 
-.serviceMatrix-table th.headerTitleEmpty {
-  background-color: #fff;
-  pointer-events: none;
-}
 
 .serviceMatrix-table td:hover::before,
 .serviceMatrix-table th:hover::before {
@@ -141,7 +228,7 @@ thead {
   content: "\00a0";
   height: 100%;
   /*left: -5000px;
-  left:90px;*/
+  left:90px;*/ /*
   right: 0px;
   position: absolute;
   top: 0;
@@ -157,10 +244,25 @@ thead {
   left: 0;
   position: absolute;
   /*top: -5000px;
-  top:0;*/
+  top:0;*/ /*
   bottom: 0px;
   width: 100%;
   z-index: -1;
+}
+
+*/
+
+.serviceMatrix-table td,
+.serviceMatrix-table th,
+.serviceMatrix-table .row,
+.serviceMatrix-table .col {
+  cursor: pointer;
+  position: relative;
+}
+
+.serviceMatrix-table th.headerTitleEmpty {
+  background-color: #fff;
+  pointer-events: none;
 }
 
 .unavailable {

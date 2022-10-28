@@ -30,7 +30,7 @@ const PopulateMultiSelect = (
           " " +
           service.records[index].DisplayNameEN +
           " " +
-          service.records[index].DisplayNameFI
+          service.records[index].DisplayNameFI,
       });
     }
 
@@ -42,14 +42,14 @@ const PopulateMultiSelect = (
         addonServices.push({
           value: addon,
           title: addon,
-          subTitle: "",
+          subTitle: "(" + addon + ")",
           optGroup: "Additional Service",
           keyWords:
             addon +
             " " +
             additionalServices.records[index].DisplayNameEN +
             " " +
-            additionalServices.records[index].DisplayNameFI
+            additionalServices.records[index].DisplayNameFI,
         });
       }
     }
@@ -60,7 +60,7 @@ const PopulateMultiSelect = (
         title: "< " + row.original.width + " cm",
         subTitle: "",
         optGroup: "Longest Side",
-        keyWords: row.original.width + " cm"
+        keyWords: row.original.width + " cm",
       });
     }
     if (!weights || !weights.some((x) => x.value === row.original.weight)) {
@@ -69,7 +69,7 @@ const PopulateMultiSelect = (
         title: "< " + row.original.weight + " kg",
         subTitle: "",
         optGroup: "Weight",
-        keyWords: row.original.weight + " kg"
+        keyWords: row.original.weight + " kg",
       });
     }
     if (
@@ -91,7 +91,7 @@ const PopulateMultiSelect = (
         title: row.original.serviceGroup,
         subTitle: row.original.serviceGroup + "_desc",
         optGroup: "Service Group",
-        keyWords: keyWords
+        keyWords: keyWords,
       });
     }
     if (
@@ -117,7 +117,7 @@ const PopulateMultiSelect = (
             title: location,
             subTitle: location + "_desc",
             optGroup: "Delivery Location",
-            keyWords: keyWords
+            keyWords: keyWords,
           });
         }
       }
@@ -145,7 +145,7 @@ const PopulateMultiSelect = (
             " " +
             countries.records[index].DisplayNameEN +
             " " +
-            countries.records[index].DisplayNameFI
+            countries.records[index].DisplayNameFI,
         });
       }
 
@@ -176,7 +176,7 @@ const PopulateMultiSelect = (
                 " " +
                 countries.records[index].DisplayNameEN +
                 " " +
-                countries.records[index].DisplayNameFI
+                countries.records[index].DisplayNameFI,
             });
           }
         } else if (
@@ -195,7 +195,7 @@ const PopulateMultiSelect = (
               " " +
               countries.records[index].DisplayNameEN +
               " " +
-              countries.records[index].DisplayNameFI
+              countries.records[index].DisplayNameFI,
           });
         }
       }
