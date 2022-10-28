@@ -2,10 +2,12 @@ import { useCallback, memo } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
+import emitter from "./Emitter";
 
 const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
   //console.log("render", columnId);
   //let row = service.original;
+
   const onCellClick = useCallback(() => {
     onClick(rowIndex, columnId, value);
   }, [onClick, rowIndex, columnId, value]);

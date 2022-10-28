@@ -42,11 +42,13 @@ body {
 
 .controls .resetButton {
   margin-top: 5px;
+  z-index: 300;
 }
 
 .pickupOptions {
   display: flex;
   left: 0;
+  z-index: 300;
 }
 
 input[type="checkbox"].form-check-input {
@@ -98,8 +100,9 @@ input[type="checkbox"].form-check-input:checked:focus {
 
 .MatrixContainer {
   width: 100%;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 170px);
   overflow: auto;
+  margin-top: -80px;
 }
 
 .FFContainer {

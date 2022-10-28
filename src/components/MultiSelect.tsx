@@ -180,6 +180,7 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
     menu: (styles) => ({
       ...styles,
       borderRadius: "16px",
+      zIndex: 9999,
     }),
     option: (provided, state) => ({
       ...provided,

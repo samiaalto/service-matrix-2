@@ -284,7 +284,11 @@ const App = (props: AppProps) => {
       columnVisibility[record.ServiceCode] = true;
       return columns.push({
         id: record.ServiceCode,
-        header: () => <div>{t(record.ServiceCode)}</div>,
+        header: () => (
+          <div>
+            <span>{t(record.ServiceCode)}</span>
+          </div>
+        ),
 
         columns: [
           {
@@ -860,7 +864,7 @@ const App = (props: AppProps) => {
       <Container fluid>
         <Routes>
           <Route
-            path="/ServiceMatrix"
+            path="/service-matrix-2/ServiceMatrix"
             element={
               <>
                 <OffCanvas
@@ -892,149 +896,99 @@ const App = (props: AppProps) => {
                             w,
                             ls,
                             dl,
-                            s = false;
+                            s = "";
                           let addons = [];
-                          console.log(e);
+                          let updatedSearchParams = new URLSearchParams(
+                            params.toString()
+                          );
                           if (e.length > 0) {
                             for (let item of e) {
                               if (item.optGroup === "Departure Country") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  departure: item.value.substring(
-                                    4,
-                                    item.value.length
-                                  ),
-                                }));
-                                dep = true;
-                                updateSearchParams(
-                                  "departure",
-                                  item.value.substring(4, item.value.length)
+                                dep = item.value.substring(
+                                  4,
+                                  item.value.length
                                 );
                               }
                               if (item.optGroup === "Destination Country") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  destination: item.value.substring(
-                                    4,
-                                    item.value.length
-                                  ),
-                                }));
-                                des = true;
-                                updateSearchParams(
-                                  "destination",
-                                  item.value.substring(4, item.value.length)
+                                des = item.value.substring(
+                                  4,
+                                  item.value.length
                                 );
                               }
                               if (item.optGroup === "Service Group") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  serviceGroup: item.value,
-                                }));
-                                sg = true;
-                                updateSearchParams("serviceGroup", item.value);
+                                sg = item.value;
                               }
                               if (item.optGroup === "Weight") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  weight: item.value,
-                                }));
-                                w = true;
-                                updateSearchParams("weight", item.value);
+                                w = item.value;
                               }
                               if (item.optGroup === "Longest Side") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  width: item.value,
-                                }));
-                                ls = true;
-                                updateSearchParams("width", item.value);
+                                ls = item.value;
                               }
                               if (item.optGroup === "Delivery Location") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  deliveryLocation: item.value,
-                                }));
-                                dl = true;
-                                updateSearchParams(
-                                  "deliveryLocation",
-                                  item.value
-                                );
+                                dl = item.value;
                               }
                               if (item.optGroup === "Service") {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  serviceFilter: item.value,
-                                }));
-                                s = true;
-                                updateSearchParams("serviceFilter", item.value);
+                                s = item.value;
                               }
                               if (item.optGroup === "Additional Service") {
                                 addons.push(item.value);
                               }
                             }
-                            if (addons.length > 0) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                addonsFilter: addons,
-                              }));
-                              updateSearchParams("addonsFilter", addons);
+                            setSelected((prevState) => ({
+                              ...prevState,
+                              departure: dep,
+                              destination: des,
+                              serviceGroup: sg,
+                              weight: w,
+                              width: ls,
+                              deliveryLocation: dl,
+                              serviceFilter: s,
+                              addonsFilter: addons,
+                            }));
+
+                            if (s) {
+                              updatedSearchParams.set("serviceFilter", s);
                             } else {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                addonsFilter: [],
-                              }));
-                              updateSearchParams("addonsFilter", "");
+                              updatedSearchParams.delete("serviceFilter");
                             }
-                            if (!dep) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                departure: "",
-                              }));
-                              updateSearchParams("departure", "");
+                            if (sg) {
+                              updatedSearchParams.set("serviceGroup", sg);
+                            } else {
+                              updatedSearchParams.delete("serviceGroup");
                             }
-                            if (!des) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                destination: "",
-                              }));
-                              updateSearchParams("destination", "");
+                            if (dep) {
+                              updatedSearchParams.set("departure", dep);
+                            } else {
+                              updatedSearchParams.delete("departure");
                             }
-                            if (!sg) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                serviceGroup: "",
-                              }));
-                              updateSearchParams("serviceGroup", "");
+                            if (des) {
+                              updatedSearchParams.set("destination", des);
+                            } else {
+                              updatedSearchParams.delete("destination");
                             }
-                            if (!w) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                weight: "",
-                              }));
-                              updateSearchParams("weight", "");
+                            if (w) {
+                              updatedSearchParams.set("weight", w);
+                            } else {
+                              updatedSearchParams.delete("weight");
                             }
-                            if (!ls) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                width: "",
-                              }));
-                              updateSearchParams("width", "");
+                            if (ls) {
+                              updatedSearchParams.set("width", ls);
+                            } else {
+                              updatedSearchParams.delete("width");
                             }
-                            if (!dl) {
-                              if (!selected.pudo) {
-                                setSelected((prevState) => ({
-                                  ...prevState,
-                                  deliveryLocation: "",
-                                }));
-                                updateSearchParams("deliveryLocation", "");
-                              }
+                            if (dl) {
+                              updatedSearchParams.set("deliveryLocation", dl);
+                            } else {
+                              updatedSearchParams.delete("deliveryLocation");
                             }
-                            if (!s) {
-                              setSelected((prevState) => ({
-                                ...prevState,
-                                service: "",
-                              }));
-                              updateSearchParams("service", "");
+                            if (addons.length > 0) {
+                              let addonstring = addons.join(" ");
+                              updatedSearchParams.set(
+                                "addonsFilter",
+                                addonstring
+                              );
+                            } else {
+                              updatedSearchParams.delete("addonsFilter");
                             }
                           } else {
                             if (!selected.pudo) {
@@ -1061,10 +1015,20 @@ const App = (props: AppProps) => {
                                 addonsFilter: addons,
                               }));
                             }
+
+                            updatedSearchParams.delete("serviceFilter");
+                            updatedSearchParams.delete("departure");
+                            updatedSearchParams.delete("destination");
+                            updatedSearchParams.delete("weight");
+                            updatedSearchParams.delete("width");
+                            updatedSearchParams.delete("deliveryLocation");
+                            updatedSearchParams.delete("addonsFilter");
+                            updatedSearchParams.delete("serviceGroup");
                           }
 
                           if (e.length === multiSelectData.length) {
                           }
+                          setParams(updatedSearchParams.toString());
                         }}
                       />
                     </Col>
@@ -1159,7 +1123,7 @@ const App = (props: AppProps) => {
             }
           />
           <Route
-            path="/FileFormats"
+            path="/service-matrix-2/FileFormats"
             element={
               <FileFormats
                 t={t}
@@ -1174,7 +1138,10 @@ const App = (props: AppProps) => {
               />
             }
           />
-          <Route path="*" element={<Navigate to="/ServiceMatrix" replace />} />
+          <Route
+            path="*"
+            element={<Navigate to="/service-matrix-2/ServiceMatrix" replace />}
+          />
         </Routes>
       </Container>
     </div>
