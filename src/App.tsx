@@ -10,7 +10,7 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useSearchParams, Route, Routes, Navigate } from "react-router-dom";
+import { useSearchParams, Route, Routes, useNavigate } from "react-router-dom";
 import {
   Container,
   Row,
@@ -484,10 +484,11 @@ const App = (props: AppProps) => {
     setDataLoaded(true);
   };
 
+  let navigate = useNavigate();
   useEffect(() => {
     if (window.location.hash.length > 1) {
-      console.log("TÄÄLLÄ");
-      const path = window.location.hash.replace("#", "");
+      const path = "/service-matrix-2" + window.location.hash.replace("#", "");
+      navigate(path, { replace: true });
     }
     getData();
   }, []);
