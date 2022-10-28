@@ -11,7 +11,7 @@ const NavBar = ({
   navDropEn,
   navDropFi,
   selectedLang,
-  value
+  value,
 }) => {
   const handleSelect = (e) => {
     selectedLang(e);
@@ -27,10 +27,18 @@ const NavBar = ({
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav defaultActiveKey="ServiceMatrix" className="me-auto">
-            <Nav.Link as={Link} to="ServiceMatrix" eventKey="ServiceMatrix">
+            <Nav.Link
+              as={Link}
+              to="/service-matrix-2/ServiceMatrix"
+              eventKey="ServiceMatrix"
+            >
               {navMatrix}
             </Nav.Link>
-            <Nav.Link as={Link} to="FileFormats" eventKey="FileFormats">
+            <Nav.Link
+              as={Link}
+              to="/service-matrix-2/FileFormats"
+              eventKey="FileFormats"
+            >
               {navFormat}
             </Nav.Link>
           </Nav>
