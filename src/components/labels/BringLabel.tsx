@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import BringLogoIcon from "../icons/BringLogo.svg";
+import { ReactComponent as BringLogoIcon } from "../icons/BringLogo.svg";
 import "../styles/BringLabel_styles.css";
 
 const BringLabel = ({ data }) => {
@@ -539,7 +539,11 @@ const BringLabel = ({ data }) => {
           <Row className="bringProductInformation">
             <Col xs={2} className="bringLogo">
               <Row className="bringLogoIcon">
-                <BringLogoIcon />
+                <BringLogoIcon
+                  className="bringLogoIcon"
+                  key="bringLogoIcon"
+                  title="bringLogoIcon"
+                />
               </Row>
               <Row className="bringLogoText">bring</Row>
             </Col>
