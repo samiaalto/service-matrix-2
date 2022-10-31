@@ -159,25 +159,25 @@ function loadLanguages(language) {
     }
   }
   for (let record of labelInstructions.records) {
-    if (language === "EN") {
-      result[record.labelType + "_" + record.id + "_name"] = record.nameEN;
-      result[record.labelType + "_" + record.id + "_mandatory"] =
-        record.mandatory;
-      result[record.labelType + "_" + record.id + "_description"] =
-        record.descriptionEN;
-      if (record.fontSize) {
-        result[record.labelType + "_" + record.id + "_fontSize"] =
+    for (let label of record.LabelInstructions) {
+      if (language === "EN") {
+        result[record.labelType + "_" + label.id + "_name"] = label.nameEN;
+        result[record.labelType + "_" + label.id + "_mandatory"] =
+          label.mandatory;
+        result[record.labelType + "_" + label.id + "_description"] =
+          label.descriptionEN;
+        result[record.labelType + "_" + label.id + "_fontSize"] =
+          label.fontSize;
+        result[record.labelType + "_" + label.id + "_bold"] = label.bold;
+      } else {
+        result[record.labelType + "_" + label.id + "_name"] = label.nameFI;
+        result[record.labelType + "_" + label.id + "_mandatory"] =
+          record.mandatory;
+        result[record.labelType + "_" + label.id + "_description"] =
+          record.descriptionFI;
+        result[record.labelType + "_" + label.id + "_fontSize"] =
           record.fontSize;
-      }
-    } else {
-      result[record.labelType + "_" + record.id + "_name"] = record.nameFI;
-      result[record.labelType + "_" + record.id + "_mandatory"] =
-        record.mandatory;
-      result[record.labelType + "_" + record.id + "_description"] =
-        record.descriptionFI;
-      if (record.fontSize) {
-        result[record.labelType + "_" + record.id + "_fontSize"] =
-          record.fontSize;
+        result[record.labelType + "_" + label.id + "_bold"] = label.bold;
       }
     }
   }
