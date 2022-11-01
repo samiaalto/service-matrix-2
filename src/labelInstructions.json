@@ -198,7 +198,7 @@
           "ExpirationDate": null
         },
         {
-          "FieldID": "receiverPostalCode",
+          "FieldID": "receiverPostCode",
           "DisplayNameFI": "Vastaanottajan postinumero",
           "DisplayNameEN": "Receiver's postal code",
           "DescriptionFI": "Vastaanottajan postinumero tai noutopisteen postinumero ",

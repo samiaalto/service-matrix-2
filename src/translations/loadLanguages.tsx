@@ -159,25 +159,29 @@ function loadLanguages(language) {
     }
   }
   for (let record of labelInstructions.records) {
-    for (let label of record.LabelInstructions) {
-      if (language === "EN") {
-        result[record.labelType + "_" + label.id + "_name"] = label.nameEN;
-        result[record.labelType + "_" + label.id + "_mandatory"] =
-          label.mandatory;
-        result[record.labelType + "_" + label.id + "_description"] =
-          label.descriptionEN;
-        result[record.labelType + "_" + label.id + "_fontSize"] =
-          label.fontSize;
-        result[record.labelType + "_" + label.id + "_bold"] = label.bold;
-      } else {
-        result[record.labelType + "_" + label.id + "_name"] = label.nameFI;
-        result[record.labelType + "_" + label.id + "_mandatory"] =
-          record.mandatory;
-        result[record.labelType + "_" + label.id + "_description"] =
-          record.descriptionFI;
-        result[record.labelType + "_" + label.id + "_fontSize"] =
-          record.fontSize;
-        result[record.labelType + "_" + label.id + "_bold"] = label.bold;
+    if (record.LabelInstructions.length > 0) {
+      for (let label of record.LabelInstructions) {
+        if (language === "EN") {
+          result[record.LabelType + "_" + label.FieldID + "_name"] =
+            label.DisplayNameEN;
+          result[record.LabelType + "_" + label.FieldID + "_mandatory"] =
+            label.Mandatory;
+          result[record.LabelType + "_" + label.FieldID + "_description"] =
+            label.DescriptionEN;
+          result[record.LabelType + "_" + label.FieldID + "_fontSize"] =
+            label.FontSize;
+          result[record.LabelType + "_" + label.FieldID + "_bold"] = label.Bold;
+        } else {
+          result[record.LabelType + "_" + label.FieldID + "_name"] =
+            label.DisplayNameFI;
+          result[record.LabelType + "_" + label.FieldID + "_mandatory"] =
+            label.Mandatory;
+          result[record.LabelType + "_" + label.FieldID + "_description"] =
+            label.DescriptionFI;
+          result[record.LabelType + "_" + label.FieldID + "_fontSize"] =
+            label.FontSize;
+          result[record.LabelType + "_" + label.FieldID + "_bold"] = label.Bold;
+        }
       }
     }
   }
@@ -197,7 +201,7 @@ function loadLanguages(language) {
       result[record.Name + "_desc"] = record.DescriptionFI;
     }
   }
-  //console.log(result);
+  console.log(result);
   return result;
 }
 

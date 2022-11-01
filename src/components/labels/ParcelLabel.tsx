@@ -40,8 +40,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_labelLogo_mandatory")}
-                        {t("PARCEL_labelLogo_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_labelLogo_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -97,8 +96,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_serviceName_mandatory")}
-                        {t("PARCEL_serviceName_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_serviceName_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -135,8 +133,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_sender-label_mandatory")}
-                        {t("PARCEL_sender-label_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_sender-label_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -171,8 +168,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderName_mandatory")}
-                        {t("PARCEL_senderName_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderName_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -205,8 +201,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderName2_mandatory")}
-                        {t("PARCEL_senderName2_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderName2_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -239,8 +234,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderAddress1_mandatory")}
-                        {t("PARCEL_senderAddress1_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderAddress1_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -274,8 +268,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderAddress2_mandatory")}
-                        {t("PARCEL_senderAddress2_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderAddress2_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -309,8 +302,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderPostalCode_mandatory")}
-                        {t("PARCEL_senderPostalCode_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderPostalCode_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -344,8 +336,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderPostOffice_mandatory")}
-                        {t("PARCEL_senderPostOffice_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderPostOffice_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -379,8 +370,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_senderCountry_mandatory")}
-                        {t("PARCEL_senderCountry_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_senderCountry_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -416,8 +406,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiver-label_mandatory")}
-                        {t("PARCEL_receiver-label_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiver-label_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -453,8 +442,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverName_mandatory")}
-                        {t("PARCEL_receiverName_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverName_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -491,8 +479,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverName2_mandatory")}
-                        {t("PARCEL_receiverName2_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverName2_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -530,8 +517,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverAddress1_mandatory")}
-                        {t("PARCEL_receiverAddress1_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverAddress1_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -570,8 +556,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverAddress2_mandatory")}
-                        {t("PARCEL_receiverAddress2_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverAddress2_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -609,8 +594,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverPostalCode_mandatory")}
-                        {t("PARCEL_receiverPostalCode_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverPostalCode_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -646,8 +630,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverPostCode_mandatory")}
-                        {t("PARCEL_receiverPostCode_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverPostCode_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -685,8 +668,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverCountry_mandatory")}
-                        {t("PARCEL_receiverCountry_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverCountry_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -727,8 +709,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_processCode_mandatory")}
-                      {t("PARCEL_processCode_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_processCode_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -769,8 +750,7 @@ const ParcelLabel = ({ data }) => {
                         {t("Mandatory") +
                           ": " +
                           t("PARCEL_receiverPhone_mandatory")}
-                        {t("PARCEL_receiverPhone_fontSize").toString() ===
-                        "null" ? (
+                        {!t("PARCEL_receiverPhone_fontSize") ? (
                           ""
                         ) : (
                           <>
@@ -803,7 +783,7 @@ const ParcelLabel = ({ data }) => {
             <Col xs={4} className="product">
               <Row>
                 <OverlayTrigger
-                  placement="top"
+                  placement="bottom"
                   overlay={
                     <Tooltip id="PARCEL_serviceBarcode">
                       <b>{t("PARCEL_serviceBarcode_name")}</b>
@@ -811,8 +791,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_serviceBarcode_mandatory")}
-                      {t("PARCEL_serviceBarcode_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_serviceBarcode_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -852,8 +831,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_serviceCode_mandatory")}
-                      {t("PARCEL_serviceCode_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_serviceCode_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -886,7 +864,7 @@ const ParcelLabel = ({ data }) => {
                       <b>{t("PARCEL_EDISSI_name")}</b>
                       <br />
                       {t("Mandatory") + ": " + t("PARCEL_EDISSI_mandatory")}
-                      {t("PARCEL_EDISSI_fontSize").toString() === "null" ? (
+                      {!t("PARCEL_EDISSI_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -917,8 +895,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_date-label_mandatory")}
-                          {t("PARCEL_date-label_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_date-label_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -951,7 +928,7 @@ const ParcelLabel = ({ data }) => {
                           <b>{t("PARCEL_date_name")}</b>
                           <br />
                           {t("Mandatory") + ": " + t("PARCEL_date_mandatory")}
-                          {t("PARCEL_date_fontSize").toString() === "null" ? (
+                          {!t("PARCEL_date_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -992,8 +969,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_weightValue_mandatory")}
-                          {t("PARCEL_weightValue_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_weightValue_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1027,8 +1003,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_weightlabel_mandatory")}
-                          {t("PARCEL_weightlabel_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_weightlabel_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1066,8 +1041,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_volumeValue_mandatory")}
-                          {t("PARCEL_volumeValue_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_volumeValue_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1101,8 +1075,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_volumelabel_mandatory")}
-                          {t("PARCEL_volumelabel_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_volumelabel_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1142,8 +1115,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_packageCount_mandatory")}
-                          {t("PARCEL_packageCount_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_packageCount_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1179,8 +1151,7 @@ const ParcelLabel = ({ data }) => {
                           {t("Mandatory") +
                             ": " +
                             t("PARCEL_packageCountLabel_mandatory")}
-                          {t("PARCEL_packageCountLabel_fontSize").toString() ===
-                          "null" ? (
+                          {!t("PARCEL_packageCountLabel_fontSize") ? (
                             ""
                           ) : (
                             <>
@@ -1222,8 +1193,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_addon-label_mandatory")}
-                      {t("PARCEL_addon-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_addon-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1269,8 +1239,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_otherPayer-label_mandatory")}
-                      {t("PARCEL_otherPayer-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_otherPayer-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1306,8 +1275,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_otherPayerValue_mandatory")}
-                      {t("PARCEL_otherPayerValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_otherPayerValue_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1345,8 +1313,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_packageCountLabel_mandatory")}
-                      {t("PARCEL_packageCountLabel_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_packageCountLabel_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1380,8 +1347,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_packageCount_mandatory")}
-                      {t("PARCEL_packageCount_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_packageCount_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1423,8 +1389,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codAmount-label_mandatory")}
-                      {t("PARCEL_codAmount-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codAmount-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1458,8 +1423,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codAmountValue_mandatory")}
-                      {t("PARCEL_codAmountValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codAmountValue_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1496,8 +1460,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codIBAN-label_mandatory")}
-                      {t("PARCEL_codIBAN-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codIBAN-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1532,8 +1495,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codIBANValue_mandatory")}
-                      {t("PARCEL_codIBANValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codIBANValue_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1572,8 +1534,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codReference-label_mandatory")}
-                      {t("PARCEL_codReference-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codReference-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1609,8 +1570,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codReferenceValue_mandatory")}
-                      {t("PARCEL_codReferenceValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codReferenceValue_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1650,8 +1610,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codBIC-label_mandatory")}
-                      {t("PARCEL_codBIC-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codBIC-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1684,8 +1643,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_codBICValue_mandatory")}
-                      {t("PARCEL_codBICValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_codBICValue_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1722,8 +1680,7 @@ const ParcelLabel = ({ data }) => {
                   {t("Mandatory") +
                     ": " +
                     t("PARCEL_trackingBarcodeValue_mandatory")}
-                  {t("PARCEL_trackingBarcodeValue_fontSize").toString() ===
-                  "null" ? (
+                  {!t("PARCEL_trackingBarcodeValue_fontSize") ? (
                     ""
                   ) : (
                     <>
@@ -1759,8 +1716,7 @@ const ParcelLabel = ({ data }) => {
                   {t("Mandatory") +
                     ": " +
                     t("PARCEL_trackingBarcode_mandatory")}
-                  {t("PARCEL_trackingBarcode_fontSize").toString() ===
-                  "null" ? (
+                  {!t("PARCEL_trackingBarcode_fontSize") ? (
                     ""
                   ) : (
                     <>
@@ -1795,8 +1751,7 @@ const ParcelLabel = ({ data }) => {
                   {t("Mandatory") +
                     ": " +
                     t("PARCEL_trackingBarcodeValue_mandatory")}
-                  {t("PARCEL_trackingBarcodeValue_fontSize").toString() ===
-                  "null" ? (
+                  {!t("PARCEL_trackingBarcodeValue_fontSize") ? (
                     ""
                   ) : (
                     <>
@@ -1834,8 +1789,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_additionalInfo-label_mandatory")}
-                      {t("PARCEL_additionalInfo-label_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_additionalInfo-label_fontSize") ? (
                         ""
                       ) : (
                         <>
@@ -1871,8 +1825,7 @@ const ParcelLabel = ({ data }) => {
                       {t("Mandatory") +
                         ": " +
                         t("PARCEL_additionalInfoValue_mandatory")}
-                      {t("PARCEL_additionalInfoValue_fontSize").toString() ===
-                      "null" ? (
+                      {!t("PARCEL_additionalInfoValue_fontSize") ? (
                         ""
                       ) : (
                         <>
