@@ -1,8 +1,9 @@
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
-
+import { useTranslation } from "react-i18next";
 import "../styles/ParcelLabel_styles.css";
 
 const ParcelLabel = ({ data }) => {
+  const { t } = useTranslation();
   const Barcode = require("react-barcode");
   const addonboxes = [];
   let addonCount = 0;
@@ -33,14 +34,29 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="labelLogo">
-                        <b>{"Posti logo"}</b>
+                      <Tooltip id="PARCEL_labelLogo">
+                        <b>{t("PARCEL_labelLogo_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_labelLogo_mandatory")}
+                        {!t("PARCEL_labelLogo_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_labelLogo_fontSize")}
+                            {t("PARCEL_labelLogo_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {
-                          "Description: Printed in blue on address cards supplied by Posti. Printed in black (length: 12mm) in the customer's own address card materials, with a free space of 3mm on the left and the upper edge."
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_labelLogo_description")}
                       </Tooltip>
                     }
                   >
@@ -74,16 +90,29 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="serviceName">
-                        <b>{"Name of service"}</b>
+                      <Tooltip id="PARCEL_serviceName">
+                        <b>{t("PARCEL_serviceName_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_serviceName_mandatory")}
+                        {!t("PARCEL_serviceName_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_serviceName_fontSize")}
+                            {t("PARCEL_serviceName_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 10/12 bold"}
-                        <br />
-                        {
-                          "Description: Grouped according to the service-specific models"
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_serviceName_description")}
                       </Tooltip>
                     }
                   >
@@ -98,16 +127,29 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="sender-label">
-                        <b>{"Header for sender information"}</b>
+                      <Tooltip id="PARCEL_sender-label">
+                        <b>{t("PARCEL_sender-label_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_sender-label_mandatory")}
+                        {!t("PARCEL_sender-label_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_sender-label_fontSize")}
+                            {t("PARCEL_sender-label_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 6"}
-                        <br />
-                        {
-                          "Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_sender-label_description")}
                       </Tooltip>
                     }
                   >
@@ -120,14 +162,29 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="senderName">
-                        <b>{"Sender's name 1"}</b>
+                      <Tooltip id="PARCEL_senderName">
+                        <b>{t("PARCEL_senderName_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderName_mandatory")}
+                        {!t("PARCEL_senderName_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderName_fontSize")}
+                            {t("PARCEL_senderName_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's name"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderName_description")}
                       </Tooltip>
                     }
                   >
@@ -135,20 +192,66 @@ const ParcelLabel = ({ data }) => {
                   </OverlayTrigger>
                 </Row>
                 <Row>
-                  <div className="senderName2"></div>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="PARCEL_senderName2">
+                        <b>{t("PARCEL_senderName2_name")}</b>
+                        <br />
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderName2_mandatory")}
+                        {!t("PARCEL_senderName2_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderName2_fontSize")}
+                            {t("PARCEL_senderName2_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
+                        <br />
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderName2_description")}
+                      </Tooltip>
+                    }
+                  >
+                    <div className="senderName2"></div>
+                  </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="senderAddress1">
-                        <b>{"Sender's address 1"}</b>
+                      <Tooltip id="PARCEL_senderAddress1">
+                        <b>{t("PARCEL_senderAddress1_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderAddress1_mandatory")}
+                        {!t("PARCEL_senderAddress1_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderAddress1_fontSize")}
+                            {t("PARCEL_senderAddress1_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's address"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderAddress1_description")}
                       </Tooltip>
                     }
                   >
@@ -156,22 +259,67 @@ const ParcelLabel = ({ data }) => {
                   </OverlayTrigger>
                 </Row>
                 <Row>
-                  <div className="senderAddress2"></div>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="PARCEL_senderAddress2">
+                        <b>{t("PARCEL_senderAddress2_name")}</b>
+                        <br />
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderAddress2_mandatory")}
+                        {!t("PARCEL_senderAddress2_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderAddress2_fontSize")}
+                            {t("PARCEL_senderAddress2_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
+                        <br />
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderAddress2_description")}
+                      </Tooltip>
+                    }
+                  >
+                    <div className="senderAddress2"></div>
+                  </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="senderPostalCode">
-                        <b>{"Sender's postal code"}</b>
+                      <Tooltip id="PARCEL_senderPostalCode">
+                        <b>{t("PARCEL_senderPostalCode_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderPostalCode_mandatory")}
+                        {!t("PARCEL_senderPostalCode_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderPostalCode_fontSize")}
+                            {t("PARCEL_senderPostalCode_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "Description: Sender's postal code with country code prefix"
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderPostalCode_description")}
                       </Tooltip>
                     }
                   >
@@ -182,14 +330,30 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="senderPostOffice">
-                        <b>{"Sender's city"}</b>
+                      <Tooltip id="PARCEL_senderPostOffice">
+                        <b>{t("PARCEL_senderPostOffice_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderPostOffice_mandatory")}
+                        {!t("PARCEL_senderPostOffice_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderPostOffice_fontSize")}
+                            {t("PARCEL_senderPostOffice_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's city"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderPostOffice_description")}
                       </Tooltip>
                     }
                   >
@@ -200,14 +364,30 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="senderCountry">
-                        <b>{"Sender's country"}</b>
+                      <Tooltip id="PARCEL_senderCountry">
+                        <b>{t("PARCEL_senderCountry_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_senderCountry_mandatory")}
+                        {!t("PARCEL_senderCountry_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_senderCountry_fontSize")}
+                            {t("PARCEL_senderCountry_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's country"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_senderCountry_description")}
                       </Tooltip>
                     }
                   >
@@ -220,16 +400,30 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiver-label">
-                        <b>{"Header for recpient information"}</b>
+                      <Tooltip id="PARCEL_receiver-label">
+                        <b>{t("PARCEL_receiver-label_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiver-label_mandatory")}
+                        {!t("PARCEL_receiver-label_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiver-label_fontSize")}
+                            {t("PARCEL_receiver-label_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 6"}
-                        <br />
-                        {
-                          "Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiver-label_description")}
                       </Tooltip>
                     }
                   >
@@ -242,98 +436,225 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverName">
-                        <b>{"Recipient's name 1"}</b>
+                      <Tooltip id="PARCEL_receiverName">
+                        <b>{t("PARCEL_receiverName_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverName_mandatory")}
+                        {!t("PARCEL_receiverName_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverName_fontSize")}
+                            {t("PARCEL_receiverName_bold").toString() === "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Recipient's name"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverName_description")}
                       </Tooltip>
                     }
                   >
-                    <div className="receiverName">Ricky Receiver</div>
+                    <div className="receiverName">
+                      {data.labelData.receiverName
+                        ? data.labelData.receiverName
+                        : "Ricky Receiver"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverName2">
-                        <b>{"Recipient's name 2"}</b>
+                      <Tooltip id="PARCEL_receiverName2">
+                        <b>{t("PARCEL_receiverName2_name")}</b>
                         <br />
-                        {"Mandatory: When delivery to a pickup point is chosen"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverName2_mandatory")}
+                        {!t("PARCEL_receiverName2_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverName2_fontSize")}
+                            {t("PARCEL_receiverName2_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Care Of name of the pickup point"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverName2_description")}
                       </Tooltip>
                     }
                   >
-                    <div className="receiverName2"></div>
+                    <div className="receiverName2">
+                      {data.labelData.receiverName2
+                        ? data.labelData.receiverName2
+                        : ""}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverAddress1">
-                        <b>{"Recipient's address 1"}</b>
+                      <Tooltip id="PARCEL_receiverAddress1">
+                        <b>{t("PARCEL_receiverAddress1_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverAddress1_mandatory")}
+                        {!t("PARCEL_receiverAddress1_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverAddress1_fontSize")}
+                            {t("PARCEL_receiverAddress1_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "Description: Recipient's home address or address the pickup point"
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverAddress1_description")}
                       </Tooltip>
                     }
                   >
-                    <div className="receiverAddress1">Postintaival 7</div>
+                    <div className="receiverAddress1">
+                      {" "}
+                      {data.labelData.receiverAddress1
+                        ? data.labelData.receiverAddress1
+                        : "Postintaival 7"}
+                    </div>
                   </OverlayTrigger>
-                </Row>
-                <Row>
-                  <div className="receiverAddress2"></div>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverPostalCode">
-                        <b>{"Recipient's postal code"}</b>
+                      <Tooltip id="PARCEL_receiverAddress2">
+                        <b>{t("PARCEL_receiverAddress2_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverAddress2_mandatory")}
+                        {!t("PARCEL_receiverAddress2_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverAddress2_fontSize")}
+                            {t("PARCEL_receiverAddress2_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 10 bold"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverAddress2_description")}
+                      </Tooltip>
+                    }
+                  >
+                    <div className="receiverAddress2">
+                      {data.labelData.receiverAddress2
+                        ? data.labelData.receiverAddress2
+                        : ""}
+                    </div>
+                  </OverlayTrigger>
+                </Row>
+                <Row>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={
+                      <Tooltip id="PARCEL_receiverPostalCode">
+                        <b>{t("PARCEL_receiverPostalCode_name")}</b>
                         <br />
-                        {
-                          "Description: Recipient's postal code or postal code of the pickup point with the country code prefix"
-                        }
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverPostalCode_mandatory")}
+                        {!t("PARCEL_receiverPostalCode_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverPostalCode_fontSize")}
+                            {t("PARCEL_receiverPostalCode_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
+                        <br />
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverPostalCode_description")}
                       </Tooltip>
                     }
                   >
                     <Col xs={5} className="receiverPostalCode">
-                      FI-00230
+                      {data.labelData.receiverPostalCode
+                        ? data.labelData.receiverPostalCode
+                        : "FI-00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverPostOffice">
-                        <b>{"Recipient's city"}</b>
+                      <Tooltip id="PARCEL_receiverPostCode">
+                        <b>{t("PARCEL_receiverPostCode_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverPostCode_mandatory")}
+                        {!t("PARCEL_receiverPostCode_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverPostCode_fontSize")}
+                            {t("PARCEL_receiverPostCode_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 10 bold"}
-                        <br />
-                        {"Description: Recipient's city"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverPostCode_description")}
                       </Tooltip>
                     }
                   >
                     <Col xs={6} className="receiverPostOffice">
-                      HELSINKI
+                      {data.labelData.receiverPostOffice
+                        ? data.labelData.receiverPostOffice
+                        : "HELSINKI"}
                     </Col>
                   </OverlayTrigger>
                 </Row>
@@ -341,18 +662,38 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverCountry">
-                        <b>{"Recipient's country"}</b>
+                      <Tooltip id="PARCEL_receiverCountry">
+                        <b>{t("PARCEL_receiverCountry_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverCountry_mandatory")}
+                        {!t("PARCEL_receiverCountry_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverCountry_fontSize")}
+                            {t("PARCEL_receiverCountry_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 10 bold"}
-                        <br />
-                        {"Description: Recipient's country"}
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverCountry_description")}
                       </Tooltip>
                     }
                   >
-                    <div className="receiverCountry">Finland</div>
+                    <div className="receiverCountry">
+                      {data.labelData.receiverCountry
+                        ? data.labelData.receiverCountry
+                        : "Finland"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
               </div>
@@ -362,16 +703,29 @@ const ParcelLabel = ({ data }) => {
                 <OverlayTrigger
                   placement="top"
                   overlay={
-                    <Tooltip id="processCode">
-                      <b>{"The service's process number"}</b>
+                    <Tooltip id="PARCEL_processCode">
+                      <b>{t("PARCEL_processCode_name")}</b>
                       <br />
-                      {"Mandatory: Yes"}
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_processCode_mandatory")}
+                      {!t("PARCEL_processCode_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_processCode_fontSize")}
+                          {t("PARCEL_processCode_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
                       <br />
-                      {"Font size: 20/24 bold"}
-                      <br />
-                      {
-                        "Description: Grouped according to the service-specific models"
-                      }
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_processCode_description")}
                     </Tooltip>
                   }
                 >
@@ -390,21 +744,37 @@ const ParcelLabel = ({ data }) => {
                   <OverlayTrigger
                     placement="top"
                     overlay={
-                      <Tooltip id="receiverPhoneValue">
-                        <b>{"The recipient's mobile phone number"}</b>
+                      <Tooltip id="PARCEL_receiverPhone">
+                        <b>{t("PARCEL_receiverPhone_name")}</b>
                         <br />
-                        {"Mandatory: Yes"}
+                        {t("Mandatory") +
+                          ": " +
+                          t("PARCEL_receiverPhone_mandatory")}
+                        {!t("PARCEL_receiverPhone_fontSize") ? (
+                          ""
+                        ) : (
+                          <>
+                            <br />
+                            {t("Font size") +
+                              ": " +
+                              t("PARCEL_receiverPhone_fontSize")}
+                            {t("PARCEL_receiverPhone_bold").toString() ===
+                            "true"
+                              ? " " + t("bold")
+                              : ""}
+                          </>
+                        )}
                         <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "The recipient's mobile phone number and/or email address has to be given in the EDI message."
-                        }
+                        {t("Description") +
+                          ": " +
+                          t("PARCEL_receiverPhone_description")}
                       </Tooltip>
                     }
                   >
                     <Col xs={5} className="receiverPhoneValue label">
-                      04018234990
+                      {data.labelData.receiverPhone
+                        ? data.labelData.receiverPhone
+                        : "04018234990"}
                     </Col>
                   </OverlayTrigger>
                 </Col>
@@ -413,44 +783,31 @@ const ParcelLabel = ({ data }) => {
             <Col xs={4} className="product">
               <Row>
                 <OverlayTrigger
-                  placement="top"
+                  placement="bottom"
                   overlay={
-                    <Tooltip id="serviceBarcode">
-                      <b>{"The service's product code as a barcode"}</b>
+                    <Tooltip id="PARCEL_serviceBarcode">
+                      <b>{t("PARCEL_serviceBarcode_name")}</b>
                       <br />
-                      {"Mandatory: Yes"}
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_serviceBarcode_mandatory")}
+                      {!t("PARCEL_serviceBarcode_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_serviceBarcode_fontSize")}
+                          {t("PARCEL_serviceBarcode_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
                       <br />
-                      {
-                        "6 characters, contain a technical modulo 103 check digit, not visual"
-                      }
-                      <br />
-                      {"FactCode: 2W"}
-                      <br />
-                      {"Product code: 4 numbers given by Posti"}
-                      <br />
-                      {"Bar code type: Licence Plate code 128 a, b and c"}
-                      <br />
-                      {
-                        "The first two characters shall produced in type a or b and the remaining four even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code."
-                      }
-                      <br />
-                      {
-                        "X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)"
-                      }
-                      <br />
-                      {
-                        "The minimum resolution in thermal transfer printer is 200 dots / inch."
-                      }
-                      <br />
-                      {
-                        "The minimum resolution in laser reproduction is 600 dots / inch."
-                      }
-                      <br />
-                      {
-                        "Free space at both sides of the bar code must be at least 5 mmoMinimum height is 20 mm, but when EDI-message is used 12 mm"
-                      }
-                      <br />
-                      {"Use block capitals in bar codes"}
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_serviceBarcode_description")}
                     </Tooltip>
                   }
                 >
@@ -468,16 +825,29 @@ const ParcelLabel = ({ data }) => {
                 <OverlayTrigger
                   placement="top"
                   overlay={
-                    <Tooltip id="serviceCode">
-                      <b>{"The service's product code"}</b>
+                    <Tooltip id="PARCEL_serviceCode">
+                      <b>{t("PARCEL_serviceCode_name")}</b>
                       <br />
-                      {"Mandatory: Yes"}
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_serviceCode_mandatory")}
+                      {!t("PARCEL_serviceCode_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_serviceCode_fontSize")}
+                          {t("PARCEL_serviceCode_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
                       <br />
-                      {"Font size: 10"}
-                      <br />
-                      {
-                        "Description: The service's product code that uses the License Plate 2W -prefix"
-                      }
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_serviceCode_description")}
                     </Tooltip>
                   }
                 >
@@ -487,7 +857,31 @@ const ParcelLabel = ({ data }) => {
                 </OverlayTrigger>
               </Row>
               <Row>
-                <div className="EDISSI">EDI SSI</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_EDISSI">
+                      <b>{t("PARCEL_EDISSI_name")}</b>
+                      <br />
+                      {t("Mandatory") + ": " + t("PARCEL_EDISSI_mandatory")}
+                      {!t("PARCEL_EDISSI_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") + ": " + t("PARCEL_EDISSI_fontSize")}
+                          {t("PARCEL_EDISSI_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") + ": " + t("PARCEL_EDISSI_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="EDISSI">EDI SSI</div>
+                </OverlayTrigger>
               </Row>
               <Row>
                 <Col className="dateBox">
@@ -495,14 +889,29 @@ const ParcelLabel = ({ data }) => {
                     <OverlayTrigger
                       placement="top"
                       overlay={
-                        <Tooltip id="date-label">
-                          <b>{"Header for printing date"}</b>
+                        <Tooltip id="PARCEL_date-label">
+                          <b>{t("PARCEL_date-label_name")}</b>
                           <br />
-                          {"Mandatory: Yes"}
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_date-label_mandatory")}
+                          {!t("PARCEL_date-label_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_date-label_fontSize")}
+                              {t("PARCEL_date-label_bold").toString() === "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
                           <br />
-                          {"Font size: 6"}
-                          <br />
-                          {"Description: Header for printing date"}
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_date-label_description")}
                         </Tooltip>
                       }
                     >
@@ -515,16 +924,27 @@ const ParcelLabel = ({ data }) => {
                     <OverlayTrigger
                       placement="top"
                       overlay={
-                        <Tooltip id="date">
-                          <b>{"Printing date"}</b>
+                        <Tooltip id="PARCEL_date">
+                          <b>{t("PARCEL_date_name")}</b>
                           <br />
-                          {"Mandatory: No"}
+                          {t("Mandatory") + ": " + t("PARCEL_date_mandatory")}
+                          {!t("PARCEL_date_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_date_fontSize")}
+                              {t("PARCEL_date_bold").toString() === "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
                           <br />
-                          {"Font size: 8"}
-                          <br />
-                          {
-                            "Description: Printing date in Finnish date format: DD.MM.YYYY"
-                          }
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_date_description")}
                         </Tooltip>
                       }
                     >
@@ -543,65 +963,219 @@ const ParcelLabel = ({ data }) => {
                     <OverlayTrigger
                       placement="top"
                       overlay={
-                        <Tooltip id="weightValue">
-                          <b>{"Shipment gross weight"}</b>
+                        <Tooltip id="PARCEL_weightValue">
+                          <b>{t("PARCEL_weightValue_name")}</b>
                           <br />
-                          {"Mandatory: No"}
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_weightValue_mandatory")}
+                          {!t("PARCEL_weightValue_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_weightValue_fontSize")}
+                              {t("PARCEL_weightValue_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
                           <br />
-                          {"Font size: 8"}
-                          <br />
-                          {"Description: Shipment gross weight"}
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_weightValue_description")}
                         </Tooltip>
                       }
                     >
                       <Col xs={7} className="weightValue">
-                        0,31
+                        {data.labelData.weight ? data.labelData.weight : "0,31"}
                       </Col>
                     </OverlayTrigger>
-                    <Col
-                      xs={2}
-                      className="weightlabel"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Header for shipment gross weight</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for shipment gross weight"
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="PARCEL_weightlabel">
+                          <b>{t("PARCEL_weightlabel_name")}</b>
+                          <br />
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_weightlabel_mandatory")}
+                          {!t("PARCEL_weightlabel_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_weightlabel_fontSize")}
+                              {t("PARCEL_weightlabel_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
+                          <br />
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_weightlabel_description")}
+                        </Tooltip>
+                      }
                     >
-                      kg
-                    </Col>
+                      <Col xs={2} className="weightlabel">
+                        kg
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
                 <Col className="volume box">
                   <Row>
-                    <Col
-                      xs={7}
-                      className="volumeValue"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Shipment volume</b></br>Mandatory: No</br>Font size: 8</br>Description: Shipment volume"
-                    ></Col>
-                    <Col
-                      xs={2}
-                      className="volumelabel"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Header for shipment volume</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for shipment volume"
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="PARCEL_volumeValue">
+                          <b>{t("PARCEL_volumeValue_name")}</b>
+                          <br />
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_volumeValue_mandatory")}
+                          {!t("PARCEL_volumeValue_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_volumeValue_fontSize")}
+                              {t("PARCEL_volumeValue_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
+                          <br />
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_volumeValue_description")}
+                        </Tooltip>
+                      }
                     >
-                      m3
-                    </Col>
+                      <Col xs={7} className="volumeValue">
+                        {data.labelData.volume ? data.labelData.volume : ""}
+                      </Col>
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="PARCEL_volumelabel">
+                          <b>{t("PARCEL_volumelabel_name")}</b>
+                          <br />
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_volumelabel_mandatory")}
+                          {!t("PARCEL_volumelabel_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_volumelabel_fontSize")}
+                              {t("PARCEL_volumelabel_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
+                          <br />
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_volumelabel_description")}
+                        </Tooltip>
+                      }
+                    >
+                      <Col xs={2} className="volumelabel">
+                        m3
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
               </Row>
               <Row>
                 <Col className="packages  box">
                   <Row>
-                    <Col xs={7} className="packageCount">
-                      1
-                    </Col>
-                    <Col xs={4} className="volumelabel">
-                      kpl/st
-                    </Col>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="PARCEL_packageCount">
+                          <b>{t("PARCEL_packageCount_name")}</b>
+                          <br />
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_packageCount_mandatory")}
+                          {!t("PARCEL_packageCount_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_packageCount_fontSize")}
+                              {t("PARCEL_packageCount_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
+                          <br />
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_packageCount_description")}
+                        </Tooltip>
+                      }
+                    >
+                      <Col xs={7} className="packageCount">
+                        {data.labelData.packageCount
+                          ? data.labelData.packageCount
+                          : "1"}
+                      </Col>
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="PARCEL_packageCountLabel">
+                          <b>{t("PARCEL_packageCountLabel_name")}</b>
+                          <br />
+                          {t("Mandatory") +
+                            ": " +
+                            t("PARCEL_packageCountLabel_mandatory")}
+                          {!t("PARCEL_packageCountLabel_fontSize") ? (
+                            ""
+                          ) : (
+                            <>
+                              <br />
+                              {t("Font size") +
+                                ": " +
+                                t("PARCEL_packageCountLabel_fontSize")}
+                              {t("PARCEL_packageCountLabel_bold").toString() ===
+                              "true"
+                                ? " " + t("bold")
+                                : ""}
+                            </>
+                          )}
+                          <br />
+                          {t("Description") +
+                            ": " +
+                            t("PARCEL_packageCountLabel_description")}
+                        </Tooltip>
+                      }
+                    >
+                      <Col xs={4} className="packageCountLabel">
+                        kpl/st
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
               </Row>
@@ -610,9 +1184,39 @@ const ParcelLabel = ({ data }) => {
           <Row className="cod">
             <Col xs={4} className="addon box">
               <Row>
-                <div className="addon-label label">
-                  Lisäpalvelut Tilläggstjänster
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_addon-label">
+                      <b>{t("PARCEL_addon-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_addon-label_mandatory")}
+                      {!t("PARCEL_addon-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_addon-label_fontSize")}
+                          {t("PARCEL_addon-label_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_addon-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">
+                    Lisäpalvelut Tilläggstjänster
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
                 {addonboxes.map((addon, i) => (
@@ -626,20 +1230,149 @@ const ParcelLabel = ({ data }) => {
             </Col>
             <Col xs={4} className="otherPayer box">
               <Row>
-                <div className="otherPayerHeading">
-                  Maksaja muu kuin lähettäjä Betalaren annan än avsändaren
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_otherPayer-label">
+                      <b>{t("PARCEL_otherPayer-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_otherPayer-label_mandatory")}
+                      {!t("PARCEL_otherPayer-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_otherPayer-label_fontSize")}
+                          {t("PARCEL_otherPayer-label_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_otherPayer-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="otherPayer-label">
+                    Maksaja muu kuin lähettäjä Betalaren annan än avsändaren
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <Col className="otherPayerValue">661234</Col>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_otherPayerValue">
+                      <b>{t("PARCEL_otherPayerValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_otherPayerValue_mandatory")}
+                      {!t("PARCEL_otherPayerValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_otherPayerValue_fontSize")}
+                          {t("PARCEL_otherPayerValue_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_otherPayerValue_description")}
+                    </Tooltip>
+                  }
+                >
+                  <Col className="otherPayerValue">
+                    {data.labelData.otherPayer ? data.labelData.otherPayer : ""}
+                  </Col>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="packages box">
               <Row>
-                <div className="addon-label label">kpl st</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_packageCountLabel">
+                      <b>{t("PARCEL_packageCountLabel_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_packageCountLabel_mandatory")}
+                      {!t("PARCEL_packageCountLabel_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_packageCountLabel_fontSize")}
+                          {t("PARCEL_packageCountLabel_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_packageCountLabel_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">kpl st</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="packageCount">1</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_packageCount">
+                      <b>{t("PARCEL_packageCount_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_packageCount_mandatory")}
+                      {!t("PARCEL_packageCount_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_packageCount_fontSize")}
+                          {t("PARCEL_packageCount_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_packageCount_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="packageCount">
+                    {data.labelData.packageCount
+                      ? data.labelData.packageCount
+                      : "1"}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="empty"></Col>
@@ -647,103 +1380,482 @@ const ParcelLabel = ({ data }) => {
           <Row>
             <Col className="codAmount box">
               <Row>
-                <div className="addon-label label">PE-summa PF-belopp</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codAmount-label">
+                      <b>{t("PARCEL_codAmount-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codAmount-label_mandatory")}
+                      {!t("PARCEL_codAmount-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codAmount-label_fontSize")}
+                          {t("PARCEL_codAmount-label_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codAmount-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">PE-summa PF-belopp</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codAmountValue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codAmountValue">
+                      <b>{t("PARCEL_codAmountValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codAmountValue_mandatory")}
+                      {!t("PARCEL_codAmountValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codAmountValue_fontSize")}
+                          {t("PARCEL_codAmountValue_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codAmountValue_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="codAmountValue">
+                    {data.labelData.codAmount ? data.labelData.codAmount : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="codIBAN box">
               <Row>
-                <div className="addon-label label">Tilinumero Kontonummer</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codIBAN-label">
+                      <b>{t("PARCEL_codIBAN-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codIBAN-label_mandatory")}
+                      {!t("PARCEL_codIBAN-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codIBAN-label_fontSize")}
+                          {t("PARCEL_codIBAN-label_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codIBAN-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">
+                    Tilinumero Kontonummer
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codIBANvalue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codIBANValue">
+                      <b>{t("PARCEL_codIBANValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codIBANValue_mandatory")}
+                      {!t("PARCEL_codIBANValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codIBANValue_fontSize")}
+                          {t("PARCEL_codIBANValue_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codIBANValue_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="codIBANvalue">
+                    {data.labelData.codIBAN ? data.labelData.codIBAN : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
           </Row>
           <Row>
             <Col xs={8} className="codReference box">
               <Row>
-                <div className="addon-label label">
-                  Pankkiviite Bankreferens
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codReference-label">
+                      <b>{t("PARCEL_codReference-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codReference-label_mandatory")}
+                      {!t("PARCEL_codReference-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codReference-label_fontSize")}
+                          {t("PARCEL_codReference-label_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codReference-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">
+                    Pankkiviite Bankreferens
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codReferenceValue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codReferenceValue">
+                      <b>{t("PARCEL_codReferenceValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codReferenceValue_mandatory")}
+                      {!t("PARCEL_codReferenceValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codReferenceValue_fontSize")}
+                          {t("PARCEL_codReferenceValue_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codReferenceValue_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="codReferenceValue">
+                    {data.labelData.codReference
+                      ? data.labelData.codReference
+                      : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="codBIC box">
               <Row>
-                <div className="addon-label label">BIC</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codBIC-label">
+                      <b>{t("PARCEL_codBIC-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codBIC-label_mandatory")}
+                      {!t("PARCEL_codBIC-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codBIC-label_fontSize")}
+                          {t("PARCEL_codBIC-label_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codBIC-label_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="addon-label label">BIC</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codBICvalue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_codBICValue">
+                      <b>{t("PARCEL_codBICValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_codBICValue_mandatory")}
+                      {!t("PARCEL_codBICValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_codBICValue_fontSize")}
+                          {t("PARCEL_codBICValue_bold").toString() === "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_codBICValue_description")}
+                    </Tooltip>
+                  }
+                >
+                  <div className="codBICvalue">
+                    {data.labelData.codBIC ? data.labelData.codBIC : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
           </Row>
           <Row>
-            <div
-              className="trackingBarcodeValue"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip id="PARCEL_trackingBarcodeValue">
+                  <b>{t("PARCEL_trackingBarcodeValue_name")}</b>
+                  <br />
+                  {t("Mandatory") +
+                    ": " +
+                    t("PARCEL_trackingBarcodeValue_mandatory")}
+                  {!t("PARCEL_trackingBarcodeValue_fontSize") ? (
+                    ""
+                  ) : (
+                    <>
+                      <br />
+                      {t("Font size") +
+                        ": " +
+                        t("PARCEL_trackingBarcodeValue_fontSize")}
+                      {t("PARCEL_trackingBarcodeValue_bold").toString() ===
+                      "true"
+                        ? " " + t("bold")
+                        : ""}
+                    </>
+                  )}
+                  <br />
+                  {t("Description") +
+                    ": " +
+                    t("PARCEL_trackingBarcodeValue_description")}
+                </Tooltip>
+              }
             >
-              JJFI 699999 12345 678901
-            </div>
+              <div className="trackingBarcodeValue">
+                JJFI 699999 12345 678901
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
-            <div
-              className="trackingBarcode"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID as a barcode</b></br>Mandatory: Yes</br>Bar code type: Licence Plate code 128 a, b and c</br>The first 5 characters shall produced in type a or b and the remaining 16 even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code.</br>X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)</br>The minimum resolution in thermal transfer printer is 200 dots / inch.</br>The minimum resolution in laser reproduction is 600 dots / inch.</br>Free space at both sides of the bar code must be at least 5 mm</br>Minimum height is 25 mm</br>Use block capitals in bar codes"
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip id="PARCEL_trackingBarcode">
+                  <b>{t("PARCEL_trackingBarcode_name")}</b>
+                  <br />
+                  {t("Mandatory") +
+                    ": " +
+                    t("PARCEL_trackingBarcode_mandatory")}
+                  {!t("PARCEL_trackingBarcode_fontSize") ? (
+                    ""
+                  ) : (
+                    <>
+                      <br />
+                      {t("Font size") +
+                        ": " +
+                        t("PARCEL_trackingBarcode_fontSize")}
+                      {t("PARCEL_trackingBarcode_bold").toString() === "true"
+                        ? " " + t("bold")
+                        : ""}
+                    </>
+                  )}
+                  <br />
+                  {t("Description") +
+                    ": " +
+                    t("PARCEL_trackingBarcode_description")}
+                </Tooltip>
+              }
             >
-              <Barcode value="JJFI69999912345678901" displayValue={false} />
-            </div>
+              <div className="trackingBarcode">
+                <Barcode value="JJFI69999912345678901" displayValue={false} />
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
-            <div
-              className="trackingBarcodeValue"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip id="PARCEL_trackingBarcodeValue">
+                  <b>{t("PARCEL_trackingBarcodeValue_name")}</b>
+                  <br />
+                  {t("Mandatory") +
+                    ": " +
+                    t("PARCEL_trackingBarcodeValue_mandatory")}
+                  {!t("PARCEL_trackingBarcodeValue_fontSize") ? (
+                    ""
+                  ) : (
+                    <>
+                      <br />
+                      {t("Font size") +
+                        ": " +
+                        t("PARCEL_trackingBarcodeValue_fontSize")}
+                      {t("PARCEL_trackingBarcodeValue_bold").toString() ===
+                      "true"
+                        ? " " + t("bold")
+                        : ""}
+                    </>
+                  )}
+                  <br />
+                  {t("Description") +
+                    ": " +
+                    t("PARCEL_trackingBarcodeValue_description")}
+                </Tooltip>
+              }
             >
-              JJFI 699999 12345 678901
-            </div>
+              <div className="trackingBarcodeValue">
+                JJFI 699999 12345 678901
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
             <Col className="additionalInfo">
               <Row>
-                <div
-                  className="addon-label label"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_additionalInfo-label">
+                      <b>{t("PARCEL_additionalInfo-label_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_additionalInfo-label_mandatory")}
+                      {!t("PARCEL_additionalInfo-label_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_additionalInfo-label_fontSize")}
+                          {t("PARCEL_additionalInfo-label_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_additionalInfo-label_description")}
+                    </Tooltip>
+                  }
                 >
-                  Lisätiedot Tilläggsuppgifter
-                </div>
+                  <div className="addon-label label">
+                    Lisätiedot Tilläggsuppgifter
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div
-                  className="additionalInfoValue"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Additional information</b></br>Mandatory: Yes</br>Font size: 12 Bold</br>Description: The name of the additional service is printed in the data field in large bold letters. If no additional services have been selected, you can print the destination postal code barcode in the data field (except when EDI is used). Otherwise, you can print transport instructions or free-form text in the space."
+                <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Tooltip id="PARCEL_additionalInfoValue">
+                      <b>{t("PARCEL_additionalInfoValue_name")}</b>
+                      <br />
+                      {t("Mandatory") +
+                        ": " +
+                        t("PARCEL_additionalInfoValue_mandatory")}
+                      {!t("PARCEL_additionalInfoValue_fontSize") ? (
+                        ""
+                      ) : (
+                        <>
+                          <br />
+                          {t("Font size") +
+                            ": " +
+                            t("PARCEL_additionalInfoValue_fontSize")}
+                          {t("PARCEL_additionalInfoValue_bold").toString() ===
+                          "true"
+                            ? " " + t("bold")
+                            : ""}
+                        </>
+                      )}
+                      <br />
+                      {t("Description") +
+                        ": " +
+                        t("PARCEL_additionalInfoValue_description")}
+                    </Tooltip>
+                  }
                 >
-                  {data.labelData.addons
-                    ? data.labelData.addons.map((addon, i) => (
-                        <div key={"addon_" + i}>
-                          {addon.labelName.toUpperCase()}
-                        </div>
-                      ))
-                    : ""}
-                </div>
+                  <div className="additionalInfoValue">
+                    {data.labelData.addons
+                      ? data.labelData.addons.map((addon, i) => (
+                          <div key={"addon_" + i}>
+                            {addon.labelName.toUpperCase()}
+                          </div>
+                        ))
+                      : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
                 <div className="PostiGreen">

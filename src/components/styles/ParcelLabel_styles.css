@@ -169,7 +169,8 @@
 }
 
 .volumelabel,
-.weightlabel {
+.weightlabel,
+.packageCountLabel {
   font-weight: 700;
 }
 
@@ -181,7 +182,7 @@
   min-height: 20px;
 }
 
-.otherPayerHeading {
+.otherPayer-label {
   padding-left: 5px;
   font-size: 9px;
 }

@@ -1,8 +1,9 @@
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
-
+import { useTranslation } from "react-i18next";
 import "../styles/UPULabel_styles.css";
 
 const UPULabel = ({ data }) => {
+  const { t } = useTranslation();
   const Barcode = require("react-barcode");
   const addonboxes = [];
   let addonCount = 0;
@@ -20,28 +21,36 @@ const UPULabel = ({ data }) => {
     }
   }
 
+  const overlay = (fieldId: string) => {
+    return (
+      <Tooltip id={"UPU_" + fieldId}>
+        <b>{t("PARCEL_" + fieldId + "_name")}</b>
+        <br />
+        {t("Mandatory") + ": " + t("PARCEL_" + fieldId + "_mandatory")}
+        {!t("PARCEL_" + fieldId + "_fontSize") ? (
+          ""
+        ) : (
+          <>
+            <br />
+            {t("Font size") + ": " + t("PARCEL_" + fieldId + "_fontSize")}
+            {t("PARCEL_" + fieldId + "_bold").toString() === "true"
+              ? " " + t("bold")
+              : ""}
+          </>
+        )}
+        <br />
+        {t("Description") + ": " + t("PARCEL_" + fieldId + "_description")}
+      </Tooltip>
+    );
+  };
+
   return (
     <>
       <div className="labelPreview">
         <div className="labelBorder">
           <Row>
             <Row className="serviceArea">
-              <OverlayTrigger
-                placement="top"
-                overlay={
-                  <Tooltip id="serviceName">
-                    <b>{"Name of service"}</b>
-                    <br />
-                    {"Mandatory: Yes"}
-                    <br />
-                    {"Font size: 10/12 bold"}
-                    <br />
-                    {
-                      "Description: Grouped according to the service-specific models"
-                    }
-                  </Tooltip>
-                }
-              >
+              <OverlayTrigger placement="top" overlay={overlay("serviceName")}>
                 <Col className="serviceName">
                   {data.service === "2015" ? (
                     <img

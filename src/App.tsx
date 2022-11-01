@@ -44,6 +44,7 @@ const App = (props: AppProps) => {
     additionalServices: {},
     fileFormats: {},
     countries: {},
+    labelInstructions: {},
     packageTypes: {},
   });
   const [multiSelectData, setMultiSelectData] = useState([
@@ -479,6 +480,7 @@ const App = (props: AppProps) => {
       additionalServices: additionalServicesJSON,
       fileFormats: fileFormatsJSON,
       countries: countriesJSON,
+      labelInstructions: labelInstructionsJSON,
     }));
 
     setDataLoaded(true);
