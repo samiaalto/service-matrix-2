@@ -13,6 +13,9 @@
   margin: 10px;
 }
 
+.bringParties.hidden {
+  display: none;
+}
 .labelPreview .bringProduct {
   padding-bottom: 5px;
 }
