@@ -2,7 +2,8 @@ const MessageGenerator = (
   selected,
   services,
   fileFormats,
-  additionalServices
+  additionalServices,
+  countries
 ) => {
   const { create } = require("xmlbuilder2");
 
@@ -140,22 +141,147 @@ const MessageGenerator = (
   let labelData = {};
   let labelAddons = [];
   let addons = [];
+  let depIndex = -1;
+  let destIndex = -1;
 
   addonArr = selected.addons;
+
+  let dest = "FI";
+  if (selected.destination) {
+    dest = selected.destination;
+  }
+
+  if (selected.departure && selected.departure !== "FI") {
+    for (let country of countries.records) {
+      if (country.CountryCode === selected.departure) {
+        labelData["senderAddress1"] = country.Address;
+        labelData["senderPostalCode"] = country.PostalCode;
+        labelData["senderPostOffice"] = country.City;
+        labelData["senderCountryCode"] = country.CountryCode;
+        labelData["senderCountry"] = country.DisplayNameEN;
+
+        serviceProps.push(
+          {
+            format: "XML",
+            property: "StreetAddress1",
+            value: country.Address,
+            position: "CONSIGNOR",
+            mandatory: true,
+          },
+          {
+            format: "XML",
+            property: "PostalCode",
+            value: country.PostalCode,
+            position: "CONSIGNOR",
+            mandatory: true,
+          },
+          {
+            format: "XML",
+            property: "City",
+            value: country.City,
+            position: "CONSIGNOR",
+            mandatory: true,
+          },
+          {
+            format: "XML",
+            property: "Country",
+            value: country.CountryCode,
+            position: "CONSIGNOR",
+            mandatory: true,
+          }
+        );
+      }
+    }
+  }
+
+  for (let [index, country] of countries.records.entries()) {
+    if (country.CountryCode === dest) {
+      destIndex = index;
+      if (selected.pudo) {
+        labelData["receiverName2"] = country.Name2;
+        labelData["receiverPhone"] = "+3580007654321";
+      }
+      labelData["receiverAddress1"] = country.Address;
+      labelData["receiverPostalCode"] = country.PostalCode;
+      labelData["receiverPostOffice"] = country.City;
+      labelData["receiverCountryCode"] = country.CountryCode;
+      labelData["receiverCountry"] = country.DisplayNameEN;
+
+      serviceProps.push(
+        {
+          format: "XML",
+          property: "StreetAddress1",
+          value: country.Address,
+          position: "CONSIGNEE",
+          mandatory: true,
+        },
+        {
+          format: "XML",
+          property: "PostalCode",
+          value: country.PostalCode,
+          position: "CONSIGNEE",
+          mandatory: true,
+        },
+        {
+          format: "XML",
+          property: "City",
+          value: country.City,
+          position: "CONSIGNEE",
+          mandatory: true,
+        },
+        {
+          format: "XML",
+          property: "Country",
+          value: country.CountryCode,
+          position: "CONSIGNEE",
+          mandatory: true,
+        }
+      );
+    }
+  }
 
   for (const record of services.records) {
     if (record.ServiceCode === selected.service) {
       labelData["labelType"] = record.LabelType;
-      labelData["serviceName"] = record.LabelName;
+      labelData["serviceName"] = record.DisplayNameFI;
       labelData["processNumber"] = record.ProcessNumber;
       if (record.Fields.length > 0) {
         for (const field of record.Fields) {
+          let value = field.PropertyValue;
+          let mandatory = field.Mandatory;
+
+          if (selected.pudo && field.PropertyName === "Name2") {
+            value = countries.records[destIndex].Name2;
+            mandatory = true;
+          } else if (
+            (selected.pudo && field.PropertyName === "Service") ||
+            (selected.pudo && field.PropertyName === "ContactChannel")
+          ) {
+            mandatory = true;
+          } else if (
+            (selected.pudo && field.PropertyName === "Party") ||
+            (selected.pudo && field.PropertyName === "Name1")
+          ) {
+            mandatory = true;
+          } else if (selected.pudo && field.PropertyName === "StreetAddress1") {
+            value = countries.records[destIndex].Address;
+            mandatory = true;
+          } else if (selected.pudo && field.PropertyName === "PostalCode") {
+            value = countries.records[destIndex].PostalCode;
+            mandatory = true;
+          } else if (selected.pudo && field.PropertyName === "City") {
+            value = countries.records[destIndex].City;
+            mandatory = true;
+          } else if (selected.pudo && field.PropertyName === "Country") {
+            value = countries.records[destIndex].CountryCode;
+            mandatory = true;
+          }
           serviceProps.push({
             format: field.MessageFormat,
             property: field.PropertyName,
-            value: field.PropertyValue,
+            value: value,
             position: field.MessagePosition,
-            mandatory: field.Mandatory,
+            mandatory: mandatory,
           });
         }
       }
@@ -267,7 +393,7 @@ const MessageGenerator = (
           }
 
           let val = "";
-          let found = false;
+          let found = [];
           for (let k = 0; k < serviceProps.length; k++) {
             if (
               (serviceProps[k].property === record.Records[i].Name &&
@@ -279,164 +405,158 @@ const MessageGenerator = (
                 !usedProps.includes(k) &&
                 serviceProps[k].mandatory)
             ) {
-              found = true;
-              break;
+              found.push(k);
             }
           }
 
-          if (found) {
-            for (const [index, prop] of serviceProps.entries()) {
-              if (prop.property === record.Records[i].Name) {
-                val = prop.value;
-                usedProps.push(index);
-                //console.log(objParent);
-                let newPath = obj.Path;
-                if (typeof objParent !== "undefined") {
-                  if (objParent.Type === "Array" || objParent.Type === null) {
-                    if (!indexes.hasOwnProperty(parent)) {
-                      indexes[parent] = 0;
-                      indexes[obj.Name] = 0;
-                    } else if (indexes.hasOwnProperty(obj.Name)) {
-                      indexes[obj.Name] = indexes[obj.Name] + 1;
-                    }
-
-                    let path = obj.Path.split(".");
-
-                    for (const index of Object.keys(indexes)) {
-                      let elIndex = path.findIndex((o) => o === index);
-                      if (elIndex > -1) {
-                        path[elIndex + 1] = indexes[index];
-                      }
-                    }
-                    newPath = path.join(".");
-                  } else {
-                    let path = obj.Path.split(".");
-
-                    for (const index of Object.keys(indexes)) {
-                      let elIndex = path.findIndex((o) => o === index);
-                      if (elIndex > -1) {
-                        path[elIndex + 1] = indexes[index];
-                      }
-                    }
-                    newPath = path.join(".");
+          if (found.length > 0) {
+            for (let index of found) {
+              val = serviceProps[index].value;
+              usedProps.push(index);
+              //console.log(objParent);
+              let newPath = obj.Path;
+              if (typeof objParent !== "undefined") {
+                if (objParent.Type === "Array" || objParent.Type === null) {
+                  if (!indexes.hasOwnProperty(parent)) {
+                    indexes[parent] = 0;
+                    indexes[obj.Name] = 0;
+                  } else if (indexes.hasOwnProperty(obj.Name)) {
+                    indexes[obj.Name] = indexes[obj.Name] + 1;
                   }
-                }
-                //}
 
-                // Set the attributes
+                  let path = obj.Path.split(".");
 
-                let next = i + 1;
-                let value = {};
-
-                if (sampleValues) {
-                  if (obj.ExampleValue === "dateTime") {
-                    value = Object.assign(value, {
-                      "#text":
-                        new Date().toISOString().split(".")[0] + "+03:00",
-                    });
-                  } else {
-                    value = Object.assign(value, { "#text": obj.ExampleValue });
+                  for (const index of Object.keys(indexes)) {
+                    let elIndex = path.findIndex((o) => o === index);
+                    if (elIndex > -1) {
+                      path[elIndex + 1] = indexes[index];
+                    }
                   }
+                  newPath = path.join(".");
+                } else {
+                  let path = obj.Path.split(".");
+
+                  for (const index of Object.keys(indexes)) {
+                    let elIndex = path.findIndex((o) => o === index);
+                    if (elIndex > -1) {
+                      path[elIndex + 1] = indexes[index];
+                    }
+                  }
+                  newPath = path.join(".");
+                }
+              }
+              //}
+
+              // Set the attributes
+
+              let next = i + 1;
+              let value = {};
+
+              if (sampleValues) {
+                if (obj.ExampleValue === "dateTime") {
+                  value = Object.assign(value, {
+                    "#text": new Date().toISOString().split(".")[0] + "+03:00",
+                  });
+                } else {
+                  value = Object.assign(value, { "#text": obj.ExampleValue });
+                }
+              }
+
+              //for (const prop of serviceProps) {
+              //  if (prop.property === record.Records[i].Name) {
+              //    val = prop.value;
+              //  }
+              //}
+
+              if (val !== "") {
+                value = Object.assign(value, { "#text": val });
+              }
+
+              // Handle attributes
+
+              if (
+                i !== record.Records.length - 1 &&
+                record.Records[next].Type === "Attribute"
+              ) {
+                if (record.Records[next].ExampleValue === "time") {
+                  value = {
+                    ["@" + record.Records[next].Name]:
+                      sampleValues || val !== "" ? "12:00:00+03:00" : "",
+                    "#text":
+                      val !== ""
+                        ? val
+                        : sampleValues
+                        ? new Date().toISOString().split(".")[0]
+                        : "",
+                  };
+                } else {
+                  value = {
+                    ["@" + record.Records[next].Name]:
+                      sampleValues || val !== ""
+                        ? record.Records[next].ExampleValue
+                        : "",
+                    "#text":
+                      val !== "" ? val : sampleValues ? obj.ExampleValue : "",
+                  };
                 }
 
-                //for (const prop of serviceProps) {
-                //  if (prop.property === record.Records[i].Name) {
-                //    val = prop.value;
-                //  }
-                //}
+                //console.log(value);
 
-                if (val !== "") {
-                  value = Object.assign(value, { "#text": val });
+                if (i > 1 && record.Records[i].Type === "Object") {
+                  let value2 = {
+                    ["@" + record.Records[i + 1].Name]: sampleValues
+                      ? record.Records[i + 1].ExampleValue
+                      : "",
+                    "#text": sampleValues ? record.Records[i].ExampleValue : "",
+                  };
+
+                  let path = record.Records[i].Path.split(".");
+
+                  for (const index of Object.keys(indexes)) {
+                    let elIndex = path.findIndex((o) => o === index);
+                    if (elIndex > -1) {
+                      path[elIndex + 1] = indexes[index];
+                    }
+                  }
+                  let newPath2 = path.join(".");
+
+                  set(outXML, newPath2, value2);
                 }
-
-                // Handle attributes
 
                 if (
-                  i !== record.Records.length - 1 &&
-                  record.Records[next].Type === "Attribute"
+                  next + 1 < record.Records.length - 1 &&
+                  record.Records[next + 1].Type === "Attribute"
                 ) {
-                  if (record.Records[next].ExampleValue === "time") {
-                    value = {
-                      ["@" + record.Records[next].Name]:
-                        sampleValues || val !== "" ? "12:00:00+03:00" : "",
-                      "#text":
-                        val !== ""
-                          ? val
-                          : sampleValues
-                          ? new Date().toISOString().split(".")[0]
-                          : "",
-                    };
+                  if (record.Records[next + 1].ExampleValue === "time") {
+                    value = Object.assign(value, {
+                      ["@" + record.Records[next + 1].Name]: sampleValues
+                        ? "16:00:00+03:00"
+                        : "",
+                      "#text": sampleValues
+                        ? new Date().toISOString().split("T")[0]
+                        : "",
+                    });
                   } else {
-                    value = {
-                      ["@" + record.Records[next].Name]:
-                        sampleValues || val !== ""
-                          ? record.Records[next].ExampleValue
-                          : "",
-                      "#text":
-                        val !== "" ? val : sampleValues ? obj.ExampleValue : "",
-                    };
-                  }
-
-                  //console.log(value);
-
-                  if (i > 1 && record.Records[i].Type === "Object") {
-                    let value2 = {
-                      ["@" + record.Records[i + 1].Name]: sampleValues
-                        ? record.Records[i + 1].ExampleValue
+                    value = Object.assign(value, {
+                      ["@" + record.Records[next + 1].Name]: sampleValues
+                        ? record.Records[next + 1].ExampleValue
                         : "",
                       "#text": sampleValues
                         ? record.Records[i].ExampleValue
                         : "",
-                    };
-
-                    let path = record.Records[i].Path.split(".");
-
-                    for (const index of Object.keys(indexes)) {
-                      let elIndex = path.findIndex((o) => o === index);
-                      if (elIndex > -1) {
-                        path[elIndex + 1] = indexes[index];
-                      }
-                    }
-                    let newPath2 = path.join(".");
-
-                    set(outXML, newPath2, value2);
-                  }
-
-                  if (
-                    next + 1 < record.Records.length - 1 &&
-                    record.Records[next + 1].Type === "Attribute"
-                  ) {
-                    if (record.Records[next + 1].ExampleValue === "time") {
-                      value = Object.assign(value, {
-                        ["@" + record.Records[next + 1].Name]: sampleValues
-                          ? "16:00:00+03:00"
-                          : "",
-                        "#text": sampleValues
-                          ? new Date().toISOString().split("T")[0]
-                          : "",
-                      });
-                    } else {
-                      value = Object.assign(value, {
-                        ["@" + record.Records[next + 1].Name]: sampleValues
-                          ? record.Records[next + 1].ExampleValue
-                          : "",
-                        "#text": sampleValues
-                          ? record.Records[i].ExampleValue
-                          : "",
-                      });
-                    }
+                    });
                   }
                 }
-                //console.log(newPath);
-                // Set the element in to the tree
+              }
+              //console.log(newPath);
+              // Set the element in to the tree
 
-                if (
-                  obj.Type !== "Object" &&
-                  obj.Type !== "Array" &&
-                  obj.Type !== "Attribute"
-                ) {
-                  set(outXML, newPath, value);
-                }
+              if (
+                obj.Type !== "Object" &&
+                obj.Type !== "Array" &&
+                obj.Type !== "Attribute"
+              ) {
+                set(outXML, newPath, value);
               }
             }
           } else {

@@ -520,7 +520,8 @@ const App = (props: AppProps) => {
         selected,
         data.services,
         data.fileFormats,
-        data.additionalServices
+        data.additionalServices,
+        data.countries
       );
 
       setSelected((prevState) => ({
@@ -536,6 +537,7 @@ const App = (props: AppProps) => {
     selected.addons,
     selected.showSamples,
     selected.showOptional,
+    selected.pudo,
   ]);
 
   useEffect(() => {

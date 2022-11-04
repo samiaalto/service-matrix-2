@@ -94,7 +94,7 @@
           "AdditionalInfo": null,
           "Sample": "3101",
           "Mandatory": true,
-          "MessagePosition": "AdditionalServices",
+          "MessagePosition": null,
           "PropertyName": "AdditionalServices",
           "PropertyValue": "3101"
         },
@@ -103,7 +103,7 @@
           "AdditionalInfo": null,
           "Sample": "NDEAFIHH",
           "Mandatory": true,
-          "MessagePosition": "Shipment",
+          "MessagePosition": null,
           "PropertyName": "CodBIC",
           "PropertyValue": "NDEAFIHH"
         },
@@ -112,7 +112,7 @@
           "AdditionalInfo": null,
           "Sample": "FI2112345600000785",
           "Mandatory": true,
-          "MessagePosition": "Shipment",
+          "MessagePosition": null,
           "PropertyName": "CodIBAN",
           "PropertyValue": "FI2112345600000785"
         },
@@ -121,7 +121,7 @@
           "AdditionalInfo": null,
           "Sample": "00012350",
           "Mandatory": true,
-          "MessagePosition": "Shipment",
+          "MessagePosition": null,
           "PropertyName": "CodValue",
           "PropertyValue": "00012350"
         },
@@ -130,7 +130,7 @@
           "AdditionalInfo": null,
           "Sample": "EUR",
           "Mandatory": true,
-          "MessagePosition": "CodValue",
+          "MessagePosition": null,
           "PropertyName": "CurrencyCode",
           "PropertyValue": "EUR"
         },
@@ -139,7 +139,7 @@
           "AdditionalInfo": null,
           "Sample": "1234123456898",
           "Mandatory": false,
-          "MessagePosition": "Shipment",
+          "MessagePosition": null,
           "PropertyName": "CodReference",
           "PropertyValue": "1234123456898"
         },
@@ -220,7 +220,7 @@
           "AdditionalInfo": null,
           "Sample": "3102",
           "Mandatory": true,
-          "MessagePosition": "AdditionalServices",
+          "MessagePosition": null,
           "PropertyName": "AdditionalServices",
           "PropertyValue": "3102"
         },
@@ -265,7 +265,7 @@
           "AdditionalInfo": null,
           "Sample": "3103",
           "Mandatory": true,
-          "MessagePosition": "AdditionalServices",
+          "MessagePosition": null,
           "PropertyName": "AdditionalServices",
           "PropertyValue": "3103"
         },
@@ -277,6 +277,51 @@
           "MessagePosition": "addons",
           "PropertyName": "id",
           "PropertyValue": "OPAY"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Party role=\"PAYER\"></Party>",
+          "Mandatory": true,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "PAYER"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Party role=\"PAYER\"></Party>",
+          "Mandatory": true,
+          "MessagePosition": "PAYER",
+          "PropertyName": "role",
+          "PropertyValue": "PAYER"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Account type=\"CONTRACT\">666666</Account>",
+          "Mandatory": true,
+          "MessagePosition": "PAYER",
+          "PropertyName": "Account",
+          "PropertyValue": "666666"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Account type=\"CONTRACT\">666666</Account>",
+          "Mandatory": true,
+          "MessagePosition": "PAYER",
+          "PropertyName": "type",
+          "PropertyValue": "CONTRACT"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Name1>Payer Name</Name1>",
+          "Mandatory": true,
+          "MessagePosition": "PAYER",
+          "PropertyName": "Name1",
+          "PropertyValue": "Payer Name"
         }
       ]
     },
@@ -977,7 +1022,7 @@
           "AdditionalInfo": "Package record",
           "Sample": "00000234",
           "Mandatory": true,
-          "MessagePosition": "DangerousGoodsItem",
+          "MessagePosition": null,
           "PropertyName": "LimitedQuantityWeight",
           "PropertyValue": "00000234"
         },

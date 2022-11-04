@@ -27,7 +27,11 @@ const FreightLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderName", "FREIGHT")}
                   >
-                    <div className="senderName">Sandy Sender</div>
+                    <div className="senderName">
+                      {data.labelData.senderName
+                        ? data.labelData.senderName
+                        : "Sandy Sender"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -35,7 +39,11 @@ const FreightLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderName2", "FREIGHT")}
                   >
-                    <div className="senderName2"></div>
+                    <div className="senderName2">
+                      {data.labelData.senderName2
+                        ? data.labelData.senderName2
+                        : ""}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -43,7 +51,11 @@ const FreightLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderAddress1", "FREIGHT")}
                   >
-                    <div className="senderAddress1">Sender Street 123</div>
+                    <div className="senderAddress1">
+                      {data.labelData.senderAddress1
+                        ? data.labelData.senderAddress1
+                        : "Sender Street 123"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -51,7 +63,11 @@ const FreightLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderAddress2", "FREIGHT")}
                   >
-                    <div className="senderAddress2"></div>
+                    <div className="senderAddress2">
+                      {data.labelData.senderAddress2
+                        ? data.labelData.senderAddress2
+                        : ""}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -60,14 +76,20 @@ const FreightLabel = ({ data }) => {
                     overlay={overlay("senderPostalCode", "FREIGHT")}
                   >
                     <Col xs={5} className="senderPostalCode">
-                      FI-00230
+                      {data.labelData.senderPostalCode
+                        ? data.labelData.senderPostalCode
+                        : "FI-00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
                     overlay={overlay("senderPostOffice", "FREIGHT")}
                   >
-                    <Col className="senderPostOffice">HELSINKI</Col>
+                    <Col className="senderPostOffice">
+                      {data.labelData.senderPostOffice
+                        ? data.labelData.senderPostOffice
+                        : "HELSINKI"}
+                    </Col>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -81,7 +103,7 @@ const FreightLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={overlay("senderPhone", "FREIGHT")}
+                    overlay={overlay("senderPhone-label", "FREIGHT")}
                   >
                     <Col xs={4} className="senderPhone freightLabel">
                       Puh - Tel
@@ -89,10 +111,12 @@ const FreightLabel = ({ data }) => {
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
-                    overlay={overlay("senderPhoneValue", "FREIGHT")}
+                    overlay={overlay("senderPhone-value", "FREIGHT")}
                   >
                     <Col xs={8} className="senderPhoneValue">
-                      04012345678
+                      {data.labelData.senderPhone
+                        ? data.labelData.senderPhone
+                        : "04012345678"}
                     </Col>
                   </OverlayTrigger>
                 </Row>
@@ -203,7 +227,11 @@ const FreightLabel = ({ data }) => {
                   placement="top"
                   overlay={overlay("receiverName", "FREIGHT")}
                 >
-                  <div className="freightReceiverName">Ricky Receiver</div>
+                  <div className="freightReceiverName">
+                    {data.labelData.receiverName
+                      ? data.labelData.receiverName
+                      : "Ricky Receiver"}
+                  </div>
                 </OverlayTrigger>
               </Row>
               <Row>
@@ -211,7 +239,11 @@ const FreightLabel = ({ data }) => {
                   placement="top"
                   overlay={overlay("receiverName2", "FREIGHT")}
                 >
-                  <div className="freightReceiverName2"></div>
+                  <div className="freightReceiverName2">
+                    {data.labelData.receiverName2
+                      ? data.labelData.receiverName2
+                      : ""}
+                  </div>
                 </OverlayTrigger>
               </Row>
               <Row>
@@ -219,7 +251,11 @@ const FreightLabel = ({ data }) => {
                   placement="top"
                   overlay={overlay("receiverAddress1", "FREIGHT")}
                 >
-                  <div className="freightReceiverAddress1">Postintaival 7</div>
+                  <div className="freightReceiverAddress1">
+                    {data.labelData.receiverAddress1
+                      ? data.labelData.receiverAddress1
+                      : "Postintaival 7"}
+                  </div>
                 </OverlayTrigger>
               </Row>
               <Row>
@@ -227,7 +263,11 @@ const FreightLabel = ({ data }) => {
                   placement="top"
                   overlay={overlay("receiverAddress2", "FREIGHT")}
                 >
-                  <div className="freightReceiverAddress2"></div>
+                  <div className="freightReceiverAddress2">
+                    {data.labelData.receiverAddress2
+                      ? data.labelData.receiverAddress2
+                      : ""}
+                  </div>
                 </OverlayTrigger>
               </Row>
               <Row>
@@ -236,7 +276,9 @@ const FreightLabel = ({ data }) => {
                   overlay={overlay("receiverPostalCode", "FREIGHT")}
                 >
                   <Col xs={3} className="freightReceiverPostalCode">
-                    FI-00230
+                    {data.labelData.receiverPostalCode
+                      ? data.labelData.receiverPostalCode
+                      : "FI-00230"}
                   </Col>
                 </OverlayTrigger>
                 <OverlayTrigger
@@ -244,14 +286,16 @@ const FreightLabel = ({ data }) => {
                   overlay={overlay("receiverPostOffice", "FREIGHT")}
                 >
                   <Col xs={6} className="freightReceiverPostOffice">
-                    HELSINKI
+                    {data.labelData.receiverPostOffice
+                      ? data.labelData.receiverPostOffice
+                      : "HELSINKI"}
                   </Col>
                 </OverlayTrigger>
               </Row>
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("receiverContact", "FREIGHT")}
+                  overlay={overlay("receiverContactName", "FREIGHT")}
                 >
                   <div className="freightReceiverContact">Rita Receiver</div>
                 </OverlayTrigger>
@@ -259,7 +303,7 @@ const FreightLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("receiverPhone", "FREIGHT")}
+                  overlay={overlay("receiverPhone-label", "FREIGHT")}
                 >
                   <Col xs={2} className="freightReceiverPhone freightLabel">
                     Puh - Tel
@@ -267,10 +311,12 @@ const FreightLabel = ({ data }) => {
                 </OverlayTrigger>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("receiverPhoneValue", "FREIGHT")}
+                  overlay={overlay("receiverPhone-value", "FREIGHT")}
                 >
                   <Col xs={8} className="freightReceiverPhoneValue">
-                    04012345678
+                    {data.labelData.receiverPhone
+                      ? data.labelData.receiverPhone
+                      : "04012345678"}
                   </Col>
                 </OverlayTrigger>
               </Row>
@@ -416,7 +462,7 @@ const FreightLabel = ({ data }) => {
             <Col xs={4}>
               <OverlayTrigger
                 placement="top"
-                overlay={overlay("trackingCode-label", "FREIGHT")}
+                overlay={overlay("trackingBarcode-label", "FREIGHT")}
               >
                 <div className="freightTackingCode freightLabel">
                   Kolli - Item ID
@@ -426,7 +472,7 @@ const FreightLabel = ({ data }) => {
             <Col xs={8}>
               <OverlayTrigger
                 placement="top"
-                overlay={overlay("trackingCode-value", "FREIGHT")}
+                overlay={overlay("trackingBarcode-value", "FREIGHT")}
               >
                 <div className="freightTrackingBarcodeValue">
                   (00) 364300421903882843

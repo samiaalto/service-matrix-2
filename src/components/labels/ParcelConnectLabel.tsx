@@ -46,7 +46,9 @@ const ParcelConnectLabel = ({ data }) => {
               overlay={overlay("serviceName", "PARCELCONNECT")}
             >
               <Col xs={8} className="pcServiceName">
-                {data.serviceName ? data.serviceName : "Parcel Connect"}
+                {data.labelData.serviceName
+                  ? data.labelData.serviceName
+                  : "Parcel Connect"}
               </Col>
             </OverlayTrigger>
           </Row>
@@ -67,7 +69,9 @@ const ParcelConnectLabel = ({ data }) => {
                     overlay={overlay("senderName", "PARCELCONNECT")}
                   >
                     <div className="senderName">
-                      {data.senderName ? data.senderName : "Sandy Sender"}
+                      {data.labelData.senderName
+                        ? data.labelData.senderName
+                        : "Sandy Sender"}
                     </div>
                   </OverlayTrigger>
                 </Row>
@@ -77,7 +81,9 @@ const ParcelConnectLabel = ({ data }) => {
                     overlay={overlay("senderName2", "PARCELCONNECT")}
                   >
                     <div className="senderName2">
-                      {data.senderName2 ? data.senderName2 : ""}
+                      {data.labelData.senderName2
+                        ? data.labelData.senderName2
+                        : ""}
                     </div>
                   </OverlayTrigger>
                 </Row>
@@ -87,8 +93,8 @@ const ParcelConnectLabel = ({ data }) => {
                     overlay={overlay("senderAddress1", "PARCELCONNECT")}
                   >
                     <div className="senderAddress1">
-                      {data.senderAddress1
-                        ? data.senderAddress1
+                      {data.labelData.senderAddress1
+                        ? data.labelData.senderAddress1
                         : "Sender Street 123"}
                     </div>
                   </OverlayTrigger>
@@ -99,7 +105,9 @@ const ParcelConnectLabel = ({ data }) => {
                     overlay={overlay("senderAddress2", "PARCELCONNECT")}
                   >
                     <div className="senderAddress2">
-                      {data.senderAddress2 ? data.senderAddress2 : ""}{" "}
+                      {data.labelData.senderAddress2
+                        ? data.labelData.senderAddress2
+                        : ""}{" "}
                     </div>
                   </OverlayTrigger>
                 </Row>
@@ -109,9 +117,12 @@ const ParcelConnectLabel = ({ data }) => {
                     overlay={overlay("senderPostalCode", "PARCELCONNECT")}
                   >
                     <Col xs={3} className="senderPostalCode">
-                      {data.senderPostalCode
-                        ? data.senderPostalCode
-                        : "FI-00230"}
+                      {data.labelData.senderCountryCode
+                        ? data.labelData.senderCountryCode + "-"
+                        : "FI-"}
+                      {data.labelData.senderPostalCode
+                        ? data.labelData.senderPostalCode
+                        : "00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
@@ -120,7 +131,7 @@ const ParcelConnectLabel = ({ data }) => {
                   >
                     <Col className="senderPostOffice">
                       {data.senderPostOffice
-                        ? data.senderPostOffice
+                        ? data.senderPostOffice.toUpperCase()
                         : "HELSINKI"}
                     </Col>
                   </OverlayTrigger>
@@ -154,7 +165,9 @@ const ParcelConnectLabel = ({ data }) => {
                       overlay={overlay("senderAccount-value", "PARCELCONNECT")}
                     >
                       <Col className="senderAccountValue">
-                        {data.senderContract ? data.senderContract : "654321"}
+                        {data.labelData.senderContract
+                          ? data.labelData.senderContract
+                          : "654321"}
                       </Col>
                     </OverlayTrigger>
                   </Row>
@@ -171,7 +184,9 @@ const ParcelConnectLabel = ({ data }) => {
                         overlay={overlay("senderPhone-value", "PARCELCONNECT")}
                       >
                         <Col className="senderPhoneValue">
-                          {data.senderPhone ? data.senderPhone : "04012345678"}
+                          {data.labelData.senderPhone
+                            ? data.labelData.senderPhone
+                            : "04012345678"}
                         </Col>
                       </OverlayTrigger>
                     </Row>
@@ -222,7 +237,7 @@ const ParcelConnectLabel = ({ data }) => {
                 >
                   <div className="freightReceiverAddress1">
                     {data.labelData.receiverAddress1
-                      ? data.labelData.receiveraddress1
+                      ? data.labelData.receiverAddress1
                       : "Postintaival 7"}
                   </div>
                 </OverlayTrigger>
@@ -234,7 +249,7 @@ const ParcelConnectLabel = ({ data }) => {
                 >
                   <div className="freightReceiverAddress2">
                     {data.labelData.receiverAddress2
-                      ? data.labelData.receiveraddress2
+                      ? data.labelData.receiverAddress2
                       : ""}
                   </div>
                 </OverlayTrigger>
@@ -245,9 +260,12 @@ const ParcelConnectLabel = ({ data }) => {
                   overlay={overlay("receiverPostalCode", "PARCELCONNECT")}
                 >
                   <Col xs={4} className="freightReceiverPostalCode">
+                    {data.labelData.receiverCountryCode
+                      ? data.labelData.receiverCountryCode + "-"
+                      : "FI-"}
                     {data.labelData.receiverPostalCode
                       ? data.labelData.receiverPostalCode
-                      : "FI-00230"}
+                      : "00230"}
                   </Col>
                 </OverlayTrigger>
                 <OverlayTrigger
@@ -256,7 +274,7 @@ const ParcelConnectLabel = ({ data }) => {
                 >
                   <Col xs={6} className="freightReceiverPostOffice">
                     {data.labelData.receiverPostOffice
-                      ? data.labelData.receiverPostOffice
+                      ? data.labelData.receiverPostOffice.toUpperCase()
                       : "HELSINKI"}
                   </Col>
                 </OverlayTrigger>

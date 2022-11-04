@@ -103,7 +103,11 @@ const ParcelLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderAddress1", "PARCEL")}
                   >
-                    <div className="senderAddress1">Sender Street 123</div>
+                    <div className="senderAddress1">
+                      {data.labelData.senderAddress1
+                        ? data.labelData.senderAddress1
+                        : "Sender Street 123"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -111,7 +115,11 @@ const ParcelLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderAddress2", "PARCEL")}
                   >
-                    <div className="senderAddress2"></div>
+                    <div className="senderAddress2">
+                      {data.labelData.senderAddress2
+                        ? data.labelData.senderAddress2
+                        : ""}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -120,14 +128,23 @@ const ParcelLabel = ({ data }) => {
                     overlay={overlay("senderPostalCode", "PARCEL")}
                   >
                     <Col xs={5} className="senderPostalCode">
-                      FI-00230
+                      {data.labelData.senderCountryCode
+                        ? data.labelData.senderCountryCode + "-"
+                        : "FI-"}
+                      {data.labelData.senderPostalCode
+                        ? data.labelData.senderPostalCode
+                        : "00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
                     overlay={overlay("senderPostOffice", "PARCEL")}
                   >
-                    <Col className="senderPostOffice">HELSINKI</Col>
+                    <Col className="senderPostOffice">
+                      {data.labelData.senderPostOffice
+                        ? data.labelData.senderPostOffice.toUpperCase()
+                        : "HELSINKI"}
+                    </Col>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -135,7 +152,11 @@ const ParcelLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("senderCountry", "PARCEL")}
                   >
-                    <div className="senderCountry">Finland</div>
+                    <div className="senderCountry">
+                      {data.labelData.senderCountry
+                        ? data.labelData.senderCountry
+                        : "Finland"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
               </div>
@@ -205,9 +226,12 @@ const ParcelLabel = ({ data }) => {
                     overlay={overlay("receiverPostalCode", "PARCEL")}
                   >
                     <Col xs={5} className="receiverPostalCode">
+                      {data.labelData.receiverCountryCode
+                        ? data.labelData.receiverCountryCode + "-"
+                        : "FI-"}
                       {data.labelData.receiverPostalCode
                         ? data.labelData.receiverPostalCode
-                        : "FI-00230"}
+                        : "00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
@@ -216,7 +240,7 @@ const ParcelLabel = ({ data }) => {
                   >
                     <Col xs={6} className="receiverPostOffice">
                       {data.labelData.receiverPostOffice
-                        ? data.labelData.receiverPostOffice
+                        ? data.labelData.receiverPostOffice.toUpperCase()
                         : "HELSINKI"}
                     </Col>
                   </OverlayTrigger>
@@ -260,7 +284,7 @@ const ParcelLabel = ({ data }) => {
                     <Col xs={5} className="receiverPhoneValue label">
                       {data.labelData.receiverPhone
                         ? data.labelData.receiverPhone
-                        : "04018234990"}
+                        : ""}
                     </Col>
                   </OverlayTrigger>
                 </Col>
