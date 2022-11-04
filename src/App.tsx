@@ -44,6 +44,7 @@ const App = (props: AppProps) => {
     additionalServices: {},
     fileFormats: {},
     countries: {},
+    labelInstructions: {},
     packageTypes: {},
   });
   const [multiSelectData, setMultiSelectData] = useState([
@@ -346,6 +347,7 @@ const App = (props: AppProps) => {
   };
 
   const handlePudo = () => {
+    updateSearchParams("pudo", !selected.pudo);
     setSelected((prevState) => ({
       ...prevState,
       pudo: !prevState.pudo,
@@ -479,6 +481,7 @@ const App = (props: AppProps) => {
       additionalServices: additionalServicesJSON,
       fileFormats: fileFormatsJSON,
       countries: countriesJSON,
+      labelInstructions: labelInstructionsJSON,
     }));
 
     setDataLoaded(true);
@@ -518,7 +521,8 @@ const App = (props: AppProps) => {
         selected,
         data.services,
         data.fileFormats,
-        data.additionalServices
+        data.additionalServices,
+        data.countries
       );
 
       setSelected((prevState) => ({
@@ -534,6 +538,7 @@ const App = (props: AppProps) => {
     selected.addons,
     selected.showSamples,
     selected.showOptional,
+    selected.pudo,
   ]);
 
   useEffect(() => {

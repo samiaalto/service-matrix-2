@@ -1,5 +1,5 @@
-import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
-
+import { Row, Col, OverlayTrigger } from "react-bootstrap";
+import overlay from "./Overlay";
 import "../styles/ParcelLabel_styles.css";
 
 const ParcelLabel = ({ data }) => {
@@ -32,17 +32,7 @@ const ParcelLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="labelLogo">
-                        <b>{"Posti logo"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {
-                          "Description: Printed in blue on address cards supplied by Posti. Printed in black (length: 12mm) in the customer's own address card materials, with a free space of 3mm on the left and the upper edge."
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("labelLogo", "PARCEL")}
                   >
                     <Col xs={4} className="labelLogo">
                       <svg
@@ -73,19 +63,7 @@ const ParcelLabel = ({ data }) => {
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="serviceName">
-                        <b>{"Name of service"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 10/12 bold"}
-                        <br />
-                        {
-                          "Description: Grouped according to the service-specific models"
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("serviceName", "PARCEL")}
                   >
                     <Col xs={7} className="serviceName">
                       {data.labelData.serviceName
@@ -97,19 +75,7 @@ const ParcelLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="sender-label">
-                        <b>{"Header for sender information"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 6"}
-                        <br />
-                        {
-                          "Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("sender-label", "PARCEL")}
                   >
                     <div className="sender-label label">
                       Lähettäjä Avsändare From
@@ -119,99 +85,78 @@ const ParcelLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="senderName">
-                        <b>{"Sender's name 1"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's name"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("senderName", "PARCEL")}
                   >
                     <div className="senderName">Sandy Sender</div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
-                  <div className="senderName2"></div>
-                </Row>
-                <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="senderAddress1">
-                        <b>{"Sender's address 1"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's address"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("senderName2", "PARCEL")}
                   >
-                    <div className="senderAddress1">Sender Street 123</div>
+                    <div className="senderName2"></div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
-                  <div className="senderAddress2"></div>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={overlay("senderAddress1", "PARCEL")}
+                  >
+                    <div className="senderAddress1">
+                      {data.labelData.senderAddress1
+                        ? data.labelData.senderAddress1
+                        : "Sender Street 123"}
+                    </div>
+                  </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="senderPostalCode">
-                        <b>{"Sender's postal code"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "Description: Sender's postal code with country code prefix"
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("senderAddress2", "PARCEL")}
+                  >
+                    <div className="senderAddress2">
+                      {data.labelData.senderAddress2
+                        ? data.labelData.senderAddress2
+                        : ""}
+                    </div>
+                  </OverlayTrigger>
+                </Row>
+                <Row>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={overlay("senderPostalCode", "PARCEL")}
                   >
                     <Col xs={5} className="senderPostalCode">
-                      FI-00230
+                      {data.labelData.senderCountryCode
+                        ? data.labelData.senderCountryCode + "-"
+                        : "FI-"}
+                      {data.labelData.senderPostalCode
+                        ? data.labelData.senderPostalCode
+                        : "00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="senderPostOffice">
-                        <b>{"Sender's city"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's city"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("senderPostOffice", "PARCEL")}
                   >
-                    <Col className="senderPostOffice">HELSINKI</Col>
+                    <Col className="senderPostOffice">
+                      {data.labelData.senderPostOffice
+                        ? data.labelData.senderPostOffice.toUpperCase()
+                        : "HELSINKI"}
+                    </Col>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="senderCountry">
-                        <b>{"Sender's country"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Sender's country"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("senderCountry", "PARCEL")}
                   >
-                    <div className="senderCountry">Finland</div>
+                    <div className="senderCountry">
+                      {data.labelData.senderCountry
+                        ? data.labelData.senderCountry
+                        : "Finland"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
               </div>
@@ -219,19 +164,7 @@ const ParcelLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiver-label">
-                        <b>{"Header for recpient information"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 6"}
-                        <br />
-                        {
-                          "Description: Addresses of the sender of the Thermaltransfer sticker address label 20 characters per line, A5 laser-printed address label 35 characters per line. In both address labels detachable label part, the sender's addresses 2 x 35 characters."
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiver-label", "PARCEL")}
                   >
                     <div className="receiver-label label">
                       Vastaanottaja Addressat To
@@ -241,118 +174,87 @@ const ParcelLabel = ({ data }) => {
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverName">
-                        <b>{"Recipient's name 1"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Recipient's name"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverName", "PARCEL")}
                   >
-                    <div className="receiverName">Ricky Receiver</div>
+                    <div className="receiverName">
+                      {data.labelData.receiverName
+                        ? data.labelData.receiverName
+                        : "Ricky Receiver"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverName2">
-                        <b>{"Recipient's name 2"}</b>
-                        <br />
-                        {"Mandatory: When delivery to a pickup point is chosen"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {"Description: Care Of name of the pickup point"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverName2", "PARCEL")}
                   >
-                    <div className="receiverName2"></div>
+                    <div className="receiverName2">
+                      {data.labelData.receiverName2
+                        ? data.labelData.receiverName2
+                        : ""}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverAddress1">
-                        <b>{"Recipient's address 1"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "Description: Recipient's home address or address the pickup point"
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverAddress1", "PARCEL")}
                   >
-                    <div className="receiverAddress1">Postintaival 7</div>
+                    <div className="receiverAddress1">
+                      {" "}
+                      {data.labelData.receiverAddress1
+                        ? data.labelData.receiverAddress1
+                        : "Postintaival 7"}
+                    </div>
                   </OverlayTrigger>
-                </Row>
-                <Row>
-                  <div className="receiverAddress2"></div>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverPostalCode">
-                        <b>{"Recipient's postal code"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 10 bold"}
-                        <br />
-                        {
-                          "Description: Recipient's postal code or postal code of the pickup point with the country code prefix"
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverAddress2", "PARCEL")}
+                  >
+                    <div className="receiverAddress2">
+                      {data.labelData.receiverAddress2
+                        ? data.labelData.receiverAddress2
+                        : ""}
+                    </div>
+                  </OverlayTrigger>
+                </Row>
+                <Row>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={overlay("receiverPostalCode", "PARCEL")}
                   >
                     <Col xs={5} className="receiverPostalCode">
-                      FI-00230
+                      {data.labelData.receiverCountryCode
+                        ? data.labelData.receiverCountryCode + "-"
+                        : "FI-"}
+                      {data.labelData.receiverPostalCode
+                        ? data.labelData.receiverPostalCode
+                        : "00230"}
                     </Col>
                   </OverlayTrigger>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverPostOffice">
-                        <b>{"Recipient's city"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 10 bold"}
-                        <br />
-                        {"Description: Recipient's city"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverPostOffice", "PARCEL")}
                   >
                     <Col xs={6} className="receiverPostOffice">
-                      HELSINKI
+                      {data.labelData.receiverPostOffice
+                        ? data.labelData.receiverPostOffice.toUpperCase()
+                        : "HELSINKI"}
                     </Col>
                   </OverlayTrigger>
                 </Row>
                 <Row>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverCountry">
-                        <b>{"Recipient's country"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 10 bold"}
-                        <br />
-                        {"Description: Recipient's country"}
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverCountry", "PARCEL")}
                   >
-                    <div className="receiverCountry">Finland</div>
+                    <div className="receiverCountry">
+                      {data.labelData.receiverCountry
+                        ? data.labelData.receiverCountry
+                        : "Finland"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
               </div>
@@ -361,19 +263,7 @@ const ParcelLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={
-                    <Tooltip id="processCode">
-                      <b>{"The service's process number"}</b>
-                      <br />
-                      {"Mandatory: Yes"}
-                      <br />
-                      {"Font size: 20/24 bold"}
-                      <br />
-                      {
-                        "Description: Grouped according to the service-specific models"
-                      }
-                    </Tooltip>
-                  }
+                  overlay={overlay("processCode", "PARCEL")}
                 >
                   <div className="processCode">
                     {data.labelData.processNumber
@@ -389,22 +279,12 @@ const ParcelLabel = ({ data }) => {
                   </Col>
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip id="receiverPhoneValue">
-                        <b>{"The recipient's mobile phone number"}</b>
-                        <br />
-                        {"Mandatory: Yes"}
-                        <br />
-                        {"Font size: 8"}
-                        <br />
-                        {
-                          "The recipient's mobile phone number and/or email address has to be given in the EDI message."
-                        }
-                      </Tooltip>
-                    }
+                    overlay={overlay("receiverPhoneValue", "PARCEL")}
                   >
                     <Col xs={5} className="receiverPhoneValue label">
-                      04018234990
+                      {data.labelData.receiverPhone
+                        ? data.labelData.receiverPhone
+                        : ""}
                     </Col>
                   </OverlayTrigger>
                 </Col>
@@ -413,46 +293,8 @@ const ParcelLabel = ({ data }) => {
             <Col xs={4} className="product">
               <Row>
                 <OverlayTrigger
-                  placement="top"
-                  overlay={
-                    <Tooltip id="serviceBarcode">
-                      <b>{"The service's product code as a barcode"}</b>
-                      <br />
-                      {"Mandatory: Yes"}
-                      <br />
-                      {
-                        "6 characters, contain a technical modulo 103 check digit, not visual"
-                      }
-                      <br />
-                      {"FactCode: 2W"}
-                      <br />
-                      {"Product code: 4 numbers given by Posti"}
-                      <br />
-                      {"Bar code type: Licence Plate code 128 a, b and c"}
-                      <br />
-                      {
-                        "The first two characters shall produced in type a or b and the remaining four even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code."
-                      }
-                      <br />
-                      {
-                        "X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)"
-                      }
-                      <br />
-                      {
-                        "The minimum resolution in thermal transfer printer is 200 dots / inch."
-                      }
-                      <br />
-                      {
-                        "The minimum resolution in laser reproduction is 600 dots / inch."
-                      }
-                      <br />
-                      {
-                        "Free space at both sides of the bar code must be at least 5 mmoMinimum height is 20 mm, but when EDI-message is used 12 mm"
-                      }
-                      <br />
-                      {"Use block capitals in bar codes"}
-                    </Tooltip>
-                  }
+                  placement="bottom"
+                  overlay={overlay("serviceBarcode", "PARCEL")}
                 >
                   <div className="serviceBarcode">
                     <Barcode
@@ -467,19 +309,7 @@ const ParcelLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={
-                    <Tooltip id="serviceCode">
-                      <b>{"The service's product code"}</b>
-                      <br />
-                      {"Mandatory: Yes"}
-                      <br />
-                      {"Font size: 10"}
-                      <br />
-                      {
-                        "Description: The service's product code that uses the License Plate 2W -prefix"
-                      }
-                    </Tooltip>
-                  }
+                  overlay={overlay("serviceCode", "PARCEL")}
                 >
                   <div className="serviceCode">
                     {data.service ? "2W" + data.service : "2W2103"}
@@ -487,24 +317,19 @@ const ParcelLabel = ({ data }) => {
                 </OverlayTrigger>
               </Row>
               <Row>
-                <div className="EDISSI">EDI SSI</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("EDISSI", "PARCEL")}
+                >
+                  <div className="EDISSI">EDI SSI</div>
+                </OverlayTrigger>
               </Row>
               <Row>
                 <Col className="dateBox">
                   <Row>
                     <OverlayTrigger
                       placement="top"
-                      overlay={
-                        <Tooltip id="date-label">
-                          <b>{"Header for printing date"}</b>
-                          <br />
-                          {"Mandatory: Yes"}
-                          <br />
-                          {"Font size: 6"}
-                          <br />
-                          {"Description: Header for printing date"}
-                        </Tooltip>
-                      }
+                      overlay={overlay("date-label", "PARCEL")}
                     >
                       <div className="date-label label">
                         Päivämäärä Datum Date
@@ -514,19 +339,7 @@ const ParcelLabel = ({ data }) => {
                   <Row>
                     <OverlayTrigger
                       placement="top"
-                      overlay={
-                        <Tooltip id="date">
-                          <b>{"Printing date"}</b>
-                          <br />
-                          {"Mandatory: No"}
-                          <br />
-                          {"Font size: 8"}
-                          <br />
-                          {
-                            "Description: Printing date in Finnish date format: DD.MM.YYYY"
-                          }
-                        </Tooltip>
-                      }
+                      overlay={overlay("date", "PARCEL")}
                     >
                       <div className="date">
                         {data.labelData.dateTime
@@ -542,66 +355,64 @@ const ParcelLabel = ({ data }) => {
                   <Row>
                     <OverlayTrigger
                       placement="top"
-                      overlay={
-                        <Tooltip id="weightValue">
-                          <b>{"Shipment gross weight"}</b>
-                          <br />
-                          {"Mandatory: No"}
-                          <br />
-                          {"Font size: 8"}
-                          <br />
-                          {"Description: Shipment gross weight"}
-                        </Tooltip>
-                      }
+                      overlay={overlay("weightValue", "PARCEL")}
                     >
                       <Col xs={7} className="weightValue">
-                        0,31
+                        {data.labelData.weight ? data.labelData.weight : "0,31"}
                       </Col>
                     </OverlayTrigger>
-                    <Col
-                      xs={2}
-                      className="weightlabel"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Header for shipment gross weight</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for shipment gross weight"
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={overlay("weightlabel", "PARCEL")}
                     >
-                      kg
-                    </Col>
+                      <Col xs={2} className="weightlabel">
+                        kg
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
                 <Col className="volume box">
                   <Row>
-                    <Col
-                      xs={7}
-                      className="volumeValue"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Shipment volume</b></br>Mandatory: No</br>Font size: 8</br>Description: Shipment volume"
-                    ></Col>
-                    <Col
-                      xs={2}
-                      className="volumelabel"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      data-container=".labelPreview"
-                      title="<b>Header for shipment volume</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for shipment volume"
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={overlay("volumeValue", "PARCEL")}
                     >
-                      m3
-                    </Col>
+                      <Col xs={7} className="volumeValue">
+                        {data.labelData.volume ? data.labelData.volume : ""}
+                      </Col>
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={overlay("volumelabel", "PARCEL")}
+                    >
+                      <Col xs={2} className="volumelabel">
+                        m3
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
               </Row>
               <Row>
                 <Col className="packages  box">
                   <Row>
-                    <Col xs={7} className="packageCount">
-                      1
-                    </Col>
-                    <Col xs={4} className="volumelabel">
-                      kpl/st
-                    </Col>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={overlay("packageCount", "PARCEL")}
+                    >
+                      <Col xs={7} className="packageCount">
+                        {data.labelData.packageCount
+                          ? data.labelData.packageCount
+                          : "1"}
+                      </Col>
+                    </OverlayTrigger>
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={overlay("packageCountLabel", "PARCEL")}
+                    >
+                      <Col xs={4} className="packageCountLabel">
+                        kpl/st
+                      </Col>
+                    </OverlayTrigger>
                   </Row>
                 </Col>
               </Row>
@@ -610,36 +421,75 @@ const ParcelLabel = ({ data }) => {
           <Row className="cod">
             <Col xs={4} className="addon box">
               <Row>
-                <div className="addon-label label">
-                  Lisäpalvelut Tilläggstjänster
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("addon-label", "PARCEL")}
+                >
+                  <div className="addon-label label">
+                    Lisäpalvelut Tilläggstjänster
+                  </div>
+                </OverlayTrigger>
               </Row>
-              <Row>
-                {addonboxes.map((addon, i) => (
-                  <Col className={"addonbox " + i} key={"addonbox_" + i}>
-                    <div className={"addonValue " + i} key={"addonvalue_" + i}>
-                      {addon.marking}
-                    </div>
-                  </Col>
-                ))}
-              </Row>
+              <OverlayTrigger
+                placement="top"
+                overlay={overlay("addon-value", "PARCEL")}
+              >
+                <Row>
+                  {addonboxes.map((addon, i) => (
+                    <Col className={"addonbox " + i} key={"addonbox_" + i}>
+                      <div
+                        className={"addonValue " + i}
+                        key={"addonvalue_" + i}
+                      >
+                        {addon.marking}
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </OverlayTrigger>
             </Col>
             <Col xs={4} className="otherPayer box">
               <Row>
-                <div className="otherPayerHeading">
-                  Maksaja muu kuin lähettäjä Betalaren annan än avsändaren
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("otherPayer-label", "PARCEL")}
+                >
+                  <div className="otherPayer-label">
+                    Maksaja muu kuin lähettäjä Betalaren annan än avsändaren
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <Col className="otherPayerValue">661234</Col>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("otherPayer-value", "PARCEL")}
+                >
+                  <Col className="otherPayerValue">
+                    {data.labelData.otherPayer ? data.labelData.otherPayer : ""}
+                  </Col>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="packages box">
               <Row>
-                <div className="addon-label label">kpl st</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("packageCountLabel", "PARCEL")}
+                >
+                  <div className="addon-label label">kpl st</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="packageCount">1</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("packageCount", "PARCEL")}
+                >
+                  <div className="packageCount">
+                    {data.labelData.packageCount
+                      ? data.labelData.packageCount
+                      : "1"}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="empty"></Col>
@@ -647,103 +497,150 @@ const ParcelLabel = ({ data }) => {
           <Row>
             <Col className="codAmount box">
               <Row>
-                <div className="addon-label label">PE-summa PF-belopp</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codAmount-label", "PARCEL")}
+                >
+                  <div className="addon-label label">PE-summa PF-belopp</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codAmountValue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codAmountValue", "PARCEL")}
+                >
+                  <div className="codAmountValue">
+                    {data.labelData.codAmount ? data.labelData.codAmount : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="codIBAN box">
               <Row>
-                <div className="addon-label label">Tilinumero Kontonummer</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codIBAN-label", "PARCEL")}
+                >
+                  <div className="addon-label label">
+                    Tilinumero Kontonummer
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codIBANvalue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codIBANvalue", "PARCEL")}
+                >
+                  <div className="codIBANvalue">
+                    {data.labelData.codIBAN ? data.labelData.codIBAN : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
           </Row>
           <Row>
             <Col xs={8} className="codReference box">
               <Row>
-                <div className="addon-label label">
-                  Pankkiviite Bankreferens
-                </div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codReference-label", "PARCEL")}
+                >
+                  <div className="addon-label label">
+                    Pankkiviite Bankreferens
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codReferenceValue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codReferenceValue", "PARCEL")}
+                >
+                  <div className="codReferenceValue">
+                    {data.labelData.codReference
+                      ? data.labelData.codReference
+                      : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
             <Col className="codBIC box">
               <Row>
-                <div className="addon-label label">BIC</div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codBIC-label", "PARCEL")}
+                >
+                  <div className="addon-label label">BIC</div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div className="codBICvalue"></div>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("codBICvalue", "PARCEL")}
+                >
+                  <div className="codBICvalue">
+                    {data.labelData.codBIC ? data.labelData.codBIC : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
             </Col>
           </Row>
           <Row>
-            <div
-              className="trackingBarcodeValue"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+            <OverlayTrigger
+              placement="top"
+              overlay={overlay("trackingBarcodeValue", "PARCEL")}
             >
-              JJFI 699999 12345 678901
-            </div>
+              <div className="trackingBarcodeValue">
+                JJFI 699999 12345 678901
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
-            <div
-              className="trackingBarcode"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID as a barcode</b></br>Mandatory: Yes</br>Bar code type: Licence Plate code 128 a, b and c</br>The first 5 characters shall produced in type a or b and the remaining 16 even numbersin type c. It is not mandatory to use type c, if in the address label is space enough to print out longer bar code.</br>X-value (width of the narrowest bar) 0,42 -0,50 mm (optimal value is 0,46 mm)</br>The minimum resolution in thermal transfer printer is 200 dots / inch.</br>The minimum resolution in laser reproduction is 600 dots / inch.</br>Free space at both sides of the bar code must be at least 5 mm</br>Minimum height is 25 mm</br>Use block capitals in bar codes"
+            <OverlayTrigger
+              placement="top"
+              overlay={overlay("trackingBarcode", "PARCEL")}
             >
-              <Barcode value="JJFI69999912345678901" displayValue={false} />
-            </div>
+              <div className="trackingBarcode">
+                <Barcode value="JJFI69999912345678901" displayValue={false} />
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
-            <div
-              className="trackingBarcodeValue"
-              data-toggle="tooltip"
-              data-placement="top"
-              data-container=".labelPreview"
-              title="<b>Delivery ID</b></br>Mandatory: Yes</br>Font size: 10</br>Description: Delivery ID that uses the License Plate JJFI prefix. The six last numbers are grouped as an element of their own, and entered in bold when possible."
+            <OverlayTrigger
+              placement="top"
+              overlay={overlay("trackingBarcodeValue", "PARCEL")}
             >
-              JJFI 699999 12345 678901
-            </div>
+              <div className="trackingBarcodeValue">
+                JJFI 699999 12345 678901
+              </div>
+            </OverlayTrigger>
           </Row>
           <Row>
             <Col className="additionalInfo">
               <Row>
-                <div
-                  className="addon-label label"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Header for additional information</b></br>Mandatory: Yes</br>Font size: 6</br>Description: Header for additional information"
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("additionalInfo-label", "PARCEL")}
                 >
-                  Lisätiedot Tilläggsuppgifter
-                </div>
+                  <div className="addon-label label">
+                    Lisätiedot Tilläggsuppgifter
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
-                <div
-                  className="additionalInfoValue"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  data-container=".labelPreview"
-                  title="<b>Additional information</b></br>Mandatory: Yes</br>Font size: 12 Bold</br>Description: The name of the additional service is printed in the data field in large bold letters. If no additional services have been selected, you can print the destination postal code barcode in the data field (except when EDI is used). Otherwise, you can print transport instructions or free-form text in the space."
+                <OverlayTrigger
+                  placement="top"
+                  overlay={overlay("additionalInfoValue", "PARCEL")}
                 >
-                  {data.labelData.addons
-                    ? data.labelData.addons.map((addon, i) => (
-                        <div key={"addon_" + i}>
-                          {addon.labelName.toUpperCase()}
-                        </div>
-                      ))
-                    : ""}
-                </div>
+                  <div className="additionalInfoValue">
+                    {data.labelData.addons
+                      ? data.labelData.addons.map((addon, i) => (
+                          <div key={"addon_" + i}>
+                            {addon.labelName.toUpperCase()}
+                          </div>
+                        ))
+                      : ""}
+                  </div>
+                </OverlayTrigger>
               </Row>
               <Row>
                 <div className="PostiGreen">

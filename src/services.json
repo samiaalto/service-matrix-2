@@ -453,7 +453,7 @@
           "AdditionalInfo": "Package record",
           "Sample": "2101",
           "Mandatory": true,
-          "MessagePosition": "GoodsItem",
+          "MessagePosition": null,
           "PropertyName": "ServiceCode",
           "PropertyValue": "2101"
         },
@@ -777,6 +777,42 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2103"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>c/o Automaatti</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "Name2",
+          "PropertyValue": "c/o Automaatti"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Service>3201</Service>",
+          "Mandatory": false,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3201"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": false,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "ContactChannel",
+          "PropertyValue": "+3580007654321"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<ContactChannel channel='MOBILE'>+3580007654321</ContactChannel>",
+          "Mandatory": false,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "channel",
+          "PropertyValue": "MOBILE"
         }
       ],
       "PackageTypesAndDimensions": [
@@ -3918,6 +3954,69 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2351"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"DELIVERY\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "CONSIGNEE",
+          "PropertyName": "Party",
+          "PropertyValue": "DELIVERY"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Daisy Delivery</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Name1",
+          "PropertyValue": "Daisy Delivery"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>c/o Parcel locker</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Name2",
+          "PropertyValue": "Parcel locker"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Delivery Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Street1",
+          "PropertyValue": "Delivery Address 1"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "City",
+          "PropertyValue": "FI"
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Country",
+          "PropertyValue": "FI"
         }
       ],
       "PackageTypesAndDimensions": [
