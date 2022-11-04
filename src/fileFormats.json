@@ -233,7 +233,7 @@
           "Position": 191,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1234 123456 898"
+          "ExampleValue": null
         },
         {
           "Name": "CodValue",
@@ -247,7 +247,7 @@
           "Position": 226,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "001234"
+          "ExampleValue": null
         },
         {
           "Name": "CurrencyCode",
@@ -317,7 +317,7 @@
           "Position": 303,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": "2"
         },
         {
           "Name": "RecordType",
@@ -331,7 +331,7 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": null
         },
         {
           "Name": "Role",
@@ -404,11 +404,11 @@
           "ExampleValue": "Name 3"
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": "Katusoite 1",
           "DescriptionEN": "Street Address 1",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -418,11 +418,11 @@
           "ExampleValue": "Keskuskatu 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": "Katusoite 2",
           "DescriptionEN": "Street Address 2",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -432,11 +432,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": "Katusoite 3",
           "DescriptionEN": "Street Address 3",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -460,11 +460,11 @@
           "ExampleValue": "Helsinki"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": "Postinumero",
           "DescriptionEN": "Postcode",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 9,
@@ -642,11 +642,11 @@
           "ExampleValue": "Name 3"
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": "Katusoite 1",
           "DescriptionEN": "Street Address 1",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -656,11 +656,11 @@
           "ExampleValue": "Keskustie 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": "Katusoite 2",
           "DescriptionEN": "Street Address 2",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -670,11 +670,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": "Katusoite 3",
           "DescriptionEN": "Street Address 3",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -698,11 +698,11 @@
           "ExampleValue": "Helsinki"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": "Postinumero",
           "DescriptionEN": "Postcode",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 9,
@@ -880,11 +880,11 @@
           "ExampleValue": "Name 3"
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": "Katusoite 1",
           "DescriptionEN": "Street Address 1",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -894,11 +894,11 @@
           "ExampleValue": "Payer address 1"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": "Katusoite 2",
           "DescriptionEN": "Street Address 2",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -908,11 +908,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": "Katusoite 3",
           "DescriptionEN": "Street Address 3",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -936,11 +936,11 @@
           "ExampleValue": "Tikkurila"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": "Postinumero",
           "DescriptionEN": "Postcode",
-          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 9,
@@ -2419,11 +2419,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 1.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -2433,11 +2433,11 @@
           "ExampleValue": "Keskuskatu 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 2.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -2447,11 +2447,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 3.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -2461,11 +2461,11 @@
           "ExampleValue": "Street Address 3"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -2727,11 +2727,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 1.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -2741,11 +2741,11 @@
           "ExampleValue": "Keskustie 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 2.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -2755,11 +2755,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 3.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -2769,11 +2769,11 @@
           "ExampleValue": "Street Address 3"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -2993,11 +2993,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 1.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -3007,11 +3007,11 @@
           "ExampleValue": "Delivery Address 1"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 2.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -3021,11 +3021,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "StreetAddress3",
+          "Name": "Street3",
           "DisplayName": "Street Address 3",
           "DescriptionFI": null,
           "DescriptionEN": "Street address line 3.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -3035,11 +3035,11 @@
           "ExampleValue": "Street Address 3"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -4938,11 +4938,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address. P.O. Box is not valid address in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 60,
@@ -4952,11 +4952,11 @@
           "ExampleValue": "Keskuskatu 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Additional street address info, e.g. gates, doors, floor, etc. ",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 60,
@@ -4966,11 +4966,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code. P.O. Box postal codes are not valid in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -5260,11 +5260,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address. P.O. Box is not valid address in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 60,
@@ -5274,11 +5274,11 @@
           "ExampleValue": "Keskuskatu 3"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Additional street address info, e.g. gates, doors, floor, etc. ",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress3",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street3",
           "Mandatory": false,
           "Type": "String",
           "Length": 60,
@@ -5288,11 +5288,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code. P.O. Box postal codes are not valid in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -5526,11 +5526,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address. P.O. Box is not valid address in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 35,
@@ -5540,11 +5540,11 @@
           "ExampleValue": "Pickup address 1"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Additional street address info, e.g. gates, doors, floor, etc. ",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 35,
@@ -5554,11 +5554,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code. P.O. Box postal codes are not valid in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -5764,11 +5764,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address. P.O. Box is not valid address in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 60,
@@ -5778,11 +5778,11 @@
           "ExampleValue": "Delivery address 1"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Additional street address info, e.g. gates, doors, floor, etc. ",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 60,
@@ -5792,11 +5792,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code. P.O. Box postal codes are not valid in freight services.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,
@@ -6030,11 +6030,11 @@
           "ExampleValue": null
         },
         {
-          "Name": "StreetAddress1",
+          "Name": "Street1",
           "DisplayName": "Street Address 1",
           "DescriptionFI": null,
           "DescriptionEN": "Street address. Mandatory when payer is a third party, i.e. not consignor or consignee. Recommended to use always",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress1",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street1",
           "Mandatory": true,
           "Type": "String",
           "Length": 60,
@@ -6044,11 +6044,11 @@
           "ExampleValue": "Payer address 1"
         },
         {
-          "Name": "StreetAddress2",
+          "Name": "Street2",
           "DisplayName": "Street Address 2",
           "DescriptionFI": null,
           "DescriptionEN": "Additional street address info, e.g. gates, doors, floor, etc. ",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.StreetAddress2",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Street2",
           "Mandatory": false,
           "Type": "String",
           "Length": 60,
@@ -6058,11 +6058,11 @@
           "ExampleValue": "Street Address 2"
         },
         {
-          "Name": "PostalCode",
+          "Name": "Postcode",
           "DisplayName": "Postal Code",
           "DescriptionFI": null,
           "DescriptionEN": "Postal code. Mandatory when payer is a third party, i.e. not consignor or consignee. Recommended to use always.",
-          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.PostalCode",
+          "Path": "Postra.0.Shipments.0.Shipment.0.Parties.0.Party.0.Location.0.Postcode",
           "Mandatory": true,
           "Type": "String",
           "Length": 10,

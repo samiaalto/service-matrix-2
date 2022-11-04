@@ -7,7 +7,7 @@ const MessageGenerator = (
 ) => {
   const { create } = require("xmlbuilder2");
 
-  //console.log(addons);
+  //console.log(fileFormats);
 
   function set(obj, path, value) {
     // protect against being something unexpected
@@ -163,14 +163,14 @@ const MessageGenerator = (
         serviceProps.push(
           {
             format: "XML",
-            property: "StreetAddress1",
+            property: "Street1",
             value: country.Address,
             position: "CONSIGNOR",
             mandatory: true,
           },
           {
             format: "XML",
-            property: "PostalCode",
+            property: "Postcode",
             value: country.PostalCode,
             position: "CONSIGNOR",
             mandatory: true,
@@ -199,7 +199,6 @@ const MessageGenerator = (
       destIndex = index;
       if (selected.pudo) {
         labelData["receiverName2"] = country.Name2;
-        labelData["receiverPhone"] = "+3580007654321";
       }
       labelData["receiverAddress1"] = country.Address;
       labelData["receiverPostalCode"] = country.PostalCode;
@@ -210,14 +209,14 @@ const MessageGenerator = (
       serviceProps.push(
         {
           format: "XML",
-          property: "StreetAddress1",
+          property: "Street1",
           value: country.Address,
           position: "CONSIGNEE",
           mandatory: true,
         },
         {
           format: "XML",
-          property: "PostalCode",
+          property: "Postcode",
           value: country.PostalCode,
           position: "CONSIGNEE",
           mandatory: true,
@@ -253,20 +252,20 @@ const MessageGenerator = (
           if (selected.pudo && field.PropertyName === "Name2") {
             value = countries.records[destIndex].Name2;
             mandatory = true;
-          } else if (
-            (selected.pudo && field.PropertyName === "Service") ||
-            (selected.pudo && field.PropertyName === "ContactChannel")
-          ) {
+          } else if (selected.pudo && field.PropertyName === "Service") {
+            mandatory = true;
+          } else if (selected.pudo && field.PropertyName === "ContactChannel") {
+            labelData["receiverPhone"] = "+3580007654321";
             mandatory = true;
           } else if (
             (selected.pudo && field.PropertyName === "Party") ||
             (selected.pudo && field.PropertyName === "Name1")
           ) {
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "StreetAddress1") {
+          } else if (selected.pudo && field.PropertyName === "Street1") {
             value = countries.records[destIndex].Address;
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "PostalCode") {
+          } else if (selected.pudo && field.PropertyName === "Postcode") {
             value = countries.records[destIndex].PostalCode;
             mandatory = true;
           } else if (selected.pudo && field.PropertyName === "City") {
@@ -290,8 +289,12 @@ const MessageGenerator = (
   if (addonArr) {
     for (const record of additionalServices.records) {
       if (addonArr.includes(record.ServiceCode)) {
+        let labelName = record.DisplayNameFI;
+        if (record.ServiceCode === "3175" || record.ServiceCode === "3143") {
+          labelName = labelName + " 1 KPL 0,234 KG BRUTTO";
+        }
         labelAddons.push({
-          labelName: record.DisplayNameFI,
+          labelName: labelName,
           labelMarking: record.LabelMarking,
         });
         if (record.Fields.length > 0) {
@@ -316,6 +319,26 @@ const MessageGenerator = (
                   mandatory: field.Mandatory,
                 });
               }
+            } else if (field.MessageFormat.substring(0, 6) === "POSTRA") {
+              if (field.PropertyName === "CodValue") {
+                labelData["codAmount"] = field.PropertyValue.replace(".", ",");
+              } else if (field.PropertyName === "CodIBAN") {
+                labelData["codIBAN"] = field.PropertyValue;
+              } else if (field.PropertyName === "CodBIC") {
+                labelData["codBIC"] = field.PropertyValue;
+              } else if (field.PropertyName === "CodReference") {
+                labelData["codReference"] = field.PropertyValue;
+              } else if (field.PropertyName === "Account") {
+                labelData["otherPayer"] = field.PropertyValue;
+              }
+
+              serviceProps.push({
+                format: field.MessageFormat,
+                property: field.PropertyName,
+                value: field.PropertyValue,
+                position: field.MessagePosition,
+                mandatory: field.Mandatory,
+              });
             } else {
               serviceProps.push({
                 format: field.MessageFormat,
@@ -1145,9 +1168,9 @@ const MessageGenerator = (
   //console.log(indexes);
   //console.log(JSON.stringify(outJSON));
   //console.log(outJSON);
-  console.log(outTXT);
+  //console.log(outTXT);
 
-  //console.log(outXML);
+  console.log(outXML);
 
   const json = [JSON.stringify(outJSON, null, 2)];
   const beautifiedJSON = JSON.stringify(outJSON, null, 2);

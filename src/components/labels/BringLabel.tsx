@@ -80,7 +80,14 @@ const BringLabel = ({ data }) => {
             </OverlayTrigger>
           </Row>
           <Row>
-            <Col className="bringParties" xs={4}>
+            <Col
+              className={
+                data.service === "2358" || data.service === "2359"
+                  ? "bringParties hidden"
+                  : "bringParties"
+              }
+              xs={4}
+            >
               <div className="bringReturn">
                 <Row>
                   <OverlayTrigger

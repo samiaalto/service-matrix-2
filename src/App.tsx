@@ -347,6 +347,7 @@ const App = (props: AppProps) => {
   };
 
   const handlePudo = () => {
+    updateSearchParams("pudo", !selected.pudo);
     setSelected((prevState) => ({
       ...prevState,
       pudo: !prevState.pudo,
