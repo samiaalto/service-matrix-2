@@ -58,9 +58,11 @@ const OffCanvas = ({
             className="mb-3"
           >
             <Tab eventKey="label" title={t("Label")}>
-              {renderSwitch(data.labelData.labelType)}
+              <div className="label">
+                {renderSwitch(data.labelData.labelType)}
+              </div>
             </Tab>
-            {data.POSTRA && (
+            {data.POSTRA.message && (
               <Tab eventKey="postra" title="Postra">
                 <Form.Group>
                   <Form.Check
@@ -78,10 +80,14 @@ const OffCanvas = ({
                     onChange={showSamples}
                   />
                 </Form.Group>
-                <SampleCodeView data={data.POSTRA} />
+                <SampleCodeView
+                  data={data.POSTRA.message}
+                  type={"xml"}
+                  lines={data.POSTRA.newLines}
+                />
               </Tab>
             )}
-            {data.SMARTSHIP && (
+            {data.SMARTSHIP.message && (
               <Tab eventKey="smartship" title="SmartShip">
                 <Form.Group>
                   <Form.Check
@@ -99,7 +105,11 @@ const OffCanvas = ({
                     onChange={showSamples}
                   />
                 </Form.Group>
-                <SampleCodeView data={data.SMARTSHIP} />
+                <SampleCodeView
+                  data={data.SMARTSHIP.message}
+                  type={"json"}
+                  lines={data.SMARTSHIP.newLines}
+                />
               </Tab>
             )}
             {data.WAYBILD16A && (
@@ -120,7 +130,11 @@ const OffCanvas = ({
                     onChange={showSamples}
                   />
                 </Form.Group>
-                <SampleCodeView data={data.WAYBILD16A} />
+                <SampleCodeView
+                  data={data.WAYBILD16A}
+                  type={"xml"}
+                  lines={[]}
+                />
               </Tab>
             )}
           </Tabs>

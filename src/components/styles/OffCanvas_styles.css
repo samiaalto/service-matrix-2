@@ -38,6 +38,16 @@
 
 .offcanvas-body {
   padding-top: 0;
+  overflow: hidden;
+}
+
+.label {
+  max-width: 57em;
+  min-height: 0;
+  max-height: calc(100vh - 148px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
 }
 
 input[type="checkbox"].form-check-input {
