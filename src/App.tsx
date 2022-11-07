@@ -412,7 +412,6 @@ const App = (props: AppProps) => {
           }
         }
       }
-      console.log("TÄÄLLÄ");
       updateSearchParams("service", service);
     } else {
       handleReset();
