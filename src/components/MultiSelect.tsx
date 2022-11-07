@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Select, { components, StylesConfig } from "react-select";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { ReactComponent as DepartureLogo } from "./icons/Departure_logo.svg";
@@ -11,7 +12,132 @@ import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
 import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
 import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
 
-const MultiSelect = ({ onChange, isMulti, data, t }) => {
+const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
+  const [selectedValues, setSelectedValues] = useState([]);
+  const [initialValues, setInitialValues] = useState([]);
+  const [initialLoad, setInitialLoad] = useState(true);
+  const [preset, setPreset] = useState(false);
+
+  const onSelection = (e) => {
+    onChange(e);
+    setSelectedValues(e);
+  };
+
+  useEffect(() => {
+    let count = 0;
+    if (data.length > 0) {
+      for (let item of data) {
+        if (item.options.length > 0) {
+          count++;
+        }
+      }
+    }
+    if (initialLoad && data.length === count) {
+      setInitialLoad(false);
+      setInitialValues(data);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!preset && initialValues.length > 0) {
+      setPreset(true);
+      let options = [];
+      for (let item of initialValues) {
+        if (
+          item.label === "Departure Country" &&
+          selected.departure !== "" &&
+          typeof selected.departure !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.title === selected.departure) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Destination Country" &&
+          selected.destination !== "" &&
+          typeof selected.destination !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.title === selected.destination) {
+              options.push(option);
+            }
+          }
+        }
+        if (item.label === "Weight" && typeof selected.weight !== "undefined") {
+          for (let option of item.options) {
+            if (option.value === selected.weight) {
+              options.push(option);
+            }
+          }
+        }
+        if (item.label === "Width" && typeof selected.width !== "undefined") {
+          for (let option of item.options) {
+            if (option.value === selected.width) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Longest Side" &&
+          typeof selected.width !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.value === selected.width) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Delivery Location" &&
+          typeof selected.width !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.value === selected.deliveryLocation) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Service Group" &&
+          selected.serviceGroup !== "" &&
+          typeof selected.serviceGroup !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.value === selected.serviceGroup) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Service" &&
+          selected.serviceFilter !== "" &&
+          typeof selected.serviceFilter !== "undefined"
+        ) {
+          for (let option of item.options) {
+            if (option.value === selected.serviceFilter) {
+              options.push(option);
+            }
+          }
+        }
+        if (
+          item.label === "Additional Service" &&
+          selected.addonsFilter.length > 0
+        ) {
+          for (let option of item.options) {
+            if (selected.addonsFilter.includes(option.value)) {
+              options.push(option);
+            }
+          }
+        }
+      }
+      if (options.length > 0) {
+        setSelectedValues(options);
+      }
+    }
+  }, [selected]);
+
   const renderSwitch = (param) => {
     switch (param) {
       case "Departure Country":
@@ -226,11 +352,12 @@ const MultiSelect = ({ onChange, isMulti, data, t }) => {
 
   return (
     <Select
+      value={selectedValues}
       styles={customStyles}
       options={data}
       closeMenuOnSelect={false}
       isMulti={isMulti}
-      onChange={onChange}
+      onChange={onSelection}
       placeholder={t("'Filter data'")}
       className={"matrix"}
       classNamePrefix="lp-copy-sel"

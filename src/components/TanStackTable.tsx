@@ -196,6 +196,10 @@ function TanStackTable({
   }, []);
 
   useEffect(() => {
+    filteredRows(table.getPreFilteredRowModel());
+  }, []);
+
+  useEffect(() => {
     filteredRows(table.getFilteredRowModel());
     let fRows = table.getFilteredRowModel();
     setRows(fRows["rows"].length);
