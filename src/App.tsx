@@ -73,8 +73,8 @@ const App = (props: AppProps) => {
     serviceFilter: "",
     serviceGroup: "",
     addonsFilter: [],
-    weight: "",
-    width: "",
+    weight: undefined,
+    width: undefined,
     deliveryLocation: "",
     departure: "",
     destination: "",
@@ -577,11 +577,13 @@ const App = (props: AppProps) => {
         return !!JSON.parse(String(val).toLowerCase());
       }
     };
+
     if (Object.entries(filteredRowData).length > 0 && loaded) {
       const URLparams = Object.fromEntries([...params]);
       let alertArray = [];
       let addonArray = [];
       let selectedAddons = [];
+      let filteredAddons = [];
       let serviceAddons = [];
       let serviceIndex = -1;
       let lang = "en";
@@ -623,6 +625,10 @@ const App = (props: AppProps) => {
 
       if (URLparams.addons) {
         addonArray = URLparams.addons.split(" ");
+      }
+
+      if (URLparams.addonsFilter) {
+        filteredAddons = URLparams.addonsFilter.split(" ");
       }
 
       for (let [i, row] of rowData.entries()) {
@@ -670,7 +676,6 @@ const App = (props: AppProps) => {
         }
         setupdateRows(update);
       }, 500);
-
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
@@ -678,7 +683,9 @@ const App = (props: AppProps) => {
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
         service: URLparams.service,
+        serviceFilter: URLparams.serviceFilter,
         addons: selectedAddons,
+        addonsFilter: filteredAddons,
         departure: URLparams.departure,
         destination: URLparams.destination,
         filter: URLparams.filter,
@@ -689,6 +696,9 @@ const App = (props: AppProps) => {
         offCanvasTab: URLparams.offCanvasTab,
         showSamples: getBool(URLparams.showSamples),
         showOptional: getBool(URLparams.showOptional),
+        weight: Number(URLparams.weight),
+        width: Number(URLparams.width),
+        deliveryLocation: URLparams.deliveryLocation,
       }));
       if (alertArray.length > 0) {
         GenerateAlert(alertArray, setSelected);
@@ -896,6 +906,7 @@ const App = (props: AppProps) => {
                   <Row className="filter">
                     <Col xs={10} sm={10} md={11}>
                       <Select
+                        selected={loaded ? selected : ""}
                         data={multiSelectData}
                         isMulti={true}
                         t={t}
