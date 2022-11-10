@@ -111,6 +111,34 @@ const MessageGenerator = (
             value: country.CountryCode,
             position: "CONSIGNOR",
             mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "address1",
+            value: country.Address,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "zipcode",
+            value: country.PostalCode,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "city",
+            value: country.City,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "country",
+            value: country.CountryCode,
+            position: "sender",
+            mandatory: true,
           }
         );
       }
@@ -157,6 +185,34 @@ const MessageGenerator = (
           value: country.CountryCode,
           position: "CONSIGNEE",
           mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "address1",
+          value: country.Address,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "zipcode",
+          value: country.PostalCode,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "city",
+          value: country.City,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "country",
+          value: country.CountryCode,
+          position: "receiver",
+          mandatory: true,
         }
       );
     }
@@ -164,9 +220,23 @@ const MessageGenerator = (
 
   for (const record of services.records) {
     if (record.ServiceCode === selected.service) {
+      let bringLabelName = "";
+      let bringServiceCode = "";
+      if (record.ExternalServiceCodes.length > 0) {
+        for (let ext of record.ExternalServiceCodes) {
+          if (ext.ExternalSystem === "BRING") {
+            bringLabelName = ext.DisplayNameEN;
+            bringServiceCode = ext.ServiceCode;
+          }
+        }
+      }
+
       labelData["labelType"] = record.LabelType;
       labelData["serviceName"] = record.DisplayNameFI;
       labelData["processNumber"] = record.ProcessNumber;
+      labelData["bringLabelName"] = bringLabelName;
+      labelData["bringServiceCode"] = bringServiceCode;
+
       if (record.Fields.length > 0) {
         for (const field of record.Fields) {
           let value = field.PropertyValue;
@@ -212,6 +282,21 @@ const MessageGenerator = (
   if (addonArr) {
     for (const record of additionalServices.records) {
       if (addonArr.includes(record.ServiceCode)) {
+        let bringLabelName = "";
+        let bringServiceCode = "";
+        if (record.ExternalServiceCodes.length > 0) {
+          for (let ext of record.ExternalServiceCodes) {
+            if (ext.ExternalSystem === "BRING") {
+              if (ext.ServiceCode === "0003") {
+                bringLabelName = ext.DisplayNameEN + " 0,234 KG BRUTTO";
+                bringServiceCode = ext.ServiceCode;
+              } else {
+                bringLabelName = ext.DisplayNameEN;
+                bringServiceCode = ext.ServiceCode;
+              }
+            }
+          }
+        }
         let labelName = record.DisplayNameFI;
         if (record.ServiceCode === "3175" || record.ServiceCode === "3143") {
           labelName = labelName + " 1 KPL 0,234 KG BRUTTO";
@@ -219,6 +304,8 @@ const MessageGenerator = (
         labelAddons.push({
           labelName: labelName,
           labelMarking: record.LabelMarking,
+          bringLabelName: bringLabelName,
+          bringServiceCode: bringServiceCode,
         });
         if (record.Fields.length > 0) {
           for (const field of record.Fields) {
@@ -276,7 +363,7 @@ const MessageGenerator = (
       }
     }
   }
-
+  console.log(labelAddons);
   let d = new Date();
   labelData["dateTime"] =
     d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
@@ -294,7 +381,7 @@ const MessageGenerator = (
   let usedPropsJSON = [];
   let usedPropsTXT = [];
 
-  console.log(serviceProps);
+  //console.log(serviceProps);
 
   for (const record of fileFormats.records) {
     if (serviceProps.some((e) => e.format === record.Name)) {
@@ -357,7 +444,7 @@ const MessageGenerator = (
 
           if (found.length > 0) {
             for (let index of found) {
-              val = serviceProps[index].value;
+              val = serviceProps[index].value + "***";
               usedProps.push(index);
               //console.log(objParent);
               let newPath = obj.Path;
@@ -759,7 +846,7 @@ const MessageGenerator = (
                 usedPropsJSON.push(index);
 
                 let newPath = obj.Path;
-                console.log(newPath);
+                //console.log(newPath);
                 if (objParent.Type === "Array") {
                   if (!indexes.hasOwnProperty(objParent.Name)) {
                     indexes[objParent.Name] = 0;
@@ -803,6 +890,7 @@ const MessageGenerator = (
                   newPath = path.join(".");
                 }
 
+                val = prop.value + "***";
                 // Set the attributes
 
                 let value = "";
@@ -867,7 +955,7 @@ const MessageGenerator = (
 
             // Set the attributes
 
-            let value = "";
+            let value;
             let val = "";
 
             if (sampleValues) {
@@ -881,9 +969,9 @@ const MessageGenerator = (
                   .split("T")[1]
                   .replace(/\.\d+Z/, "");
               } else if (obj.ExampleValue === "TRUE") {
-                value = "true";
+                value = true;
               } else if (obj.ExampleValue === "FALSE") {
-                value = "false";
+                value = false;
               } else {
                 value = obj.ExampleValue;
               }
@@ -1047,14 +1135,11 @@ const MessageGenerator = (
   }
 
   //console.log(indexes);
-  //console.log(JSON.stringify(outJSON));
   //console.log(outJSON);
   //console.log(outTXT);
+  //console.log(outXML);
 
-  console.log(outXML);
-
-  const json = [JSON.stringify(outJSON, null, 2)];
-  const beautifiedJSON = JSON.stringify(outJSON, null, 2);
+  const formattedJSON = JSON.stringify(outJSON, null, 2);
   const doc = create({ version: "1.0", encoding: "UTF-8" }, outXML);
   let xml = doc.end();
 
@@ -1068,11 +1153,8 @@ const MessageGenerator = (
     let lines = data.split("\n");
 
     for (let [index, line] of lines.entries()) {
-      for (let prop of serviceProps) {
-        //console.log(line + " " + prop.value);
-        if (line.includes(prop.value) && !newLines.includes(index + 1)) {
-          newLines.push(index + 1);
-        }
+      if (line.includes("***") && !newLines.includes(index + 1)) {
+        newLines.push(index + 1);
       }
     }
     return newLines;
@@ -1080,19 +1162,17 @@ const MessageGenerator = (
 
   const formattedXML = formatXml(xml, "  ");
   const linesXML = findNewLines(formattedXML);
-  const linesJSON = findNewLines(beautifiedJSON);
-  //let findNewLines2 = beautifiedJSON.split("\n");
-  //console.log(findNewLines2);
+  const linesJSON = findNewLines(formattedJSON);
 
-  //let findNewLines = formattedXML.split("\r\n");
-  //let newLines = [];
-
-  //console.log(newLines);
-
-  //const beautifiedXML = beautify(formatXml(xml, "  "));
   return {
-    POSTRA: { message: [formattedXML], newLines: linesXML },
-    SMARTSHIP: { message: beautifiedJSON, newLines: linesJSON },
+    POSTRA: {
+      message: [formattedXML.replaceAll("***", "")],
+      newLines: linesXML,
+    },
+    SMARTSHIP: {
+      message: formattedJSON.replaceAll("***", ""),
+      newLines: linesJSON,
+    },
     WAYBILD16A: outTXT,
     labelData: labelData,
   };

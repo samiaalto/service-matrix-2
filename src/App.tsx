@@ -366,12 +366,23 @@ const App = (props: AppProps) => {
     let updatedSearchParams = new URLSearchParams(params.toString());
     updatedSearchParams.delete("service");
     updatedSearchParams.delete("addons");
+    updatedSearchParams.delete("pudo");
+    updatedSearchParams.delete("offCanvasOpen");
+    updatedSearchParams.delete("offCanvasTab");
+    updatedSearchParams.delete("showOptional");
+    updatedSearchParams.delete("showSamples");
     setParams(updatedSearchParams.toString());
 
     setSelected((prevState) => ({
       ...prevState,
       service: "",
       addons: [],
+      pudo: false,
+      pickupOrder: false,
+      offCanvasOpen: false,
+      offCanvasTab: "",
+      showOptional: false,
+      showSamples: true,
     }));
 
     setReset(true);
@@ -380,7 +391,7 @@ const App = (props: AppProps) => {
   const handleServiceSelection = (index, isSelected, filteredRows) => {
     let service;
     let update = [];
-
+    console.log(isSelected + " " + index);
     if (isSelected) {
       for (const row of filteredRows["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
@@ -401,9 +412,11 @@ const App = (props: AppProps) => {
             update.push({ row: row.index, column: key, value: null });
           } else if (row.index === index && value === null) {
             update.push({ row: row.index, column: key, value: false });
-          } else if (row.index === index && key === "serviceName") {
+          }
+          if (row.index === index && key === "serviceName") {
             service = value;
-          } else if (row.index === index && key === "serviceButton") {
+          }
+          if (row.index === index && key === "serviceButton") {
             update.push({
               row: row.index,
               column: key,
@@ -678,6 +691,8 @@ const App = (props: AppProps) => {
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
+      console.log(getBool(URLparams.showSamples));
+
       setSelected((prevState) => ({
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
@@ -693,8 +708,14 @@ const App = (props: AppProps) => {
         lang: lang,
         offCanvasOpen: getBool(URLparams.offCanvasOpen),
         offCanvasTab: URLparams.offCanvasTab,
-        showSamples: getBool(URLparams.showSamples),
-        showOptional: getBool(URLparams.showOptional),
+        showSamples:
+          getBool(URLparams.showSamples) !== undefined
+            ? getBool(URLparams.showSamples)
+            : true,
+        showOptional:
+          getBool(URLparams.showOptional) !== undefined
+            ? getBool(URLparams.showOptional)
+            : false,
         weight: Number(URLparams.weight),
         width: Number(URLparams.width),
         deliveryLocation: URLparams.deliveryLocation,

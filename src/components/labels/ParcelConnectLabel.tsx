@@ -14,7 +14,7 @@ const ParcelConnectLabel = ({ data }) => {
               placement="top"
               overlay={overlay("labelLogo", "PARCELCONNECT")}
             >
-              <Col xs={4} className="pcLabelLogo">
+              <Col xs={3} className="pcLabelLogo">
                 <svg
                   width="67"
                   height="32"
@@ -45,12 +45,13 @@ const ParcelConnectLabel = ({ data }) => {
               placement="top"
               overlay={overlay("serviceName", "PARCELCONNECT")}
             >
-              <Col xs={8} className="pcServiceName">
+              <Col xs={6} className="pcServiceName">
                 {data.labelData.serviceName
                   ? data.labelData.serviceName
                   : "Parcel Connect"}
               </Col>
             </OverlayTrigger>
+            <Col xs={3}></Col>
           </Row>
           <Row>
             <Col className="parties" xs={9}>

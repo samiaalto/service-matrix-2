@@ -58,7 +58,7 @@ const OffCanvas = ({
             className="mb-3"
           >
             <Tab eventKey="label" title={t("Label")}>
-              <div className="label">
+              <div className="label-layout">
                 {renderSwitch(data.labelData.labelType)}
               </div>
             </Tab>

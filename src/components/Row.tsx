@@ -15,7 +15,7 @@ import {
 import { useState, useCallback, memo } from "react";
 import { Cell } from "./Cell";
 
-const RowComponent = ({ row, onCellClick, t }) => {
+const RowComponent = ({ row, onCellClick, t, highlightRow }) => {
   //console.log("render row", row.index);
 
   const handleClick = useCallback(
@@ -27,7 +27,7 @@ const RowComponent = ({ row, onCellClick, t }) => {
 
   return (
     <tr>
-      {row.getVisibleCells().map((cell) => {
+      {row.getVisibleCells().map((cell, i) => {
         //const cellProps = cell.getCellProps();
 
         return (
@@ -37,8 +37,10 @@ const RowComponent = ({ row, onCellClick, t }) => {
             value={cell.getValue()}
             rowIndex={cell.row.index}
             service={cell.row}
+            columnIndex={i}
             onClick={handleClick}
             columnId={cell.column.id}
+            highlightRow={highlightRow}
           />
         );
       })}
