@@ -24,21 +24,26 @@
   max-height: calc(100vh - 210px);
 }
 
-.string {
-  color: #e6db74;
+.hljs-tag {
+  color: #d4d4d4 !important;
 }
-.key {
-  color: #f92672;
+
+.hljs-attr {
+  color: rgb(230, 219, 116) !important;
 }
-.bracket {
-  color: #989898;
+
+.hljs-attr + span {
+  color: rgb(230, 219, 116) !important;
 }
-.number {
-  color: #ae81ff;
+
+.hljs-attr + span + span {
+  color: rgb(230, 219, 116) !important;
 }
-.boolean {
-  color: #d0782a;
-}
-.null {
-  color: #d0782a;
+
+.highlighted .linenumber {
+  color: #e0e0e0 !important;
+  border-right: 4px solid #868686 !important;
+  width: 4em;
+  margin-left: -11px !important;
+  background-color: #474747 !important;
 }

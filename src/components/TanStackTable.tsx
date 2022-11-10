@@ -25,6 +25,7 @@ import "./styles/Table_styles.css";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 import { Row } from "./Row";
+import emitter from "./Emitter";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -183,6 +184,16 @@ function TanStackTable({
     },
   });
 
+  let ref = useRef<any>();
+  const subscribe = (rowIndex, columnIndex) => {
+    emitter.subscribe(rowIndex, columnIndex, (isHighlighted) => {
+      if (ref.current) {
+        // Directly update the class on the DOM node
+        ref.current.classList.toggle("highlight-cell", isHighlighted);
+      }
+    });
+  };
+
   const onCellClick = useCallback((rowIndex, columnId, value) => {
     //setActiveRow(rowIndex);
     if (columnId === "serviceName") {
@@ -267,11 +278,16 @@ function TanStackTable({
                         header.column.id === "serviceButton" ||
                         header.column.id === "serviceCode"
                       ) {
+                        subscribe(header.depth - 1, header.index);
                         return (
                           <th
                             key={header.id}
                             colSpan={header.colSpan}
                             className="headerTitleEmpty"
+                            onMouseEnter={() =>
+                              emitter.highlight(header.depth - 1, header.index)
+                            }
+                            ref={ref}
                           >
                             {header.isPlaceholder
                               ? null
@@ -282,6 +298,7 @@ function TanStackTable({
                           </th>
                         );
                       } else {
+                        subscribe(header.depth - 1, header.index);
                         return (
                           <OverlayTrigger
                             key={"tooltip_" + header.column.id}
@@ -300,6 +317,13 @@ function TanStackTable({
                               colSpan={header.colSpan}
                               className="headerTitle"
                               onClick={() => openModal(header.column.id)}
+                              onMouseEnter={() =>
+                                emitter.highlight(
+                                  header.depth - 1,
+                                  header.index
+                                )
+                              }
+                              ref={ref}
                             >
                               {header.isPlaceholder
                                 ? null
@@ -312,11 +336,16 @@ function TanStackTable({
                         );
                       }
                     } else if (header.column.id === "serviceName") {
+                      subscribe(header.depth - 1, header.index);
                       return (
                         <td
                           key={header.column.id}
                           colSpan={header.colSpan}
                           className="serviceHeader"
+                          onMouseEnter={() =>
+                            emitter.highlight(header.depth - 1, header.index)
+                          }
+                          ref={ref}
                         >
                           {header.isPlaceholder
                             ? null
@@ -330,11 +359,16 @@ function TanStackTable({
                       header.column.id === "serviceCode" ||
                       header.column.id === "serviceButton"
                     ) {
+                      subscribe(header.depth - 1, header.index);
                       return (
                         <td
                           key={header.column.id}
                           colSpan={header.colSpan}
                           className="code"
+                          onMouseEnter={() =>
+                            emitter.highlight(header.depth - 1, header.index)
+                          }
+                          ref={ref}
                         >
                           {header.isPlaceholder
                             ? null
@@ -345,11 +379,16 @@ function TanStackTable({
                         </td>
                       );
                     } else {
+                      subscribe(header.depth - 1, header.index);
                       return (
                         <td
                           key={header.column.id}
                           colSpan={header.colSpan}
                           className="addonCode"
+                          onMouseEnter={() =>
+                            emitter.highlight(header.depth - 1, header.index)
+                          }
+                          ref={ref}
                         >
                           {header.isPlaceholder
                             ? null
@@ -366,14 +405,13 @@ function TanStackTable({
             </thead>
             <tbody>
               {table.getRowModel().rows.map((row) => {
-                //const cells = row.getVisibleCells();
-                //const rowProps = row.getRowProps();
                 return (
                   <Row
                     t={t}
                     key={row.index}
                     row={row}
                     onCellClick={onCellClick}
+                    highlightRow={row.index + 2}
                   />
                 );
               })}

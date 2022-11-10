@@ -1,12 +1,28 @@
-import { useCallback, memo } from "react";
+import { useCallback, memo, useState, useEffect, useRef } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 import emitter from "./Emitter";
 
-const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
-  //console.log("render", columnId);
-  //let row = service.original;
+const CellComponent = ({
+  value,
+  rowIndex,
+  onClick,
+  columnId,
+  t,
+  service,
+  columnIndex,
+  highlightRow,
+}) => {
+  const ref = useRef<any>();
+  useEffect(() => {
+    emitter.subscribe(highlightRow, columnIndex, (isHighlighted) => {
+      if (ref.current) {
+        // Directly update the class on the DOM node
+        ref.current.classList.toggle("highlight-cell", isHighlighted);
+      }
+    });
+  }, [highlightRow, columnIndex]);
 
   const onCellClick = useCallback(() => {
     onClick(rowIndex, columnId, value);
@@ -26,7 +42,12 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
             </Tooltip>
           }
         >
-          <td className="service selected" onClick={onCellClick}>
+          <td
+            className="service selected"
+            onClick={onCellClick}
+            onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+            ref={ref}
+          >
             {t(value)}
           </td>
         </OverlayTrigger>
@@ -43,22 +64,42 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
             </Tooltip>
           }
         >
-          <td className="service" onClick={onCellClick}>
+          <td
+            className="service"
+            onClick={onCellClick}
+            onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+            ref={ref}
+          >
             {t(value)}
           </td>
         </OverlayTrigger>
       ) : columnId === "serviceCode" &&
         service.original.serviceButton === true ? (
-        <td className="serviceCode selected" onClick={onCellClick}>
+        <td
+          className="serviceCode selected"
+          onClick={onCellClick}
+          onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+          ref={ref}
+        >
           {value}
         </td>
       ) : columnId === "serviceCode" &&
         service.original.serviceButton !== true ? (
-        <td className="serviceCode" onClick={onCellClick}>
+        <td
+          className="serviceCode"
+          onClick={onCellClick}
+          onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+          ref={ref}
+        >
           {value}
         </td>
       ) : columnId === "serviceButton" && value === true ? (
-        <td className="serviceButton selected" onClick={onCellClick}>
+        <td
+          className="serviceButton selected"
+          onClick={onCellClick}
+          onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+          ref={ref}
+        >
           <Button
             title=""
             type="select"
@@ -66,7 +107,12 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
           />
         </td>
       ) : columnId === "serviceButton" && value !== true ? (
-        <td className="serviceButton" onClick={onCellClick}>
+        <td
+          className="serviceButton"
+          onClick={onCellClick}
+          onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+          ref={ref}
+        >
           <Button
             title=""
             type="select"
@@ -74,7 +120,11 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
           />
         </td>
       ) : value !== undefined && value !== null ? (
-        <td className="">
+        <td
+          className=""
+          onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+          ref={ref}
+        >
           <Checkbox
             value={value}
             row={rowIndex}
@@ -98,7 +148,11 @@ const CellComponent = ({ value, rowIndex, onClick, columnId, t, service }) => {
             </Tooltip>
           }
         >
-          <td className="unavailable"></td>
+          <td
+            className="unavailable"
+            onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
+            ref={ref}
+          ></td>
         </OverlayTrigger>
       )}
     </>

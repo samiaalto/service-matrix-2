@@ -2,6 +2,7 @@
   "records": [
     {
       "ServiceCode": "2004",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Posti Rahti",
       "DisplayNameEN": "Posti Freight",
       "DescriptionFI": "Digitaalinen, ympäristöystävällinen ja Suomen kattavin. Postin rahtipalveluilla tavoitat jopa 90 prosenttia Suomen yrityksistä seuraavaksi työpäiväksi. Käytämme kuljetuksissamme aina nopeimpia reittejä, jolloin sinä säästät aikaa ja rahaa. Kaikki rahtipalvelumme ovat hiilineutraaleja Posti Green -palveluita – ilman lisämaksua. Palvelu soveltuu raskaamman tavaran kuljettamiseen kollista koko kuormaan – kuljetusdokumenttina on rahtikirja ja kuljetusalustana on lava.",
@@ -236,6 +237,7 @@
     },
     {
       "ServiceCode": "2015",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Priority",
       "DisplayNameEN": "Priority",
       "DescriptionFI": "Priority-paketti tavoittaa kenet tahansa missä tahansa maailmassa. Asiakkaat saavat paketin kätevästi itseään lähinnä olevaan palvelupisteeseen, ja monissa maissa se kuljetetaan perille vastaanottajan osoitteeseen. Kuljetukset Pohjoismaihin 3–5, muualle Eurooppaan 2–7 ja muualle maailmaan 6–14 arkipäivässä. Posti ei vastaa kohdemaan tullin toimenpiteiden lähetyksille aiheuttamista viivästymisistä.",
@@ -308,6 +310,7 @@
     },
     {
       "ServiceCode": "2017",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "EMS",
       "DisplayNameEN": "EMS",
       "DescriptionFI": "EMS (Express Mail Service) on pikapalvelu noin 180 maahan. EMS kulkee vastaanottajan osoitteeseen nopeinta mahdollista reittiä käyttäen. Kuljetukset EU-alueelle 1–3 arkipäivässä ja muualle maailmaan 2–8 arkipäivässä. Posti ei vastaa kohdemaan tullin toimenpiteiden lähetyksille aiheuttamista viivästymisistä.",
@@ -380,6 +383,7 @@
     },
     {
       "ServiceCode": "2101",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Paketti Aamuksi",
       "DisplayNameEN": "Express Parcel Morning",
       "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Express 09-pakettitoimitus toimitetaan  seuraavana arkiaamuna klo 9 mennessä ja tämän palvelun piirissä on yli 70% Suomen yrityksistä.",
@@ -497,6 +501,7 @@
     },
     {
       "ServiceCode": "2102",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Paketti",
       "DisplayNameEN": "Express Parcel",
       "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Express 14-paketti toimitetaan klo 8–16 välillä seuraavana arkipäivänä ja tämän palvelun piirissä on yli 95% Suomen yrityksistä.",
@@ -689,6 +694,7 @@
     },
     {
       "ServiceCode": "2103",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Postipaketti",
       "DisplayNameEN": "Postal Parcel",
       "DescriptionFI": "Postipaketti on verkkokauppiaiden ylivoimaisesti suosituin verkkokauppaostosten toimitustapa. Tarjoamme ylivoimaisen toimituspisteverkoston noutamiseen yli 2000 omalla automaatilla ja yli 130000 lokerolla. Näiden lisäksi tarjoamme henkilökohtaisen palvelun noutopisteitä. Kuluttajat voivat kätevästi seurata paketin kulkua omaposti-sovelluksen kautta.",
@@ -870,6 +876,7 @@
     },
     {
       "ServiceCode": "2104",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Kotipaketti",
       "DisplayNameEN": "Home Parcel",
       "DescriptionFI": "Kotipaketti on helppo ratkaisu verkkokaupan asiakkaille. Olemme yhteydessä vastaanottajaan pääsääntöisesti seuraavana työpäivänä, jolloin sovimme jakeluajan. Sovittavat toimitusajat vaihtelevat alueittain klo 9–21 välillä.",
@@ -1011,6 +1018,7 @@
     },
     {
       "ServiceCode": "2108",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Palautus",
       "DisplayNameEN": "Return",
       "DescriptionFI": "Verkkokauppaostoksen helppo palauttaminen poistaa kuluttajalta ostamisen esteitä ja kuuluu uskottavan verkkokauppiaan tarjoamaan. Helppo palauttaminen myös kattavan automaattiverkoston kautta antaa Postin asiakkaille selkeää helppoutta löytää itselle sopivin palautuspiste mahdollismman läheltä.",
@@ -1092,6 +1100,7 @@
     },
     {
       "ServiceCode": "2124",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Paketti Samana Päivänä",
       "DisplayNameEN": "Express Parcel Same Day",
       "DescriptionFI": "Express-pakettitoimitukset on tarkoitettu pääsääntöisesti yritysvastaanottajille ja ne sisältävät valtakunnan monipuolisimmat pakettiratkaisut erilaisiin tarpeisiin. Asiakkaan valittavana on mm. useita erilaisia toimitusnopeuksia sekä toimitustapoja. Express-paketit toimitetaan perille tai automaattiin asiakkaan valinnan mukaan. Nopeimpia toimitustarpeita varten on valittavissa myös erittäin aikaisia aamunoutoja tietyistä terminaaleista ja automaateista (klo 7 ja klo 8 mennessä) sekä alueellisia saman päivän toimituksia (Express 00). ",
@@ -1230,6 +1239,7 @@
     },
     {
       "ServiceCode": "2142",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Rahti Samana Päivänä",
       "DisplayNameEN": "Express Freight Same Day",
       "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Express-rahti Samana päivänä -lähetys toimitetaan ovelta ovelle saman arkipäivän aikana. Palvelu on sopimusasiakkaille, joilla on tarve toimittaa lähetyksiä kaupunkien sisäisessä liikenteessä. Palvelu toimii saman päivän rytmillä, erikseen määritellyn palvelualueen sisällä. Lisäpalvelun käyttö edellyttää asiakkaalta EDI- sanoman lähettämistä Postille.",
@@ -1434,6 +1444,7 @@
     },
     {
       "ServiceCode": "2143",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Rahti Aamuksi",
       "DisplayNameEN": "Express Freight Morning",
       "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Aamuksi-lisäpalvelu on erikseen määritellyillä alueilla seuraavaksi työpäiväksi klo 9 mennessä jaettava pikakuljetuspalvelu sopimusasiakkaille. Toimitusaikasitoumuksen ja kattavan verkon ansiosta palvelu sopii hyvin vaativiinkin​ pikakuljetustarpeisiin.",
@@ -1635,6 +1646,7 @@
     },
     {
       "ServiceCode": "2144",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Rahti",
       "DisplayNameEN": "Express Freight",
       "DescriptionFI": "Express-rahti on oikea valinta, kun halutaan toimittaa suurikokoisia lähetyksiä tai paketteja valmiissa kuljetusyksikössä paketista tutulla osoitekortilla. Kuljetusalustana on rullakko tai lava. Lähetys on perillä vastaanottajalla lähetyksestä seuraavana arkipäivänä klo 16 mennessä. Osassa Pohjois-Suomea jakelu tehdään klo 17 mennessä ja pisimmillä yhteysväleillä toimitus vie kaksi arkipäivää. ",
@@ -1836,6 +1848,7 @@
     },
     {
       "ServiceCode": "2145",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express-Rahti Illaksi",
       "DisplayNameEN": "Express Freight Evening",
       "DescriptionFI": null,
@@ -2094,6 +2107,7 @@
     },
     {
       "ServiceCode": "2317",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express Business Day Parcel",
       "DisplayNameEN": "Express Business Day Parcel",
       "DescriptionFI": "Express Business Day -paketilla (EBD) tilaukset toimitetaan yritysasiakkaille ympäri Eurooppaa. Baltiassa myös kuluttajatoimitukset ovat mahdollisia. Express Business Day -paketit kulkevat 27 Euroopan maahan. Kuljetukset 1–8 arkipäivässä maasta riippuen. ",
@@ -2966,6 +2980,7 @@
     },
     {
       "ServiceCode": "2318",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express Business Day Pallet",
       "DisplayNameEN": "Express Business Day Pallet",
       "DescriptionFI": "Express Business Day -lavalla (EBD) toimitat isommat tilaukset yritysasiakkaillesi Baltiaan, Pohjoismaihin ja Puolaan. Baltiassa myös kuluttajatoimitukset ovat mahdollisia. Kuljetukset 1–6 arkipäivässä maasta riippuen.",
@@ -3262,6 +3277,7 @@
     },
     {
       "ServiceCode": "2329",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express Business Day Pallet Morning",
       "DisplayNameEN": "Express Business Day Pallet Morning",
       "DescriptionFI": "Express Business Day Pallet Morning",
@@ -3386,6 +3402,7 @@
     },
     {
       "ServiceCode": "2330",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express Business Day Pallet Home Delivery",
       "DisplayNameEN": "Express Business Day Pallet Home Delivery",
       "DescriptionFI": "Express Business Day Pallet Home Delivery",
@@ -3558,6 +3575,7 @@
     },
     {
       "ServiceCode": "2331",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Posti Parcel Baltic",
       "DisplayNameEN": "Posti Parcel Baltic",
       "DescriptionFI": "Postipaketti Baltiaan on erinomainen palvelu asiakkaiden palvelemiseksi Virossa, Latviassa ja Liettuassa. Palvelu tuotetaan yhteistyössä Posti-konsernin Itella-yhtiöiden kanssa. Lähetykset toimitetaan 1–3 arkipäivässä.",
@@ -3666,6 +3684,7 @@
     },
     {
       "ServiceCode": "2338",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Posti Parcel Baltic Return",
       "DisplayNameEN": "Posti Parcel Baltic Return",
       "DescriptionFI": "Posti Parcel Baltic Return",
@@ -3771,6 +3790,7 @@
     },
     {
       "ServiceCode": "2341",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Express Business Day Pallet Arrival Day",
       "DisplayNameEN": "Express Business Day Pallet Arrival Day",
       "DescriptionFI": "Express Business Day Pallet Arrival Day",
@@ -3895,6 +3915,17 @@
     },
     {
       "ServiceCode": "2351",
+      "ExternalServiceCodes": [
+        {
+          "ExternalSystem": "BRING",
+          "ServiceCode": "0340",
+          "DisplayNameFI": null,
+          "DisplayNameEN": "Pickup Parcel",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameFI": "Pickup Parcel",
       "DisplayNameEN": "Pickup Parcel",
       "DescriptionFI": "PickUp Parcel -paketit toimitetaan kuluttajille Ruotsissa ja Tanskassa. Paketit toimitetaan noutopisteisiin ja pakettiautomaatteihin Ruotsiin 2–5 ja Tanskaan 2–​​​​​​​4 arkipäivässä. ",
@@ -4056,6 +4087,17 @@
     },
     {
       "ServiceCode": "2352",
+      "ExternalServiceCodes": [
+        {
+          "ExternalSystem": "BRING",
+          "ServiceCode": "0349",
+          "DisplayNameFI": null,
+          "DisplayNameEN": "Home Delivery Parcel",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameFI": "Home Parcel",
       "DisplayNameEN": "Home Parcel",
       "DescriptionFI": "Home Parcel -paketit toimitetaan kuluttajan kotiin Ruotsissa ja Tanskassa. Toimitukset Ruotsiin tehdään 2–5 ja Tanskaan 2–4 arkipäivän kuluessa. ",
@@ -4141,6 +4183,17 @@
     },
     {
       "ServiceCode": "2354",
+      "ExternalServiceCodes": [
+        {
+          "ExternalSystem": "BRING",
+          "ServiceCode": "3123",
+          "DisplayNameFI": null,
+          "DisplayNameEN": "Home Delivery Curbside",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameFI": "Home Pallet",
       "DisplayNameEN": "Home Pallet",
       "DescriptionFI": "Home Pallet -palvelu vie suuret lähetykset kuluttajien kotiosoitteisiin Ruotsissa. Lavatoimitukset ovat perillä 2–5 arkipäivässä. ",
@@ -4247,6 +4300,17 @@
     },
     {
       "ServiceCode": "2358",
+      "ExternalServiceCodes": [
+        {
+          "ExternalSystem": "BRING",
+          "ServiceCode": "0343",
+          "DisplayNameFI": null,
+          "DisplayNameEN": "Pickup Parcel Return Bulk",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameFI": "Customer Return",
       "DisplayNameEN": "Customer Return",
       "DescriptionFI": "Customer Return",
@@ -4358,6 +4422,17 @@
     },
     {
       "ServiceCode": "2359",
+      "ExternalServiceCodes": [
+        {
+          "ExternalSystem": "BRING",
+          "ServiceCode": "3577",
+          "DisplayNameFI": null,
+          "DisplayNameEN": "Curbside Return",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameFI": "Customer Return Pallet",
       "DisplayNameEN": "Customer Return Pallet",
       "DescriptionFI": "Customer Return Pallet",
@@ -4446,6 +4521,7 @@
     },
     {
       "ServiceCode": "2461",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Pikkupaketti",
       "DisplayNameEN": "Small Parcel",
       "DescriptionFI": "Pikkupaketti on kuluttajille vaivattomin tapa vastaanottaa verkkokaupan pieniä lähetyksiä. Pikkupaketti voidaan toimittaa yli kolmeen miljoonaan postiluukkuun/-laatikkoon 1-3:ssa arkipäivässä.",
@@ -4518,6 +4594,7 @@
     },
     {
       "ServiceCode": "2711",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Parcel Connect",
       "DisplayNameEN": "Parcel Connect",
       "DescriptionFI": "Parcel Connect",
@@ -4811,6 +4888,7 @@
     },
     {
       "ServiceCode": "2718",
+      "ExternalServiceCodes": [],
       "DisplayNameFI": "Parcel Connect Return",
       "DisplayNameEN": "Parcel Connect Return",
       "DescriptionFI": "Parcel Connect Return",

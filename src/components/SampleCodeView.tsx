@@ -22,17 +22,21 @@ const SampleCodeView = ({ data, type, lines }) => {
             color: "#9f9f9f",
             borderRight: "1px solid #474747",
             marginRight: "10px",
+            minWidth: "2.75em",
           }}
           wrapLines={true}
           lineProps={(lineNumber) => {
+            let className = "";
             let style = {
               display: "block",
               backgroundColor: "#272822",
             };
+
             if (lines.includes(lineNumber)) {
-              style.backgroundColor = "#333333";
+              style.backgroundColor = "rgba(51,51,51,0.8)";
+              className = "highlighted";
             }
-            return { style };
+            return { style, class: className };
           }}
         >
           {Object.entries(data).length > 0 ? data : ""}

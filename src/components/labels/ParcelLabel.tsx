@@ -27,7 +27,7 @@ const ParcelLabel = ({ data }) => {
       <div className="labelPreview">
         <div className="labelBorder">
           <Row>
-            <Col className="parties" xs={5}>
+            <Col className="parties" xs={6}>
               <div className="sender">
                 <Row>
                   <OverlayTrigger
@@ -259,7 +259,7 @@ const ParcelLabel = ({ data }) => {
                 </Row>
               </div>
             </Col>
-            <Col className="middle" xs={3}>
+            <Col className="middle" xs={2}>
               <Row>
                 <OverlayTrigger
                   placement="top"
@@ -462,7 +462,7 @@ const ParcelLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("otherPayer-value", "PARCEL")}
+                  overlay={overlay("otherPayerValue", "PARCEL")}
                 >
                   <Col className="otherPayerValue">
                     {data.labelData.otherPayer ? data.labelData.otherPayer : ""}
@@ -529,7 +529,7 @@ const ParcelLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("codIBANvalue", "PARCEL")}
+                  overlay={overlay("codIBANValue", "PARCEL")}
                 >
                   <div className="codIBANvalue">
                     {data.labelData.codIBAN ? data.labelData.codIBAN : ""}
@@ -575,7 +575,7 @@ const ParcelLabel = ({ data }) => {
               <Row>
                 <OverlayTrigger
                   placement="top"
-                  overlay={overlay("codBICvalue", "PARCEL")}
+                  overlay={overlay("codBICValue", "PARCEL")}
                 >
                   <div className="codBICvalue">
                     {data.labelData.codBIC ? data.labelData.codBIC : ""}
@@ -642,12 +642,12 @@ const ParcelLabel = ({ data }) => {
                   </div>
                 </OverlayTrigger>
               </Row>
-              <Row>
-                <div className="PostiGreen">
-                  Posti Green - ilmastoystävällinen kuljetus
-                </div>
-              </Row>
             </Col>
+          </Row>
+          <Row>
+            <div className="PostiGreen">
+              Posti Green - ilmastoystävällinen kuljetus
+            </div>
           </Row>
         </div>
       </div>

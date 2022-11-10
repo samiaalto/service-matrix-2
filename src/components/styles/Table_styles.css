@@ -109,7 +109,6 @@ thead:first-child {
   border-bottom: 0;
   border-top: 0;
   text-align: center;
-  pointer-events: none;
 }
 
 .serviceMatrix-table td.addonCode {
@@ -151,6 +150,11 @@ thead:first-child {
   cursor: default !important;
 }
 
+.highlight-cell {
+  background-color: rgba(57, 75, 88, 0.2) !important;
+}
+
+/*
 .serviceMatrix-table tbody td:hover {
   background-color: #394b58;
   color: #fff;
@@ -172,28 +176,27 @@ thead:first-child {
   content: "\00a0";
   height: 100%;
   /*left: -5000px;
-  left:90px;*/
+  left:90px;*/ /*
   right: 0px;
   position: absolute;
   top: 0;
-  width: 10000px;
+  width: 1000px;
   z-index: -1;
 }
 
 .serviceMatrix-table tbody td:hover::after {
   background-color: rgba(57, 75, 88, 0.2);
   content: "\00a0";
-  height: 10000px;
+  height: 1000px;
   left: 0;
   position: absolute;
   /*top: -5000px;
-  top:0;*/
+  top:0;*/ /*
   bottom: 0px;
   width: 100%;
   z-index: -1;
 }
 
-/*
 .serviceMatrix-table th:hover {
   background-color: #394b58;
   color: #fff;

@@ -578,7 +578,15 @@ const BringLabel = ({ data }) => {
                 placement="top"
                 overlay={overlay("additionalServices-value", "BRING")}
               >
-                <div className="bringAddonsValue">0011 Pickup Locker</div>
+                <div className="bringAddonsValue">
+                  {data.labelData.addons
+                    ? data.labelData.addons.map((addon, i) => (
+                        <div key={"addon_" + i}>
+                          {addon.bringServiceCode + " " + addon.bringLabelName}
+                        </div>
+                      ))
+                    : ""}
+                </div>
               </OverlayTrigger>
             </Row>
           </Row>
@@ -598,7 +606,7 @@ const BringLabel = ({ data }) => {
                 <Row className="bringLogoText">bring</Row>
               </Col>
             </OverlayTrigger>
-            <Col xs={8}>
+            <Col xs={7}>
               <Row>
                 <OverlayTrigger
                   placement="top"
@@ -613,8 +621,8 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("productName-value", "BRING")}
                 >
                   <div className="bringServiceName">
-                    {data.labelData.serviceName
-                      ? data.labelData.serviceName
+                    {data.labelData.bringLabelName
+                      ? data.labelData.bringLabelName
                       : "PickUp Parcel"}
                   </div>
                 </OverlayTrigger>
@@ -633,7 +641,9 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("productId-value", "BRING")}
                 >
                   <div className="bringServiceName">
-                    {data.serviceName ? data.serviceName : "0340"}
+                    {data.labelData.bringServiceCode
+                      ? data.labelData.bringServiceCode
+                      : "0340"}
                   </div>
                 </OverlayTrigger>
               </Row>
@@ -642,7 +652,13 @@ const BringLabel = ({ data }) => {
               placement="top"
               overlay={overlay("visualGuide", "BRING")}
             >
-              <Col className="visualGuide">Ø</Col>
+              <Col className="visualGuide">
+                {data.service === "2354" || data.service === "2352"
+                  ? "H2"
+                  : data.service === "2351"
+                  ? "Ø"
+                  : ""}
+              </Col>
             </OverlayTrigger>
           </Row>
           <Row className="bringTrackingBarcodeArea">
