@@ -25,7 +25,7 @@ import "./styles/Table_styles.css";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 import { Row } from "./Row";
-import emitter from "./Emitter";
+import { HeaderRow } from "./HeaderRow";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -184,16 +184,6 @@ function TanStackTable({
     },
   });
 
-  let ref = useRef<any>();
-  const subscribe = (rowIndex, columnIndex) => {
-    emitter.subscribe(rowIndex, columnIndex, (isHighlighted) => {
-      if (ref.current) {
-        // Directly update the class on the DOM node
-        ref.current.classList.toggle("highlight-cell", isHighlighted);
-      }
-    });
-  };
-
   const onCellClick = useCallback((rowIndex, columnId, value) => {
     //setActiveRow(rowIndex);
     if (columnId === "serviceName") {
@@ -269,139 +259,17 @@ function TanStackTable({
         <div className="MatrixContainer">
           <table className="serviceMatrix-table">
             <thead>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    if (header.depth === 1) {
-                      if (
-                        header.column.id === "serviceName" ||
-                        header.column.id === "serviceButton" ||
-                        header.column.id === "serviceCode"
-                      ) {
-                        subscribe(header.depth - 1, header.index);
-                        return (
-                          <th
-                            key={header.id}
-                            colSpan={header.colSpan}
-                            className="headerTitleEmpty"
-                            onMouseEnter={() =>
-                              emitter.highlight(header.depth - 1, header.index)
-                            }
-                            ref={ref}
-                          >
-                            {header.isPlaceholder
-                              ? null
-                              : flexRender(
-                                  header.column.columnDef.header,
-                                  header.getContext()
-                                )}
-                          </th>
-                        );
-                      } else {
-                        subscribe(header.depth - 1, header.index);
-                        return (
-                          <OverlayTrigger
-                            key={"tooltip_" + header.column.id}
-                            placement="left"
-                            overlay={
-                              <Tooltip key={"tooltip_" + header.column.id}>
-                                <b> {t(header.column.id)} </b>{" "}
-                                {" (" + header.column.id + ")"}
-                                <br />
-                                {t(header.column.id + "_tooltip")}
-                              </Tooltip>
-                            }
-                          >
-                            <th
-                              key={header.id}
-                              colSpan={header.colSpan}
-                              className="headerTitle"
-                              onClick={() => openModal(header.column.id)}
-                              onMouseEnter={() =>
-                                emitter.highlight(
-                                  header.depth - 1,
-                                  header.index
-                                )
-                              }
-                              ref={ref}
-                            >
-                              {header.isPlaceholder
-                                ? null
-                                : flexRender(
-                                    header.column.columnDef.header,
-                                    header.getContext()
-                                  )}
-                            </th>
-                          </OverlayTrigger>
-                        );
-                      }
-                    } else if (header.column.id === "serviceName") {
-                      subscribe(header.depth - 1, header.index);
-                      return (
-                        <td
-                          key={header.column.id}
-                          colSpan={header.colSpan}
-                          className="serviceHeader"
-                          onMouseEnter={() =>
-                            emitter.highlight(header.depth - 1, header.index)
-                          }
-                          ref={ref}
-                        >
-                          {header.isPlaceholder
-                            ? null
-                            : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
-                        </td>
-                      );
-                    } else if (
-                      header.column.id === "serviceCode" ||
-                      header.column.id === "serviceButton"
-                    ) {
-                      subscribe(header.depth - 1, header.index);
-                      return (
-                        <td
-                          key={header.column.id}
-                          colSpan={header.colSpan}
-                          className="code"
-                          onMouseEnter={() =>
-                            emitter.highlight(header.depth - 1, header.index)
-                          }
-                          ref={ref}
-                        >
-                          {header.isPlaceholder
-                            ? null
-                            : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
-                        </td>
-                      );
-                    } else {
-                      subscribe(header.depth - 1, header.index);
-                      return (
-                        <td
-                          key={header.column.id}
-                          colSpan={header.colSpan}
-                          className="addonCode"
-                          onMouseEnter={() =>
-                            emitter.highlight(header.depth - 1, header.index)
-                          }
-                          ref={ref}
-                        >
-                          {header.isPlaceholder
-                            ? null
-                            : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
-                        </td>
-                      );
-                    }
-                  })}
-                </tr>
-              ))}
+              {table.getHeaderGroups().map((headerGroup) => {
+                return (
+                  <HeaderRow
+                    t={t}
+                    key={headerGroup.id}
+                    headerGroup={headerGroup}
+                    allCols={table.getAllColumns()}
+                    onCellClick={onCellClick}
+                  />
+                );
+              })}
             </thead>
             <tbody>
               {table.getRowModel().rows.map((row) => {

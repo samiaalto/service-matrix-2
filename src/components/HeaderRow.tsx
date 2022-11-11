@@ -1,7 +1,7 @@
 import { useState, useCallback, memo } from "react";
-import { Cell } from "./Cell";
+import { Header } from "./Header";
 
-const RowComponent = ({ row, onCellClick, t, highlightRow }) => {
+const HeaderRowComponent = ({ onCellClick, t, headerGroup, allCols }) => {
   //console.log("render row", row.index);
 
   const handleClick = useCallback(
@@ -13,21 +13,21 @@ const RowComponent = ({ row, onCellClick, t, highlightRow }) => {
 
   return (
     <tr>
-      {row.getAllCells().map((cell, i) => {
+      {headerGroup.headers.map((header) => {
         //const cellProps = cell.getCellProps();
 
-        if (cell.column.getIsVisible()) {
+        let index = allCols.findIndex((e) => e.id === header.column.id);
+
+        if (index > -1) {
           return (
-            <Cell
+            <Header
               t={t}
-              key={cell.id}
-              value={cell.getValue()}
-              rowIndex={cell.row.index}
-              service={cell.row}
-              columnIndex={i}
+              key={header.id}
+              value={header}
+              header={header}
               onClick={handleClick}
-              columnId={cell.column.id}
-              highlightRow={highlightRow}
+              columnIndex={index}
+              highlightRow={header.depth - 1}
             />
           );
         }
@@ -35,6 +35,6 @@ const RowComponent = ({ row, onCellClick, t, highlightRow }) => {
     </tr>
   );
 };
-export const Row = RowComponent;
+export const HeaderRow = HeaderRowComponent;
 
 //export const Row = memo(RowComponent);

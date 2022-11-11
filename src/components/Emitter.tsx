@@ -6,7 +6,6 @@ const emitter = (() => {
     // cell, in a useEffect
     subscribe(r, c, cb) {
       subs[r] = subs[r] ?? [];
-      console.log(r + " " + c);
       // Note that this does not handle multiple
       // subscriptions for the same cell
       subs[r][c] = cb;
@@ -17,7 +16,9 @@ const emitter = (() => {
     highlight(newRow, newCol) {
       subs.forEach((row, r) => {
         row.forEach((cb, c) => {
-          const isHighlighted =
+          let isHighlighted;
+
+          isHighlighted =
             (r === newRow && c <= newCol) || (c === newCol && r <= newRow);
 
           // useState won't rerender the component if the
