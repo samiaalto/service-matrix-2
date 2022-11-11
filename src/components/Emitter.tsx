@@ -18,12 +18,19 @@ const emitter = (() => {
         row.forEach((cb, c) => {
           let isHighlighted;
 
-          isHighlighted =
-            (r === newRow && c <= newCol) || (c === newCol && r <= newRow);
+          if (newCol < 3 && newRow > 1) {
+            isHighlighted = r === newRow && c <= 3;
+          } else if (newRow > 1 && newCol > 3) {
+            isHighlighted =
+              (r === newRow && c <= newCol) || (c === newCol && r <= newRow);
+          } else if (newRow < 2 && newCol > 3) {
+            isHighlighted = c === newCol && r <= 1;
+          } else {
+            isHighlighted = false;
 
-          // useState won't rerender the component if the
-          // value hasn't changed, so we can call it for
-          // every cell
+            // isHighlighted =
+            //   (r === newRow && c <= newCol) || (c === newCol && r <= newRow);
+          }
           cb(isHighlighted);
         });
       });
