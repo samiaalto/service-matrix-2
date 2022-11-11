@@ -121,7 +121,7 @@ const CellComponent = ({
         </td>
       ) : value !== undefined && value !== null ? (
         <td
-          className=""
+          className="check"
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
         >

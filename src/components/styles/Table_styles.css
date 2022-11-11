@@ -64,7 +64,9 @@ thead:first-child {
 .serviceMatrix-table th.headerTitle > div > span {
   padding: 10px 10px;
   overflow: hidden;
-  max-height: 250px;
+  text-align: start;
+  display: inline-block;
+  width: 240px;
 }
 
 .serviceMatrix-table .service {
@@ -109,7 +111,14 @@ thead:first-child {
   font-weight: 700;
   text-align: left;
   padding-left: 5px;
-  pointer-events: none;
+}
+
+.serviceMatrix-table td.serviceHeader:hover,
+.serviceMatrix-table td.code:hover,
+.serviceMatrix-table th.headerTitleEmpty {
+  background-color: #fff !important;
+  color: #000 !important;
+  cursor: default;
 }
 
 .serviceMatrix-table td.serviceButton {
@@ -127,7 +136,6 @@ thead:first-child {
 .serviceMatrix-table td.code {
   border: 0;
   font-weight: 700;
-  pointer-events: none;
 }
 
 .serviceMatrix-table td.serviceCode {
@@ -135,6 +143,7 @@ thead:first-child {
   border-bottom: 0;
   border-top: 0;
   text-align: center;
+  cursor: default;
 }
 
 .serviceMatrix-table td.addonCode {
@@ -143,6 +152,7 @@ thead:first-child {
   border-top: 0;
   height: 39px;
   text-align: center;
+  cursor: default;
 }
 
 .serviceMatrix-table tr {
@@ -178,6 +188,10 @@ thead:first-child {
 
 .unavailable.highlight-cell {
   background-color: rgba(57, 75, 88, 0.2) !important;
+}
+
+.check.highlight-cell {
+  background-color: rgba(57, 75, 88, 0.04) !important;
 }
 
 .serviceMatrix-table td:hover {
@@ -295,11 +309,6 @@ thead:first-child {
 .serviceMatrix-table .col {
   cursor: pointer;
   position: relative;
-}
-
-.serviceMatrix-table th.headerTitleEmpty {
-  background-color: #fff;
-  pointer-events: none;
 }
 
 .unavailable {

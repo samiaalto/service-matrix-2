@@ -22,7 +22,7 @@ const emitter = (() => {
             isHighlighted = r === newRow && c <= 3;
           } else if (newRow > 1 && newCol > 3) {
             isHighlighted =
-              (r === newRow && c <= newCol) || (c === newCol && r <= newRow);
+              (r === newRow && c < newCol) || (c === newCol && r < newRow);
           } else if (newRow < 2 && newCol > 3) {
             isHighlighted = c === newCol && r <= 1;
           } else {

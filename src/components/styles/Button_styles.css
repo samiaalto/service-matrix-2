@@ -24,6 +24,7 @@
 .reset {
   background-color: var(--reset-button-bg);
   border: var(--reset-button-border);
+  min-width: 96px;
 }
 
 .btn-wrapper.reset:hover {
