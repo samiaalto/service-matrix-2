@@ -59,7 +59,7 @@ const HeaderComponent = ({
               colSpan={header.colSpan}
               className="headerTitle"
               onClick={() =>
-                onClick(highlightRow, columnIndex, header.column.id)
+                onClick(highlightRow, "modal" + columnIndex, header.column.id)
               }
               onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
               ref={ref}
