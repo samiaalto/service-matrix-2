@@ -176,7 +176,7 @@ thead:first-child {
   cursor: default !important;
 }
 
-.highlight-cell {
+.unavailable.highlight-cell {
   background-color: rgba(57, 75, 88, 0.2) !important;
 }
 
