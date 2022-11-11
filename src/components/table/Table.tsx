@@ -1,29 +1,15 @@
 import {
-  Column,
-  Table,
   useReactTable,
   ColumnFiltersState,
   getCoreRowModel,
   getFilteredRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
-  ColumnDef,
-  flexRender,
   RowData,
   FilterFn,
 } from "@tanstack/react-table";
-import {
-  useState,
-  useReducer,
-  useEffect,
-  useCallback,
-  useRef,
-  useMemo,
-} from "react";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import "./styles/Table_styles.css";
-import Checkbox from "./Checkbox";
-import Button from "./Button";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import "../styles/Table_styles.css";
 import { Row } from "./Row";
 import { HeaderRow } from "./HeaderRow";
 

@@ -1,4 +1,4 @@
-import { useCallback, memo, useState, useEffect, useRef } from "react";
+import { useCallback, memo, useEffect, useRef } from "react";
 import { flexRender } from "@tanstack/react-table";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import emitter from "./Emitter";
@@ -20,10 +20,6 @@ const HeaderComponent = ({
       }
     });
   }, [highlightRow, columnIndex]);
-
-  const onCellClick = useCallback(() => {
-    onClick(highlightRow, columnIndex, value);
-  }, [onClick, highlightRow, columnIndex, value]);
 
   return (
     <>

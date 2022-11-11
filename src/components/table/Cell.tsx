@@ -1,7 +1,7 @@
-import { useCallback, memo, useState, useEffect, useRef } from "react";
+import { useCallback, memo, useEffect, useRef } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Checkbox from "./Checkbox";
-import Button from "./Button";
+import Checkbox from "../Checkbox";
+import Button from "../Button";
 import emitter from "./Emitter";
 
 const CellComponent = ({

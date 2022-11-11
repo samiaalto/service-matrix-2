@@ -32,7 +32,7 @@ import mapRows from "./components/MapRows";
 import mapFfRows from "./components/MapFFRows";
 import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
-import TanStackTable from "./components/TanStackTable";
+import TanStackTable from "./components/table/Table";
 import populateSelect from "./components/PopulateSelect";
 
 /* HOOK REACT EXAMPLE */
