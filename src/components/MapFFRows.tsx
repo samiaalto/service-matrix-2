@@ -1,4 +1,4 @@
-const MapFFRows = (fileFormats, setFfRowData) => {
+const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
   let rows = [];
   let index = 0;
   for (let record of fileFormats.records) {
@@ -57,6 +57,34 @@ const MapFFRows = (fileFormats, setFfRowData) => {
           attribute.Position + "-" + (attribute.Position + attribute.Length);
       }
 
+      let tooltip = [];
+
+      if (attribute.Name === "Product" || attribute.Name === "ServiceCode") {
+        for (let service of services.records) {
+          for (let format of service.Fields) {
+            if (
+              format.MessageFormat === record.Name &&
+              format.PropertyName === attribute.Name
+            ) {
+              tooltip.push(format.PropertyValue);
+            }
+          }
+        }
+      }
+
+      if (attribute.Name === "Service") {
+        for (let addon of additionalServices.records) {
+          for (let format of addon.Fields) {
+            if (
+              format.MessageFormat === record.Name &&
+              format.PropertyName === attribute.Name
+            ) {
+              tooltip.push(format.PropertyValue);
+            }
+          }
+        }
+      }
+
       rows.push({
         format: record.Name,
         attribute: (
@@ -69,6 +97,7 @@ const MapFFRows = (fileFormats, setFfRowData) => {
         type: type,
         position: position,
         description: attribute.DescriptionEN,
+        tooltip: tooltip,
       });
     }
     index++;

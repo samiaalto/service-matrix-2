@@ -20,8 +20,8 @@ import {
   useRef,
   useMemo,
 } from "react";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./styles/FFTable_styles.css";
+import FileFormatButton from "./FileFormatButton";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -147,9 +147,9 @@ function FFTable({
   useEffect(() => {
     table.getColumn("format").setFilterValue(selectedFormat || undefined);
     if (selectedFormat === "WAYBILD16A") {
-      setColumnVisibility({ format: false });
+      setColumnVisibility({ format: false, tooltip: false });
     } else {
-      setColumnVisibility({ format: false, position: false });
+      setColumnVisibility({ format: false, tooltip: false, position: false });
     }
   }, [selectedFormat]);
 
@@ -235,6 +235,25 @@ function FFTable({
                                 cell.column.columnDef.cell,
                                 cell.getContext()
                               )}
+                            </td>
+                          );
+                        } else if (
+                          cell.column.id === "description" &&
+                          cell.row.original.tooltip.length > 0
+                        ) {
+                          return (
+                            <td
+                              key={cell.id}
+                              className={cell.column.id + "_col"}
+                            >
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext()
+                              )}
+                              <FileFormatButton
+                                data={cell.row.original.tooltip}
+                                t={t}
+                              />
                             </td>
                           );
                         } else {

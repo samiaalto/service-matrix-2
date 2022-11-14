@@ -152,6 +152,13 @@ const App = (props: AppProps) => {
       accessorKey: "description",
       enableGlobalFilter: true,
     },
+    {
+      id: "tooltip",
+      header: () => <span>{t("Tooltip")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "tooltip",
+      enableGlobalFilter: false,
+    },
   ]);
 
   const mapColumns = (additionalServices: any) => {
@@ -519,7 +526,12 @@ const App = (props: AppProps) => {
         setRowData,
         data.packageTypes
       );
-      mapFfRows(data.fileFormats, setFfRowData);
+      mapFfRows(
+        data.services,
+        data.additionalServices,
+        data.fileFormats,
+        setFfRowData
+      );
     }
   }, [data, dataLoaded]);
 
