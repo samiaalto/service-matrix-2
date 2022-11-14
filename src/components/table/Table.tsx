@@ -12,6 +12,7 @@ import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import "../styles/Table_styles.css";
 import { Row } from "./Row";
 import { HeaderRow } from "./HeaderRow";
+import emitter from "./Emitter";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -244,7 +245,10 @@ function TanStackTable({
   return (
     <>
       {rows > 0 ? (
-        <div className="MatrixContainer">
+        <div
+          className="MatrixContainer"
+          onMouseLeave={() => emitter.highlight(0, 0)}
+        >
           <table className="serviceMatrix-table">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => {
