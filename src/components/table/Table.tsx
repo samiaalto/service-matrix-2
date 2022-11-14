@@ -245,11 +245,11 @@ function TanStackTable({
   return (
     <>
       {rows > 0 ? (
-        <div
-          className="MatrixContainer"
-          onMouseLeave={() => emitter.highlight(0, 0)}
-        >
-          <table className="serviceMatrix-table">
+        <div className="MatrixContainer">
+          <table
+            className="serviceMatrix-table"
+            onMouseLeave={() => emitter.highlight(0, 0)}
+          >
             <thead>
               {table.getHeaderGroups().map((headerGroup) => {
                 return (
