@@ -59,7 +59,20 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
 
       let tooltip = [];
 
-      if (attribute.Name === "Product" || attribute.Name === "ServiceCode") {
+      let splitPath = attribute.Path.split(".");
+      let parent;
+      for (let j = splitPath.length - 2; j >= 0; j--) {
+        if (splitPath[j] !== "0") {
+          parent = splitPath[j];
+          break;
+        }
+      }
+
+      if (
+        attribute.Name === "Product" ||
+        attribute.Name === "ServiceCode" ||
+        (attribute.Name === "id" && parent === "service")
+      ) {
         for (let service of services.records) {
           for (let format of service.Fields) {
             if (
@@ -72,7 +85,23 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
         }
       }
 
-      if (attribute.Name === "Service") {
+      if (attribute.Name === "type" && parent === "PackageQuantity") {
+        for (let service of services.records) {
+          for (let type of service.PackageTypesAndDimensions) {
+            if (
+              type.MessageFormat === record.Name &&
+              !tooltip.includes(type.PackageType)
+            ) {
+              tooltip.push(type.PackageType);
+            }
+          }
+        }
+      }
+
+      if (
+        attribute.Name === "Service" ||
+        (attribute.Name === "id" && parent === "addons")
+      ) {
         for (let addon of additionalServices.records) {
           for (let format of addon.Fields) {
             if (

@@ -122,5 +122,16 @@
 
 .ff-showlist {
   position: flex;
-  float: right;
+  float: left;
+  background-color: #394b58;
+  border: none;
+}
+
+.ff-showlist:focus {
+  outline: none !important;
+  -webkit-appearance: none !important;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }

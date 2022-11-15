@@ -4,27 +4,33 @@ import Button from "react-bootstrap/Button";
 
 const FileFormatButton = ({ data, t }) => {
   const [listItems, setListItems] = useState(data);
-  const [show, setShow] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const [showItem, setShowItem] = useState(4);
+
+  const loadCount = showAll ? listItems.length : showItem;
   return (
     <>
-      <Button
-        className="ff-showlist"
-        title="Show list"
-        onClick={() => setShow(!show)}
-      >
-        Show list
-      </Button>
       <div className="value-list">
+        <div>Allowed values:</div>
         <ul>
-          {show
-            ? listItems.map((item, i) => (
-                <li key={i} className="list-item">
-                  {item + " (" + t(item) + ")"}
-                </li>
-              ))
-            : ""}
+          {listItems.slice(0, loadCount).map((item, i) => (
+            <li key={i} className="list-item">
+              {item + " (" + t(item) + ")"}
+            </li>
+          ))}
         </ul>
       </div>
+      {listItems.length > showItem ? (
+        <Button
+          className="ff-showlist"
+          title="Show list"
+          onClick={() => setShowAll(!showAll)}
+        >
+          Show all
+        </Button>
+      ) : (
+        ""
+      )}
     </>
   );
 };
