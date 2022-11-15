@@ -218,10 +218,10 @@ function loadLanguages(language: string) {
     for (let messageRecord of record.Records) {
       for (let validation of messageRecord.Validations) {
         if (language === "EN") {
-          result[messageRecord.DisplayName + "_" + validation.ValidationValue] =
+          result[messageRecord.Name + "_" + validation.ValidationValue] =
             validation.DisplayNameEN;
         } else {
-          result[messageRecord.DisplayName + "_" + validation.ValidationValue] =
+          result[messageRecord.Name + "_" + validation.ValidationValue] =
             validation.DisplayNameFI;
         }
       }
