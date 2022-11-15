@@ -133,7 +133,7 @@ let fi = {
   "'No results for filter value'": "Ei tuloksia hakuarvolla",
 };
 
-function loadLanguages(language) {
+function loadLanguages(language: string) {
   let result = {};
 
   if (language === "EN") {
