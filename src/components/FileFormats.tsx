@@ -1,5 +1,5 @@
 import FFTable from "./FileFormatTable";
-import Dropdown from "./Dropdown";
+import { Link } from "react-router-dom";
 import Select from "./Select";
 import Filter from "./Filter";
 import { Table, Tabs, Tab, Row, Col } from "react-bootstrap";
@@ -117,7 +117,14 @@ const FileFormats = ({
             )}
             {selected.format && selected.format.substring(0, 6) === "POSTRA" ? (
               <Tab eventKey="schema" title="Schema">
-                <div className="FFContainer">SCHEMA</div>
+                <div className="FFContainer">
+                  <div className="dl-schema">
+                    <div className="schema-txt">Download schema files</div>
+                    <Link to="/files/schema.zip" target="_blank" download>
+                      here
+                    </Link>
+                  </div>
+                </div>
               </Tab>
             ) : (
               ""

@@ -146,3 +146,12 @@
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
+
+.dl-schema {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+.schema-txt {
+  padding-right: 5px;
+}
