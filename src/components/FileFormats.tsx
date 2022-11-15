@@ -78,6 +78,15 @@ const FileFormats = ({
             }}
             className="mb-3 ff-tabs"
           >
+            <Tab eventKey="specs" title={t("specs")}>
+              <FFTable
+                t={t}
+                defaultColumns={ffColumnData}
+                defaultData={ffRowData}
+                selectedFormat={selected.format}
+                glblFilter={selected.formatFilter}
+              />
+            </Tab>
             {history.length > 0 ? (
               <Tab eventKey="version" title={t("version")}>
                 <div className="FFContainer">
@@ -106,15 +115,13 @@ const FileFormats = ({
             ) : (
               ""
             )}
-            <Tab eventKey="specs" title={t("specs")}>
-              <FFTable
-                t={t}
-                defaultColumns={ffColumnData}
-                defaultData={ffRowData}
-                selectedFormat={selected.format}
-                glblFilter={selected.formatFilter}
-              />
-            </Tab>
+            {selected.format && selected.format.substring(0, 6) === "POSTRA" ? (
+              <Tab eventKey="schema" title="Schema">
+                <div className="FFContainer">SCHEMA</div>
+              </Tab>
+            ) : (
+              ""
+            )}
           </Tabs>
         </div>
       </div>
