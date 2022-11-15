@@ -15,7 +15,10 @@ const FileFormatButton = ({ data, t }) => {
         <ul>
           {listItems.slice(0, loadCount).map((item, i) => (
             <li key={i} className="list-item">
-              {item + " (" + t(item) + ")"}
+              {item.substring(0, item.indexOf("-")) +
+                " (" +
+                t(item.substring(item.indexOf("-") + 1, item.length)) +
+                ")"}
             </li>
           ))}
         </ul>

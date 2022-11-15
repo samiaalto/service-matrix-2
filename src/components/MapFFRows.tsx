@@ -79,20 +79,23 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
               format.MessageFormat === record.Name &&
               format.PropertyName === attribute.Name
             ) {
-              tooltip.push(format.PropertyValue);
+              tooltip.push(format.PropertyValue + "-" + service.ServiceCode);
             }
           }
         }
       }
 
-      if (attribute.Name === "type" && parent === "PackageQuantity") {
+      if (
+        (attribute.Name === "type" && parent === "PackageQuantity") ||
+        attribute.Name === "PackageType"
+      ) {
         for (let service of services.records) {
           for (let type of service.PackageTypesAndDimensions) {
             if (
               type.MessageFormat === record.Name &&
               !tooltip.includes(type.PackageType)
             ) {
-              tooltip.push(type.PackageType);
+              tooltip.push(type.PackageType + "-" + type.PackageType);
             }
           }
         }
@@ -100,6 +103,7 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
 
       if (
         attribute.Name === "Service" ||
+        attribute.Name === "AdditionalServices" ||
         (attribute.Name === "id" && parent === "addons")
       ) {
         for (let addon of additionalServices.records) {
@@ -108,7 +112,7 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
               format.MessageFormat === record.Name &&
               format.PropertyName === attribute.Name
             ) {
-              tooltip.push(format.PropertyValue);
+              tooltip.push(format.PropertyValue + "-" + addon.ServiceCode);
             }
           }
         }

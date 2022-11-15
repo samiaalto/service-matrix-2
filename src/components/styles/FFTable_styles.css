@@ -128,6 +128,7 @@
 }
 
 .ff-showlist:focus {
+  background-color: #394b58;
   outline: none !important;
   -webkit-appearance: none !important;
 
