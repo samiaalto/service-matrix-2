@@ -80,26 +80,28 @@ const FileFormats = ({
           >
             {history.length > 0 ? (
               <Tab eventKey="version" title={t("version")}>
-                <Table className="ff-table">
-                  <thead>
-                    <tr>
-                      <th className="version_title">Document Version</th>
-                      <th className="version_title">Schema Version</th>
-                      <th className="date_title">Date</th>
-                      <th className="comment_title">Comment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {history.map((row, i) => (
-                      <tr key={"row" + i}>
-                        <td className="version_col">{row.DocumentVersion}</td>
-                        <td className="version_col">{row.SchemaVersion}</td>
-                        <td className="date_col">{row.Date}</td>
-                        <td className="comment_col">{row.Comments}</td>
+                <div className="FFContainer">
+                  <Table className="ff-table">
+                    <thead>
+                      <tr>
+                        <th className="version_title">Document Version</th>
+                        <th className="version_title">Schema Version</th>
+                        <th className="date_title">Date</th>
+                        <th className="comment_title">Comment</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </Table>
+                    </thead>
+                    <tbody>
+                      {history.map((row, i) => (
+                        <tr key={"row" + i}>
+                          <td className="version_col">{row.DocumentVersion}</td>
+                          <td className="version_col">{row.SchemaVersion}</td>
+                          <td className="date_col">{row.DateModified}</td>
+                          <td className="comment_col">{row.Comment}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
               </Tab>
             ) : (
               ""

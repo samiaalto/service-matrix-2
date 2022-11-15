@@ -10,6 +10,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": [
         {
           "Name": "RecordType",
@@ -1591,6 +1592,68 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [
+        {
+          "Comment": "Document created.",
+          "DateModified": "2017-09-06",
+          "DocumentVersion": "0",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Updated chapter 1.",
+          "DateModified": "2017-09-11",
+          "DocumentVersion": "1",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Added message specification and updated other content.",
+          "DateModified": "2017-09-26",
+          "DocumentVersion": "2",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated",
+          "DateModified": "2017-11-14",
+          "DocumentVersion": "3",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated",
+          "DateModified": "2017-12-08",
+          "DocumentVersion": "4",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": null,
+          "DateModified": "2018-08-15",
+          "DocumentVersion": "5",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "New ‘LimitedQuantity’ field (boolean) added to inform dangerous goods classified details in limited quantities (LQ). The element MessageRelease changed to mandatory.",
+          "DateModified": "2019-10-11",
+          "DocumentVersion": "6",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "Decimal values corrected in sample messages. ",
+          "DateModified": "2020-02-13",
+          "DocumentVersion": "7",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "DangerousGoods Provisions added.",
+          "DateModified": "2020-06-16",
+          "DocumentVersion": "8",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "*Namespace added in header * UTF-8 encoding allowed with exception *New schema (MessageRelease = 2) Is compatible to previous releases *AgreedDeliveryDate added *Reference @typeCode ‘IOSS_NUMBER’ added *New Party @role DELIVERY * Party Account @type codes ‘VAT’ and ‘TAX_NUMBER’ added for roles CONSIGNOR and CONSIGNEE",
+          "DateModified": "2021-09-10",
+          "DocumentVersion": "9",
+          "SchemaVersion": "1.2"
+        }
+      ],
       "Records": [
         {
           "Name": "Postra",
@@ -3984,6 +4047,74 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [
+        {
+          "Comment": "Document created.",
+          "DateModified": "2017-08-10",
+          "DocumentVersion": "0",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Chapter 1 updated. Message specification added.",
+          "DateModified": "2017-08-14",
+          "DocumentVersion": "1",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Chapter 1 updated. Message specification added.",
+          "DateModified": "2017-08-17",
+          "DocumentVersion": "2",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated. Added sample 1.",
+          "DateModified": "2017-08-24",
+          "DocumentVersion": "3",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Header and footer information updated.",
+          "DateModified": "2017-10-02",
+          "DocumentVersion": "4",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated.",
+          "DateModified": "2017-11-14",
+          "DocumentVersion": "5",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated, Descriptions updated.",
+          "DateModified": "2017-11-21",
+          "DocumentVersion": "6",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "First draft version is published",
+          "DateModified": "2017-12-08",
+          "DocumentVersion": "7",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "* New schema (MessageRelease = 1). Is compatible to release 0. The element changed to mandatory. * Default encoding is UTF-8 * New ‘LimitedQuantity’ field (boolean) added to inform dangerous goods classified details in limited quantities (LQ). * LimitedQuantityWeight decimals 2 > 3 Supplementings to description texts: * Posti will charge penalty fee for manual correction of missing or erroneous data * ShipmentDate is PickupDate, if PickupDate not sent * @timeEarliest and @timeLatest cannot be the same timestamp value * How LimitedQuantityWeight differ from LimitedQuantity * SSCC codes must be sent with leading zeroes",
+          "DateModified": "2019-10-11",
+          "DocumentVersion": "8",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "* Shipment/Totals and GoodsItem/GrossWeight, Volume, LoadingMeter allow max. 3 decimals. * All parties (CONSIGNEE, CONSIGNOR, PICKUP, DELIVERY, PAYER) has Street2 address allowed. *PAYER Name1 is always mandatory. * Namespace added to MIG root element. * DangerousGoods Provisions added",
+          "DateModified": "2020-06-16",
+          "DocumentVersion": "9",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "* New schema (MessageRelease = 2) Is compatible to previous releases. *COD is no longer available for FI domestic * Party Account @type ‘VAT’ and TAX_NUMBER added for roles CONSIGNOR and CONSIGNEE",
+          "DateModified": "2021-09-10",
+          "DocumentVersion": "10",
+          "SchemaVersion": "1.2"
+        }
+      ],
       "Records": [
         {
           "Name": "Postra",
@@ -6727,6 +6858,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": []
     },
     {
@@ -6739,6 +6871,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": []
     },
     {
@@ -6751,6 +6884,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": [
         {
           "Name": "pdfConfig",
