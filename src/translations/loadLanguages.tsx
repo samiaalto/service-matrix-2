@@ -150,6 +150,17 @@ function loadLanguages(language) {
       result[record.ServiceCode] = record.DisplayNameFI;
       result[record.ServiceCode + "_tooltip"] = record.DescriptionFI;
     }
+    for (let type of record.PackageTypesAndDimensions) {
+      if (language === "EN") {
+        if (!result[type.PackageType]) {
+          result[type.PackageType] = type.DescriptionEN;
+        }
+      } else {
+        if (!result[type.PackageType]) {
+          result[type.PackageType] = type.DescriptionFI;
+        }
+      }
+    }
   }
   for (let record of additionalServices.records) {
     if (language === "EN") {

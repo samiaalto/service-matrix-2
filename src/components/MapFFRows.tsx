@@ -93,7 +93,7 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
           for (let type of service.PackageTypesAndDimensions) {
             if (
               type.MessageFormat === record.Name &&
-              !tooltip.includes(type.PackageType)
+              !tooltip.includes(type.PackageType + "-" + type.PackageType)
             ) {
               tooltip.push(type.PackageType + "-" + type.PackageType);
             }
