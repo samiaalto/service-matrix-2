@@ -186,9 +186,11 @@ function FFTable({
             </thead>
             <tbody>
               {table.getRowModel().rows.map((row) => {
+                console.log(row);
                 if (
                   row.original.type === "Array" ||
-                  row.original.type === "Object"
+                  row.original.type === "Object" ||
+                  row.original.attribute.props.children.includes("RecordType")
                 ) {
                   return (
                     <tr key={row.index} className="ff-boldRow">

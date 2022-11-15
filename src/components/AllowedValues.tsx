@@ -22,18 +22,18 @@ const AllowedValues = ({ data, t }) => {
             </li>
           ))}
         </ul>
+        {listItems.length > showItem ? (
+          <Button
+            className="ff-showlist"
+            title="Show list"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {t("showAll")}
+          </Button>
+        ) : (
+          ""
+        )}
       </div>
-      {listItems.length > showItem ? (
-        <Button
-          className="ff-showlist"
-          title="Show list"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {t("showAll")}
-        </Button>
-      ) : (
-        ""
-      )}
     </>
   );
 };

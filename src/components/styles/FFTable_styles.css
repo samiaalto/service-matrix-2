@@ -24,13 +24,14 @@
   padding-left: 5px;
   min-width: 180px;
   max-width: 250px;
+  padding: 5px;
 }
 
-.attributeName {
+.attributeName_col pre {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  display: flex;
-  align-items: center;
+  display: inline;
+  vertical-align: middle !important;
 }
 
 .version_col,
