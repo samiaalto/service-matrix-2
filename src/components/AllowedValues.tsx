@@ -28,7 +28,7 @@ const AllowedValues = ({ data, t }) => {
             title="Show list"
             onClick={() => setShowAll(!showAll)}
           >
-            {t("showAll")}
+            {showAll ? t("hideAll") : t("showAll")}
           </Button>
         ) : (
           ""
