@@ -110,7 +110,8 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
           for (let format of addon.Fields) {
             if (
               format.MessageFormat === record.Name &&
-              format.PropertyName === attribute.Name
+              format.PropertyName === attribute.Name &&
+              !tooltip.some((s) => s.indexOf(format.PropertyValue) !== -1)
             ) {
               tooltip.push(format.PropertyValue + "-" + addon.ServiceCode);
             }
