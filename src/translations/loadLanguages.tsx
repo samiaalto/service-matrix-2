@@ -213,6 +213,17 @@ function loadLanguages(language) {
       result[record.Name] = record.DisplayNameFI;
       result[record.Name + "_desc"] = record.DescriptionFI;
     }
+    for (let messageRecord of record.Records) {
+      for (let validation of messageRecord.Validations) {
+        if (language === "EN") {
+          result[messageRecord.DisplayName + "_" + validation.ValidationValue] =
+            validation.DisplayNameEN;
+        } else {
+          result[messageRecord.DisplayName + "_" + validation.ValidationValue] =
+            validation.DisplayNameFI;
+        }
+      }
+    }
   }
   console.log(result);
   return result;

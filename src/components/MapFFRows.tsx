@@ -119,6 +119,18 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
         }
       }
 
+      if (attribute.Validations.length > 0) {
+        for (let item of attribute.Validations) {
+          tooltip.push(
+            item.ValidationValue +
+              "-" +
+              attribute.Name +
+              "_" +
+              item.ValidationValue
+          );
+        }
+      }
+
       rows.push({
         format: record.Name,
         attribute: (
