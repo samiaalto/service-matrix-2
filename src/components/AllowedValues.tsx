@@ -2,7 +2,7 @@ import { useState } from "react";
 //import Button from "./Button";
 import Button from "react-bootstrap/Button";
 
-const FileFormatButton = ({ data, t }) => {
+const AllowedValues = ({ data, t }) => {
   const [listItems, setListItems] = useState(data);
   const [showAll, setShowAll] = useState(false);
   const [showItem, setShowItem] = useState(4);
@@ -11,7 +11,7 @@ const FileFormatButton = ({ data, t }) => {
   return (
     <>
       <div className="value-list">
-        <div>Allowed values:</div>
+        <div className="value-header">Allowed values:</div>
         <ul>
           {listItems.slice(0, loadCount).map((item, i) => (
             <li key={i} className="list-item">
@@ -29,7 +29,7 @@ const FileFormatButton = ({ data, t }) => {
           title="Show list"
           onClick={() => setShowAll(!showAll)}
         >
-          Show all
+          {t("showAll")}
         </Button>
       ) : (
         ""
@@ -38,4 +38,4 @@ const FileFormatButton = ({ data, t }) => {
   );
 };
 
-export default FileFormatButton;
+export default AllowedValues;

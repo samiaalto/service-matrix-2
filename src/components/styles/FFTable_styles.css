@@ -120,11 +120,16 @@
   list-style-type: none;
 }
 
+.value-header {
+  padding-top: 5px;
+}
+
 .ff-showlist {
   position: flex;
   float: left;
   background-color: #394b58;
   border: none;
+  border-radius: 8px;
 }
 
 .ff-showlist:focus {

@@ -21,7 +21,7 @@ import {
   useMemo,
 } from "react";
 import "./styles/FFTable_styles.css";
-import FileFormatButton from "./FileFormatButton";
+import AllowedValues from "./AllowedValues";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -250,7 +250,7 @@ function FFTable({
                                 cell.column.columnDef.cell,
                                 cell.getContext()
                               )}
-                              <FileFormatButton
+                              <AllowedValues
                                 data={cell.row.original.tooltip}
                                 t={t}
                               />
