@@ -167,6 +167,11 @@ thead:first-child {
   transition-delay: 0.1s;
 }
 
+.serviceMatrix-table td.service.selected {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 .serviceMatrix-table td {
   min-width: 39px;
   min-height: 39px !important;
