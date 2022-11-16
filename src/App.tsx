@@ -174,6 +174,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceName",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceName",
@@ -187,6 +188,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceButton",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceButton",
@@ -200,6 +202,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceCode",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceCode",
@@ -215,6 +218,7 @@ const App = (props: AppProps) => {
         columns: [
           {
             header: () => <span>Routes</span>,
+            footer: "",
             cell: (info: any) => info.getValue(),
             accessorKey: "routes",
             enableGlobalFilter: false,
@@ -226,6 +230,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceGroup",
         header: () => <span>Service Group</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -238,6 +243,7 @@ const App = (props: AppProps) => {
       {
         id: "weight",
         header: () => <span>Weight</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -251,6 +257,7 @@ const App = (props: AppProps) => {
       {
         id: "width",
         header: () => <span>Width</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -277,6 +284,7 @@ const App = (props: AppProps) => {
       {
         id: "additionalServices",
         header: () => <span>Additional Services</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -297,7 +305,8 @@ const App = (props: AppProps) => {
             <span>{t(record.ServiceCode)}</span>
           </div>
         ),
-
+        footer:
+          record.DisplayNameEN.indexOf("Equipment") > -1 ? "EQUIPMENT" : "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -579,7 +588,7 @@ const App = (props: AppProps) => {
     if (rowData.length > 0 && Object.entries(filteredRowData).length > 0) {
       for (const [key] of Object.entries(rowData[0])) {
         if (key.substring(0, 1) === "3" || key.substring(0, 1) === "5") {
-          hideColumn(key, rowData, setColumnVisibility, filteredRowData);
+          hideColumn(key, columnData, setColumnVisibility, filteredRowData);
         }
       }
     }
