@@ -93,6 +93,7 @@ const App = (props: AppProps) => {
     offCanvasTab: "label",
     showSamples: true,
     showOptional: false,
+    showEquipment: false,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -378,6 +379,13 @@ const App = (props: AppProps) => {
     }));
   };
 
+  const handleShowEquipment = () => {
+    setSelected((prevState) => ({
+      ...prevState,
+      showEquipment: !prevState.showEquipment,
+    }));
+  };
+
   const handleReset = () => {
     let updatedSearchParams = new URLSearchParams(params.toString());
     updatedSearchParams.delete("service");
@@ -588,7 +596,13 @@ const App = (props: AppProps) => {
     if (rowData.length > 0 && Object.entries(filteredRowData).length > 0) {
       for (const [key] of Object.entries(rowData[0])) {
         if (key.substring(0, 1) === "3" || key.substring(0, 1) === "5") {
-          hideColumn(key, columnData, setColumnVisibility, filteredRowData);
+          hideColumn(
+            key,
+            columnData,
+            setColumnVisibility,
+            filteredRowData,
+            selected.showEquipment
+          );
         }
       }
     }
@@ -602,6 +616,7 @@ const App = (props: AppProps) => {
     selected.destination,
     selected.serviceFilter,
     selected.addonsFilter,
+    selected.showEquipment,
   ]);
 
   useEffect(() => {
@@ -1115,6 +1130,17 @@ const App = (props: AppProps) => {
                         />
                       </Col>
                     </OverlayTrigger>
+                  </Row>
+                  <Row>
+                    <Col className="pickupOptions">
+                      <Form.Check
+                        type="switch"
+                        id="equipment"
+                        label={t("'Show equipment'")}
+                        checked={selected.showEquipment}
+                        onChange={handleShowEquipment}
+                      />
+                    </Col>
                   </Row>
                   <Row>
                     <Col className="pickupOptions">

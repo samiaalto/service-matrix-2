@@ -1,4 +1,10 @@
-const hideColumn = (addon, columnData, setColumnVisibility, filteredData) => {
+const hideColumn = (
+  addon,
+  columnData,
+  setColumnVisibility,
+  filteredData,
+  showEquipment
+) => {
   let emptyCount = 0;
   let isEquipment = false;
 
@@ -21,7 +27,7 @@ const hideColumn = (addon, columnData, setColumnVisibility, filteredData) => {
     //console.log(addon);
     setColumnVisibility((prevState) => ({ ...prevState, [addon]: false }));
     //setColumnVisibility((prevState) => prevState.map((item, index) => console.log(item)));
-  } else if (isEquipment) {
+  } else if (isEquipment && !showEquipment) {
     setColumnVisibility((prevState) => ({ ...prevState, [addon]: false }));
   } else {
     //show hidden column
