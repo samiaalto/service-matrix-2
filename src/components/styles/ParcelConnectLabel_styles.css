@@ -127,7 +127,7 @@
 
 .labelPreview .pcServiceName {
   font-size: 18px;
-  text-align: left;
+  text-align: center !important;
   font-weight: 700;
   margin-top: 5px;
 }

@@ -196,8 +196,8 @@
 }
 
 .PostiGreen {
-  position: absolute;
-  bottom: -130px !important;
+  display: flex;
+  margin-bottom: -20px;
   padding-left: 5px;
   font-size: 17px;
   font-weight: 700;

@@ -59,83 +59,6 @@ const MessageGenerator = (
     return formatted.substring(1, formatted.length - 3);
   };
 
-  const beautify = (xmlData) => {
-    let highlighted = [];
-    let row = 1;
-    let rows = [];
-    let xmlRows = xmlData.split("\n");
-    for (let j = 0; j < xmlRows.length; j++) {
-      var string = [];
-      var items = xmlRows[j].split(/(?=[ "?=></])|(?<=[ "?=></])/g);
-
-      for (var i = 0; i < items.length; i++) {
-        if (
-          items[i] === "<" ||
-          items[i] === ">" ||
-          items[i] === "/" ||
-          items[i] === "?"
-        ) {
-          string.push(<span className="bracket">{items[i]}</span>);
-        } else if (items[i - 1] === "?") {
-          string.push(<span className="bracket">{items[i]}</span>);
-        } else if (items[i + 1] === "=") {
-          string.push(<span className="string">{items[i]}</span>);
-        } else if (items[i] === "=") {
-          string.push(<span className="string">{items[i]}</span>);
-        } else if (items[i - 1] === "<" || items[i - 1] === "/") {
-          string.push(<span className="key">{items[i]}</span>);
-        } else {
-          string.push(<span>{items[i]}</span>);
-        }
-      }
-
-      //console.log(string);
-
-      highlighted.push(<span key={row}>{string}</span>);
-      highlighted.push("\n");
-
-      rows.push(row);
-      rows.push("\n");
-      row++;
-    }
-    return highlighted;
-  };
-
-  const beautifyJSON = (jsonData) => {
-    let highlighted = [];
-    let row = 1;
-    let rows = [row, "\n"];
-    //console.log(jsonData);
-    let jsonRows = jsonData.split("\n");
-    //let jsonRows = jsonData;
-    for (let j = 0; j < jsonRows.length; j++) {
-      var testiii = jsonRows[j].split(/(?=[}{":,\[\]])|(?<=[}{":,\[\]])/g);
-      var string = [];
-      for (var i = 0; i < testiii.length; i++) {
-        if (testiii[i - 1] === '"' && testiii[i + 1] === '"') {
-          string.push(<span className="string">{testiii[i]}</span>);
-        } else if (testiii[i - 1] === ":") {
-          if (/true|null|false/.test(testiii[i])) {
-            string.push(<span className="boolean">{testiii[i]}</span>);
-          } else {
-            string.push(<span className="number">{testiii[i]}</span>);
-          }
-        } else {
-          string.push(<span>{testiii[i]}</span>);
-        }
-      }
-    }
-
-    highlighted.push(<span key={row}>{string}</span>);
-    highlighted.push("\n");
-
-    row++;
-    rows.push(row);
-    rows.push("\n");
-    //console.log(highlighted);
-    return highlighted;
-  };
-
   const serviceProps = [];
   let addonArr = [];
   let labelData = {};
@@ -188,6 +111,34 @@ const MessageGenerator = (
             value: country.CountryCode,
             position: "CONSIGNOR",
             mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "address1",
+            value: country.Address,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "zipcode",
+            value: country.PostalCode,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "city",
+            value: country.City,
+            position: "sender",
+            mandatory: true,
+          },
+          {
+            format: "JSON",
+            property: "country",
+            value: country.CountryCode,
+            position: "sender",
+            mandatory: true,
           }
         );
       }
@@ -234,6 +185,34 @@ const MessageGenerator = (
           value: country.CountryCode,
           position: "CONSIGNEE",
           mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "address1",
+          value: country.Address,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "zipcode",
+          value: country.PostalCode,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "city",
+          value: country.City,
+          position: "receiver",
+          mandatory: true,
+        },
+        {
+          format: "JSON",
+          property: "country",
+          value: country.CountryCode,
+          position: "receiver",
+          mandatory: true,
         }
       );
     }
@@ -241,9 +220,23 @@ const MessageGenerator = (
 
   for (const record of services.records) {
     if (record.ServiceCode === selected.service) {
+      let bringLabelName = "";
+      let bringServiceCode = "";
+      if (record.ExternalServiceCodes.length > 0) {
+        for (let ext of record.ExternalServiceCodes) {
+          if (ext.ExternalSystem === "BRING") {
+            bringLabelName = ext.DisplayNameEN;
+            bringServiceCode = ext.ServiceCode;
+          }
+        }
+      }
+
       labelData["labelType"] = record.LabelType;
       labelData["serviceName"] = record.DisplayNameFI;
       labelData["processNumber"] = record.ProcessNumber;
+      labelData["bringLabelName"] = bringLabelName;
+      labelData["bringServiceCode"] = bringServiceCode;
+
       if (record.Fields.length > 0) {
         for (const field of record.Fields) {
           let value = field.PropertyValue;
@@ -289,6 +282,21 @@ const MessageGenerator = (
   if (addonArr) {
     for (const record of additionalServices.records) {
       if (addonArr.includes(record.ServiceCode)) {
+        let bringLabelName = "";
+        let bringServiceCode = "";
+        if (record.ExternalServiceCodes.length > 0) {
+          for (let ext of record.ExternalServiceCodes) {
+            if (ext.ExternalSystem === "BRING") {
+              if (ext.ServiceCode === "0003") {
+                bringLabelName = ext.DisplayNameEN + " 0,234 KG BRUTTO";
+                bringServiceCode = ext.ServiceCode;
+              } else {
+                bringLabelName = ext.DisplayNameEN;
+                bringServiceCode = ext.ServiceCode;
+              }
+            }
+          }
+        }
         let labelName = record.DisplayNameFI;
         if (record.ServiceCode === "3175" || record.ServiceCode === "3143") {
           labelName = labelName + " 1 KPL 0,234 KG BRUTTO";
@@ -296,6 +304,8 @@ const MessageGenerator = (
         labelAddons.push({
           labelName: labelName,
           labelMarking: record.LabelMarking,
+          bringLabelName: bringLabelName,
+          bringServiceCode: bringServiceCode,
         });
         if (record.Fields.length > 0) {
           for (const field of record.Fields) {
@@ -353,7 +363,7 @@ const MessageGenerator = (
       }
     }
   }
-
+  console.log(labelAddons);
   let d = new Date();
   labelData["dateTime"] =
     d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
@@ -371,7 +381,7 @@ const MessageGenerator = (
   let usedPropsJSON = [];
   let usedPropsTXT = [];
 
-  console.log(serviceProps);
+  //console.log(serviceProps);
 
   for (const record of fileFormats.records) {
     if (serviceProps.some((e) => e.format === record.Name)) {
@@ -434,7 +444,7 @@ const MessageGenerator = (
 
           if (found.length > 0) {
             for (let index of found) {
-              val = serviceProps[index].value;
+              val = serviceProps[index].value + "***";
               usedProps.push(index);
               //console.log(objParent);
               let newPath = obj.Path;
@@ -836,7 +846,7 @@ const MessageGenerator = (
                 usedPropsJSON.push(index);
 
                 let newPath = obj.Path;
-                console.log(newPath);
+                //console.log(newPath);
                 if (objParent.Type === "Array") {
                   if (!indexes.hasOwnProperty(objParent.Name)) {
                     indexes[objParent.Name] = 0;
@@ -880,6 +890,7 @@ const MessageGenerator = (
                   newPath = path.join(".");
                 }
 
+                val = prop.value + "***";
                 // Set the attributes
 
                 let value = "";
@@ -944,7 +955,7 @@ const MessageGenerator = (
 
             // Set the attributes
 
-            let value = "";
+            let value;
             let val = "";
 
             if (sampleValues) {
@@ -958,9 +969,9 @@ const MessageGenerator = (
                   .split("T")[1]
                   .replace(/\.\d+Z/, "");
               } else if (obj.ExampleValue === "TRUE") {
-                value = "true";
+                value = true;
               } else if (obj.ExampleValue === "FALSE") {
-                value = "false";
+                value = false;
               } else {
                 value = obj.ExampleValue;
               }
@@ -1123,57 +1134,12 @@ const MessageGenerator = (
     }
   }
 
-  function syntaxHighlight(json) {
-    let highlighted = [];
-    json = json
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
-    return json.replace(
-      /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-      function (match) {
-        var cls = "number";
-        var output = "";
-        let string = [];
-        if (/^"/.test(match)) {
-          if (/:$/.test(match)) {
-            cls = "key";
-          } else {
-            cls = "string";
-          }
-        } else if (/true|false/.test(match)) {
-          cls = "boolean";
-        } else if (/null/.test(match)) {
-          cls = "null";
-        }
-        if (cls === "key") {
-          match = match.substring(1, match.length - 2);
-          //output = '"<span class="' + cls + '">' + match + '</span>":';
-          string.push(<span className="key">{match}</span>);
-        } else if (cls === "string") {
-          match = match.substring(1, match.length - 1);
-          //output = '"<span class="' + cls + '">' + match + '</span>"';
-          string.push(<span className="string">{match}</span>);
-        } else {
-          output = '<span class="' + cls + '">' + match + "</span>";
-          string.push(<span className={cls}>{match}</span>);
-        }
-
-        return string;
-        //return output;
-      }
-    );
-  }
-
   //console.log(indexes);
-  //console.log(JSON.stringify(outJSON));
   //console.log(outJSON);
   //console.log(outTXT);
+  //console.log(outXML);
 
-  console.log(outXML);
-
-  const json = [JSON.stringify(outJSON, null, 2)];
-  const beautifiedJSON = JSON.stringify(outJSON, null, 2);
+  const formattedJSON = JSON.stringify(outJSON, null, 2);
   const doc = create({ version: "1.0", encoding: "UTF-8" }, outXML);
   let xml = doc.end();
 
@@ -1182,10 +1148,31 @@ const MessageGenerator = (
     xml = xml.replaceAll("</" + element + ">", "");
   }
 
-  const beautifiedXML = beautify(formatXml(xml, "  "));
+  const findNewLines = (data) => {
+    let newLines = [];
+    let lines = data.split("\n");
+
+    for (let [index, line] of lines.entries()) {
+      if (line.includes("***") && !newLines.includes(index + 1)) {
+        newLines.push(index + 1);
+      }
+    }
+    return newLines;
+  };
+
+  const formattedXML = formatXml(xml, "  ");
+  const linesXML = findNewLines(formattedXML);
+  const linesJSON = findNewLines(formattedJSON);
+
   return {
-    POSTRA: [beautifiedXML],
-    SMARTSHIP: beautifiedJSON,
+    POSTRA: {
+      message: [formattedXML.replaceAll("***", "")],
+      newLines: linesXML,
+    },
+    SMARTSHIP: {
+      message: formattedJSON.replaceAll("***", ""),
+      newLines: linesJSON,
+    },
     WAYBILD16A: outTXT,
     labelData: labelData,
   };

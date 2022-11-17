@@ -1,5 +1,5 @@
 import FFTable from "./FileFormatTable";
-import Dropdown from "./Dropdown";
+import { Link } from "react-router-dom";
 import Select from "./Select";
 import Filter from "./Filter";
 import { Table, Tabs, Tab, Row, Col } from "react-bootstrap";
@@ -78,32 +78,6 @@ const FileFormats = ({
             }}
             className="mb-3 ff-tabs"
           >
-            {history.length > 0 ? (
-              <Tab eventKey="version" title={t("version")}>
-                <Table className="ff-table">
-                  <thead>
-                    <tr>
-                      <th className="version_title">Document Version</th>
-                      <th className="version_title">Schema Version</th>
-                      <th className="date_title">Date</th>
-                      <th className="comment_title">Comment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {history.map((row, i) => (
-                      <tr key={"row" + i}>
-                        <td className="version_col">{row.DocumentVersion}</td>
-                        <td className="version_col">{row.SchemaVersion}</td>
-                        <td className="date_col">{row.Date}</td>
-                        <td className="comment_col">{row.Comments}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </Table>
-              </Tab>
-            ) : (
-              ""
-            )}
             <Tab eventKey="specs" title={t("specs")}>
               <FFTable
                 t={t}
@@ -113,6 +87,48 @@ const FileFormats = ({
                 glblFilter={selected.formatFilter}
               />
             </Tab>
+            {history.length > 0 ? (
+              <Tab eventKey="version" title={t("version")}>
+                <div className="FFContainer">
+                  <Table className="ff-table">
+                    <thead>
+                      <tr>
+                        <th className="version_title">Document Version</th>
+                        <th className="version_title">Schema Version</th>
+                        <th className="date_title">Date</th>
+                        <th className="comment_title">Comment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {history.map((row, i) => (
+                        <tr key={"row" + i}>
+                          <td className="version_col">{row.DocumentVersion}</td>
+                          <td className="version_col">{row.SchemaVersion}</td>
+                          <td className="date_col">{row.DateModified}</td>
+                          <td className="comment_col">{row.Comment}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
+              </Tab>
+            ) : (
+              ""
+            )}
+            {selected.format && selected.format.substring(0, 6) === "POSTRA" ? (
+              <Tab eventKey="schema" title="Schema">
+                <div className="FFContainer">
+                  <div className="dl-schema">
+                    <div className="schema-txt">Download schema files</div>
+                    <Link to="/files/schema.zip" target="_blank" download>
+                      here
+                    </Link>
+                  </div>
+                </div>
+              </Tab>
+            ) : (
+              ""
+            )}
           </Tabs>
         </div>
       </div>

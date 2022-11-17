@@ -20,8 +20,8 @@ import {
   useRef,
   useMemo,
 } from "react";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./styles/FFTable_styles.css";
+import AllowedValues from "./AllowedValues";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
 
@@ -147,9 +147,9 @@ function FFTable({
   useEffect(() => {
     table.getColumn("format").setFilterValue(selectedFormat || undefined);
     if (selectedFormat === "WAYBILD16A") {
-      setColumnVisibility({ format: false });
+      setColumnVisibility({ format: false, tooltip: false });
     } else {
-      setColumnVisibility({ format: false, position: false });
+      setColumnVisibility({ format: false, tooltip: false, position: false });
     }
   }, [selectedFormat]);
 
@@ -188,7 +188,8 @@ function FFTable({
               {table.getRowModel().rows.map((row) => {
                 if (
                   row.original.type === "Array" ||
-                  row.original.type === "Object"
+                  row.original.type === "Object" ||
+                  row.original.attribute.props.children.includes("RecordType")
                 ) {
                   return (
                     <tr key={row.index} className="ff-boldRow">
@@ -235,6 +236,25 @@ function FFTable({
                                 cell.column.columnDef.cell,
                                 cell.getContext()
                               )}
+                            </td>
+                          );
+                        } else if (
+                          cell.column.id === "description" &&
+                          cell.row.original.tooltip.length > 0
+                        ) {
+                          return (
+                            <td
+                              key={cell.id}
+                              className={cell.column.id + "_col"}
+                            >
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext()
+                              )}
+                              <AllowedValues
+                                data={cell.row.original.tooltip}
+                                t={t}
+                              />
                             </td>
                           );
                         } else {

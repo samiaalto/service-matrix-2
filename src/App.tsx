@@ -32,7 +32,7 @@ import mapRows from "./components/MapRows";
 import mapFfRows from "./components/MapFFRows";
 import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
-import TanStackTable from "./components/TanStackTable";
+import TanStackTable from "./components/table/Table";
 import populateSelect from "./components/PopulateSelect";
 
 /* HOOK REACT EXAMPLE */
@@ -73,8 +73,8 @@ const App = (props: AppProps) => {
     serviceFilter: "",
     serviceGroup: "",
     addonsFilter: [],
-    weight: "",
-    width: "",
+    weight: undefined,
+    width: undefined,
     deliveryLocation: "",
     departure: "",
     destination: "",
@@ -93,6 +93,7 @@ const App = (props: AppProps) => {
     offCanvasTab: "label",
     showSamples: true,
     showOptional: false,
+    showEquipment: false,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -152,6 +153,13 @@ const App = (props: AppProps) => {
       accessorKey: "description",
       enableGlobalFilter: true,
     },
+    {
+      id: "tooltip",
+      header: () => <span>{t("Tooltip")}</span>,
+      cell: (info: any) => info.getValue(),
+      accessorKey: "tooltip",
+      enableGlobalFilter: false,
+    },
   ]);
 
   const mapColumns = (additionalServices: any) => {
@@ -167,6 +175,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceName",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceName",
@@ -180,6 +189,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceButton",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceButton",
@@ -193,6 +203,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceCode",
         header: () => <span></span>,
+        footer: "",
         columns: [
           {
             accessorKey: "serviceCode",
@@ -208,6 +219,7 @@ const App = (props: AppProps) => {
         columns: [
           {
             header: () => <span>Routes</span>,
+            footer: "",
             cell: (info: any) => info.getValue(),
             accessorKey: "routes",
             enableGlobalFilter: false,
@@ -219,6 +231,7 @@ const App = (props: AppProps) => {
       {
         id: "serviceGroup",
         header: () => <span>Service Group</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -231,6 +244,7 @@ const App = (props: AppProps) => {
       {
         id: "weight",
         header: () => <span>Weight</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -244,6 +258,7 @@ const App = (props: AppProps) => {
       {
         id: "width",
         header: () => <span>Width</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -270,6 +285,7 @@ const App = (props: AppProps) => {
       {
         id: "additionalServices",
         header: () => <span>Additional Services</span>,
+        footer: "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -290,7 +306,8 @@ const App = (props: AppProps) => {
             <span>{t(record.ServiceCode)}</span>
           </div>
         ),
-
+        footer:
+          record.DisplayNameEN.indexOf("Equipment") > -1 ? "EQUIPMENT" : "",
         columns: [
           {
             cell: (info: any) => info.getValue(),
@@ -362,16 +379,34 @@ const App = (props: AppProps) => {
     }));
   };
 
+  const handleShowEquipment = () => {
+    setSelected((prevState) => ({
+      ...prevState,
+      showEquipment: !prevState.showEquipment,
+    }));
+  };
+
   const handleReset = () => {
     let updatedSearchParams = new URLSearchParams(params.toString());
     updatedSearchParams.delete("service");
     updatedSearchParams.delete("addons");
+    updatedSearchParams.delete("pudo");
+    updatedSearchParams.delete("offCanvasOpen");
+    updatedSearchParams.delete("offCanvasTab");
+    updatedSearchParams.delete("showOptional");
+    updatedSearchParams.delete("showSamples");
     setParams(updatedSearchParams.toString());
 
     setSelected((prevState) => ({
       ...prevState,
       service: "",
       addons: [],
+      pudo: false,
+      pickupOrder: false,
+      offCanvasOpen: false,
+      offCanvasTab: "",
+      showOptional: false,
+      showSamples: true,
     }));
 
     setReset(true);
@@ -380,7 +415,7 @@ const App = (props: AppProps) => {
   const handleServiceSelection = (index, isSelected, filteredRows) => {
     let service;
     let update = [];
-
+    console.log(isSelected + " " + index);
     if (isSelected) {
       for (const row of filteredRows["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
@@ -401,9 +436,11 @@ const App = (props: AppProps) => {
             update.push({ row: row.index, column: key, value: null });
           } else if (row.index === index && value === null) {
             update.push({ row: row.index, column: key, value: false });
-          } else if (row.index === index && key === "serviceName") {
+          }
+          if (row.index === index && key === "serviceName") {
             service = value;
-          } else if (row.index === index && key === "serviceButton") {
+          }
+          if (row.index === index && key === "serviceButton") {
             update.push({
               row: row.index,
               column: key,
@@ -412,7 +449,6 @@ const App = (props: AppProps) => {
           }
         }
       }
-      console.log("TÄÄLLÄ");
       updateSearchParams("service", service);
     } else {
       handleReset();
@@ -507,7 +543,12 @@ const App = (props: AppProps) => {
         setRowData,
         data.packageTypes
       );
-      mapFfRows(data.fileFormats, setFfRowData);
+      mapFfRows(
+        data.services,
+        data.additionalServices,
+        data.fileFormats,
+        setFfRowData
+      );
     }
   }, [data, dataLoaded]);
 
@@ -555,7 +596,13 @@ const App = (props: AppProps) => {
     if (rowData.length > 0 && Object.entries(filteredRowData).length > 0) {
       for (const [key] of Object.entries(rowData[0])) {
         if (key.substring(0, 1) === "3" || key.substring(0, 1) === "5") {
-          hideColumn(key, rowData, setColumnVisibility, filteredRowData);
+          hideColumn(
+            key,
+            columnData,
+            setColumnVisibility,
+            filteredRowData,
+            selected.showEquipment
+          );
         }
       }
     }
@@ -569,6 +616,7 @@ const App = (props: AppProps) => {
     selected.destination,
     selected.serviceFilter,
     selected.addonsFilter,
+    selected.showEquipment,
   ]);
 
   useEffect(() => {
@@ -577,11 +625,13 @@ const App = (props: AppProps) => {
         return !!JSON.parse(String(val).toLowerCase());
       }
     };
+
     if (Object.entries(filteredRowData).length > 0 && loaded) {
       const URLparams = Object.fromEntries([...params]);
       let alertArray = [];
       let addonArray = [];
       let selectedAddons = [];
+      let filteredAddons = [];
       let serviceAddons = [];
       let serviceIndex = -1;
       let lang = "en";
@@ -623,6 +673,10 @@ const App = (props: AppProps) => {
 
       if (URLparams.addons) {
         addonArray = URLparams.addons.split(" ");
+      }
+
+      if (URLparams.addonsFilter) {
+        filteredAddons = URLparams.addonsFilter.split(" ");
       }
 
       for (let [i, row] of rowData.entries()) {
@@ -670,15 +724,18 @@ const App = (props: AppProps) => {
         }
         setupdateRows(update);
       }, 500);
-
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
+
+      console.log(getBool(URLparams.showSamples));
 
       setSelected((prevState) => ({
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
         service: URLparams.service,
+        serviceFilter: URLparams.serviceFilter,
         addons: selectedAddons,
+        addonsFilter: filteredAddons,
         departure: URLparams.departure,
         destination: URLparams.destination,
         filter: URLparams.filter,
@@ -687,8 +744,17 @@ const App = (props: AppProps) => {
         lang: lang,
         offCanvasOpen: getBool(URLparams.offCanvasOpen),
         offCanvasTab: URLparams.offCanvasTab,
-        showSamples: getBool(URLparams.showSamples),
-        showOptional: getBool(URLparams.showOptional),
+        showSamples:
+          getBool(URLparams.showSamples) !== undefined
+            ? getBool(URLparams.showSamples)
+            : true,
+        showOptional:
+          getBool(URLparams.showOptional) !== undefined
+            ? getBool(URLparams.showOptional)
+            : false,
+        weight: Number(URLparams.weight),
+        width: Number(URLparams.width),
+        deliveryLocation: URLparams.deliveryLocation,
       }));
       if (alertArray.length > 0) {
         GenerateAlert(alertArray, setSelected);
@@ -896,6 +962,7 @@ const App = (props: AppProps) => {
                   <Row className="filter">
                     <Col xs={10} sm={10} md={11}>
                       <Select
+                        selected={loaded ? selected : ""}
                         data={multiSelectData}
                         isMulti={true}
                         t={t}
@@ -1063,6 +1130,17 @@ const App = (props: AppProps) => {
                         />
                       </Col>
                     </OverlayTrigger>
+                  </Row>
+                  <Row>
+                    <Col className="pickupOptions">
+                      <Form.Check
+                        type="switch"
+                        id="equipment"
+                        label={t("'Show equipment'")}
+                        checked={selected.showEquipment}
+                        onChange={handleShowEquipment}
+                      />
+                    </Col>
                   </Row>
                   <Row>
                     <Col className="pickupOptions">

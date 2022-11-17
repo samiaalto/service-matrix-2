@@ -63,6 +63,10 @@ thead:first-child {
 
 .serviceMatrix-table th.headerTitle > div > span {
   padding: 10px 10px;
+  overflow: hidden;
+  text-align: start;
+  display: inline-block;
+  width: 240px;
 }
 
 .serviceMatrix-table .service {
@@ -76,6 +80,28 @@ thead:first-child {
   overflow: hidden;
 }
 
+.serviceMatrix-table .service.highlight-cell {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.serviceMatrix-table .headerTitle.highlight-cell {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.serviceMatrix-table .service.highlight-cell,
+.serviceMatrix-table .serviceButton.highlight-cell,
+.serviceMatrix-table .serviceCode.highlight-cell,
+.serviceMatrix-table .headerTitle.highlight-cell,
+.serviceMatrix-table .addonCode.highlight-cell {
+  background-color: #394b58 !important;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
 .serviceMatrix-table td.service {
   border: 0;
 }
@@ -85,6 +111,14 @@ thead:first-child {
   font-weight: 700;
   text-align: left;
   padding-left: 5px;
+}
+
+.serviceMatrix-table td.serviceHeader:hover,
+.serviceMatrix-table td.code:hover,
+.serviceMatrix-table th.headerTitleEmpty {
+  background-color: #fff !important;
+  color: #000 !important;
+  cursor: default;
 }
 
 .serviceMatrix-table td.serviceButton {
@@ -109,7 +143,7 @@ thead:first-child {
   border-bottom: 0;
   border-top: 0;
   text-align: center;
-  pointer-events: none;
+  cursor: default;
 }
 
 .serviceMatrix-table td.addonCode {
@@ -118,6 +152,7 @@ thead:first-child {
   border-top: 0;
   height: 39px;
   text-align: center;
+  cursor: default;
 }
 
 .serviceMatrix-table tr {
@@ -130,6 +165,11 @@ thead:first-child {
   cursor: pointer;
   transition: color 0.2s ease-in-out;
   transition-delay: 0.1s;
+}
+
+.serviceMatrix-table td.service.selected {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .serviceMatrix-table td {
@@ -151,6 +191,23 @@ thead:first-child {
   cursor: default !important;
 }
 
+.unavailable.highlight-cell {
+  background-color: rgba(57, 75, 88, 0.2) !important;
+}
+
+.check.highlight-cell {
+  background-color: rgba(57, 75, 88, 0.04) !important;
+}
+
+.serviceMatrix-table td:hover {
+  background-color: #394b58 !important;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+/*
 .serviceMatrix-table tbody td:hover {
   background-color: #394b58;
   color: #fff;
@@ -172,28 +229,27 @@ thead:first-child {
   content: "\00a0";
   height: 100%;
   /*left: -5000px;
-  left:90px;*/
+  left:90px;*/ /*
   right: 0px;
   position: absolute;
   top: 0;
-  width: 10000px;
+  width: 1000px;
   z-index: -1;
 }
 
 .serviceMatrix-table tbody td:hover::after {
   background-color: rgba(57, 75, 88, 0.2);
   content: "\00a0";
-  height: 10000px;
+  height: 1000px;
   left: 0;
   position: absolute;
   /*top: -5000px;
-  top:0;*/
+  top:0;*/ /*
   bottom: 0px;
   width: 100%;
   z-index: -1;
 }
 
-/*
 .serviceMatrix-table th:hover {
   background-color: #394b58;
   color: #fff;
@@ -258,11 +314,6 @@ thead:first-child {
 .serviceMatrix-table .col {
   cursor: pointer;
   position: relative;
-}
-
-.serviceMatrix-table th.headerTitleEmpty {
-  background-color: #fff;
-  pointer-events: none;
 }
 
 .unavailable {

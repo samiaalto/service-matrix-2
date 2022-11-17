@@ -48,6 +48,9 @@ let en = {
   Service: "Service",
   specs: "Message Specifications",
   version: "Version History",
+  showAll: "Show whole list >>",
+  hideAll: "Show less >>",
+  "'Show equipment'": "Show Equipment Installation services",
   BOTH: "Additional service is available when sending shipments to pickup point chosen by the recipient and to recipient home address.",
   HOME: "Additional service is only available when sending shipments to recipient home address.",
   PUDO: "Additional service is only available when sending shipments to pickup point chosen by the recipient.",
@@ -114,6 +117,9 @@ let fi = {
   Mandatory: "Pakollinen",
   Example: "Esimerkki",
   Availability: "Saatavuus",
+  showAll: "Näytä koko lista >>",
+  hideAll: "Sulje lista >>",
+  "'Show equipment'": "Näytä laiteasennuspalvelut",
   BOTH: "Lisäpalvelu on saatavilla asiakkaan valitsemaan noutopisteeseen sekä asiakkaan osoitteeseen lähetettäessä.",
   HOME: "Lisäpalvelu on saatavilla ainoastaan asiakkaan osoitteeseen lähetettäessä.",
   PUDO: "Lisäpalvelu on saatavilla ainoastaan asiakkaan valitsemaan noutopisteeseen",
@@ -131,7 +137,7 @@ let fi = {
   "'No results for filter value'": "Ei tuloksia hakuarvolla",
 };
 
-function loadLanguages(language) {
+function loadLanguages(language: string) {
   let result = {};
 
   if (language === "EN") {
@@ -147,6 +153,17 @@ function loadLanguages(language) {
     } else {
       result[record.ServiceCode] = record.DisplayNameFI;
       result[record.ServiceCode + "_tooltip"] = record.DescriptionFI;
+    }
+    for (let type of record.PackageTypesAndDimensions) {
+      if (language === "EN") {
+        if (!result[type.PackageType]) {
+          result[type.PackageType] = type.DescriptionEN;
+        }
+      } else {
+        if (!result[type.PackageType]) {
+          result[type.PackageType] = type.DescriptionFI;
+        }
+      }
     }
   }
   for (let record of additionalServices.records) {
@@ -199,6 +216,17 @@ function loadLanguages(language) {
     } else {
       result[record.Name] = record.DisplayNameFI;
       result[record.Name + "_desc"] = record.DescriptionFI;
+    }
+    for (let messageRecord of record.Records) {
+      for (let validation of messageRecord.Validations) {
+        if (language === "EN") {
+          result[messageRecord.Name + "_" + validation.ValidationValue] =
+            validation.DisplayNameEN;
+        } else {
+          result[messageRecord.Name + "_" + validation.ValidationValue] =
+            validation.DisplayNameFI;
+        }
+      }
     }
   }
   console.log(result);

@@ -37,7 +37,7 @@ const ModalWindow = ({
                     <thead>
                       <tr>
                         <td></td>
-                        {data.dimensions.map((dimension) => (
+                        {data.dimensions.map((dimension, i) => (
                           <td>{dimension.PackageType}</td>
                         ))}
                       </tr>

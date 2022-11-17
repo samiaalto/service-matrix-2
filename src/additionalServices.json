@@ -2,6 +2,7 @@
   "records": [
     {
       "ServiceCode": "3101",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Cash On Delivery",
       "DisplayNameFI": "Postiennakko",
       "DescriptionEN": "The shipment is handed over to the recipient against the payment specified by the Customer. Posti remits the payment to the Customer’s account at a bank operating in SEPA countries within two to four (2–4) weekdays of payment. COD additional service is only available for parcels and pallets from/to Baltics. The maximum sum of a COD is EUR 2,000.",
@@ -192,6 +193,7 @@
     },
     {
       "ServiceCode": "3102",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Multi-Parcel Shipment",
       "DisplayNameFI": "Monipakettilähetys",
       "DescriptionEN": null,
@@ -237,6 +239,7 @@
     },
     {
       "ServiceCode": "3103",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Paid by other than sender",
       "DisplayNameFI": "Maksaja muu kuin lähettäjä",
       "DescriptionEN": "Transportation and additional services can be paid by other than the sender.",
@@ -327,6 +330,7 @@
     },
     {
       "ServiceCode": "3104",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Fragile",
       "DisplayNameFI": "Särkyvä",
       "DescriptionEN": "With the service, you can ensure the careful handling of your products vulnerable to damage. Using the additional service requires a marking on the shipment and the EDI message.",
@@ -372,6 +376,7 @@
     },
     {
       "ServiceCode": "3105",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Registration",
       "DisplayNameFI": "Kirjaaminen",
       "DescriptionEN": "The parcel will be handed over against acknowledgment only to the recipient or a person which is authorized. The shipment may not be handed over except to the recipient indicated in person on the address card or to a person authorized by him or her by proxy. Proof of identity is provided by a driving license, passport or photo ID. Registered shipments addressed to an individual may not be taken with the pick-up and delivery service, but recipient information must also be found in the recipient information.",
@@ -417,6 +422,7 @@
     },
     {
       "ServiceCode": "3106",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Saturday Delivery",
       "DisplayNameFI": "Lauantaijakelu",
       "DescriptionEN": "In the additional service Saturday delivery, a shipment sent on Friday will be delivered to the recipient on weekdays in the areas specified in the delivery time inquiry.",
@@ -484,6 +490,17 @@
     },
     {
       "ServiceCode": "3115",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "2870",
+          "DisplayNameEN": "Home Delivery indoor",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Delivery to Specific Location",
       "DisplayNameFI": "Täsmäpaikkajakelu",
       "DescriptionEN": "With delivery to specific location, the shipment is taken to a pre-arranged, single location at the recipient, such as inside a store or office. When transporting shipments, take into account traffic restrictions.",
@@ -593,6 +610,7 @@
     },
     {
       "ServiceCode": "3116",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Installation, Ready for Use",
       "DisplayNameFI": "Käyttökuntoon asennus",
       "DescriptionEN": "The additional service includes carrying the product to the apartment / destination to the designated place. The shipment is unloaded from the transport platform. The driver unpacks the product and completes the installation of the product. Packaging waste is taken away for proper recycling.",
@@ -705,6 +723,7 @@
     },
     {
       "ServiceCode": "3119",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Shelving Service",
       "DisplayNameFI": "Hyllytyspalvelu",
       "DescriptionEN": "The additional service Shelving service appears on the address card or waybill. In the shelving service, the shipment is delivered to a specific location on the premises of the receiving customer, unpacked and shelved in place. The service also includes the removal of packaging waste and, if necessary, placing replenishment orders. Work instructions are made for the items in the shelving service and their delivery schedule is preferably agreed in advance.",
@@ -817,6 +836,17 @@
     },
     {
       "ServiceCode": "3137",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "1123",
+          "DisplayNameEN": "Returning of packaging / Unwrapping",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Transport to Recycling",
       "DisplayNameFI": "Kuljetus kierrätykseen",
       "DescriptionEN": "​​​​​The additional service transport to recycling is intended for the waste transport of electronic - and furniture -waste from consumers for proper recycling or disposal. For one new product, you can order the transport for one similar product for recycling. The additional service label is printed on the transport document, so the recycled product does not need its own transport document.",
@@ -874,6 +904,17 @@
     },
     {
       "ServiceCode": "3139",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "0091",
+          "DisplayNameEN": "eAdvising",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Electronic notice of arrival",
       "DisplayNameFI": "Sähköinen saapumisilmoitus",
       "DescriptionEN": "The recipient will receive a notification of the arrival of the parcel picked up from the service point by text message and / or e-mail. The notification is sent automatically when the shipment is shelved at the pick-up point. The recipient will also receive an email reminder of the last pick-up date of the shipment if the order has an email address (4 days from arrival).",
@@ -964,6 +1005,17 @@
     },
     {
       "ServiceCode": "3143",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "0003",
+          "DisplayNameEN": "LQ",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "LQ Process permit",
       "DisplayNameFI": "LQ prosessilupa",
       "DescriptionEN": "Additional service LQ Process Permit can be used to send products, VAK classifications and quantities of substances specified by the Posti, packed in a cardboard box. Unlike other transport services for dangerous goods, the LQ Process Permit supplementary service allows shipments to be taken to a collection point and does not use Posti's VAK tape. And there is no need to load shipments in their own transport unit.",
@@ -1066,6 +1118,7 @@
     },
     {
       "ServiceCode": "3146",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Pickup reminder by mail",
       "DisplayNameFI": "Noutomuistutus kirjeenä",
       "DescriptionEN": "The sender can confirm the pick-up of the shipment with a separate reminder and give the recipient extra time to pick it up. The recipient will be sent a reminder letter from the pick-up point if the recipient has not picked up the shipment within eight (8) days of its arrival. The pick-up reminder as letter service extends the retention period for shipments by seven (7) days.",
@@ -1111,6 +1164,7 @@
     },
     {
       "ServiceCode": "3151",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Recipient identification",
       "DisplayNameFI": "Vastaanottajan tunnistaminen",
       "DescriptionEN": "The additional service recipient identification allows the sender to verify the identity of the recipient before handing over the product. ",
@@ -1128,6 +1182,7 @@
     },
     {
       "ServiceCode": "3155",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Blocker for Parcel Steering",
       "DisplayNameFI": "Paketinohjauksen esto",
       "DescriptionEN": "The blocker for parcel steering additional service blocks the steering of the SmartDynamic system.",
@@ -1173,6 +1228,7 @@
     },
     {
       "ServiceCode": "3162",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Transport of Dangerous Goods",
       "DisplayNameFI": "Vaarallisten aineiden kuljetus",
       "DescriptionEN": "We handle the transport of any parcels classified as dangerous goods safely, reliably and in accordance with the applicable legislation. NOTE! At least two copies of the Transport of Dangerous Goods Appendix should be attached to the shipment when Dangerous Goods (ADR) additional service is used.",
@@ -1576,6 +1632,7 @@
     },
     {
       "ServiceCode": "3163",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Handing over to the Addressee in Person",
       "DisplayNameFI": "Henkilökohtaisesti luovutettava",
       "DescriptionEN": "At the time of delivery, it is checked that the identity of the recipient matches the recipient's information entered on the address card or waybill. The shipment may not be handed over except to the recipient indicated in person on the address card / waybill. Proof of identity is provided by a driving license, passport or photo ID. Please note that a written power of attorney is never valid. The shipment must indeed be handed over in person.",
@@ -1637,6 +1694,7 @@
     },
     {
       "ServiceCode": "3164",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Delivery without receivers signature",
       "DisplayNameFI": "Luovuttaminen ilman vastaanottajan kuittausta",
       "DescriptionEN": "With the delivery without receivers signature additional service, the customer authorizes the Posti's driver to register the delivery transaction and acknowledge it in his/her own name without the recipient's presence.",
@@ -1704,6 +1762,7 @@
     },
     {
       "ServiceCode": "3165",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Extended Storage Time",
       "DisplayNameFI": "Säilytysajan pidennys",
       "DescriptionEN": "With the extended storage time additional service, the retention period of shipment can be extended by seven (7) days. The service is available for Postal Parcels sent for collection to stores. It cannot therefore be used for shipments addressed to parcel lockers. ",
@@ -1749,6 +1808,7 @@
     },
     {
       "ServiceCode": "3166",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Call Before Delivery",
       "DisplayNameFI": "Soitto ennen jakelua",
       "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
@@ -1852,6 +1912,7 @@
     },
     {
       "ServiceCode": "3167",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Transport Packaging Removal",
       "DisplayNameFI": "Purku kuljetuspakkauksesta",
       "DescriptionEN": "The service is suitable for use when the recipient wants the parcel shipment to be unpacked from the transport package or the cargo consignment from the transport platform to a separately specified one place and the packaging materials to be removed, for proper recycling.",
@@ -1928,6 +1989,7 @@
     },
     {
       "ServiceCode": "3168",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Product Packaging Removal",
       "DisplayNameFI": "Purku tuotepakkauksesta",
       "DescriptionEN": "The service is suitable for use when the recipient buys a new household appliance or furniture, etc. and wants it to be unpacked and the packaging waste removed. We unpack the shipment, take the packaging waste out of the customer and deliver it for proper recycling. The customer does not have to worry about disposing of packaging waste.",
@@ -2001,6 +2063,7 @@
     },
     {
       "ServiceCode": "3169",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Pick-up from Terminal",
       "DisplayNameFI": "Nouto terminaalista",
       "DescriptionEN": "The Customer can address the shipment directly to the terminal, from where the recipient will pick it up. Posti contacts the recipient once the shipment in question has arrived at the terminal.",
@@ -2091,6 +2154,7 @@
     },
     {
       "ServiceCode": "3170",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Electronic Pre-notification",
       "DisplayNameFI": "Sähköinen ennakkoilmoitus",
       "DescriptionEN": "In the electronic pre-notification, Posti sends advance information about the shipment to be delivered to the mobile phone number or e-mail address provided by the sender in the EDI message at the same time as the shipment is loaded for delivery. A pre-message is sent when a shipment is taken into delivery event is registered for the shipment during transport. Shipments will be delivered to recipients according to the service promise of the selected rate.",
@@ -2188,6 +2252,7 @@
     },
     {
       "ServiceCode": "3171",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Heated Transport",
       "DisplayNameFI": "Lämminkuljetus",
       "DescriptionEN": "Shipments are transported in a heated (> +0 ​​degrees) freight at different stages of the transport and terminal network. Note that, the heated transportation service applies to transport during the winter season (heated transport season 1st of October to 30th of April).",
@@ -2242,6 +2307,17 @@
     },
     {
       "ServiceCode": "3174",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "0348",
+          "DisplayNameEN": "Home Delivery Parcel Return",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Bulky (oversized)",
       "DisplayNameFI": "Suuri",
       "DescriptionEN": "The Bulky additional service can be used to send shipments with address cards, the size of which exceeds the standard maximum size of the main product up to the maximum size of the Bulky additional service. ",
@@ -2287,6 +2363,7 @@
     },
     {
       "ServiceCode": "3175",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "LQ Transport",
       "DisplayNameFI": "LQ kuljetus",
       "DescriptionEN": "The service enables the transport of dangerous goods to a limited extent in accordance with the Act on the Transport of Dangerous Goods (VAK) in accordance with the service area register of the main product. The additional service appears on the address card, which also shows the LQ gross weight and the number of items, as well as on the limited number of LQ labels and VAK tape.",
@@ -2390,6 +2467,7 @@
     },
     {
       "ServiceCode": "3176",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Arrival notification by mail",
       "DisplayNameFI": "Saapumisilmoitus kirjeenä",
       "DescriptionEN": "The recipient of the shipment will receive an arrival notification in paper form when the shipment shelved at the Posti's pick-up point.",
@@ -2448,6 +2526,7 @@
     },
     {
       "ServiceCode": "3180",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Washing machine",
       "DisplayNameFI": "Laiteasennus Pesukone",
       "DescriptionEN": "Equipment Installation Washing machine",
@@ -2474,6 +2553,7 @@
     },
     {
       "ServiceCode": "3181",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Dryer",
       "DisplayNameFI": "Laiteasennus Kuivausrumpu",
       "DescriptionEN": "Equipment Installation Dryer",
@@ -2500,6 +2580,7 @@
     },
     {
       "ServiceCode": "3182",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Refrigerator",
       "DisplayNameFI": "Laiteasennus Jääkaappi",
       "DescriptionEN": "Equipment Installation Refrigerator",
@@ -2526,6 +2607,7 @@
     },
     {
       "ServiceCode": "3183",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Freezer",
       "DisplayNameFI": "Laiteasennus Pakastin",
       "DescriptionEN": "Equipment Installation Freezer",
@@ -2552,6 +2634,7 @@
     },
     {
       "ServiceCode": "3184",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Microwave oven",
       "DisplayNameFI": "Laiteasennus Mikroaaltouuni",
       "DescriptionEN": "Equipment Installation Microwave oven",
@@ -2578,6 +2661,7 @@
     },
     {
       "ServiceCode": "3185",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Television",
       "DisplayNameFI": "Laiteasennus Televisio",
       "DescriptionEN": "Equipment Installation Television",
@@ -2604,6 +2688,7 @@
     },
     {
       "ServiceCode": "3186",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Dishwasher",
       "DisplayNameFI": "Laiteasennus Astianpesukone",
       "DescriptionEN": "Equipment Installation Dishwasher",
@@ -2630,6 +2715,7 @@
     },
     {
       "ServiceCode": "3187",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Hob",
       "DisplayNameFI": "Laiteasennus Liesi- ja keittotaso",
       "DescriptionEN": "Equipment Installation Hob",
@@ -2656,6 +2742,7 @@
     },
     {
       "ServiceCode": "3188",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Built-in oven",
       "DisplayNameFI": "Laiteasennus Kaluste- ja integroitava uuni",
       "DescriptionEN": "Equipment Installation Built-in oven",
@@ -2682,6 +2769,7 @@
     },
     {
       "ServiceCode": "3189",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Cooker",
       "DisplayNameFI": "Laiteasennus Lattialiesi",
       "DescriptionEN": "Equipment Installation Cooker",
@@ -2708,6 +2796,7 @@
     },
     {
       "ServiceCode": "3190",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Sauna stove",
       "DisplayNameFI": "Laiteasennus Kiuas",
       "DescriptionEN": "Equipment Installation Sauna stove",
@@ -2734,6 +2823,7 @@
     },
     {
       "ServiceCode": "3191",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Drying cabinet",
       "DisplayNameFI": "Laiteasennus Kuivauskaappi",
       "DescriptionEN": "Equipment Installation Drying cabinet",
@@ -2760,6 +2850,7 @@
     },
     {
       "ServiceCode": "3192",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Side-by-side",
       "DisplayNameFI": "Laiteasennus Side-by-side kaappi",
       "DescriptionEN": "Equipment Installation Side-by-side",
@@ -2786,6 +2877,7 @@
     },
     {
       "ServiceCode": "3193",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Reversing door on refrigerator",
       "DisplayNameFI": "Laiteasennus Kätisyyden vaihto",
       "DescriptionEN": "Equipment Installation Reversing door on refrigerator",
@@ -2812,6 +2904,7 @@
     },
     {
       "ServiceCode": "3194",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment Installation Reversing door on screen refrigerator",
       "DisplayNameFI": "Laiteasennus Kätisyyden vaihto näytöllinen ovi",
       "DescriptionEN": "Equipment Installation Reversing door on screen refrigerator",
@@ -2838,6 +2931,7 @@
     },
     {
       "ServiceCode": "3198",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Carry in",
       "DisplayNameFI": "Sisäänkanto",
       "DescriptionEN": "We carry in the shipment to an agreed place near the recipient, for instance, inside a store or to an office. The exact delivery location will be agreed with the recipient via phone. Max 20 packages and maximum freight weight for each package is 35 kg.",
@@ -2868,6 +2962,7 @@
     },
     {
       "ServiceCode": "3358",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Delivery time agreement by phone",
       "DisplayNameFI": "Jakeluajankohdan sopiminen puhelimitse",
       "DescriptionEN": "Delivery time agreement by phone disallow the digitized notification process and directs production to settle on delivery time agreement by phone. Terminal staff will settle on a delivery time with the recipient on the same day when the shipment arrives at the terminal. The delivery time window will be settled for the next few days.",
@@ -2894,6 +2989,17 @@
     },
     {
       "ServiceCode": "3372",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "1280",
+          "DisplayNameEN": "Signature Required",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Signature Required",
       "DisplayNameFI": "Allekirjoitus vaaditaan",
       "DescriptionEN": "Signature Required additional service can be used with Home Parcel and Home Pallet deliveries to Sweden. The recipient of the shipment will sign upon delivery. In Sweden, standard delivery method is without signature. The additional service selected by the sender appears on the address label. ​​​​​​​Once the additional service is selected, it is not possible for the recipient to redirect Home Parcel to a pick-up point.",
@@ -2915,6 +3021,17 @@
     },
     {
       "ServiceCode": "3373",
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "1133",
+          "DisplayNameEN": "Recycling Standardized",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "ID Required",
       "DisplayNameFI": "Henkilöllisyyden todentaminen",
       "DescriptionEN": "ID Required additional service can be used with Home Parcel and Home Pallet deliveries. The identity of the recipient of the shipment will be verified and the signature will be registered. The additional service selected by the sender appears on the address label. Once the additional service is selected, it is not possible for the recipient to redirect Home Parcel to a pick-up point.",
@@ -2939,6 +3056,7 @@
     },
     {
       "ServiceCode": "3376",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Blocker for parcel steering to outdoor locker",
       "DisplayNameFI": "Blocker for parcel steering to outdoor locker",
       "DescriptionEN": "This additional service prevent parcel steering to outdoor parcel locker. Used for parcels that can't be stored in outdoor parcel locker such as medicines.",
@@ -2965,6 +3083,7 @@
     },
     {
       "ServiceCode": "3401",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Home Delivery",
       "DisplayNameFI": "Kotijakelu",
       "DescriptionEN": "Home Delivery additional service can be used in Posti Parcel Baltic and Express Business Day (EBD) parcel deliveries to the Baltic countries. Parcels will be delivered to a recipient's door. The Home Delivery VAS enables wider delivery options as Saturday and Sunday deliveries are available in Estonia and in the biggest cities in Latvia and Lithuania.",
@@ -2988,6 +3107,7 @@
     },
     {
       "ServiceCode": "3410",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Game console",
       "DisplayNameFI": "Laiteasennus Pelikonsoli",
       "DescriptionEN": "Equipment installation Game console",
@@ -3014,6 +3134,7 @@
     },
     {
       "ServiceCode": "3411",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Coffee maker",
       "DisplayNameFI": "Laiteasennus Kahvinkeitin",
       "DescriptionEN": "Equipment installation Coffee maker",
@@ -3040,6 +3161,7 @@
     },
     {
       "ServiceCode": "3412",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Countertop dishwasher",
       "DisplayNameFI": "Laiteasennus Pöytämallinen tiskikone",
       "DescriptionEN": "Equipment installation Countertop dishwasher",
@@ -3066,6 +3188,7 @@
     },
     {
       "ServiceCode": "3413",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Robot vacuum",
       "DisplayNameFI": "Laiteasennus Robottipölynimuri",
       "DescriptionEN": "Equipment installation Robot vacuum",
@@ -3092,6 +3215,7 @@
     },
     {
       "ServiceCode": "3415",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Ceiling lamp",
       "DisplayNameFI": "Laiteasennus Kattovalaisin",
       "DescriptionEN": "Equipment installation Ceiling lamp",
@@ -3118,6 +3242,7 @@
     },
     {
       "ServiceCode": "3416",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Fire/carbon dioxide alarm",
       "DisplayNameFI": "Laiteasennus Palo- tai häkävaroitin",
       "DescriptionEN": "Equipment installation Fire/carbon dioxide alarm",
@@ -3144,6 +3269,7 @@
     },
     {
       "ServiceCode": "3417",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Digital TV receiver",
       "DisplayNameFI": "Laiteasennus Netti-TV/digivastaanotin",
       "DescriptionEN": "Equipment installation Digital TV receiver",
@@ -3170,6 +3296,7 @@
     },
     {
       "ServiceCode": "3418",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Medicine cabin",
       "DisplayNameFI": "Laiteasennus Lääkekaappi",
       "DescriptionEN": "Equipment installation Medicine cabin",
@@ -3196,6 +3323,7 @@
     },
     {
       "ServiceCode": "3419",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Electric tooth brush",
       "DisplayNameFI": "Laiteasennus Sähköhammasharja",
       "DescriptionEN": "Equipment installation Electric tooth brush",
@@ -3222,6 +3350,7 @@
     },
     {
       "ServiceCode": "3420",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Water kettle",
       "DisplayNameFI": "Laiteasennus Vedenkeitin",
       "DescriptionEN": "Equipment installation Water kettle",
@@ -3248,6 +3377,7 @@
     },
     {
       "ServiceCode": "3421",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Toaster",
       "DisplayNameFI": "Laiteasennus Leivänpaahdin",
       "DescriptionEN": "Equipment installation Toaster",
@@ -3274,6 +3404,7 @@
     },
     {
       "ServiceCode": "3422",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Video projector",
       "DisplayNameFI": "Laiteasennus Videotykki",
       "DescriptionEN": "Equipment installation Video projector",
@@ -3300,6 +3431,7 @@
     },
     {
       "ServiceCode": "3423",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Wallmounting",
       "DisplayNameFI": "Laiteasennus Seinäkiinnitys",
       "DescriptionEN": "Equipment installation Wallmounting",
@@ -3326,6 +3458,7 @@
     },
     {
       "ServiceCode": "5100",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Scheduled Delivery",
       "DisplayNameFI": "Aikataulutettu jakelu",
       "DescriptionEN": "Shipments are delivered to recipients according to the schedule. Postal code-specific time frames can be seen in the electronic order channel.",
@@ -3375,6 +3508,7 @@
     },
     {
       "ServiceCode": "5102",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Heated Transport",
       "DisplayNameFI": "Lämminkuljetus",
       "DescriptionEN": "Shipments are transported in a heated (> +0 ​​degrees) freight at different stages of the transport and terminal network. Note that, the heated transportation service applies to transport during the winter season (heated transport season 1st of October to 30th of April).",
@@ -3421,6 +3555,7 @@
     },
     {
       "ServiceCode": "5103",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Call Before Delivery",
       "DisplayNameFI": "Soitto ennen jakelua",
       "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
@@ -3500,6 +3635,7 @@
     },
     {
       "ServiceCode": "5104",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Consumer Delivery",
       "DisplayNameFI": "Jakelu yksityishenkilölle",
       "DescriptionEN": "Posti contacts the recipient to agree on a delivery date and, prior to delivery, calls the recipient’s number provided in the order.",
@@ -3576,6 +3712,7 @@
     },
     {
       "ServiceCode": "5105",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Installation (Ready for Use)",
       "DisplayNameFI": "Käyttökuntoonasennus",
       "DescriptionEN": "Installation (Ready for Use)",
@@ -3612,6 +3749,7 @@
     },
     {
       "ServiceCode": "5106",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Transport Packaging Removal",
       "DisplayNameFI": "Purku kuljetuspakkauksesta",
       "DescriptionEN": "The service is suitable for use when the recipient wants the parcel shipment to be unpacked from the transport package or the cargo consignment from the transport platform to a separately specified one place and the packaging materials to be removed, for proper recycling.",
@@ -3648,6 +3786,7 @@
     },
     {
       "ServiceCode": "5107",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Transport to Recycling",
       "DisplayNameFI": "Kuljetus kierrätykseen",
       "DescriptionEN": "Transport to Recycling",
@@ -3684,6 +3823,7 @@
     },
     {
       "ServiceCode": "5108",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Packing of returned equipment",
       "DisplayNameFI": "Packing of returned equipment",
       "DescriptionEN": "Packing of returned equipment",
@@ -3720,6 +3860,7 @@
     },
     {
       "ServiceCode": "5109",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Delivery to Terminal",
       "DisplayNameFI": " Toimitus terminaaliin",
       "DescriptionEN": "The Customer can address the shipment directly from the Posti’s terminal, to where the Customer will deliver it for further transportation.",
@@ -3787,6 +3928,7 @@
     },
     {
       "ServiceCode": "5111",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Pick-up from Terminal",
       "DisplayNameFI": "Nouto Terminaalista",
       "DescriptionEN": "The Customer can address the shipment directly to the terminal, from where the recipient will pick it up. Posti contacts the recipient once the shipment in question has arrived at the terminal.",
@@ -3881,6 +4023,7 @@
     },
     {
       "ServiceCode": "5214",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Carry in",
       "DisplayNameFI": "Sisäänkanto",
       "DescriptionEN": "We carry in the shipment to an agreed place near the recipient, for instance, inside a store or to an office. The exact delivery location will be agreed with the recipient via phone. Max 20 packages and maximum freight weight for each package is 35 kg.",
@@ -3927,6 +4070,7 @@
     },
     {
       "ServiceCode": "5222",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Deliverable in Person",
       "DisplayNameFI": "Henkilökohtaisesti luovutettava",
       "DescriptionEN": "The delivery is only handed to the person specified in the shipment. The identity of the person picking up the shipment is verified, and identity can be verified using a driver's license, passport or photo identity document. The recipient will be contacted before starting the route or at least an hour before delivery to the recipient.",
@@ -3976,6 +4120,7 @@
     },
     {
       "ServiceCode": "5223",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Delivery without receivers signature",
       "DisplayNameFI": "Luovuttaminen ilman vastaanottajan kuittausta",
       "DescriptionEN": "With the delivery without receivers signature additional service, the customer authorizes the Posti's driver to register the delivery transaction and acknowledge it in his/her own name without the recipient's presence.",
@@ -4028,6 +4173,7 @@
     },
     {
       "ServiceCode": "5224",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Delivery to Specific Location",
       "DisplayNameFI": "Täsmäpaikkajakelu",
       "DescriptionEN": "With delivery to specific location, the shipment is taken to a pre-arranged, single location at the recipient, such as inside a store or office. When transporting shipments, take into account traffic restrictions.",
@@ -4110,6 +4256,7 @@
     },
     {
       "ServiceCode": "5225",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Shelving Service",
       "DisplayNameFI": "Hyllytyspalvelu",
       "DescriptionEN": "The additional service Shelving service appears on the address card or waybill. In the shelving service, the shipment is delivered to a specific location on the premises of the receiving customer, unpacked and shelved in place. The service also includes the removal of packaging waste and, if necessary, placing replenishment orders. Work instructions are made for the items in the shelving service and their delivery schedule is preferably agreed in advance.",
@@ -4204,6 +4351,7 @@
     },
     {
       "ServiceCode": "5227",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Product Packaging Removal",
       "DisplayNameFI": "Purku tuotepakkauksesta",
       "DescriptionEN": "The service is suitable for use when the recipient buys a new household appliance or furniture, etc. and wants it to be unpacked and the packaging waste removed. We unpack the shipment, take the packaging waste out of the customer and deliver it for proper recycling. The customer does not have to worry about disposing of packaging waste.",
@@ -4262,6 +4410,7 @@
     },
     {
       "ServiceCode": "5228",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Crane Delivery Service",
       "DisplayNameFI": "Nosturipalvelu",
       "DescriptionEN": "Delivery of freight shipments is made using crane equipment. The Crane service is available for shipment batches weighing under 5,000 kg, and a single load cannot weigh more than 2,500 kg. One weekday of additional delivery time is reserved for Crane Delivery.",
@@ -4344,6 +4493,7 @@
     },
     {
       "ServiceCode": "5229",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Waste Transport",
       "DisplayNameFI": "Waste Transport",
       "DescriptionEN": "Waste Transport",
@@ -4420,6 +4570,7 @@
     },
     {
       "ServiceCode": "5230",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Long Shipment",
       "DisplayNameFI": "Pitkä lähetys",
       "DescriptionEN": "You can send address-labeled items the size of which exceeds the normal maximum size of the main product, up to the maximum size for the Oversized additional service.",
@@ -4466,6 +4617,7 @@
     },
     {
       "ServiceCode": "5234",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Chosen delivery day",
       "DisplayNameFI": "Valittu toimituspäivä",
       "DescriptionEN": "Delivering the item on the selected delivery day according to the service register. The available options are 1–5 weekdays after the first possible delivery day.",
@@ -4536,6 +4688,7 @@
     },
     {
       "ServiceCode": "5235",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Call Before Delivery",
       "DisplayNameFI": "Soitto ennen jakelua",
       "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
@@ -4606,6 +4759,7 @@
     },
     {
       "ServiceCode": "5236",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Consumer Pick-up",
       "DisplayNameFI": "Nouto yksityishenkilöltä",
       "DescriptionEN": "Posti contacts the sender to agree on a pickup date and, prior to the scheduled pickup time, calls the sender’s phone number provided in the order",
@@ -4676,6 +4830,7 @@
     },
     {
       "ServiceCode": "5237",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Pickup from a specific location",
       "DisplayNameFI": "Täsmäpaikkanouto",
       "DescriptionEN": "The service includes the pickup of the shipment from inside the sender’s premises at a specific location, such as floor, office, etc. The shipment is picked up from a place which can be accessed freely by a hand/pallet truck.",
@@ -4728,6 +4883,7 @@
     },
     {
       "ServiceCode": "5238",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Carry out",
       "DisplayNameFI": "Uloskanto",
       "DescriptionEN": "Carry out",
@@ -4765,6 +4921,7 @@
     },
     {
       "ServiceCode": "5502",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "LQ Transport",
       "DisplayNameFI": "LQ kuljetus",
       "DescriptionEN": "The service enables the transport of dangerous goods to a limited extent in accordance with the Act on the Transport of Dangerous Goods (VAK) in accordance with the service area register of the main product. The additional service appears on the address card, which also shows the LQ gross weight and the number of items, as well as on the limited number of LQ labels and VAK tape.",
@@ -4844,6 +5001,7 @@
     },
     {
       "ServiceCode": "5503",
+      "ExternalServiceCodes": [],
       "DisplayNameEN": "Transport of Dangerous Goods",
       "DisplayNameFI": "Vaarallisten aineiden kuljetus",
       "DescriptionEN": "We handle the transport of any parcels classified as dangerous goods safely, reliably and in accordance with the applicable legislation.",

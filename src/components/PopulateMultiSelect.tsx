@@ -157,7 +157,11 @@ const PopulateMultiSelect = (
           (el) =>
             el.CountryCode === country.substring(separator + 1, country.length)
         );
-        if (typeof selected.departure !== "undefined" || selected.departure) {
+        if (
+          typeof selected.departure !== "undefined" &&
+          selected.departure &&
+          selected.departure !== ""
+        ) {
           if (
             country.substring(0, separator) === selected.departure &&
             (!destCountries ||

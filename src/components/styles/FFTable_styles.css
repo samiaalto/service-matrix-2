@@ -1,6 +1,13 @@
 .ff-table {
   width: 100%;
-  margin-bottom: 70px;
+}
+
+.ff-table ul {
+  margin-block-end: 5px;
+}
+
+.ff-tabs {
+  margin-top: 30px;
 }
 
 .comment_title,
@@ -24,13 +31,14 @@
   padding-left: 5px;
   min-width: 180px;
   max-width: 250px;
+  padding: 5px;
 }
 
-.attributeName {
+.attributeName_col pre {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  display: flex;
-  align-items: center;
+  display: inline;
+  vertical-align: middle !important;
 }
 
 .version_col,
@@ -113,4 +121,58 @@
   bottom: 0px;
   width: 100%;
   z-index: -1;
+}
+
+.value-list .list-item {
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.value-header {
+  padding-top: 5px;
+}
+
+.ff-showlist {
+  position: flex;
+  float: left;
+  background-color: transparent;
+  font-size: 13px;
+  color: #000;
+  border-bottom: 2px solid #394b58;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  height: 25px;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.ff-showlist:hover {
+  background-color: #394b58;
+  color: #fff !important;
+  border-bottom: 2px solid #fff !important;
+}
+
+.ff-showlist:focus,
+.ff-showlist:active {
+  color: #000;
+  background-color: transparent;
+  outline: none !important;
+  -webkit-appearance: none !important;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid #394b58;
+}
+
+.dl-schema {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+.schema-txt {
+  padding-right: 5px;
 }

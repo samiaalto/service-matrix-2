@@ -1,4 +1,4 @@
-const MapFFRows = (fileFormats, setFfRowData) => {
+const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
   let rows = [];
   let index = 0;
   for (let record of fileFormats.records) {
@@ -57,6 +57,80 @@ const MapFFRows = (fileFormats, setFfRowData) => {
           attribute.Position + "-" + (attribute.Position + attribute.Length);
       }
 
+      let tooltip = [];
+
+      let splitPath = attribute.Path.split(".");
+      let parent;
+      for (let j = splitPath.length - 2; j >= 0; j--) {
+        if (splitPath[j] !== "0") {
+          parent = splitPath[j];
+          break;
+        }
+      }
+
+      if (
+        attribute.Name === "Product" ||
+        attribute.Name === "ServiceCode" ||
+        (attribute.Name === "id" && parent === "service")
+      ) {
+        for (let service of services.records) {
+          for (let format of service.Fields) {
+            if (
+              format.MessageFormat === record.Name &&
+              format.PropertyName === attribute.Name
+            ) {
+              tooltip.push(format.PropertyValue + "-" + service.ServiceCode);
+            }
+          }
+        }
+      }
+
+      if (
+        (attribute.Name === "type" && parent === "PackageQuantity") ||
+        attribute.Name === "PackageType"
+      ) {
+        for (let service of services.records) {
+          for (let type of service.PackageTypesAndDimensions) {
+            if (
+              type.MessageFormat === record.Name &&
+              !tooltip.includes(type.PackageType + "-" + type.PackageType)
+            ) {
+              tooltip.push(type.PackageType + "-" + type.PackageType);
+            }
+          }
+        }
+      }
+
+      if (
+        attribute.Name === "Service" ||
+        attribute.Name === "AdditionalServices" ||
+        (attribute.Name === "id" && parent === "addons")
+      ) {
+        for (let addon of additionalServices.records) {
+          for (let format of addon.Fields) {
+            if (
+              format.MessageFormat === record.Name &&
+              format.PropertyName === attribute.Name &&
+              !tooltip.some((s) => s.indexOf(format.PropertyValue) !== -1)
+            ) {
+              tooltip.push(format.PropertyValue + "-" + addon.ServiceCode);
+            }
+          }
+        }
+      }
+
+      if (attribute.Validations.length > 0) {
+        for (let item of attribute.Validations) {
+          tooltip.push(
+            item.ValidationValue +
+              "-" +
+              attribute.Name +
+              "_" +
+              item.ValidationValue
+          );
+        }
+      }
+
       rows.push({
         format: record.Name,
         attribute: (
@@ -69,6 +143,7 @@ const MapFFRows = (fileFormats, setFfRowData) => {
         type: type,
         position: position,
         description: attribute.DescriptionEN,
+        tooltip: tooltip,
       });
     }
     index++;

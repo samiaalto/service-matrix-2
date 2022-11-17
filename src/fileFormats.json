@@ -10,6 +10,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": [
         {
           "Name": "RecordType",
@@ -23,7 +24,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "0"
+          "ExampleValue": "0",
+          "Validations": []
         },
         {
           "Name": "FileId",
@@ -37,7 +39,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "WAYBILD16A"
+          "ExampleValue": "WAYBILD16A",
+          "Validations": []
         },
         {
           "Name": "DocumentDateTime",
@@ -51,7 +54,8 @@
           "Position": 12,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "SenderId",
@@ -65,7 +69,8 @@
           "Position": 24,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "COMPANY-ID"
+          "ExampleValue": "COMPANY-ID",
+          "Validations": []
         },
         {
           "Name": "ReceiverId",
@@ -79,7 +84,8 @@
           "Position": 41,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "003715318644"
+          "ExampleValue": "003715318644",
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -93,7 +99,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "ShipmentNumber",
@@ -107,7 +114,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "WB1234567890"
+          "ExampleValue": "WB1234567890",
+          "Validations": []
         },
         {
           "Name": "ShipmentDateTime",
@@ -121,7 +129,8 @@
           "Position": 37,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "TotalWeight",
@@ -135,7 +144,8 @@
           "Position": 49,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TotalQuantity",
@@ -149,7 +159,8 @@
           "Position": 57,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Infocode",
@@ -163,7 +174,8 @@
           "Position": 60,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0001"
+          "ExampleValue": "0001",
+          "Validations": []
         },
         {
           "Name": "SenderReference",
@@ -177,7 +189,8 @@
           "Position": 75,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sender reference"
+          "ExampleValue": "Sender reference",
+          "Validations": []
         },
         {
           "Name": "InvoiceNumber",
@@ -191,7 +204,8 @@
           "Position": 110,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "IN123456789"
+          "ExampleValue": "IN123456789",
+          "Validations": []
         },
         {
           "Name": "CodBIC",
@@ -205,7 +219,8 @@
           "Position": 145,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "NDEAFIHH"
+          "ExampleValue": "NDEAFIHH",
+          "Validations": []
         },
         {
           "Name": "CodIBAN",
@@ -219,7 +234,8 @@
           "Position": 156,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "FI2112345600000785"
+          "ExampleValue": "FI2112345600000785",
+          "Validations": []
         },
         {
           "Name": "CodReference",
@@ -233,7 +249,8 @@
           "Position": 191,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "CodValue",
@@ -247,7 +264,8 @@
           "Position": 226,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "CurrencyCode",
@@ -261,7 +279,8 @@
           "Position": 244,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "InsuranceValue",
@@ -275,7 +294,8 @@
           "Position": 247,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "12345"
+          "ExampleValue": "12345",
+          "Validations": []
         },
         {
           "Name": "CurrencyCode",
@@ -289,7 +309,8 @@
           "Position": 265,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "TransportUnit",
@@ -303,7 +324,8 @@
           "Position": 268,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "BB8271010017LV00RR0001"
+          "ExampleValue": "BB8271010017LV00RR0001",
+          "Validations": []
         },
         {
           "Name": "AdditionalInformation",
@@ -317,7 +339,8 @@
           "Position": 303,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": "2",
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -331,7 +354,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Role",
@@ -345,7 +369,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CZ"
+          "ExampleValue": "CZ",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -359,7 +384,8 @@
           "Position": 4,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "654321"
+          "ExampleValue": "654321",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -373,7 +399,8 @@
           "Position": 10,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -387,7 +414,8 @@
           "Position": 45,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Name3",
@@ -401,7 +429,8 @@
           "Position": 80,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 3"
+          "ExampleValue": "Name 3",
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -415,7 +444,8 @@
           "Position": 115,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -429,7 +459,8 @@
           "Position": 150,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -443,7 +474,8 @@
           "Position": 185,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -457,7 +489,8 @@
           "Position": 220,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -471,7 +504,8 @@
           "Position": 270,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -485,7 +519,8 @@
           "Position": 279,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -499,7 +534,8 @@
           "Position": 281,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "ContactLanguage",
@@ -513,7 +549,8 @@
           "Position": 316,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactMobile",
@@ -527,7 +564,8 @@
           "Position": 318,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401234567"
+          "ExampleValue": "+358401234567",
+          "Validations": []
         },
         {
           "Name": "ContactMail",
@@ -541,7 +579,8 @@
           "Position": 353,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "sandy@sender.com"
+          "ExampleValue": "sandy@sender.com",
+          "Validations": []
         },
         {
           "Name": "AdditionalInformation",
@@ -555,7 +594,8 @@
           "Position": 423,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -569,7 +609,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": "2",
+          "Validations": []
         },
         {
           "Name": "Role",
@@ -583,7 +624,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CN"
+          "ExampleValue": "CN",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -597,7 +639,8 @@
           "Position": 4,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -611,7 +654,8 @@
           "Position": 10,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -625,7 +669,8 @@
           "Position": 45,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Name3",
@@ -639,7 +684,8 @@
           "Position": 80,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 3"
+          "ExampleValue": "Name 3",
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -653,7 +699,8 @@
           "Position": 115,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskustie 3"
+          "ExampleValue": "Keskustie 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -667,7 +714,8 @@
           "Position": 150,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -681,7 +729,8 @@
           "Position": 185,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -695,7 +744,8 @@
           "Position": 220,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -709,7 +759,8 @@
           "Position": 270,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -723,7 +774,8 @@
           "Position": 279,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -737,7 +789,8 @@
           "Position": 281,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "ContactLanguage",
@@ -751,7 +804,8 @@
           "Position": 316,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactMobile",
@@ -765,7 +819,8 @@
           "Position": 318,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358409922338"
+          "ExampleValue": "+358409922338",
+          "Validations": []
         },
         {
           "Name": "ContactMail",
@@ -779,7 +834,8 @@
           "Position": 353,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "ricky@receiver.com"
+          "ExampleValue": "ricky@receiver.com",
+          "Validations": []
         },
         {
           "Name": "AdditionalInformation",
@@ -793,7 +849,8 @@
           "Position": 423,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -807,7 +864,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": "2",
+          "Validations": []
         },
         {
           "Name": "Role",
@@ -821,7 +879,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "PY"
+          "ExampleValue": "PY",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -835,7 +894,8 @@
           "Position": 4,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "622334"
+          "ExampleValue": "622334",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -849,7 +909,8 @@
           "Position": 10,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Patrick Payer"
+          "ExampleValue": "Patrick Payer",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -863,7 +924,8 @@
           "Position": 45,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Name3",
@@ -877,7 +939,8 @@
           "Position": 80,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 3"
+          "ExampleValue": "Name 3",
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -891,7 +954,8 @@
           "Position": 115,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Payer address 1"
+          "ExampleValue": "Payer address 1",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -905,7 +969,8 @@
           "Position": 150,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -919,7 +984,8 @@
           "Position": 185,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -933,7 +999,8 @@
           "Position": 220,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Tikkurila"
+          "ExampleValue": "Tikkurila",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -947,7 +1014,8 @@
           "Position": 270,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "01300"
+          "ExampleValue": "01300",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -961,7 +1029,8 @@
           "Position": 279,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -975,7 +1044,8 @@
           "Position": 281,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Patrick Payer"
+          "ExampleValue": "Patrick Payer",
+          "Validations": []
         },
         {
           "Name": "ContactLanguage",
@@ -989,7 +1059,8 @@
           "Position": 316,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactMobile",
@@ -1003,7 +1074,8 @@
           "Position": 318,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401122334"
+          "ExampleValue": "+358401122334",
+          "Validations": []
         },
         {
           "Name": "ContactMail",
@@ -1017,7 +1089,8 @@
           "Position": 353,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "patrick@payer.com"
+          "ExampleValue": "patrick@payer.com",
+          "Validations": []
         },
         {
           "Name": "AdditionalInformation",
@@ -1031,7 +1104,8 @@
           "Position": 423,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -1045,7 +1119,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "3"
+          "ExampleValue": "3",
+          "Validations": []
         },
         {
           "Name": "PackageType",
@@ -1059,7 +1134,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "PC"
+          "ExampleValue": "PC",
+          "Validations": []
         },
         {
           "Name": "PackageQuantity",
@@ -1073,7 +1149,8 @@
           "Position": 5,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "TrackingCode",
@@ -1087,7 +1164,8 @@
           "Position": 8,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "JJFI65432112345678901"
+          "ExampleValue": "JJFI65432112345678901",
+          "Validations": []
         },
         {
           "Name": "TrackingCode2",
@@ -1101,7 +1179,8 @@
           "Position": 43,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "006543210987654321"
+          "ExampleValue": "006543210987654321",
+          "Validations": []
         },
         {
           "Name": "ServiceCode",
@@ -1115,7 +1194,8 @@
           "Position": 78,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2103"
+          "ExampleValue": "2103",
+          "Validations": []
         },
         {
           "Name": "AdditionalServices",
@@ -1129,7 +1209,8 @@
           "Position": 82,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "3139"
+          "ExampleValue": "3139",
+          "Validations": []
         },
         {
           "Name": "GrossWeight",
@@ -1143,7 +1224,8 @@
           "Position": 122,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "3100"
+          "ExampleValue": "3100",
+          "Validations": []
         },
         {
           "Name": "Volume",
@@ -1157,7 +1239,8 @@
           "Position": 130,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0020"
+          "ExampleValue": "0020",
+          "Validations": []
         },
         {
           "Name": "Length",
@@ -1171,7 +1254,8 @@
           "Position": 138,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0100"
+          "ExampleValue": "0100",
+          "Validations": []
         },
         {
           "Name": "Width",
@@ -1185,7 +1269,8 @@
           "Position": 142,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0200"
+          "ExampleValue": "0200",
+          "Validations": []
         },
         {
           "Name": "Height",
@@ -1199,7 +1284,8 @@
           "Position": 146,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0300"
+          "ExampleValue": "0300",
+          "Validations": []
         },
         {
           "Name": "LimitedQuantityWeight",
@@ -1213,7 +1299,8 @@
           "Position": 150,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "ReturnCode",
@@ -1227,7 +1314,33 @@
           "Position": 158,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "M"
+          "ExampleValue": "M",
+          "Validations": [
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "H",
+              "DisplayNameFI": "Käsitellään hylättynä",
+              "DisplayNameEN": "Treat item as abandoned",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "L",
+              "DisplayNameFI": "Palautetaan lentorahdilla",
+              "DisplayNameEN": "Returned by air",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "E",
+              "DisplayNameFI": "Palautetaan edullisimmalla rahdilla",
+              "DisplayNameEN": "Returned by the most economical route",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            }
+          ]
         },
         {
           "Name": "GoodsNature",
@@ -1241,7 +1354,65 @@
           "Position": 159,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "H"
+          "ExampleValue": "H",
+          "Validations": [
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "D",
+              "DisplayNameFI": "Dokumentti",
+              "DisplayNameEN": "Document",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "S",
+              "DisplayNameFI": "Näyte",
+              "DisplayNameEN": "Sample",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "G",
+              "DisplayNameFI": "Lahja",
+              "DisplayNameEN": "Gift",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "M",
+              "DisplayNameFI": "Kauppatavara",
+              "DisplayNameEN": "Merchandise",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "E",
+              "DisplayNameFI": "DocPack (kirje)",
+              "DisplayNameEN": "DocPack (envelope)",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "R",
+              "DisplayNameFI": "Palautetut tavarat",
+              "DisplayNameEN": "Returned goods",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "O",
+              "DisplayNameFI": "Muu",
+              "DisplayNameEN": "Other",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            }
+          ]
         },
         {
           "Name": "RoutingCode",
@@ -1255,7 +1426,8 @@
           "Position": 160,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -1269,7 +1441,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "4"
+          "ExampleValue": "4",
+          "Validations": []
         },
         {
           "Name": "Description",
@@ -1283,7 +1456,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Sports shoes"
+          "ExampleValue": "Sports shoes",
+          "Validations": []
         },
         {
           "Name": "Quantity",
@@ -1297,7 +1471,8 @@
           "Position": 37,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "Weight",
@@ -1311,7 +1486,8 @@
           "Position": 72,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2100"
+          "ExampleValue": "2100",
+          "Validations": []
         },
         {
           "Name": "OriginCountry",
@@ -1325,7 +1501,8 @@
           "Position": 80,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CN"
+          "ExampleValue": "CN",
+          "Validations": []
         },
         {
           "Name": "TariffNumber",
@@ -1339,7 +1516,8 @@
           "Position": 82,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "64029996"
+          "ExampleValue": "64029996",
+          "Validations": []
         },
         {
           "Name": "DeclaredValue",
@@ -1353,7 +1531,8 @@
           "Position": 94,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1234"
+          "ExampleValue": "1234",
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -1367,7 +1546,8 @@
           "Position": 112,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -1381,7 +1561,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "5"
+          "ExampleValue": "5",
+          "Validations": []
         },
         {
           "Name": "UnNo",
@@ -1395,7 +1576,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "0016"
+          "ExampleValue": "0016",
+          "Validations": []
         },
         {
           "Name": "ProperShippingName",
@@ -1409,7 +1591,8 @@
           "Position": 6,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Alcohol, N.O.S."
+          "ExampleValue": "Alcohol, N.O.S.",
+          "Validations": []
         },
         {
           "Name": "TechnicalDescription",
@@ -1423,7 +1606,8 @@
           "Position": 76,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "MainDanger",
@@ -1437,7 +1621,8 @@
           "Position": 146,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2.1"
+          "ExampleValue": "2.1",
+          "Validations": []
         },
         {
           "Name": "SubsidiaryRisk",
@@ -1451,7 +1636,8 @@
           "Position": 150,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "PackingGroup",
@@ -1465,7 +1651,8 @@
           "Position": 162,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TunnelCode",
@@ -1479,7 +1666,8 @@
           "Position": 165,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TotalQuantity",
@@ -1493,7 +1681,8 @@
           "Position": 171,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "unit",
@@ -1507,7 +1696,8 @@
           "Position": 179,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "LTR"
+          "ExampleValue": "LTR",
+          "Validations": []
         },
         {
           "Name": "MarinePollutant",
@@ -1521,7 +1711,8 @@
           "Position": 183,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "NoDgPackages",
@@ -1535,7 +1726,8 @@
           "Position": 184,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "PackingDescription",
@@ -1549,7 +1741,8 @@
           "Position": 187,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RecordType",
@@ -1563,7 +1756,8 @@
           "Position": 1,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "9"
+          "ExampleValue": "9",
+          "Validations": []
         },
         {
           "Name": "RowCount",
@@ -1577,7 +1771,8 @@
           "Position": 2,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         }
       ]
     },
@@ -1591,6 +1786,68 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [
+        {
+          "Comment": "Document created.",
+          "DateModified": "2017-09-06",
+          "DocumentVersion": "0",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Updated chapter 1.",
+          "DateModified": "2017-09-11",
+          "DocumentVersion": "1",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Added message specification and updated other content.",
+          "DateModified": "2017-09-26",
+          "DocumentVersion": "2",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated",
+          "DateModified": "2017-11-14",
+          "DocumentVersion": "3",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated",
+          "DateModified": "2017-12-08",
+          "DocumentVersion": "4",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": null,
+          "DateModified": "2018-08-15",
+          "DocumentVersion": "5",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "New ‘LimitedQuantity’ field (boolean) added to inform dangerous goods classified details in limited quantities (LQ). The element MessageRelease changed to mandatory.",
+          "DateModified": "2019-10-11",
+          "DocumentVersion": "6",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "Decimal values corrected in sample messages. ",
+          "DateModified": "2020-02-13",
+          "DocumentVersion": "7",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "DangerousGoods Provisions added.",
+          "DateModified": "2020-06-16",
+          "DocumentVersion": "8",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "*Namespace added in header * UTF-8 encoding allowed with exception *New schema (MessageRelease = 2) Is compatible to previous releases *AgreedDeliveryDate added *Reference @typeCode ‘IOSS_NUMBER’ added *New Party @role DELIVERY * Party Account @type codes ‘VAT’ and ‘TAX_NUMBER’ added for roles CONSIGNOR and CONSIGNEE",
+          "DateModified": "2021-09-10",
+          "DocumentVersion": "9",
+          "SchemaVersion": "1.2"
+        }
+      ],
       "Records": [
         {
           "Name": "Postra",
@@ -1604,7 +1861,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Header",
@@ -1618,7 +1876,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "SenderId",
@@ -1632,7 +1891,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "COMPANY-ID"
+          "ExampleValue": "COMPANY-ID",
+          "Validations": []
         },
         {
           "Name": "ReceiverId",
@@ -1646,7 +1906,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "003715318644"
+          "ExampleValue": "003715318644",
+          "Validations": []
         },
         {
           "Name": "DocumentDateTime",
@@ -1660,7 +1921,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "Sequence",
@@ -1674,7 +1936,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "MessageCode",
@@ -1688,7 +1951,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "POSTRA"
+          "ExampleValue": "POSTRA",
+          "Validations": []
         },
         {
           "Name": "MessageVersion",
@@ -1702,7 +1966,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "MessageRelease",
@@ -1716,7 +1981,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": "2",
+          "Validations": []
         },
         {
           "Name": "TestIndicator",
@@ -1730,7 +1996,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TRUE"
+          "ExampleValue": "TRUE",
+          "Validations": []
         },
         {
           "Name": "Messageaction",
@@ -1744,7 +2011,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "PARCEL_ORDER"
+          "ExampleValue": "PARCEL_ORDER",
+          "Validations": []
         },
         {
           "Name": "Shipments",
@@ -1758,7 +2026,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Shipment",
@@ -1772,7 +2041,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "MessageFunctionCode",
@@ -1786,7 +2056,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "ORIGINAL"
+          "ExampleValue": "ORIGINAL",
+          "Validations": []
         },
         {
           "Name": "ShipmentNumber",
@@ -1800,7 +2071,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "WB1234567890"
+          "ExampleValue": "WB1234567890",
+          "Validations": []
         },
         {
           "Name": "ShipmentDateTime",
@@ -1814,7 +2086,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "Totals",
@@ -1828,7 +2101,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -1842,7 +2116,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1.00"
+          "ExampleValue": "1.00",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -1856,7 +2131,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "WEIGHT"
+          "ExampleValue": "WEIGHT",
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -1870,7 +2146,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -1884,7 +2161,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PACKAGE_QUANTITY"
+          "ExampleValue": "PACKAGE_QUANTITY",
+          "Validations": []
         },
         {
           "Name": "DeliveryDate",
@@ -1898,7 +2176,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "date"
+          "ExampleValue": "date",
+          "Validations": []
         },
         {
           "Name": "timeEarliest",
@@ -1912,7 +2191,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "timeLatest",
@@ -1926,7 +2206,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "AgreedDeliveryDate",
@@ -1940,7 +2221,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "date"
+          "ExampleValue": "date",
+          "Validations": []
         },
         {
           "Name": "timeEarliest",
@@ -1954,7 +2236,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "timeLatest",
@@ -1968,7 +2251,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "Instructions",
@@ -1982,7 +2266,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Instruction",
@@ -1996,7 +2281,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Instructions"
+          "ExampleValue": "Instructions",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -2010,7 +2296,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "GENERAL"
+          "ExampleValue": "GENERAL",
+          "Validations": []
         },
         {
           "Name": "References",
@@ -2024,7 +2311,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -2038,7 +2326,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sender reference"
+          "ExampleValue": "Sender reference",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -2052,7 +2341,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNOR"
+          "ExampleValue": "CONSIGNOR",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -2066,7 +2356,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "IN123456789"
+          "ExampleValue": "IN123456789",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -2080,7 +2371,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "INVOICE_NUMBER"
+          "ExampleValue": "INVOICE_NUMBER",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -2094,7 +2386,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "BB8271010017LV00RR0001"
+          "ExampleValue": "BB8271010017LV00RR0001",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -2108,7 +2401,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TRANSPORT_UNIT"
+          "ExampleValue": "TRANSPORT_UNIT",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -2122,7 +2416,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "IM1234567890"
+          "ExampleValue": "IM1234567890",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -2136,7 +2431,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "IOSS_NUMBER"
+          "ExampleValue": "IOSS_NUMBER",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -2150,7 +2446,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0001"
+          "ExampleValue": "0001",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -2164,7 +2461,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "INVOICING_CODE"
+          "ExampleValue": "INVOICING_CODE",
+          "Validations": []
         },
         {
           "Name": "InsuranceValue",
@@ -2178,7 +2476,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "123.45"
+          "ExampleValue": "123.45",
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -2192,7 +2491,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "CodBIC",
@@ -2206,7 +2506,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "NDEAFIHH"
+          "ExampleValue": "NDEAFIHH",
+          "Validations": []
         },
         {
           "Name": "CodIBAN",
@@ -2220,7 +2521,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "FI2112345600000785"
+          "ExampleValue": "FI2112345600000785",
+          "Validations": []
         },
         {
           "Name": "CodValue",
@@ -2234,7 +2536,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "123.45"
+          "ExampleValue": "123.45",
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -2248,7 +2551,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "CodReference",
@@ -2262,7 +2566,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Parties",
@@ -2276,7 +2581,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -2290,7 +2596,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -2304,7 +2611,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNOR"
+          "ExampleValue": "CONSIGNOR",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -2318,7 +2626,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "654321"
+          "ExampleValue": "654321",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -2332,7 +2641,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONTRACT"
+          "ExampleValue": "CONTRACT",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -2346,7 +2656,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TAX654987-9"
+          "ExampleValue": "TAX654987-9",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -2360,7 +2671,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TAX_NUMBER"
+          "ExampleValue": "TAX_NUMBER",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -2374,7 +2686,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -2388,7 +2701,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Name3",
@@ -2402,7 +2716,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 3"
+          "ExampleValue": "Name 3",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -2416,7 +2731,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -2430,7 +2746,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -2444,7 +2761,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -2458,7 +2776,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -2472,7 +2791,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -2486,7 +2806,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -2500,7 +2821,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -2514,7 +2836,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -2528,7 +2851,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2542,7 +2866,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401234567"
+          "ExampleValue": "+358401234567",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2556,7 +2881,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2570,7 +2896,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358402345671"
+          "ExampleValue": "+358402345671",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2584,7 +2911,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2598,7 +2926,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "sandy@sender.com"
+          "ExampleValue": "sandy@sender.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2612,7 +2941,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -2626,7 +2956,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -2640,7 +2971,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNEE"
+          "ExampleValue": "CONSIGNEE",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -2654,7 +2986,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -2668,7 +3001,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -2682,7 +3016,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -2696,7 +3031,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Name3",
@@ -2710,7 +3046,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 3"
+          "ExampleValue": "Name 3",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -2724,7 +3061,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -2738,7 +3076,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskustie 3"
+          "ExampleValue": "Keskustie 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -2752,7 +3091,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -2766,7 +3106,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -2780,7 +3121,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -2794,7 +3136,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -2808,7 +3151,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -2822,7 +3166,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -2836,7 +3181,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2850,7 +3196,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358409922338"
+          "ExampleValue": "+358409922338",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2864,7 +3211,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2878,7 +3226,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358402233441"
+          "ExampleValue": "+358402233441",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2892,7 +3241,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -2906,7 +3256,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "ricky@receiver.com"
+          "ExampleValue": "ricky@receiver.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -2920,7 +3271,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -2934,7 +3286,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -2948,7 +3301,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "DELIVERY"
+          "ExampleValue": "DELIVERY",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -2962,7 +3316,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Daisy Delivery"
+          "ExampleValue": "Daisy Delivery",
+          "Validations": []
         },
         {
           "Name": "Name2",
@@ -2976,7 +3331,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Name 2"
+          "ExampleValue": "Name 2",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -2990,7 +3346,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -3004,7 +3361,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Delivery Address 1"
+          "ExampleValue": "Delivery Address 1",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -3018,7 +3376,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Street3",
@@ -3032,7 +3391,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 3"
+          "ExampleValue": "Street Address 3",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -3046,7 +3406,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "33100"
+          "ExampleValue": "33100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -3060,7 +3421,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Tampere"
+          "ExampleValue": "Tampere",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -3074,7 +3436,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -3088,7 +3451,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Daisy Delivery"
+          "ExampleValue": "Daisy Delivery",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -3102,7 +3466,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -3116,7 +3481,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401234345"
+          "ExampleValue": "+358401234345",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -3130,7 +3496,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -3144,7 +3511,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358403434551"
+          "ExampleValue": "+358403434551",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -3158,7 +3526,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -3172,7 +3541,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "daisy@delivery.com"
+          "ExampleValue": "daisy@delivery.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -3186,7 +3556,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -3200,7 +3571,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -3214,7 +3586,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PAYER"
+          "ExampleValue": "PAYER",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -3228,7 +3601,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "622334"
+          "ExampleValue": "622334",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -3242,7 +3616,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONTRACT"
+          "ExampleValue": "CONTRACT",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -3256,7 +3631,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Patrick Payer"
+          "ExampleValue": "Patrick Payer",
+          "Validations": []
         },
         {
           "Name": "GoodsItems",
@@ -3270,7 +3646,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "GoodsItem",
@@ -3284,7 +3661,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 999,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "PackageQuantity",
@@ -3298,7 +3676,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -3312,7 +3691,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "PC"
+          "ExampleValue": "PC",
+          "Validations": []
         },
         {
           "Name": "GrossWeight",
@@ -3326,7 +3706,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "3.100"
+          "ExampleValue": "3.100",
+          "Validations": []
         },
         {
           "Name": "Volume",
@@ -3340,7 +3721,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0.020"
+          "ExampleValue": "0.020",
+          "Validations": []
         },
         {
           "Name": "Length",
@@ -3354,7 +3736,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "10"
+          "ExampleValue": "10",
+          "Validations": []
         },
         {
           "Name": "Width",
@@ -3368,7 +3751,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "20"
+          "ExampleValue": "20",
+          "Validations": []
         },
         {
           "Name": "Height",
@@ -3382,7 +3766,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "30"
+          "ExampleValue": "30",
+          "Validations": []
         },
         {
           "Name": "GoodsNature",
@@ -3396,7 +3781,65 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "M"
+          "ExampleValue": "M",
+          "Validations": [
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "D",
+              "DisplayNameFI": "Dokumentti",
+              "DisplayNameEN": "Document",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "S",
+              "DisplayNameFI": "Näyte",
+              "DisplayNameEN": "Sample",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "G",
+              "DisplayNameFI": "Lahja",
+              "DisplayNameEN": "Gift",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "M",
+              "DisplayNameFI": "Kauppatavara",
+              "DisplayNameEN": "Merchandise",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "E",
+              "DisplayNameFI": "DocPack (kirje)",
+              "DisplayNameEN": "DocPack (envelope)",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "R",
+              "DisplayNameFI": "Palautetut tavarat",
+              "DisplayNameEN": "Returned goods",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "O",
+              "DisplayNameFI": "Muu",
+              "DisplayNameEN": "Other",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            }
+          ]
         },
         {
           "Name": "ReturnCode",
@@ -3410,7 +3853,33 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "H"
+          "ExampleValue": "H",
+          "Validations": [
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "H",
+              "DisplayNameFI": "Käsitellään hylättynä",
+              "DisplayNameEN": "Treat item as abandoned",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "L",
+              "DisplayNameFI": "Palautetaan lentorahdilla",
+              "DisplayNameEN": "Returned by air",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            },
+            {
+              "ValidationType": "Enumeration",
+              "ValidationValue": "E",
+              "DisplayNameFI": "Palautetaan edullisimmalla rahdilla",
+              "DisplayNameEN": "Returned by the most economical route",
+              "DescriptionFI": null,
+              "DescriptionEN": null
+            }
+          ]
         },
         {
           "Name": "CustomsDetails",
@@ -3424,7 +3893,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "CustomsDetail",
@@ -3438,7 +3908,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Description",
@@ -3452,7 +3923,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Sports shoes"
+          "ExampleValue": "Sports shoes",
+          "Validations": []
         },
         {
           "Name": "Quantity",
@@ -3466,7 +3938,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "Weight",
@@ -3480,7 +3953,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "2.1"
+          "ExampleValue": "2.1",
+          "Validations": []
         },
         {
           "Name": "OriginCountry",
@@ -3494,7 +3968,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CN"
+          "ExampleValue": "CN",
+          "Validations": []
         },
         {
           "Name": "TariffNumber",
@@ -3508,7 +3983,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "64029996"
+          "ExampleValue": "64029996",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -3522,7 +3998,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "HS"
+          "ExampleValue": "HS",
+          "Validations": []
         },
         {
           "Name": "DeclaredValue",
@@ -3536,7 +4013,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "12.34"
+          "ExampleValue": "12.34",
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -3550,7 +4028,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "DangerousGoodsItems",
@@ -3564,7 +4043,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "DangerousGoodsItem",
@@ -3578,7 +4058,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RegulationsCode",
@@ -3592,7 +4073,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "ADR"
+          "ExampleValue": "ADR",
+          "Validations": []
         },
         {
           "Name": "UnNo",
@@ -3606,7 +4088,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "0016"
+          "ExampleValue": "0016",
+          "Validations": []
         },
         {
           "Name": "MainDanger",
@@ -3620,7 +4103,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2.1"
+          "ExampleValue": "2.1",
+          "Validations": []
         },
         {
           "Name": "SubsidiaryRisk",
@@ -3634,7 +4118,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 3,
-          "ExampleValue": "4.2"
+          "ExampleValue": "4.2",
+          "Validations": []
         },
         {
           "Name": "PackingGroup",
@@ -3648,7 +4133,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "II"
+          "ExampleValue": "II",
+          "Validations": []
         },
         {
           "Name": "NoDgPackages",
@@ -3662,7 +4148,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "PackingDescription",
@@ -3676,7 +4163,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "steel drum"
+          "ExampleValue": "steel drum",
+          "Validations": []
         },
         {
           "Name": "TotalQuantity",
@@ -3690,7 +4178,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "5.000"
+          "ExampleValue": "5.000",
+          "Validations": []
         },
         {
           "Name": "unit",
@@ -3704,7 +4193,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "LTR"
+          "ExampleValue": "LTR",
+          "Validations": []
         },
         {
           "Name": "ProperShippingName",
@@ -3718,7 +4208,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Alcohol, N.O.S."
+          "ExampleValue": "Alcohol, N.O.S.",
+          "Validations": []
         },
         {
           "Name": "TechnicalDescription",
@@ -3732,7 +4223,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Methanol dioxide"
+          "ExampleValue": "Methanol dioxide",
+          "Validations": []
         },
         {
           "Name": "MarinePollutant",
@@ -3746,7 +4238,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "Provisions",
@@ -3760,7 +4253,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Carriage in accordance with 1.1.4.2.1"
+          "ExampleValue": "Carriage in accordance with 1.1.4.2.1",
+          "Validations": []
         },
         {
           "Name": "Waste",
@@ -3774,7 +4268,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "TunnelCode",
@@ -3788,7 +4283,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "C5000D"
+          "ExampleValue": "C5000D",
+          "Validations": []
         },
         {
           "Name": "Empty",
@@ -3802,7 +4298,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "LimitedQuantity",
@@ -3816,7 +4313,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "LimitedQuantityWeight",
@@ -3830,7 +4328,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RoutingCode",
@@ -3844,7 +4343,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "2LSE79172+70000000"
+          "ExampleValue": "2LSE79172+70000000",
+          "Validations": []
         },
         {
           "Name": "Product",
@@ -3858,7 +4358,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2103"
+          "ExampleValue": "2103",
+          "Validations": []
         },
         {
           "Name": "Services",
@@ -3872,7 +4373,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Service",
@@ -3886,7 +4388,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 10,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Packages",
@@ -3900,7 +4403,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Package",
@@ -3914,7 +4418,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TrackingNumber",
@@ -3928,7 +4433,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "JJFI65432112345678901"
+          "ExampleValue": "JJFI65432112345678901",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -3942,7 +4448,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "POSTI"
+          "ExampleValue": "POSTI",
+          "Validations": []
         },
         {
           "Name": "TrackingNumber",
@@ -3956,7 +4463,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "006543210987654321"
+          "ExampleValue": "006543210987654321",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -3970,7 +4478,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "OTHER"
+          "ExampleValue": "OTHER",
+          "Validations": []
         }
       ]
     },
@@ -3984,6 +4493,74 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [
+        {
+          "Comment": "Document created.",
+          "DateModified": "2017-08-10",
+          "DocumentVersion": "0",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Chapter 1 updated. Message specification added.",
+          "DateModified": "2017-08-14",
+          "DocumentVersion": "1",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Chapter 1 updated. Message specification added.",
+          "DateModified": "2017-08-17",
+          "DocumentVersion": "2",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated. Added sample 1.",
+          "DateModified": "2017-08-24",
+          "DocumentVersion": "3",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Header and footer information updated.",
+          "DateModified": "2017-10-02",
+          "DocumentVersion": "4",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated.",
+          "DateModified": "2017-11-14",
+          "DocumentVersion": "5",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "Message specification updated, Descriptions updated.",
+          "DateModified": "2017-11-21",
+          "DocumentVersion": "6",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "First draft version is published",
+          "DateModified": "2017-12-08",
+          "DocumentVersion": "7",
+          "SchemaVersion": "1.0"
+        },
+        {
+          "Comment": "* New schema (MessageRelease = 1). Is compatible to release 0. The element changed to mandatory. * Default encoding is UTF-8 * New ‘LimitedQuantity’ field (boolean) added to inform dangerous goods classified details in limited quantities (LQ). * LimitedQuantityWeight decimals 2 > 3 Supplementings to description texts: * Posti will charge penalty fee for manual correction of missing or erroneous data * ShipmentDate is PickupDate, if PickupDate not sent * @timeEarliest and @timeLatest cannot be the same timestamp value * How LimitedQuantityWeight differ from LimitedQuantity * SSCC codes must be sent with leading zeroes",
+          "DateModified": "2019-10-11",
+          "DocumentVersion": "8",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "* Shipment/Totals and GoodsItem/GrossWeight, Volume, LoadingMeter allow max. 3 decimals. * All parties (CONSIGNEE, CONSIGNOR, PICKUP, DELIVERY, PAYER) has Street2 address allowed. *PAYER Name1 is always mandatory. * Namespace added to MIG root element. * DangerousGoods Provisions added",
+          "DateModified": "2020-06-16",
+          "DocumentVersion": "9",
+          "SchemaVersion": "1.1"
+        },
+        {
+          "Comment": "* New schema (MessageRelease = 2) Is compatible to previous releases. *COD is no longer available for FI domestic * Party Account @type ‘VAT’ and TAX_NUMBER added for roles CONSIGNOR and CONSIGNEE",
+          "DateModified": "2021-09-10",
+          "DocumentVersion": "10",
+          "SchemaVersion": "1.2"
+        }
+      ],
       "Records": [
         {
           "Name": "Postra",
@@ -3997,7 +4574,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Header",
@@ -4011,7 +4589,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "SenderId",
@@ -4025,7 +4604,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "COMPANY-ID"
+          "ExampleValue": "COMPANY-ID",
+          "Validations": []
         },
         {
           "Name": "ReceiverId",
@@ -4039,7 +4619,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "003715318644"
+          "ExampleValue": "003715318644",
+          "Validations": []
         },
         {
           "Name": "DocumentDateTime",
@@ -4053,7 +4634,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "Sequence",
@@ -4067,7 +4649,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "MessageCode",
@@ -4081,7 +4664,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "POSTRA"
+          "ExampleValue": "POSTRA",
+          "Validations": []
         },
         {
           "Name": "MessageVersion",
@@ -4095,7 +4679,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "MessageRelease",
@@ -4109,7 +4694,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2"
+          "ExampleValue": "2",
+          "Validations": []
         },
         {
           "Name": "TestIndicator",
@@ -4123,7 +4709,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TRUE"
+          "ExampleValue": "TRUE",
+          "Validations": []
         },
         {
           "Name": "Messageaction",
@@ -4137,7 +4724,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FREIGHT_ORDER"
+          "ExampleValue": "FREIGHT_ORDER",
+          "Validations": []
         },
         {
           "Name": "Shipments",
@@ -4151,7 +4739,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Shipment",
@@ -4165,7 +4754,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "MessageFunctionCode",
@@ -4179,7 +4769,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "ORIGINAL"
+          "ExampleValue": "ORIGINAL",
+          "Validations": []
         },
         {
           "Name": "ShipmentNumber",
@@ -4193,7 +4784,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "WB1234567890"
+          "ExampleValue": "WB1234567890",
+          "Validations": []
         },
         {
           "Name": "ShipmentDateTime",
@@ -4207,7 +4799,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "dateTime"
+          "ExampleValue": "dateTime",
+          "Validations": []
         },
         {
           "Name": "Product",
@@ -4221,7 +4814,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2004"
+          "ExampleValue": "2004",
+          "Validations": []
         },
         {
           "Name": "Services",
@@ -4235,7 +4829,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Service",
@@ -4249,7 +4844,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 10,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "HandlingCode",
@@ -4263,7 +4859,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TransportMovement",
@@ -4277,7 +4874,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "DOMESTIC"
+          "ExampleValue": "DOMESTIC",
+          "Validations": []
         },
         {
           "Name": "Totals",
@@ -4291,7 +4889,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -4305,7 +4904,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "750.500"
+          "ExampleValue": "750.500",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4319,7 +4919,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "WEIGHT"
+          "ExampleValue": "WEIGHT",
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -4333,7 +4934,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1.050"
+          "ExampleValue": "1.050",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4347,7 +4949,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "VOLUME"
+          "ExampleValue": "VOLUME",
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -4361,7 +4964,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4375,7 +4979,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PACKAGE_QUANTITY"
+          "ExampleValue": "PACKAGE_QUANTITY",
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -4389,7 +4994,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1.550"
+          "ExampleValue": "1.550",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4403,7 +5009,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "LOADING_METER"
+          "ExampleValue": "LOADING_METER",
+          "Validations": []
         },
         {
           "Name": "Total",
@@ -4417,7 +5024,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "2.000"
+          "ExampleValue": "2.000",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4431,7 +5039,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "LITER"
+          "ExampleValue": "LITER",
+          "Validations": []
         },
         {
           "Name": "PickupDate",
@@ -4445,7 +5054,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "date"
+          "ExampleValue": "date",
+          "Validations": []
         },
         {
           "Name": "timeEarliest",
@@ -4459,7 +5069,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "timeLatest",
@@ -4473,7 +5084,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "DeliveryDate",
@@ -4487,7 +5099,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "date"
+          "ExampleValue": "date",
+          "Validations": []
         },
         {
           "Name": "timeEarliest",
@@ -4501,7 +5114,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "timeLatest",
@@ -4515,7 +5129,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "Instructions",
@@ -4529,7 +5144,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Instruction",
@@ -4543,7 +5159,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Be aware of slippery loading platform."
+          "ExampleValue": "Be aware of slippery loading platform.",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4557,7 +5174,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "GENERAL"
+          "ExampleValue": "GENERAL",
+          "Validations": []
         },
         {
           "Name": "Instruction",
@@ -4571,7 +5189,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4585,7 +5204,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PICKUP"
+          "ExampleValue": "PICKUP",
+          "Validations": []
         },
         {
           "Name": "Instruction",
@@ -4599,7 +5219,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4613,7 +5234,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "DELIVERY"
+          "ExampleValue": "DELIVERY",
+          "Validations": []
         },
         {
           "Name": "References",
@@ -4627,7 +5249,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -4641,7 +5264,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "WID0751389"
+          "ExampleValue": "WID0751389",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -4655,7 +5279,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNOR"
+          "ExampleValue": "CONSIGNOR",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -4669,7 +5294,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "3010381651"
+          "ExampleValue": "3010381651",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -4683,7 +5309,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNEE"
+          "ExampleValue": "CONSIGNEE",
+          "Validations": []
         },
         {
           "Name": "Reference",
@@ -4697,7 +5324,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0001"
+          "ExampleValue": "0001",
+          "Validations": []
         },
         {
           "Name": "typeCode",
@@ -4711,7 +5339,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "INVOICING_CODE"
+          "ExampleValue": "INVOICING_CODE",
+          "Validations": []
         },
         {
           "Name": "CodBIC",
@@ -4725,7 +5354,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "NDEAFIHH"
+          "ExampleValue": "NDEAFIHH",
+          "Validations": []
         },
         {
           "Name": "CodIBAN",
@@ -4739,7 +5369,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "FI2112345600000785"
+          "ExampleValue": "FI2112345600000785",
+          "Validations": []
         },
         {
           "Name": "CodValue",
@@ -4753,7 +5384,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -4767,7 +5399,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "CodReference",
@@ -4781,7 +5414,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Parties",
@@ -4795,7 +5429,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -4809,7 +5444,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -4823,7 +5459,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNOR"
+          "ExampleValue": "CONSIGNOR",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -4837,7 +5474,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "654321"
+          "ExampleValue": "654321",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4851,7 +5489,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONTRACT"
+          "ExampleValue": "CONTRACT",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -4865,7 +5504,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4879,7 +5519,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "ADDRESS_ID"
+          "ExampleValue": "ADDRESS_ID",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -4893,7 +5534,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -4907,7 +5549,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "VAT"
+          "ExampleValue": "VAT",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -4921,7 +5564,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -4935,7 +5579,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -4949,7 +5594,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -4963,7 +5609,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -4977,7 +5624,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -4991,7 +5639,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -5005,7 +5654,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -5019,7 +5669,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -5033,7 +5684,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5047,7 +5699,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401234567"
+          "ExampleValue": "+358401234567",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5061,7 +5714,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5075,7 +5729,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358402345671"
+          "ExampleValue": "+358402345671",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5089,7 +5744,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5103,7 +5759,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "sandy@sender.com"
+          "ExampleValue": "sandy@sender.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5117,7 +5774,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -5131,7 +5789,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -5145,7 +5804,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CONSIGNEE"
+          "ExampleValue": "CONSIGNEE",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -5159,7 +5819,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -5173,7 +5834,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONTRACT"
+          "ExampleValue": "CONTRACT",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -5187,7 +5849,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "612345"
+          "ExampleValue": "612345",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -5201,7 +5864,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "ADDRESS_ID"
+          "ExampleValue": "ADDRESS_ID",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -5215,7 +5879,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TAX654987-9"
+          "ExampleValue": "TAX654987-9",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -5229,7 +5894,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "TAX_NUMBER"
+          "ExampleValue": "TAX_NUMBER",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -5243,7 +5909,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -5257,7 +5924,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -5271,7 +5939,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -5285,7 +5954,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -5299,7 +5969,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -5313,7 +5984,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -5327,7 +5999,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -5341,7 +6014,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -5355,7 +6029,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5369,7 +6044,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358409922338"
+          "ExampleValue": "+358409922338",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5383,7 +6059,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5397,7 +6074,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358402233441"
+          "ExampleValue": "+358402233441",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5411,7 +6089,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5425,7 +6104,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "ricky@receiver.com"
+          "ExampleValue": "ricky@receiver.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5439,7 +6119,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -5453,7 +6134,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -5467,7 +6149,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PICKUP"
+          "ExampleValue": "PICKUP",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -5481,7 +6164,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "type",
@@ -5495,7 +6179,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "ADDRESS_ID"
+          "ExampleValue": "ADDRESS_ID",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -5509,7 +6194,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Pamela Pickup"
+          "ExampleValue": "Pamela Pickup",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -5523,7 +6209,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -5537,7 +6224,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Pickup address 1"
+          "ExampleValue": "Pickup address 1",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -5551,7 +6239,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -5565,7 +6254,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "20100"
+          "ExampleValue": "20100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -5579,7 +6269,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Turku"
+          "ExampleValue": "Turku",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -5593,7 +6284,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -5607,7 +6299,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Pamela Pickup"
+          "ExampleValue": "Pamela Pickup",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -5621,7 +6314,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5635,7 +6329,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358409998887"
+          "ExampleValue": "+358409998887",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5649,7 +6344,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5663,7 +6359,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358408887776"
+          "ExampleValue": "+358408887776",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5677,7 +6374,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5691,7 +6389,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "pamela@pickup.com"
+          "ExampleValue": "pamela@pickup.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5705,7 +6404,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -5719,7 +6419,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -5733,7 +6434,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "DELIVERY"
+          "ExampleValue": "DELIVERY",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -5747,7 +6449,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Daisy Delivery"
+          "ExampleValue": "Daisy Delivery",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -5761,7 +6464,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -5775,7 +6479,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Delivery address 1"
+          "ExampleValue": "Delivery address 1",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -5789,7 +6494,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -5803,7 +6509,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "33100"
+          "ExampleValue": "33100",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -5817,7 +6524,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Tampere"
+          "ExampleValue": "Tampere",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -5831,7 +6539,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -5845,7 +6554,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Daisy Delivery"
+          "ExampleValue": "Daisy Delivery",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -5859,7 +6569,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5873,7 +6584,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401234345"
+          "ExampleValue": "+358401234345",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5887,7 +6599,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5901,7 +6614,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358403434551"
+          "ExampleValue": "+358403434551",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5915,7 +6629,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -5929,7 +6644,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "daisy@delivery.com"
+          "ExampleValue": "daisy@delivery.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -5943,7 +6659,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "Party",
@@ -5957,7 +6674,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 3,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "role",
@@ -5971,7 +6689,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PAYER"
+          "ExampleValue": "PAYER",
+          "Validations": []
         },
         {
           "Name": "Account",
@@ -5985,7 +6704,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "622334"
+          "ExampleValue": "622334",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -5999,7 +6719,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "CONTRACT"
+          "ExampleValue": "CONTRACT",
+          "Validations": []
         },
         {
           "Name": "Name1",
@@ -6013,7 +6734,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Patrick Payer"
+          "ExampleValue": "Patrick Payer",
+          "Validations": []
         },
         {
           "Name": "Location",
@@ -6027,7 +6749,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Street1",
@@ -6041,7 +6764,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Payer address 1"
+          "ExampleValue": "Payer address 1",
+          "Validations": []
         },
         {
           "Name": "Street2",
@@ -6055,7 +6779,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Street Address 2"
+          "ExampleValue": "Street Address 2",
+          "Validations": []
         },
         {
           "Name": "Postcode",
@@ -6069,7 +6794,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "01300"
+          "ExampleValue": "01300",
+          "Validations": []
         },
         {
           "Name": "City",
@@ -6083,7 +6809,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Tikkurila"
+          "ExampleValue": "Tikkurila",
+          "Validations": []
         },
         {
           "Name": "Country",
@@ -6097,7 +6824,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "ContactName",
@@ -6111,7 +6839,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Patrick Payer"
+          "ExampleValue": "Patrick Payer",
+          "Validations": []
         },
         {
           "Name": "languageCode",
@@ -6125,7 +6854,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "fi"
+          "ExampleValue": "fi",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -6139,7 +6869,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358401122334"
+          "ExampleValue": "+358401122334",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -6153,7 +6884,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "MOBILE"
+          "ExampleValue": "MOBILE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -6167,7 +6899,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "+358400099887"
+          "ExampleValue": "+358400099887",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -6181,7 +6914,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PHONE"
+          "ExampleValue": "PHONE",
+          "Validations": []
         },
         {
           "Name": "ContactChannel",
@@ -6195,7 +6929,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "patrick@payer.com"
+          "ExampleValue": "patrick@payer.com",
+          "Validations": []
         },
         {
           "Name": "channel",
@@ -6209,7 +6944,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EMAIL"
+          "ExampleValue": "EMAIL",
+          "Validations": []
         },
         {
           "Name": "GoodsItems",
@@ -6223,7 +6959,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "GoodsItem",
@@ -6237,7 +6974,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 999,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "PackageQuantity",
@@ -6251,7 +6989,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "type",
@@ -6265,7 +7004,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "PackageMarks",
@@ -6279,7 +7019,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "O-87X"
+          "ExampleValue": "O-87X",
+          "Validations": []
         },
         {
           "Name": "ContentDescription",
@@ -6293,7 +7034,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Beverages"
+          "ExampleValue": "Beverages",
+          "Validations": []
         },
         {
           "Name": "GrossWeight",
@@ -6307,7 +7049,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "750.050"
+          "ExampleValue": "750.050",
+          "Validations": []
         },
         {
           "Name": "Volume",
@@ -6321,7 +7064,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "2.250"
+          "ExampleValue": "2.250",
+          "Validations": []
         },
         {
           "Name": "LoadingMeter",
@@ -6335,7 +7079,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "0.400"
+          "ExampleValue": "0.400",
+          "Validations": []
         },
         {
           "Name": "Length",
@@ -6349,7 +7094,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "100"
+          "ExampleValue": "100",
+          "Validations": []
         },
         {
           "Name": "Width",
@@ -6363,7 +7109,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "150"
+          "ExampleValue": "150",
+          "Validations": []
         },
         {
           "Name": "Height",
@@ -6377,7 +7124,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "150"
+          "ExampleValue": "150",
+          "Validations": []
         },
         {
           "Name": "DangerousGoodsItems",
@@ -6391,7 +7139,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "DangerousGoodsItem",
@@ -6405,7 +7154,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "RegulationsCode",
@@ -6419,7 +7169,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "ADR"
+          "ExampleValue": "ADR",
+          "Validations": []
         },
         {
           "Name": "UnNo",
@@ -6433,7 +7184,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "0016"
+          "ExampleValue": "0016",
+          "Validations": []
         },
         {
           "Name": "MainDanger",
@@ -6447,7 +7199,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2.1"
+          "ExampleValue": "2.1",
+          "Validations": []
         },
         {
           "Name": "SubsidiaryRisk",
@@ -6461,7 +7214,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 3,
-          "ExampleValue": "4.2"
+          "ExampleValue": "4.2",
+          "Validations": []
         },
         {
           "Name": "PackingGroup",
@@ -6475,7 +7229,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "II"
+          "ExampleValue": "II",
+          "Validations": []
         },
         {
           "Name": "NoDgPackages",
@@ -6489,7 +7244,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "PackingDescription",
@@ -6503,7 +7259,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "steel drum"
+          "ExampleValue": "steel drum",
+          "Validations": []
         },
         {
           "Name": "TotalQuantity",
@@ -6517,7 +7274,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "5.000"
+          "ExampleValue": "5.000",
+          "Validations": []
         },
         {
           "Name": "unit",
@@ -6531,7 +7289,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "LTR"
+          "ExampleValue": "LTR",
+          "Validations": []
         },
         {
           "Name": "ProperShippingName",
@@ -6545,7 +7304,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Alcohol, N.O.S."
+          "ExampleValue": "Alcohol, N.O.S.",
+          "Validations": []
         },
         {
           "Name": "TechnicalDescription",
@@ -6559,7 +7319,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Methanol dioxide"
+          "ExampleValue": "Methanol dioxide",
+          "Validations": []
         },
         {
           "Name": "MarinePollutant",
@@ -6573,7 +7334,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "Provisions",
@@ -6587,7 +7349,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Carriage in accordance with 1.1.4.2.1"
+          "ExampleValue": "Carriage in accordance with 1.1.4.2.1",
+          "Validations": []
         },
         {
           "Name": "Waste",
@@ -6601,7 +7364,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "TunnelCode",
@@ -6615,7 +7379,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "C5000D"
+          "ExampleValue": "C5000D",
+          "Validations": []
         },
         {
           "Name": "Empty",
@@ -6629,7 +7394,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "LimitedQuantity",
@@ -6643,7 +7409,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "false"
+          "ExampleValue": "false",
+          "Validations": []
         },
         {
           "Name": "LimitedQuantityWeight",
@@ -6657,7 +7424,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "WasteCode",
@@ -6671,7 +7439,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Packages",
@@ -6685,7 +7454,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "Package",
@@ -6699,7 +7469,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "TrackingNumber",
@@ -6713,7 +7484,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "00123456789012345678"
+          "ExampleValue": "00123456789012345678",
+          "Validations": []
         }
       ]
     },
@@ -6727,6 +7499,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": []
     },
     {
@@ -6739,6 +7512,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": []
     },
     {
@@ -6751,6 +7525,7 @@
       "Type": "Shipment",
       "StartDate": "2022-08-01",
       "ExpirationDate": null,
+      "VersionHistory": [],
       "Records": [
         {
           "Name": "pdfConfig",
@@ -6764,7 +7539,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target1XOffset",
@@ -6778,7 +7554,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target1YOffset",
@@ -6792,7 +7569,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target1Media",
@@ -6806,7 +7584,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target2XOffset",
@@ -6820,7 +7599,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target2YOffset",
@@ -6834,7 +7614,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target2Media",
@@ -6848,7 +7629,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target3XOffset",
@@ -6862,7 +7644,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target3YOffset",
@@ -6876,7 +7659,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target3Media",
@@ -6890,7 +7674,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target4XOffset",
@@ -6904,7 +7689,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target4YOffset",
@@ -6918,7 +7704,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "target4Media",
@@ -6932,7 +7719,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "shipment",
@@ -6946,7 +7734,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "favorite",
@@ -6960,7 +7749,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "freeText1",
@@ -6974,7 +7764,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "orderNo",
@@ -6988,7 +7779,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "parcels",
@@ -7002,7 +7794,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "contents",
@@ -7016,7 +7809,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "copies",
@@ -7030,7 +7824,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "dangerousGoods",
@@ -7044,7 +7839,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "unCode",
@@ -7058,7 +7854,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1234"
+          "ExampleValue": "1234",
+          "Validations": []
         },
         {
           "Name": "hazardCode",
@@ -7072,7 +7869,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "1.1"
+          "ExampleValue": "1.1",
+          "Validations": []
         },
         {
           "Name": "packageCode",
@@ -7086,7 +7884,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "I"
+          "ExampleValue": "I",
+          "Validations": []
         },
         {
           "Name": "description",
@@ -7100,7 +7899,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Dangerous stuff"
+          "ExampleValue": "Dangerous stuff",
+          "Validations": []
         },
         {
           "Name": "adrClass",
@@ -7114,7 +7914,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "netWeight",
@@ -7128,7 +7929,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "12"
+          "ExampleValue": "12",
+          "Validations": []
         },
         {
           "Name": "trCode",
@@ -7142,7 +7944,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "E"
+          "ExampleValue": "E",
+          "Validations": []
         },
         {
           "Name": "quantity",
@@ -7156,7 +7959,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "packageType",
@@ -7170,7 +7974,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "technicalDescr",
@@ -7184,7 +7989,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "mpCode",
@@ -7198,7 +8004,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "limitedQuantities",
@@ -7212,7 +8019,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "receiver",
@@ -7226,7 +8034,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "name",
@@ -7240,7 +8049,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Ricky Receiver"
+          "ExampleValue": "Ricky Receiver",
+          "Validations": []
         },
         {
           "Name": "mobile",
@@ -7254,7 +8064,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "phone",
@@ -7268,7 +8079,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "address1",
@@ -7282,7 +8094,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "zipcode",
@@ -7296,7 +8109,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "city",
@@ -7310,7 +8124,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "country",
@@ -7324,7 +8139,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "sender",
@@ -7338,7 +8154,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "name",
@@ -7352,7 +8169,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Sandy Sender"
+          "ExampleValue": "Sandy Sender",
+          "Validations": []
         },
         {
           "Name": "phone",
@@ -7366,7 +8184,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "mobile",
@@ -7380,7 +8199,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "address1",
@@ -7394,7 +8214,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Keskuskatu 3"
+          "ExampleValue": "Keskuskatu 3",
+          "Validations": []
         },
         {
           "Name": "zipcode",
@@ -7408,7 +8229,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "00100"
+          "ExampleValue": "00100",
+          "Validations": []
         },
         {
           "Name": "city",
@@ -7422,7 +8244,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "Helsinki"
+          "ExampleValue": "Helsinki",
+          "Validations": []
         },
         {
           "Name": "country",
@@ -7436,7 +8259,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FI"
+          "ExampleValue": "FI",
+          "Validations": []
         },
         {
           "Name": "senderPartners",
@@ -7450,7 +8274,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "id",
@@ -7464,7 +8289,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "POSTI"
+          "ExampleValue": "POSTI",
+          "Validations": []
         },
         {
           "Name": "custNo",
@@ -7478,7 +8304,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "654321"
+          "ExampleValue": "654321",
+          "Validations": []
         },
         {
           "Name": "service",
@@ -7492,7 +8319,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "2103"
+          "ExampleValue": "2103",
+          "Validations": []
         },
         {
           "Name": "id",
@@ -7506,7 +8334,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "pickupBooking",
@@ -7520,7 +8349,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "TRUE"
+          "ExampleValue": "TRUE",
+          "Validations": []
         },
         {
           "Name": "pickupDate",
@@ -7534,7 +8364,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "date"
+          "ExampleValue": "date",
+          "Validations": []
         },
         {
           "Name": "pickupTimeFrom",
@@ -7548,7 +8379,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "pickupTimeTo",
@@ -7562,7 +8394,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "time"
+          "ExampleValue": "time",
+          "Validations": []
         },
         {
           "Name": "pickupText1",
@@ -7576,7 +8409,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Instruction"
+          "ExampleValue": "Instruction",
+          "Validations": []
         },
         {
           "Name": "pickupMisc",
@@ -7590,7 +8424,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Reference"
+          "ExampleValue": "Reference",
+          "Validations": []
         },
         {
           "Name": "customsDeclaration",
@@ -7604,7 +8439,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "printSet",
@@ -7618,7 +8454,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Proformaposti"
+          "ExampleValue": "Proformaposti",
+          "Validations": []
         },
         {
           "Name": "InvoiceType",
@@ -7632,7 +8469,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1234567"
+          "ExampleValue": "1234567",
+          "Validations": []
         },
         {
           "Name": "invoiceNo",
@@ -7646,7 +8484,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "STANDARD"
+          "ExampleValue": "STANDARD",
+          "Validations": []
         },
         {
           "Name": "currencyCode",
@@ -7660,7 +8499,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "EUR"
+          "ExampleValue": "EUR",
+          "Validations": []
         },
         {
           "Name": "importExportType",
@@ -7674,7 +8514,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "PERMANENT"
+          "ExampleValue": "PERMANENT",
+          "Validations": []
         },
         {
           "Name": "generalNote1",
@@ -7688,7 +8529,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "generalNote2",
@@ -7702,7 +8544,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "generalNote3",
@@ -7716,7 +8559,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "generalNote4",
@@ -7730,7 +8574,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "lines",
@@ -7744,7 +8589,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 99,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "statNo",
@@ -7758,7 +8604,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "12345678"
+          "ExampleValue": "12345678",
+          "Validations": []
         },
         {
           "Name": "subStatNo1",
@@ -7772,7 +8619,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "copies",
@@ -7786,7 +8634,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "value",
@@ -7800,7 +8649,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "100"
+          "ExampleValue": "100",
+          "Validations": []
         },
         {
           "Name": "contents",
@@ -7814,7 +8664,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "Books"
+          "ExampleValue": "Books",
+          "Validations": []
         },
         {
           "Name": "netWeight",
@@ -7828,7 +8679,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "1"
+          "ExampleValue": "1",
+          "Validations": []
         },
         {
           "Name": "sourceCountryCode",
@@ -7842,7 +8694,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "CH"
+          "ExampleValue": "CH",
+          "Validations": []
         },
         {
           "Name": "normalShipment",
@@ -7856,7 +8709,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "TRUE"
+          "ExampleValue": "TRUE",
+          "Validations": []
         },
         {
           "Name": "pickupBooking",
@@ -7870,7 +8724,8 @@
           "Position": null,
           "RepeatMin": 1,
           "RepeatMax": 1,
-          "ExampleValue": "FALSE"
+          "ExampleValue": "FALSE",
+          "Validations": []
         },
         {
           "Name": "addons",
@@ -7884,7 +8739,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "id",
@@ -7898,7 +8754,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "custNo",
@@ -7912,7 +8769,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "declarant",
@@ -7926,7 +8784,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": null
+          "ExampleValue": null,
+          "Validations": []
         },
         {
           "Name": "amount",
@@ -7940,7 +8799,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "123.50"
+          "ExampleValue": "123.50",
+          "Validations": []
         },
         {
           "Name": "account",
@@ -7954,7 +8814,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "FI2112345600000785"
+          "ExampleValue": "FI2112345600000785",
+          "Validations": []
         },
         {
           "Name": "accounttype",
@@ -7968,7 +8829,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "IBAN"
+          "ExampleValue": "IBAN",
+          "Validations": []
         },
         {
           "Name": "bank",
@@ -7982,7 +8844,8 @@
           "Position": null,
           "RepeatMin": 0,
           "RepeatMax": 1,
-          "ExampleValue": "NDEAFIHH"
+          "ExampleValue": "NDEAFIHH",
+          "Validations": []
         }
       ]
     }
