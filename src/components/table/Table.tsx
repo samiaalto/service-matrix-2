@@ -42,6 +42,13 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
       if (item === value) {
         passed = item;
         break;
+      } else if (
+        value.substring(value.indexOf("-") + 1, value.length) !== "FI" &&
+        item === value.substring(0, value.indexOf("-")) + "-ALL"
+      ) {
+        passed = item;
+        value = value.substring(0, value.indexOf("-")) + "-ALL";
+        break;
       }
     }
     itemRank = rankItem(passed, value);
