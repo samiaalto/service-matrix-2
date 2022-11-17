@@ -364,7 +364,14 @@ const App = (props: AppProps) => {
   };
 
   const handlePudo = () => {
-    updateSearchParams("pudo", !selected.pudo);
+    let updatedSearchParams = new URLSearchParams(params.toString());
+    updatedSearchParams.set("pudo", !selected.pudo === true ? "true" : "false");
+    updatedSearchParams.set(
+      "deliveryLocation",
+      !selected.pudo === true ? "Pickup" : ""
+    );
+    setParams(updatedSearchParams.toString());
+
     setSelected((prevState) => ({
       ...prevState,
       pudo: !prevState.pudo,
@@ -729,8 +736,6 @@ const App = (props: AppProps) => {
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
-      console.log(getBool(URLparams.showSamples));
-
       setSelected((prevState) => ({
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
@@ -746,6 +751,14 @@ const App = (props: AppProps) => {
         lang: lang,
         offCanvasOpen: getBool(URLparams.offCanvasOpen),
         offCanvasTab: URLparams.offCanvasTab,
+        showInstallation: getBool(URLparams.showInstallation),
+        deliveryLocation: getBool(URLparams.pudo)
+          ? "Pickup"
+          : URLparams.deliveryLocation,
+        pudo:
+          getBool(URLparams.pudo) !== undefined
+            ? getBool(URLparams.pudo)
+            : false,
         showSamples:
           getBool(URLparams.showSamples) !== undefined
             ? getBool(URLparams.showSamples)
@@ -756,7 +769,6 @@ const App = (props: AppProps) => {
             : false,
         weight: Number(URLparams.weight),
         width: Number(URLparams.width),
-        deliveryLocation: URLparams.deliveryLocation,
       }));
       if (alertArray.length > 0) {
         GenerateAlert(alertArray, setSelected);

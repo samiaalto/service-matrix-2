@@ -152,7 +152,18 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       for (let item of initialValues) {
         for (let option of item.options) {
           if (option.value === selected.deliveryLocation) {
-            setSelectedValues((prevState) => [...prevState, option]);
+            setSelectedValues((prevState) => {
+              let found = false;
+              const newState = prevState.map((obj) => {
+                if (obj.value === "Pickup") {
+                  found = true;
+                  return { ...obj, option };
+                }
+                return obj;
+              });
+
+              return found ? newState : [...prevState, option];
+            });
           }
         }
       }
@@ -164,7 +175,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         ...prevState.filter((x) => x.value !== "Pickup"),
       ]);
     }
-  }, [selected.deliveryLocation]);
+  }, [selected.pudo]);
 
   const renderSwitch = (param) => {
     switch (param) {
