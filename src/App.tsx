@@ -93,7 +93,7 @@ const App = (props: AppProps) => {
     offCanvasTab: "label",
     showSamples: true,
     showOptional: false,
-    showEquipment: false,
+    showInstallation: false,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -379,10 +379,10 @@ const App = (props: AppProps) => {
     }));
   };
 
-  const handleShowEquipment = () => {
+  const handleShowInstallation = () => {
     setSelected((prevState) => ({
       ...prevState,
-      showEquipment: !prevState.showEquipment,
+      showInstallation: !prevState.showInstallation,
     }));
   };
 
@@ -601,7 +601,8 @@ const App = (props: AppProps) => {
             columnData,
             setColumnVisibility,
             filteredRowData,
-            selected.showEquipment
+            selected,
+            data.additionalServices
           );
         }
       }
@@ -616,7 +617,8 @@ const App = (props: AppProps) => {
     selected.destination,
     selected.serviceFilter,
     selected.addonsFilter,
-    selected.showEquipment,
+    selected.showInstallation,
+    selected.pudo,
   ]);
 
   useEffect(() => {
@@ -1135,10 +1137,10 @@ const App = (props: AppProps) => {
                     <Col className="pickupOptions">
                       <Form.Check
                         type="switch"
-                        id="equipment"
+                        id="installation"
                         label={t("'Show equipment'")}
-                        checked={selected.showEquipment}
-                        onChange={handleShowEquipment}
+                        checked={selected.showInstallation}
+                        onChange={handleShowInstallation}
                       />
                     </Col>
                   </Row>
