@@ -3,10 +3,12 @@ const hideColumn = (
   columnData,
   setColumnVisibility,
   filteredData,
-  showEquipment
+  selected,
+  additionalServices
 ) => {
   let emptyCount = 0;
-  let isEquipment = false;
+  let isInstallation = false;
+  let isAvailable = true;
 
   for (const row of filteredData["rows"]) {
     for (const [key, value] of Object.entries(row.original)) {
@@ -18,7 +20,30 @@ const hideColumn = (
 
   for (let column of columnData) {
     if (column.id === addon && column.footer === "EQUIPMENT") {
-      isEquipment = true;
+      isInstallation = true;
+    }
+  }
+
+  for (let addonService of additionalServices.records) {
+    if (
+      addonService.ServiceCode === addon &&
+      selected.destination !== "" &&
+      typeof selected.destination !== "undefined"
+    ) {
+      if (
+        addonService.AvailableCountries.some(
+          (country) =>
+            country.Country === selected.destination ||
+            country.Country === "ALL"
+        )
+      ) {
+        isAvailable = true;
+      } else {
+        isAvailable = false;
+      }
+    }
+    if (addonService.ServiceCode === addon && selected.pudo) {
+      isAvailable = addonService.Pudo;
     }
   }
 
@@ -27,7 +52,7 @@ const hideColumn = (
     //console.log(addon);
     setColumnVisibility((prevState) => ({ ...prevState, [addon]: false }));
     //setColumnVisibility((prevState) => prevState.map((item, index) => console.log(item)));
-  } else if (isEquipment && !showEquipment) {
+  } else if ((isInstallation && !selected.showInstallation) || !isAvailable) {
     setColumnVisibility((prevState) => ({ ...prevState, [addon]: false }));
   } else {
     //show hidden column
