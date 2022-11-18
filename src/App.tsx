@@ -402,6 +402,8 @@ const App = (props: AppProps) => {
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
     updatedSearchParams.delete("showSamples");
+    updatedSearchParams.delete("deliveryLocation");
+    updatedSearchParams.delete("showInstallation");
     setParams(updatedSearchParams.toString());
 
     setSelected((prevState) => ({
@@ -414,17 +416,18 @@ const App = (props: AppProps) => {
       offCanvasTab: "",
       showOptional: false,
       showSamples: true,
+      deliveryLocation: "",
+      showInstallation: false,
     }));
 
     setReset(true);
   };
 
-  const handleServiceSelection = (index, isSelected, filteredRows) => {
+  const handleServiceSelection = (index, isSelected) => {
     let service;
     let update = [];
-    console.log(isSelected + " " + index);
     if (isSelected) {
-      for (const row of filteredRows["rows"]) {
+      for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
           if (
             row.index !== index &&
@@ -465,7 +468,7 @@ const App = (props: AppProps) => {
       }));
     }
     if (update.length > 0) {
-      console.log(update);
+      //console.log(update);
       setupdateRows(update);
       setSelected((prevState) => ({
         ...prevState,
@@ -1200,9 +1203,6 @@ const App = (props: AppProps) => {
                       service={selected.serviceFilter}
                       addons={selected.addonsFilter}
                       deliveryLocation={selected.deliveryLocation}
-                      openModal={(e) =>
-                        callModal(e, data.services, data.additionalServices)
-                      }
                       route={
                         selected.departure && selected.destination
                           ? selected.departure + "-" + selected.destination
@@ -1215,7 +1215,15 @@ const App = (props: AppProps) => {
                       serviceGroup={selected.serviceGroup}
                       reset={reset}
                       setReset={setReset}
-                      serviceSelection={handleServiceSelection}
+                      handleCellClick={(r: number, c: string, v: any) => {
+                        if (c === "serviceName") {
+                          callModal(v, data.services, data.additionalServices);
+                        } else if (c.substring(0, 5) === "modal") {
+                          callModal(v, data.services, data.additionalServices);
+                        } else if (c === "serviceButton") {
+                          handleServiceSelection(r, !v);
+                        }
+                      }}
                     />
                   </div>
                 ) : (

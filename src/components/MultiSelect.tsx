@@ -39,10 +39,6 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   }, [data]);
 
   useEffect(() => {
-    console.log(selectedValues);
-  }, [selectedValues]);
-
-  useEffect(() => {
     let options = [];
     if (!preset && initialValues.length > 0) {
       setPreset(true);
