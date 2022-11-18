@@ -39,9 +39,10 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   }, [data]);
 
   useEffect(() => {
+    let options = [];
     if (!preset && initialValues.length > 0) {
       setPreset(true);
-      let options = [];
+
       for (let item of initialValues) {
         if (
           item.label === "Departure Country" &&
@@ -91,7 +92,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         }
         if (
           item.label === "Delivery Location" &&
-          typeof selected.width !== "undefined"
+          typeof selected.deliveryLocation !== "undefined"
         ) {
           for (let option of item.options) {
             if (option.value === selected.deliveryLocation) {
@@ -132,11 +133,45 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
           }
         }
       }
-      if (options.length > 0) {
-        setSelectedValues(options);
-      }
+    }
+
+    if (options.length > 0) {
+      setSelectedValues(options);
     }
   }, [selected]);
+
+  useEffect(() => {
+    if (
+      typeof selected.deliveryLocation !== "undefined" &&
+      selected.deliveryLocation !== ""
+    ) {
+      for (let item of initialValues) {
+        for (let option of item.options) {
+          if (option.value === selected.deliveryLocation) {
+            setSelectedValues((prevState) => {
+              let found = false;
+              const newState = prevState.map((obj) => {
+                if (obj.value === "Pickup") {
+                  found = true;
+                  return { ...obj, option };
+                }
+                return obj;
+              });
+
+              return found ? newState : [...prevState, option];
+            });
+          }
+        }
+      }
+    } else if (
+      typeof selected.deliveryLocation === "undefined" ||
+      selected.deliveryLocation === ""
+    ) {
+      setSelectedValues((prevState) => [
+        ...prevState.filter((x) => x.value !== "Pickup"),
+      ]);
+    }
+  }, [selected.pudo]);
 
   const renderSwitch = (param) => {
     switch (param) {

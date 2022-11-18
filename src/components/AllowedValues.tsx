@@ -12,16 +12,19 @@ const AllowedValues = ({ data, t }) => {
     <>
       <div className="value-list">
         <div className="value-header">Allowed values:</div>
-        <ul>
-          {listItems.slice(0, loadCount).map((item, i) => (
-            <li key={i} className="list-item">
-              {item.substring(0, item.indexOf("-")) +
-                " (" +
-                t(item.substring(item.indexOf("-") + 1, item.length)) +
-                ")"}
-            </li>
-          ))}
-        </ul>
+        <div className="list-header-code">Value</div>
+        <div className="list-header-desc">Description</div>
+        {listItems.slice(0, loadCount).map((item, i) => (
+          <div key={i} className="list-item">
+            <div className="item-code">
+              {item.substring(0, item.indexOf("-"))}
+            </div>
+            <div className="item-desc">
+              {t(item.substring(item.indexOf("-") + 1, item.length))}
+            </div>
+          </div>
+        ))}
+
         {listItems.length > showItem ? (
           <Button
             className="ff-showlist"

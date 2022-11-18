@@ -8,7 +8,7 @@ import countriesJSON from "./countries.json";
 import fileFormatsJSON from "./fileFormats.json";
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams, Route, Routes, useNavigate } from "react-router-dom";
 import {
@@ -364,7 +364,14 @@ const App = (props: AppProps) => {
   };
 
   const handlePudo = () => {
-    updateSearchParams("pudo", !selected.pudo);
+    let updatedSearchParams = new URLSearchParams(params.toString());
+    updatedSearchParams.set("pudo", !selected.pudo === true ? "true" : "false");
+    updatedSearchParams.set(
+      "deliveryLocation",
+      !selected.pudo === true ? "Pickup" : ""
+    );
+    setParams(updatedSearchParams.toString());
+
     setSelected((prevState) => ({
       ...prevState,
       pudo: !prevState.pudo,
@@ -395,6 +402,8 @@ const App = (props: AppProps) => {
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
     updatedSearchParams.delete("showSamples");
+    updatedSearchParams.delete("deliveryLocation");
+    updatedSearchParams.delete("showInstallation");
     setParams(updatedSearchParams.toString());
 
     setSelected((prevState) => ({
@@ -407,17 +416,18 @@ const App = (props: AppProps) => {
       offCanvasTab: "",
       showOptional: false,
       showSamples: true,
+      deliveryLocation: "",
+      showInstallation: false,
     }));
 
     setReset(true);
   };
 
-  const handleServiceSelection = (index, isSelected, filteredRows) => {
+  const handleServiceSelection = (index, isSelected) => {
     let service;
     let update = [];
-    console.log(isSelected + " " + index);
     if (isSelected) {
-      for (const row of filteredRows["rows"]) {
+      for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
           if (
             row.index !== index &&
@@ -458,7 +468,7 @@ const App = (props: AppProps) => {
       }));
     }
     if (update.length > 0) {
-      console.log(update);
+      //console.log(update);
       setupdateRows(update);
       setSelected((prevState) => ({
         ...prevState,
@@ -729,8 +739,6 @@ const App = (props: AppProps) => {
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
-      console.log(getBool(URLparams.showSamples));
-
       setSelected((prevState) => ({
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
@@ -746,6 +754,14 @@ const App = (props: AppProps) => {
         lang: lang,
         offCanvasOpen: getBool(URLparams.offCanvasOpen),
         offCanvasTab: URLparams.offCanvasTab,
+        showInstallation: getBool(URLparams.showInstallation),
+        deliveryLocation: getBool(URLparams.pudo)
+          ? "Pickup"
+          : URLparams.deliveryLocation,
+        pudo:
+          getBool(URLparams.pudo) !== undefined
+            ? getBool(URLparams.pudo)
+            : false,
         showSamples:
           getBool(URLparams.showSamples) !== undefined
             ? getBool(URLparams.showSamples)
@@ -756,7 +772,6 @@ const App = (props: AppProps) => {
             : false,
         weight: Number(URLparams.weight),
         width: Number(URLparams.width),
-        deliveryLocation: URLparams.deliveryLocation,
       }));
       if (alertArray.length > 0) {
         GenerateAlert(alertArray, setSelected);
@@ -917,6 +932,19 @@ const App = (props: AppProps) => {
     }));
     updateSearchParams("showSamples", !selected.showSamples);
   };
+
+  const onHandleCellClick = useCallback(
+    (r: number, c: string, v: any) => {
+      if (c === "serviceName") {
+        callModal(v, data.services, data.additionalServices);
+      } else if (c.substring(0, 5) === "modal") {
+        callModal(v, data.services, data.additionalServices);
+      } else if (c === "serviceButton") {
+        handleServiceSelection(r, !v);
+      }
+    },
+    [filteredRowData]
+  );
 
   return (
     <div className="App">
@@ -1188,9 +1216,6 @@ const App = (props: AppProps) => {
                       service={selected.serviceFilter}
                       addons={selected.addonsFilter}
                       deliveryLocation={selected.deliveryLocation}
-                      openModal={(e) =>
-                        callModal(e, data.services, data.additionalServices)
-                      }
                       route={
                         selected.departure && selected.destination
                           ? selected.departure + "-" + selected.destination
@@ -1203,7 +1228,7 @@ const App = (props: AppProps) => {
                       serviceGroup={selected.serviceGroup}
                       reset={reset}
                       setReset={setReset}
-                      serviceSelection={handleServiceSelection}
+                      handleCellClick={onHandleCellClick}
                     />
                   </div>
                 ) : (

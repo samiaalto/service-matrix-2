@@ -76,8 +76,12 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
         for (let service of services.records) {
           for (let format of service.Fields) {
             if (
-              format.MessageFormat === record.Name &&
-              format.PropertyName === attribute.Name
+              (format.MessageFormat === record.Name &&
+                format.PropertyName === attribute.Name &&
+                format.MessagePosition === null) ||
+              (format.MessageFormat === record.Name &&
+                format.PropertyName === attribute.Name &&
+                format.MessagePosition === parent)
             ) {
               tooltip.push(format.PropertyValue + "-" + service.ServiceCode);
             }

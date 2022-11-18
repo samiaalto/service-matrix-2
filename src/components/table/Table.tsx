@@ -42,6 +42,13 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
       if (item === value) {
         passed = item;
         break;
+      } else if (
+        value.substring(value.indexOf("-") + 1, value.length) !== "FI" &&
+        item === value.substring(0, value.indexOf("-")) + "-ALL"
+      ) {
+        passed = item;
+        value = value.substring(0, value.indexOf("-")) + "-ALL";
+        break;
       }
     }
     itemRank = rankItem(passed, value);
@@ -100,7 +107,6 @@ function TanStackTable({
   defaultData,
   defaultColumns,
   hiddenColumns,
-  openModal,
   filteredRows,
   selection,
   updateRows,
@@ -113,7 +119,7 @@ function TanStackTable({
   route,
   reset,
   setReset,
-  serviceSelection,
+  handleCellClick,
 }) {
   const [data, setData] = useState(() => [...defaultData]);
   const [rows, setRows] = useState(0);
@@ -141,9 +147,9 @@ function TanStackTable({
     getFilteredRowModel: getFilteredRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: true,
+    debugTable: false,
+    debugHeaders: false,
+    debugColumns: false,
     meta: {
       updateData: (rowIndex, columnId, value) => {
         // Skip index reset until after next rerender
@@ -171,19 +177,21 @@ function TanStackTable({
     },
   });
 
-  const onCellClick = useCallback((rowIndex, columnId, value) => {
-    //setActiveRow(rowIndex);
-    if (columnId === "serviceName") {
-      openModal(value);
-    } else if (columnId.substring(0, 5) === "modal") {
-      openModal(value);
-    } else if (columnId === "serviceButton") {
-      serviceSelection(rowIndex, !value, table.getFilteredRowModel());
-    } else if (columnId !== "serviceCode") {
-      table.options.meta?.updateData(rowIndex, columnId, !value);
-      table.options.meta?.selection(rowIndex, columnId, !value);
-    }
-  }, []);
+  const onCellClick = useCallback(
+    (rowIndex, columnId, value) => {
+      if (
+        columnId !== "serviceCode" &&
+        columnId !== "serviceName" &&
+        columnId !== "serviceButton"
+      ) {
+        table.options.meta?.updateData(rowIndex, columnId, !value);
+        table.options.meta?.selection(rowIndex, columnId, !value);
+      } else {
+        handleCellClick(rowIndex, columnId, value);
+      }
+    },
+    [handleCellClick]
+  );
 
   useEffect(() => {
     filteredRows(table.getPreFilteredRowModel());
