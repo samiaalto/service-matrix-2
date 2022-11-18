@@ -147,9 +147,9 @@ function TanStackTable({
     getFilteredRowModel: getFilteredRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: true,
+    debugTable: false,
+    debugHeaders: false,
+    debugColumns: false,
     meta: {
       updateData: (rowIndex, columnId, value) => {
         // Skip index reset until after next rerender
@@ -177,20 +177,21 @@ function TanStackTable({
     },
   });
 
-  // const onCellClick = useCallback((rowIndex, columnId, value) => {
-  //   console.log(rowIndex, columnId, value);
-  //   //setActiveRow(rowIndex);
-  //   if (columnId === "serviceName") {
-  //     openModal(value);
-  //   } else if (columnId.substring(0, 5) === "modal") {
-  //     openModal(value);
-  //   } else if (columnId === "serviceButton") {
-  //     serviceSelection(rowIndex, !value, table.getFilteredRowModel());
-  //   } else if (columnId !== "serviceCode") {
-  //     table.options.meta?.updateData(rowIndex, columnId, !value);
-  //     table.options.meta?.selection(rowIndex, columnId, !value);
-  //   }
-  // }, []);
+  const onCellClick = useCallback(
+    (rowIndex, columnId, value) => {
+      if (
+        columnId !== "serviceCode" &&
+        columnId !== "serviceName" &&
+        columnId !== "serviceButton"
+      ) {
+        table.options.meta?.updateData(rowIndex, columnId, !value);
+        table.options.meta?.selection(rowIndex, columnId, !value);
+      } else {
+        handleCellClick(rowIndex, columnId, value);
+      }
+    },
+    [handleCellClick]
+  );
 
   useEffect(() => {
     filteredRows(table.getPreFilteredRowModel());
@@ -265,7 +266,7 @@ function TanStackTable({
                     key={headerGroup.id}
                     headerGroup={headerGroup}
                     allCols={table.getAllColumns()}
-                    onCellClick={handleCellClick}
+                    onCellClick={onCellClick}
                   />
                 );
               })}
@@ -277,7 +278,7 @@ function TanStackTable({
                     t={t}
                     key={row.index}
                     row={row}
-                    onCellClick={handleCellClick}
+                    onCellClick={onCellClick}
                     highlightRow={row.index + 2}
                   />
                 );

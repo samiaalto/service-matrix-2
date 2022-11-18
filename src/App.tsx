@@ -8,7 +8,7 @@ import countriesJSON from "./countries.json";
 import fileFormatsJSON from "./fileFormats.json";
 import React from "react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams, Route, Routes, useNavigate } from "react-router-dom";
 import {
@@ -933,6 +933,19 @@ const App = (props: AppProps) => {
     updateSearchParams("showSamples", !selected.showSamples);
   };
 
+  const onHandleCellClick = useCallback(
+    (r: number, c: string, v: any) => {
+      if (c === "serviceName") {
+        callModal(v, data.services, data.additionalServices);
+      } else if (c.substring(0, 5) === "modal") {
+        callModal(v, data.services, data.additionalServices);
+      } else if (c === "serviceButton") {
+        handleServiceSelection(r, !v);
+      }
+    },
+    [filteredRowData]
+  );
+
   return (
     <div className="App">
       <Alert t={t} data={selected.alertData} />
@@ -1215,15 +1228,7 @@ const App = (props: AppProps) => {
                       serviceGroup={selected.serviceGroup}
                       reset={reset}
                       setReset={setReset}
-                      handleCellClick={(r: number, c: string, v: any) => {
-                        if (c === "serviceName") {
-                          callModal(v, data.services, data.additionalServices);
-                        } else if (c.substring(0, 5) === "modal") {
-                          callModal(v, data.services, data.additionalServices);
-                        } else if (c === "serviceButton") {
-                          handleServiceSelection(r, !v);
-                        }
-                      }}
+                      handleCellClick={onHandleCellClick}
                     />
                   </div>
                 ) : (
