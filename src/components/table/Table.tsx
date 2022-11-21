@@ -182,7 +182,8 @@ function TanStackTable({
       if (
         columnId !== "serviceCode" &&
         columnId !== "serviceName" &&
-        columnId !== "serviceButton"
+        columnId !== "serviceButton" &&
+        columnId.substring(0, 5) !== "modal"
       ) {
         table.options.meta?.updateData(rowIndex, columnId, !value);
         table.options.meta?.selection(rowIndex, columnId, !value);

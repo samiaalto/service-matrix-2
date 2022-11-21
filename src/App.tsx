@@ -935,6 +935,7 @@ const App = (props: AppProps) => {
 
   const onHandleCellClick = useCallback(
     (r: number, c: string, v: any) => {
+      console.log(c + " " + r + " " + v);
       if (c === "serviceName") {
         callModal(v, data.services, data.additionalServices);
       } else if (c.substring(0, 5) === "modal") {
