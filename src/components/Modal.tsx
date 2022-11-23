@@ -2,6 +2,32 @@ import { Modal, Button, Row, Col, Table, Tabs, Tab } from "react-bootstrap";
 import "./styles/Modal_styles.css";
 import ServiceDimensions from "./ServiceDimensions";
 
+interface Dimension {
+  MinHeight_cm: number;
+  MaxHeight_cm: number;
+  MinWidth_cm: number;
+  MaxWidth_cm: number;
+  MinDepth_cm: number;
+  MaxDepth_cm: number;
+  MinWeight_kg: number;
+  MaxWeight_kg: number;
+  Circumference_cm: number;
+  MessageFormat: string;
+  PackageType: string;
+  DisplayNameEN: string;
+  AdditionalServiceCode: any;
+  DimensionName: string;
+}
+
+interface Route {
+  DepartureCountry: string;
+  DestinationCountry: string;
+}
+
+interface Addon {
+  addon: string;
+}
+
 const ModalWindow = ({
   openModal,
   closeModal,
@@ -21,74 +47,216 @@ const ModalWindow = ({
           {data.description && data.dimensions ? (
             <>
               <Row>
-                <Col className="modal-text-header">{t("Description")}</Col>
-                <Col className="modal-text-header">{t("Dimensions")}</Col>
+                <Col className="modal-text-header left">{t("Description")}</Col>
+                <Col className="modal-text-header right">{t("Dimensions")}</Col>
               </Row>
               <Row className="modal-text">
-                <Col> {t(data.description)}</Col>
+                <Col>
+                  {t(data.description)}
+                  {data.availability ? (
+                    <>
+                      <Row>
+                        <Col className="modal-text-header">
+                          {t("Availability")}
+                        </Col>
+                      </Row>
+                      {data.availability.pudo && data.availability.home ? (
+                        <Row>
+                          <Col className="modal-text">{t("BOTH")}</Col>
+                        </Row>
+                      ) : (
+                        ""
+                      )}
+                      {!data.availability.pudo && data.availability.home ? (
+                        <Row>
+                          <Col className="modal-text">{t("HOME")}</Col>
+                        </Row>
+                      ) : (
+                        ""
+                      )}
+                      {data.availability.pudo && !data.availability.home ? (
+                        <Row>
+                          <Col className="modal-text">{t("PUDO")}</Col>
+                        </Row>
+                      ) : (
+                        ""
+                      )}
+                      {!data.availability.pudo &&
+                      !data.availability.home &&
+                      data.availability.business ? (
+                        <Row>
+                          <Col className="modal-text">{t("BUSINESS")}</Col>
+                        </Row>
+                      ) : (
+                        ""
+                      )}
+                    </>
+                  ) : (
+                    ""
+                  )}
+
+                  {data.routes ? (
+                    <>
+                      <Row>
+                        <Col className="modal-text-header">{t("Routes")}</Col>
+                      </Row>
+                      <Row>
+                        <Col className="routes-table">
+                          <Table className="modal-table">
+                            <thead>
+                              <tr key={"routes_header"}>
+                                <th key={"routes_departure"}>
+                                  {t("Departure")}
+                                </th>
+                                <th key={"routes_destination"}>
+                                  {t("Destination")}
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {data.routes.map((route: Route, i: number) => (
+                                <tr key={"row_" + i}>
+                                  <td key={"dep_" + i}>
+                                    {t(route.DepartureCountry)}
+                                  </td>
+                                  <td key={"des_" + i}>
+                                    {t(route.DestinationCountry)}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </Table>
+                        </Col>
+                      </Row>
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </Col>
                 <Col>
                   <Row className="modal-dimensions-svg">
                     <ServiceDimensions
                       service={data.title}
                       dimensions={data.dimensions}
+                      t={t}
                     />
                   </Row>
-                  <Table className="modal-table">
+                  <Table className="modal-table dimension-table">
                     <thead>
-                      <tr>
-                        <td></td>
-                        {data.dimensions.map((dimension, i) => (
-                          <td>{dimension.PackageType}</td>
-                        ))}
+                      <tr key={"dimensions_table_header"}>
+                        <td key={"dimension_type_header"}></td>
+                        {data.dimensions.map(
+                          (dimension: Dimension, i: number) =>
+                            dimension.MinHeight_cm !== null ? (
+                              <td
+                                className="dimensions_table_header"
+                                key={"dimension_type_" + i}
+                              >
+                                {dimension.AdditionalServiceCode !== null
+                                  ? dimension.DisplayNameEN +
+                                    " with " +
+                                    t(dimension.AdditionalServiceCode.Addon)
+                                  : dimension.DimensionName.indexOf("locker") >
+                                    -1
+                                  ? dimension.DisplayNameEN +
+                                    " to parcel locker"
+                                  : dimension.DisplayNameEN}
+                              </td>
+                            ) : (
+                              ""
+                            )
+                        )}
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>{t("Height") + " (cm)"}</td>
-                        {data.dimensions.map((dimension) => (
-                          <td>
-                            {dimension.MinHeight_cm +
-                              "-" +
-                              dimension.MaxHeight_cm}
+                      <tr key={"dimensions_height"}>
+                        <td key={"dimension_height_header"}>
+                          {t("Height") + " (cm)"}
+                        </td>
+                        {data.dimensions.map(
+                          (dimension: Dimension, i: number) =>
+                            dimension.MinHeight_cm !== null ? (
+                              <td key={"dimension_height_" + i}>
+                                {dimension.MinHeight_cm +
+                                  "-" +
+                                  dimension.MaxHeight_cm}
+                              </td>
+                            ) : (
+                              ""
+                            )
+                        )}
+                      </tr>
+                      <tr key={"dimensions_width"}>
+                        <td key={"dimension_width_header"}>
+                          {t("Width") + " (cm)"}
+                        </td>
+                        {data.dimensions.map(
+                          (dimension: Dimension, i: number) =>
+                            dimension.MinWidth_cm !== null ? (
+                              <td key={"dimension_width_" + i}>
+                                {dimension.MinWidth_cm +
+                                  "-" +
+                                  dimension.MaxWidth_cm}
+                              </td>
+                            ) : (
+                              ""
+                            )
+                        )}
+                      </tr>
+                      <tr key={"dimensions_depth"}>
+                        <td key={"dimension_depth_header"}>
+                          {t("Depth") + " (cm)"}
+                        </td>
+                        {data.dimensions.map(
+                          (dimension: Dimension, i: number) =>
+                            dimension.MinDepth_cm !== null ? (
+                              <td key={"dimension_depth_" + i}>
+                                {dimension.MinDepth_cm +
+                                  "-" +
+                                  dimension.MaxDepth_cm}
+                              </td>
+                            ) : (
+                              ""
+                            )
+                        )}
+                      </tr>
+                      <tr key={"dimensions_weight"}>
+                        <td key={"dimension_weight_header"}>
+                          {t("Weight") + " (kg)"}
+                        </td>
+                        {data.dimensions.map(
+                          (dimension: Dimension, i: number) =>
+                            dimension.MinHeight_cm !== null ? (
+                              <td key={"dimension_weight_" + i}>
+                                {dimension.MinWeight_kg +
+                                  "-" +
+                                  dimension.MaxWeight_kg}
+                              </td>
+                            ) : (
+                              ""
+                            )
+                        )}
+                      </tr>
+                      {data.dimensions.some(
+                        (e) => e.Circumference_cm !== null
+                      ) ? (
+                        <tr key={"dimensions_circumference"}>
+                          <td key={"dimension_circumference_header"}>
+                            {t("Cirmumference") + " (cm)"}
                           </td>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>{t("Width") + " (cm)"}</td>
-                        {data.dimensions.map((dimension) => (
-                          <td>
-                            {dimension.MinWidth_cm +
-                              "-" +
-                              dimension.MaxWidth_cm}
-                          </td>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>{t("Depth") + " (cm)"}</td>
-                        {data.dimensions.map((dimension) => (
-                          <td>
-                            {dimension.MinDepth_cm +
-                              "-" +
-                              dimension.MaxDepth_cm}
-                          </td>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>{t("Weight") + " (kg)"}</td>
-                        {data.dimensions.map((dimension) => (
-                          <td>
-                            {dimension.MinWeight_kg +
-                              "-" +
-                              dimension.MaxWeight_kg}
-                          </td>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>{t("Cirmumference") + " (cm)"}</td>
-                        {data.dimensions.map((dimension) => (
-                          <td>{dimension.Circumference_cm}</td>
-                        ))}
-                      </tr>
+                          {data.dimensions.map(
+                            (dimension: Dimension, i: number) => (
+                              <td key={"dimension_circumference_" + i}>
+                                {dimension.Circumference_cm !== null
+                                  ? dimension.Circumference_cm
+                                  : ""}
+                              </td>
+                            )
+                          )}
+                        </tr>
+                      ) : (
+                        ""
+                      )}
                     </tbody>
                   </Table>
                 </Col>
@@ -104,71 +272,6 @@ const ModalWindow = ({
               </Row>
               <Row className="modal-text">
                 <Col> {t(data.description)}</Col>
-              </Row>
-            </>
-          ) : (
-            ""
-          )}
-          {data.availability ? (
-            <>
-              <Row>
-                <Col className="modal-text-header">{t("Availability")}</Col>
-              </Row>
-              {data.availability.pudo && data.availability.home ? (
-                <Row>
-                  <Col className="modal-text">{t("BOTH")}</Col>
-                </Row>
-              ) : (
-                ""
-              )}
-              {!data.availability.pudo && data.availability.home ? (
-                <Row>
-                  <Col className="modal-text">{t("HOME")}</Col>
-                </Row>
-              ) : (
-                ""
-              )}
-              {data.availability.pudo && !data.availability.home ? (
-                <Row>
-                  <Col className="modal-text">{t("PUDO")}</Col>
-                </Row>
-              ) : (
-                ""
-              )}
-              {!data.availability.pudo && !data.availability.home ? (
-                <Row>
-                  <Col className="modal-text">{t("NONE")}</Col>
-                </Row>
-              ) : (
-                ""
-              )}
-            </>
-          ) : (
-            ""
-          )}
-
-          {data.routes ? (
-            <>
-              <Row>
-                <Col className="modal-text-header">{t("Routes")}</Col>
-              </Row>
-              <Row>
-                <Table className="modal-table">
-                  <thead>
-                    <tr>
-                      <th>{t("Departure")}</th>
-                      <th>{t("Destination")}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.routes.map((route) => (
-                      <tr>
-                        <td>{t(route.DepartureCountry)}</td>
-                        <td>{t(route.DestinationCountry)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </Table>
               </Row>
             </>
           ) : (
@@ -190,6 +293,25 @@ const ModalWindow = ({
             ""
           )}
 
+          {data.countries ? (
+            <>
+              <Row>
+                <Col className="modal-text-header">
+                  {t("'Available Countries'")}
+                </Col>
+              </Row>
+              {data.countries.map((country, i: number) => (
+                <Row key={"country_row_" + i}>
+                  <Col key={"country_" + i}>
+                    {t(country) + " (" + country + ")"}
+                  </Col>
+                </Row>
+              ))}
+            </>
+          ) : (
+            ""
+          )}
+
           {data.excluded ? (
             <>
               <Row>
@@ -197,9 +319,11 @@ const ModalWindow = ({
                   {t("'Excluded Additional Services'")}
                 </Col>
               </Row>
-              {data.excluded.map((addon) => (
-                <Row>
-                  <Col>{t(addon) + " (" + addon + ")"}</Col>
+              {data.excluded.map((addon: Addon, i: number) => (
+                <Row key={"excluded_row_" + i}>
+                  <Col key={"excluded_addon_" + i}>
+                    {t(addon) + " (" + addon + ")"}
+                  </Col>
                 </Row>
               ))}
             </>
@@ -230,26 +354,58 @@ const ModalWindow = ({
                   <Tab eventKey="postra" title="Postra">
                     <Table className="modal-tech-table">
                       <thead>
-                        <tr>
-                          <td>{t("'Attribute Name'")}</td>
-                          <td className="attribute_title">{t("Attribute")}</td>
-                          <td className="mandatory_title">{t("Mandatory")}</td>
-                          <td>{t("'Additional Information'")}</td>
-                          <td className="example_title">{t("Example")}</td>
+                        <tr key={"fields_header"}>
+                          <td key={"fields_header_name"}>
+                            {t("'Attribute Name'")}
+                          </td>
+                          <td
+                            key={"fields_header_title"}
+                            className="attribute_title"
+                          >
+                            {t("Attribute")}
+                          </td>
+                          <td
+                            key={"fields_header_mandatory"}
+                            className="mandatory_title"
+                          >
+                            {t("Mandatory")}
+                          </td>
+                          <td key={"fields_header_additional"}>
+                            {t("'Additional Information'")}
+                          </td>
+                          <td
+                            key={"fields_header_example"}
+                            className="example_title"
+                          >
+                            {t("Example")}
+                          </td>
                         </tr>
                       </thead>
                       <tbody>
-                        {data.fields.POSTRA.map((item) => (
-                          <tr>
-                            <td></td>
-                            <td className="attribute_col">
+                        {data.fields.POSTRA.map((item, i) => (
+                          <tr key={"field_row_" + i}>
+                            <td key={"field_name_" + i}></td>
+                            <td
+                              key={"field_attribute_" + i}
+                              className="attribute_col"
+                            >
                               {item.PropertyName}
                             </td>
-                            <td className="mandatory_col">
+                            <td
+                              key={"field_mandatory_" + i}
+                              className="mandatory_col"
+                            >
                               {item.Mandatory ? t("TRUE") : t("FALSE")}
                             </td>
-                            <td>{item.AdditionalInfo}</td>
-                            <td className="example_col">{item.Sample}</td>
+                            <td key={"field_additional_" + i}>
+                              {item.AdditionalInfo}
+                            </td>
+                            <td
+                              key={"field_example_" + i}
+                              className="example_col"
+                            >
+                              {item.Sample}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
@@ -262,22 +418,58 @@ const ModalWindow = ({
                   <Tab eventKey="smartship" title="Smartship">
                     <Table className="modal-table">
                       <thead>
-                        <tr>
-                          <td>{t("'Attribute Name'")}</td>
-                          <td>{t("Attribute")}</td>
-                          <td>{t("Mandatory")}</td>
-                          <td>{t("'Additional Information'")}</td>
-                          <td>{t("Example")}</td>
+                        <tr key={"fields_header"}>
+                          <td key={"fields_header_name"}>
+                            {t("'Attribute Name'")}
+                          </td>
+                          <td
+                            key={"fields_header_title"}
+                            className="attribute_title"
+                          >
+                            {t("Attribute")}
+                          </td>
+                          <td
+                            key={"fields_header_mandatory"}
+                            className="mandatory_title"
+                          >
+                            {t("Mandatory")}
+                          </td>
+                          <td key={"fields_header_additional"}>
+                            {t("'Additional Information'")}
+                          </td>
+                          <td
+                            key={"fields_header_example"}
+                            className="example_title"
+                          >
+                            {t("Example")}
+                          </td>
                         </tr>
                       </thead>
                       <tbody>
-                        {data.fields.SMARTSHIP.map((item) => (
-                          <tr>
-                            <td></td>
-                            <td>{item.PropertyName}</td>
-                            <td>{item.Mandatory ? t("TRUE") : t("FALSE")}</td>
-                            <td>{item.AdditionalInfo}</td>
-                            <td>{item.Sample}</td>
+                        {data.fields.SMARTSHIP.map((item, i) => (
+                          <tr key={"field_row_" + i}>
+                            <td key={"field_name_" + i}></td>
+                            <td
+                              key={"field_attribute_" + i}
+                              className="attribute_col"
+                            >
+                              {item.PropertyName}
+                            </td>
+                            <td
+                              key={"field_mandatory_" + i}
+                              className="mandatory_col"
+                            >
+                              {item.Mandatory ? t("TRUE") : t("FALSE")}
+                            </td>
+                            <td key={"field_additional_" + i}>
+                              {item.AdditionalInfo}
+                            </td>
+                            <td
+                              key={"field_example_" + i}
+                              className="example_col"
+                            >
+                              {item.Sample}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
@@ -291,22 +483,58 @@ const ModalWindow = ({
                   <Tab eventKey="waybil" title="Waybild16a">
                     <Table className="modal-table">
                       <thead>
-                        <tr>
-                          <td>{t("'Attribute Name'")}</td>
-                          <td>{t("Attribute")}</td>
-                          <td>{t("Mandatory")}</td>
-                          <td>{t("'Additional Information'")}</td>
-                          <td>{t("Example")}</td>
+                        <tr key={"fields_header"}>
+                          <td key={"fields_header_name"}>
+                            {t("'Attribute Name'")}
+                          </td>
+                          <td
+                            key={"fields_header_title"}
+                            className="attribute_title"
+                          >
+                            {t("Attribute")}
+                          </td>
+                          <td
+                            key={"fields_header_mandatory"}
+                            className="mandatory_title"
+                          >
+                            {t("Mandatory")}
+                          </td>
+                          <td key={"fields_header_additional"}>
+                            {t("'Additional Information'")}
+                          </td>
+                          <td
+                            key={"fields_header_example"}
+                            className="example_title"
+                          >
+                            {t("Example")}
+                          </td>
                         </tr>
                       </thead>
                       <tbody>
-                        {data.fields.WAYBILD16A.map((item) => (
-                          <tr>
-                            <td></td>
-                            <td>{item.PropertyName}</td>
-                            <td>{item.Mandatory ? t("TRUE") : t("FALSE")}</td>
-                            <td>{item.AdditionalInfo}</td>
-                            <td>{item.Sample}</td>
+                        {data.fields.WAYBILD16A.map((item, i) => (
+                          <tr key={"field_row_" + i}>
+                            <td key={"field_name_" + i}></td>
+                            <td
+                              key={"field_attribute_" + i}
+                              className="attribute_col"
+                            >
+                              {item.PropertyName}
+                            </td>
+                            <td
+                              key={"field_mandatory_" + i}
+                              className="mandatory_col"
+                            >
+                              {item.Mandatory ? t("TRUE") : t("FALSE")}
+                            </td>
+                            <td key={"field_additional_" + i}>
+                              {item.AdditionalInfo}
+                            </td>
+                            <td
+                              key={"field_example_" + i}
+                              className="example_col"
+                            >
+                              {item.Sample}
+                            </td>
                           </tr>
                         ))}
                       </tbody>

@@ -5,7 +5,7 @@
 }
 
 .modal-dialog {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
 }
 
@@ -21,6 +21,9 @@
   padding-top: 0;
   padding-bottom: 0;
   background-color: #fff;
+  max-height: calc(100vh - 180px) !important;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-backdrop {
@@ -63,7 +66,16 @@
 }
 
 .modal-table {
-  max-width: 1100px !important;
+  max-width: 550px !important;
+}
+
+.dimensions_table_header {
+  font-weight: 600;
+  max-width: 60px;
+}
+
+.routes-table {
+  max-height: 400px !important;
   overflow: auto;
 }
 

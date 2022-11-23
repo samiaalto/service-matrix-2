@@ -97,7 +97,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -108,7 +110,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2004"
+          "PropertyValue": "2004",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -117,15 +121,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "POF1"
+          "PropertyValue": "POF1",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "BUN",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": null,
+          "DisplayNameEN": "Bundle",
+          "DisplayNameFI": "Nippu",
           "DescriptionEN": "Bundle",
           "DescriptionFI": "Nippu, kimppu",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -139,9 +148,12 @@
         },
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -155,9 +167,12 @@
         },
         {
           "PackageType": "CG",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": null,
+          "DisplayNameEN": "Cage",
+          "DisplayNameFI": "Häkki",
           "DescriptionEN": "Cage",
           "DescriptionFI": "Häkki",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -171,9 +186,12 @@
         },
         {
           "PackageType": "CW",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": "Roll cage",
+          "DisplayNameEN": "Roller cage",
+          "DisplayNameFI": "Rullakko",
           "DescriptionEN": "Roller cage",
           "DescriptionFI": "Rullakko",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 81,
           "MinHeight_cm": 1,
@@ -187,9 +205,12 @@
         },
         {
           "PackageType": "FIN",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": "FIN-pallet",
+          "DisplayNameEN": "FIN",
+          "DisplayNameFI": "FIN",
           "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
           "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -203,9 +224,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": "Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -219,9 +243,12 @@
         },
         {
           "PackageType": "FPL",
-          "MessageFormat": "POSTRA_FREIGHT",
+          "DimensionName": "Huonekalulava",
+          "DisplayNameEN": "Furniture pallet",
+          "DisplayNameFI": "Huonekalulava",
           "DescriptionEN": "Pallet, furniture pallet (variable size)",
           "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MessageFormat": "POSTRA_FREIGHT",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -230,6 +257,329 @@
           "MaxDepth_cm": 80,
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CT",
+          "DimensionName": null,
+          "DisplayNameEN": "Carton",
+          "DisplayNameFI": "Kartonki",
+          "DescriptionEN": "Carton, Carton box ",
+          "DescriptionFI": "Kartonki, pahvilaatikko",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "CC",
+          "DimensionName": null,
+          "DisplayNameEN": "Colli",
+          "DisplayNameFI": "Kolli",
+          "DescriptionEN": "Colli (undefined)",
+          "DescriptionFI": "Kolli ",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "DR",
+          "DimensionName": null,
+          "DisplayNameEN": "Drum",
+          "DisplayNameFI": "Tynnyri",
+          "DescriptionEN": "Drum",
+          "DescriptionFI": "Tynnyri, rumpu",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "LOA",
+          "DimensionName": null,
+          "DisplayNameEN": "Load",
+          "DisplayNameFI": "Erä",
+          "DescriptionEN": "Load",
+          "DescriptionFI": "Erä",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PAR",
+          "DimensionName": null,
+          "DisplayNameEN": "Pair",
+          "DisplayNameFI": "Pari",
+          "DescriptionEN": "Pair",
+          "DescriptionFI": "Pari",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "BPL",
+          "DimensionName": null,
+          "DisplayNameEN": "Brewery pallet",
+          "DisplayNameFI": "Panimolava",
+          "DescriptionEN": "Pallet, brewery pallet (variable size)",
+          "DescriptionFI": "Lava, panimolava (useita kokoja)",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PX",
+          "DimensionName": null,
+          "DisplayNameEN": "Pallet",
+          "DisplayNameFI": "Lava",
+          "DescriptionEN": "Pallet, other pallet ",
+          "DescriptionFI": "Lava, muu lava",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "EP",
+          "DimensionName": null,
+          "DisplayNameEN": "Disposable pallet ",
+          "DisplayNameFI": "Kertakäyttölava",
+          "DescriptionEN": "Pallet, one-way disposable pallet ",
+          "DescriptionFI": "Lava, kertakäyttö",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "EU4",
+          "DimensionName": null,
+          "DisplayNameEN": "Quarter pallet",
+          "DisplayNameFI": "Neljänneslava",
+          "DescriptionEN": "Pallet, quarter pallet (60 x 40 cm)",
+          "DescriptionFI": "Lava, neljänneslava (60 x 40 cm)",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "PI",
+          "DimensionName": null,
+          "DisplayNameEN": "Pipe",
+          "DisplayNameFI": "Putki",
+          "DescriptionEN": "Pipe",
+          "DescriptionFI": "Putki, putkilo, masto, tanko",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "RK",
+          "DimensionName": null,
+          "DisplayNameEN": "Rack",
+          "DisplayNameFI": "Teline",
+          "DescriptionEN": "Rack ",
+          "DescriptionFI": "Teline, \"räkki\"",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "RL",
+          "DimensionName": null,
+          "DisplayNameEN": "Reel",
+          "DisplayNameFI": "Kela",
+          "DescriptionEN": "Reel, spool",
+          "DescriptionFI": "Kela, puola, käämi",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "RO",
+          "DimensionName": null,
+          "DisplayNameEN": "Roll",
+          "DisplayNameFI": "Rulla",
+          "DescriptionEN": "Roll",
+          "DescriptionFI": "Rulla, tela",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "SA",
+          "DimensionName": null,
+          "DisplayNameEN": "Sack",
+          "DisplayNameFI": "Säkki",
+          "DescriptionEN": "Sack",
+          "DescriptionFI": "Säkki, pussi",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "TG",
+          "DimensionName": null,
+          "DisplayNameEN": "Tank",
+          "DisplayNameFI": "Säiliö",
+          "DescriptionEN": "Tank container",
+          "DescriptionFI": "Säiliö, tankki",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "WBC",
+          "DimensionName": null,
+          "DisplayNameEN": "Bottle crate",
+          "DisplayNameFI": "Juomadolly",
+          "DescriptionEN": "Wheel base for bottle crates",
+          "DescriptionFI": "Juomadolly ",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
+          "Circumference_cm": null,
+          "AdditionalServiceCode": null
+        },
+        {
+          "PackageType": "NE",
+          "DimensionName": null,
+          "DisplayNameEN": "Unpacked",
+          "DisplayNameFI": "Pakkaamaton",
+          "DescriptionEN": "Without packaging, unpacked",
+          "DescriptionFI": "Pakkaamaton",
+          "MessageFormat": "POSTRA_FREIGHT",
+          "MinWidth_cm": null,
+          "MaxWidth_cm": null,
+          "MinHeight_cm": null,
+          "MaxHeight_cm": null,
+          "MinDepth_cm": null,
+          "MaxDepth_cm": null,
+          "MinWeight_kg": null,
+          "MaxWeight_kg": null,
           "Circumference_cm": null,
           "AdditionalServiceCode": null
         }
@@ -257,7 +607,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "ALL"
+          "DestinationCountry": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -268,7 +620,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2015"
+          "PropertyValue": "2015",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -277,7 +631,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2015"
+          "PropertyValue": "2015",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -286,15 +642,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "ITPR"
+          "PropertyValue": "ITPR",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Priority",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 25,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 3,
@@ -330,7 +691,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "ALL"
+          "DestinationCountry": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -341,7 +704,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2017"
+          "PropertyValue": "2017",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -350,7 +715,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2017"
+          "PropertyValue": "2017",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -359,15 +726,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2017"
+          "PropertyValue": "PO2017",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EMS",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 25,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 3,
@@ -439,7 +811,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -450,7 +824,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2101"
+          "PropertyValue": "2101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -459,7 +835,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2101"
+          "PropertyValue": "2101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -468,7 +846,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2102"
+          "PropertyValue": "PO2102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -477,15 +857,20 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLV09"
+          "PropertyValue": "DLV09",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -623,7 +1008,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -634,7 +1021,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2102"
+          "PropertyValue": "2102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -643,7 +1032,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2102"
+          "PropertyValue": "2102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -652,15 +1043,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2102"
+          "PropertyValue": "PO2102",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -674,9 +1070,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Express Parcel (Bulky)",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -753,7 +1152,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -764,7 +1165,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2103"
+          "PropertyValue": "2103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -773,7 +1176,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2103"
+          "PropertyValue": "2103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -782,7 +1187,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2103"
+          "PropertyValue": "PO2103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -791,7 +1198,9 @@
           "Mandatory": false,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "Name2",
-          "PropertyValue": "c/o Automaatti"
+          "PropertyValue": "c/o Automaatti",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -800,7 +1209,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3201"
+          "PropertyValue": "3201",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -809,7 +1220,9 @@
           "Mandatory": false,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -818,15 +1231,20 @@
           "Mandatory": false,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -840,9 +1258,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel to parcel locker",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 60,
           "MinHeight_cm": 1,
@@ -856,9 +1277,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel (Bulky)",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -965,7 +1389,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -976,7 +1402,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2104"
+          "PropertyValue": "2104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -985,7 +1413,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2104"
+          "PropertyValue": "2104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -994,15 +1424,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2104"
+          "PropertyValue": "PO2104",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -1047,7 +1482,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1058,7 +1495,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2108"
+          "PropertyValue": "2108",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1067,7 +1506,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2108"
+          "PropertyValue": "2108",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1076,15 +1517,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2108"
+          "PropertyValue": "PO2108",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -1159,7 +1605,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1170,7 +1618,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2124"
+          "PropertyValue": "2124",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1179,7 +1629,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2124"
+          "PropertyValue": "2124",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1188,7 +1640,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2102"
+          "PropertyValue": "PO2102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1197,15 +1651,20 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLV00"
+          "PropertyValue": "DLV00",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 100,
           "MinHeight_cm": 1,
@@ -1219,9 +1678,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Express Parcel (Bulky)",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -1286,7 +1748,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1297,7 +1761,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2142"
+          "PropertyValue": "2142",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1306,7 +1772,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2142"
+          "PropertyValue": "2142",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1315,7 +1783,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2144"
+          "PropertyValue": "PO2144",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1324,15 +1794,20 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLV00"
+          "PropertyValue": "DLV00",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1346,9 +1821,12 @@
         },
         {
           "PackageType": "CG",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": null,
+          "DisplayNameEN": "Cage",
+          "DisplayNameFI": "Häkki",
           "DescriptionEN": "Cage",
           "DescriptionFI": "Häkki",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -1362,9 +1840,12 @@
         },
         {
           "PackageType": "CW",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Roll cage",
+          "DisplayNameEN": "Roller cage",
+          "DisplayNameFI": "Rullakko",
           "DescriptionEN": "Roller cage",
           "DescriptionFI": "Rullakko",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 81,
           "MinHeight_cm": 1,
@@ -1378,9 +1859,12 @@
         },
         {
           "PackageType": "ZPE",
-          "MessageFormat": "WAYBILD16A",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "WAYBILD16A",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1394,9 +1878,12 @@
         },
         {
           "PackageType": "FIN",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "FIN-pallet",
+          "DisplayNameEN": "FIN",
+          "DisplayNameFI": "FIN",
           "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
           "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -1410,9 +1897,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1426,9 +1916,12 @@
         },
         {
           "PackageType": "FPL",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Huonekalulava",
+          "DisplayNameEN": "Furniture pallet",
+          "DisplayNameFI": "Huonekalulava",
           "DescriptionEN": "Pallet, furniture pallet (variable size)",
           "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -1488,7 +1981,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1499,7 +1994,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2143"
+          "PropertyValue": "2143",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1508,7 +2005,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2143"
+          "PropertyValue": "2143",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1517,7 +2016,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2144"
+          "PropertyValue": "PO2144",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1526,15 +2027,20 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLV09"
+          "PropertyValue": "DLV09",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1548,9 +2054,12 @@
         },
         {
           "PackageType": "CG",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": null,
+          "DisplayNameEN": "Cage",
+          "DisplayNameFI": "Häkki",
           "DescriptionEN": "Cage",
           "DescriptionFI": "Häkki",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -1564,9 +2073,12 @@
         },
         {
           "PackageType": "CW",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Roll cage",
+          "DisplayNameEN": "Roller cage",
+          "DisplayNameFI": "Rullakko",
           "DescriptionEN": "Roller cage",
           "DescriptionFI": "Rullakko",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 81,
           "MinHeight_cm": 1,
@@ -1580,9 +2092,12 @@
         },
         {
           "PackageType": "ZPE",
-          "MessageFormat": "WAYBILD16A",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "WAYBILD16A",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1596,9 +2111,12 @@
         },
         {
           "PackageType": "FIN",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "FIN-pallet",
+          "DisplayNameEN": "FIN",
+          "DisplayNameFI": "FIN",
           "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
           "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -1612,9 +2130,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1628,9 +2149,12 @@
         },
         {
           "PackageType": "FPL",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Huonekalulava",
+          "DisplayNameEN": "Furniture pallet",
+          "DisplayNameFI": "Huonekalulava",
           "DescriptionEN": "Pallet, furniture pallet (variable size)",
           "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -1699,7 +2223,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1710,7 +2236,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2144"
+          "PropertyValue": "2144",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1719,7 +2247,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2144"
+          "PropertyValue": "2144",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1728,15 +2258,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2144"
+          "PropertyValue": "PO2144",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1750,9 +2285,12 @@
         },
         {
           "PackageType": "CG",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": null,
+          "DisplayNameEN": "Cage",
+          "DisplayNameFI": "Häkki",
           "DescriptionEN": "Cage",
           "DescriptionFI": "Häkki",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -1766,9 +2304,12 @@
         },
         {
           "PackageType": "CW",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Roll cage",
+          "DisplayNameEN": "Roller cage",
+          "DisplayNameFI": "Rullakko",
           "DescriptionEN": "Roller cage",
           "DescriptionFI": "Rullakko",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 81,
           "MinHeight_cm": 1,
@@ -1782,9 +2323,12 @@
         },
         {
           "PackageType": "ZPE",
-          "MessageFormat": "WAYBILD16A",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "WAYBILD16A",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1798,9 +2342,12 @@
         },
         {
           "PackageType": "FIN",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "FIN-pallet",
+          "DisplayNameEN": "FIN",
+          "DisplayNameFI": "FIN",
           "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
           "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -1814,9 +2361,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -1830,9 +2380,12 @@
         },
         {
           "PackageType": "FPL",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Huonekalulava",
+          "DisplayNameEN": "Furniture pallet",
+          "DisplayNameFI": "Huonekalulava",
           "DescriptionEN": "Pallet, furniture pallet (variable size)",
           "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -1949,7 +2502,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1960,7 +2515,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2145"
+          "PropertyValue": "2145",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1969,7 +2526,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2145"
+          "PropertyValue": "2145",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1978,7 +2537,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2144"
+          "PropertyValue": "PO2144",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1987,15 +2548,20 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLV21"
+          "PropertyValue": "DLV21",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -2009,9 +2575,12 @@
         },
         {
           "PackageType": "CG",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": null,
+          "DisplayNameEN": "Cage",
+          "DisplayNameFI": "Häkki",
           "DescriptionEN": "Cage",
           "DescriptionFI": "Häkki",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": null,
           "MaxWidth_cm": null,
           "MinHeight_cm": null,
@@ -2025,9 +2594,12 @@
         },
         {
           "PackageType": "CW",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Roll cage",
+          "DisplayNameEN": "Roller cage",
+          "DisplayNameFI": "Rullakko",
           "DescriptionEN": "Roller cage",
           "DescriptionFI": "Rullakko",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 81,
           "MinHeight_cm": 1,
@@ -2041,9 +2613,12 @@
         },
         {
           "PackageType": "ZPE",
-          "MessageFormat": "WAYBILD16A",
+          "DimensionName": "EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "WAYBILD16A",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -2057,9 +2632,12 @@
         },
         {
           "PackageType": "FIN",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "FIN-pallet",
+          "DisplayNameEN": "FIN",
+          "DisplayNameFI": "FIN",
           "DescriptionEN": "Pallet, FIN pallet (120 x 100 cm) ",
           "DescriptionFI": "Lava, FIN (120 x 100 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -2073,9 +2651,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -2089,9 +2670,12 @@
         },
         {
           "PackageType": "FPL",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Huonekalulava",
+          "DisplayNameEN": "Furniture pallet",
+          "DisplayNameFI": "Huonekalulava",
           "DescriptionEN": "Pallet, furniture pallet (variable size)",
           "DescriptionFI": "Lava, huonekalu (useita kokoja)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -2151,783 +2735,1173 @@
       "Routes": [
         {
           "DepartureCountry": "AT",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "AT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "AT",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "AT",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BE",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "CH",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "CZ",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "CZ",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "CZ",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "CZ",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DE",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "CH"
+          "DestinationCountry": "CH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FR"
+          "DestinationCountry": "FR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "GB"
+          "DestinationCountry": "GB",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "GR"
+          "DestinationCountry": "GR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "IE"
+          "DestinationCountry": "IE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "IT"
+          "DestinationCountry": "IT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "RO"
+          "DestinationCountry": "RO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "CH"
+          "DestinationCountry": "CH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FR"
+          "DestinationCountry": "FR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "GB"
+          "DestinationCountry": "GB",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "GR"
+          "DestinationCountry": "GR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "IE"
+          "DestinationCountry": "IE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "IT"
+          "DestinationCountry": "IT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "NO"
+          "DestinationCountry": "NO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "RO"
+          "DestinationCountry": "RO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FR",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FR",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FR",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FR",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GB",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GB",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GB",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GB",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GR",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GR",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GR",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "GR",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IE",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IT",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IT",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "IT",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "CH"
+          "DestinationCountry": "CH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FR"
+          "DestinationCountry": "FR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "GB"
+          "DestinationCountry": "GB",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "GR"
+          "DestinationCountry": "GR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "IE"
+          "DestinationCountry": "IE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "IT"
+          "DestinationCountry": "IT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "RO"
+          "DestinationCountry": "RO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LU",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LU",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LU",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LU",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "CH"
+          "DestinationCountry": "CH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FR"
+          "DestinationCountry": "FR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "GB"
+          "DestinationCountry": "GB",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "GR"
+          "DestinationCountry": "GR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "IE"
+          "DestinationCountry": "IE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "IT"
+          "DestinationCountry": "IT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "RO"
+          "DestinationCountry": "RO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NL",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NL",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NL",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NL",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NO",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "RO",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "RO",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "RO",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "RO",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SK",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SK",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SK",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2938,7 +3912,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2317"
+          "PropertyValue": "2317",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2947,7 +3923,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2317"
+          "PropertyValue": "2317",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2956,15 +3934,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "IT14I"
+          "PropertyValue": "IT14I",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Express business day Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 25,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 3,
@@ -3036,179 +4019,267 @@
       "Routes": [
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "NO"
+          "DestinationCountry": "NO",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NO",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NO",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NO",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "NO",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PL",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3219,7 +4290,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2318"
+          "PropertyValue": "2318",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3228,7 +4301,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2318"
+          "PropertyValue": "2318",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3237,15 +4312,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "ITKY14I"
+          "PropertyValue": "ITKY14I",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -3259,9 +4339,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -3321,19 +4404,27 @@
       "Routes": [
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3344,7 +4435,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2329"
+          "PropertyValue": "2329",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3353,7 +4446,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2329"
+          "PropertyValue": "2329",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3362,15 +4457,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2329"
+          "PropertyValue": "PO2329",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -3384,9 +4484,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -3494,19 +4597,27 @@
       "Routes": [
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3517,7 +4628,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2330"
+          "PropertyValue": "2330",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3526,7 +4639,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2330"
+          "PropertyValue": "2330",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3535,15 +4650,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2330"
+          "PropertyValue": "PO2330",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -3557,9 +4677,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -3607,15 +4730,21 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "EE"
+          "DestinationCountry": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LV"
+          "DestinationCountry": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LT"
+          "DestinationCountry": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3626,7 +4755,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2331"
+          "PropertyValue": "2331",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3635,7 +4766,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2331"
+          "PropertyValue": "2331",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3644,15 +4777,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2331"
+          "PropertyValue": "PO2331",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Postal Parcel Baltics",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 1,
@@ -3666,9 +4804,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Postal Parcel Baltics to parcel locker",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 60,
           "MinHeight_cm": 1,
@@ -3713,15 +4854,21 @@
       "Routes": [
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3732,7 +4879,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2338"
+          "PropertyValue": "2338",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3741,7 +4890,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2338"
+          "PropertyValue": "2338",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3750,15 +4901,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2338"
+          "PropertyValue": "PO2338",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Postal Parcel Baltics",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 1,
@@ -3772,9 +4928,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Postal Parcel Baltics to parcel locker",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 60,
           "MinHeight_cm": 1,
@@ -3834,19 +4993,27 @@
       "Routes": [
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3857,7 +5024,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2341"
+          "PropertyValue": "2341",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3866,7 +5035,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2341"
+          "PropertyValue": "2341",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3875,15 +5046,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2341"
+          "PropertyValue": "PO2341",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -3897,9 +5073,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "EBD Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -3943,19 +5122,20 @@
         },
         {
           "Addon": "3143"
-        },
-        {
-          "Addon": "3175"
         }
       ],
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3966,7 +5146,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2351"
+          "PropertyValue": "2351",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -3975,7 +5157,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2351"
+          "PropertyValue": "2351",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3984,7 +5168,9 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2351"
+          "PropertyValue": "PO2351",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -3993,7 +5179,9 @@
           "Mandatory": false,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "Party",
-          "PropertyValue": "DELIVERY"
+          "PropertyValue": "DELIVERY",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4002,7 +5190,9 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Name1",
-          "PropertyValue": "Daisy Delivery"
+          "PropertyValue": "Daisy Delivery",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4011,7 +5201,9 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Name2",
-          "PropertyValue": "Parcel locker"
+          "PropertyValue": "Parcel locker",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4020,7 +5212,9 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Street1",
-          "PropertyValue": "Delivery Address 1"
+          "PropertyValue": "Delivery Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4029,7 +5223,9 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Postcode",
-          "PropertyValue": "33100"
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4038,7 +5234,9 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "City",
-          "PropertyValue": "FI"
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -4047,15 +5245,20 @@
           "Mandatory": false,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Country",
-          "PropertyValue": "FI"
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Pickup Parcel to parcel locker",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 60,
           "MinHeight_cm": 13,
@@ -4069,9 +5272,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Pickup Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 13,
@@ -4114,7 +5320,7 @@
           "Addon": "3103"
         },
         {
-          "Addon": "3175"
+          "Addon": "3143"
         },
         {
           "Addon": "3372"
@@ -4126,11 +5332,15 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DK"
+          "DestinationCountry": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4141,7 +5351,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2352"
+          "PropertyValue": "2352",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4150,7 +5362,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2352"
+          "PropertyValue": "2352",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4159,15 +5373,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2352"
+          "PropertyValue": "PO2352",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 13,
@@ -4219,9 +5438,6 @@
           "Addon": "3167"
         },
         {
-          "Addon": "3175"
-        },
-        {
           "Addon": "3372"
         },
         {
@@ -4231,7 +5447,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4242,7 +5460,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2354"
+          "PropertyValue": "2354",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4251,7 +5471,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2354"
+          "PropertyValue": "2354",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4260,15 +5482,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2354"
+          "PropertyValue": "PO2354",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Pallet EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -4282,9 +5509,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Pallet Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -4327,17 +5557,24 @@
           "Addon": "3103"
         },
         {
+          "Addon": "3143"
+        },
+        {
           "Addon": "3174"
         }
       ],
       "Routes": [
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4348,7 +5585,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2358"
+          "PropertyValue": "2358",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4357,7 +5596,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2358"
+          "PropertyValue": "2358",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4366,15 +5607,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2358"
+          "PropertyValue": "PO2358",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Pickup Parcel to parcel locker",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 60,
           "MinHeight_cm": 13,
@@ -4388,9 +5634,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 13,
@@ -4404,9 +5653,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Pickup Parcel",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 23,
           "MaxWidth_cm": 150,
           "MinHeight_cm": 13,
@@ -4452,7 +5704,9 @@
       "Routes": [
         {
           "DepartureCountry": "SE",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4463,7 +5717,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2359"
+          "PropertyValue": "2359",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4472,7 +5728,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2359"
+          "PropertyValue": "2359",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4481,15 +5739,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2359"
+          "PropertyValue": "PO2359",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "EUR",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Pallet EUR-Pallet",
+          "DisplayNameEN": "EUR",
+          "DisplayNameFI": "EUR",
           "DescriptionEN": "Pallet, EUR pallet (120 x 80 cm)",
           "DescriptionFI": "Lava, EUR (120 x 80 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -4503,9 +5766,12 @@
         },
         {
           "PackageType": "HP",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Home Pallet Half pallet",
+          "DisplayNameEN": "Half Pallet",
+          "DisplayNameFI": "Teholava",
           "DescriptionEN": "Pallet, half pallet (80 x 60 cm)",
           "DescriptionFI": "Lava, teho / myymälä / puolilava (80 x 60 cm)",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 1,
           "MaxWidth_cm": 80,
           "MinHeight_cm": 1,
@@ -4541,7 +5807,9 @@
       "Routes": [
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4552,7 +5820,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2461"
+          "PropertyValue": "2461",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4561,7 +5831,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2461"
+          "PropertyValue": "2461",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4570,15 +5842,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2461"
+          "PropertyValue": "PO2461",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Pikkupaketti",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 0,
           "MaxWidth_cm": 25,
           "MinHeight_cm": 0,
@@ -4617,207 +5894,309 @@
       "Routes": [
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4828,7 +6207,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2711"
+          "PropertyValue": "2711",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -4837,7 +6218,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2711"
+          "PropertyValue": "2711",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4846,15 +6229,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2711"
+          "PropertyValue": "PO2711",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel Connect",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -4868,9 +6256,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel Connect (Bulky)",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
@@ -4904,207 +6295,309 @@
       "Routes": [
         {
           "DepartureCountry": "BG",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "DK",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "EE",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "ES",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "BG"
+          "DestinationCountry": "BG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HR"
+          "DestinationCountry": "HR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "HU"
+          "DestinationCountry": "HU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "PT"
+          "DestinationCountry": "PT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SI"
+          "DestinationCountry": "SI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "FI",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HR",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "HU",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LT",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "AT"
+          "DestinationCountry": "AT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "BE"
+          "DestinationCountry": "BE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "CZ"
+          "DestinationCountry": "CZ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "DE"
+          "DestinationCountry": "DE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "ES"
+          "DestinationCountry": "ES",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "LU"
+          "DestinationCountry": "LU",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "NL"
+          "DestinationCountry": "NL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "PL"
+          "DestinationCountry": "PL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SE"
+          "DestinationCountry": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "LV",
-          "DestinationCountry": "SK"
+          "DestinationCountry": "SK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "PT",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "DepartureCountry": "SI",
-          "DestinationCountry": "FI"
+          "DestinationCountry": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -5115,7 +6608,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Product",
-          "PropertyValue": "2718"
+          "PropertyValue": "2718",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -5124,7 +6619,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ServiceCode",
-          "PropertyValue": "2718"
+          "PropertyValue": "2718",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5133,15 +6630,20 @@
           "Mandatory": true,
           "MessagePosition": "service",
           "PropertyName": "id",
-          "PropertyValue": "PO2718"
+          "PropertyValue": "PO2718",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "PackageTypesAndDimensions": [
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel Connect",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 120,
           "MinHeight_cm": 1,
@@ -5155,9 +6657,12 @@
         },
         {
           "PackageType": "PC",
-          "MessageFormat": "POSTRA_PARCEL",
+          "DimensionName": "Parcel Connect (Bulky)",
+          "DisplayNameEN": "Parcel",
+          "DisplayNameFI": "Paketti",
           "DescriptionEN": "Parcel, Package, packet, pack, ",
           "DescriptionFI": "Paketti, laatikko, pakkaus,",
+          "MessageFormat": "POSTRA_PARCEL",
           "MinWidth_cm": 15,
           "MaxWidth_cm": 200,
           "MinHeight_cm": 1,
