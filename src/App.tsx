@@ -825,9 +825,23 @@ const App = (props: AppProps) => {
           let routes = [];
           data["title"] = record.ServiceCode;
           data["description"] = record.ServiceCode + "_tooltip";
+          data["availability"] = {
+            pudo: record.Pudo,
+            home: record.Home,
+            business: record.Business,
+          };
           for (const dimension of record.PackageTypesAndDimensions) {
             dimensions.push(dimension);
           }
+          dimensions.sort(
+            (a, b) =>
+              a.MaxWeight_kg +
+              a.MaxWidth_cm +
+              a.MaxHeight_cm +
+              a.MaxDepth_cm -
+              (b.MaxWeight_kg + b.MaxWidth_cm + b.MaxHeight_cm + b.MaxDepth_cm)
+          );
+          console.log(dimensions);
           for (const route of record.Routes) {
             routes.push(route);
           }
@@ -851,6 +865,7 @@ const App = (props: AppProps) => {
       for (const record of additionalServices["records"]) {
         if (record.ServiceCode === value) {
           let excluded = [];
+          let countries = [];
           let mandatory = "";
           data["fields"] = {};
           data["availability"] = { pudo: record.Pudo, home: record.Home };
@@ -859,6 +874,11 @@ const App = (props: AppProps) => {
           for (const addon of record.ExcludedAdditionalServices) {
             excluded.push(addon.Addon);
           }
+
+          for (const country of record.AvailableCountries) {
+            countries.push(country.Country);
+          }
+
           for (const field of record.Fields) {
             if (field.MessageFormat.substring(0, 6) === "POSTRA") {
               messageFormat = "POSTRA";
@@ -879,6 +899,7 @@ const App = (props: AppProps) => {
               data["fields"][messageFormat].push(field);
             }
           }
+          data["countries"] = countries;
           data["excluded"] = excluded;
           data["mandatory"] = mandatory.substring(0, mandatory.length - 2);
         }
@@ -1184,6 +1205,7 @@ const App = (props: AppProps) => {
                       />
                     </Col>
                   </Row>
+                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
@@ -1193,8 +1215,9 @@ const App = (props: AppProps) => {
                         checked={selected.pickupOrder}
                         onChange={handlePickupOrder}
                       />
-                    </Col>
+                    </Col> 
                   </Row>
+                  */}
                   <Row>
                     <Col className="resetButton" xs={4} sm={3} md={2} lg={1}>
                       <Button
