@@ -1205,6 +1205,7 @@ const App = (props: AppProps) => {
                       />
                     </Col>
                   </Row>
+                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
@@ -1214,8 +1215,9 @@ const App = (props: AppProps) => {
                         checked={selected.pickupOrder}
                         onChange={handlePickupOrder}
                       />
-                    </Col>
+                    </Col> 
                   </Row>
+                  */}
                   <Row>
                     <Col className="resetButton" xs={4} sm={3} md={2} lg={1}>
                       <Button

@@ -67,12 +67,26 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
       passed = row.getValue(columnId);
     }
     itemRank = rankItem(passed, value);
-  } else if (columnId === "weight" || columnId === "width") {
-    if (row.getValue(columnId) === value) {
-      itemRank = rankItem(row.getValue(columnId), value);
-    } else {
-      itemRank = rankItem("", value);
+  } else if (columnId === "weight") {
+    let passed;
+    let array: any = row.getValue(columnId);
+    for (let item of array) {
+      if (item.maxWeight === value) {
+        passed = item.maxWeight;
+        break;
+      }
     }
+    itemRank = rankItem(passed, value);
+  } else if (columnId === "width") {
+    let passed: number;
+    let array: any = row.getValue(columnId);
+    for (let item of array) {
+      if (item.maxWidth === value) {
+        passed = item.maxWidth;
+        break;
+      }
+    }
+    itemRank = rankItem(passed, value);
   } else {
     itemRank = rankItem(row.getValue(columnId), value);
   }

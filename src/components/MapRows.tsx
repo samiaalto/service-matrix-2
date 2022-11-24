@@ -71,19 +71,46 @@ const MapRows = (
     }
 
     let dimensions = [];
+    let weights = [];
+
     for (let item of record.PackageTypesAndDimensions) {
-      dimensions.push(item.MaxHeight_cm, item.MaxDepth_cm, item.MaxWidth_cm);
+      let itemDimensions = [];
+      itemDimensions.push(
+        item.MaxHeight_cm,
+        item.MaxDepth_cm,
+        item.MaxWidth_cm
+      );
+      let maxWidth = Math.max(...itemDimensions, 0);
+      if (item.MaxHeight_cm !== null) {
+        dimensions.push({
+          maxWidth: maxWidth,
+          addon:
+            item.AdditionalServiceCode !== null
+              ? item.AdditionalServiceCode.Addon
+              : item.DimensionName.indexOf("locker") > -1
+              ? "APT"
+              : null,
+        });
+        if (
+          weights.length === 0 ||
+          weights.some((e) => e.maxWeight !== item.MaxWeight_kg)
+        ) {
+          weights.push({
+            maxWeight: item.MaxWeight_kg,
+            addon:
+              item.AdditionalServiceCode !== null
+                ? item.AdditionalServiceCode.Addon
+                : item.DimensionName.indexOf("locker") > -1
+                ? "APT"
+                : null,
+          });
+        }
+      }
     }
 
-    let maxWidth = Math.max(...dimensions, 0);
-
-    let maxWeight = Math.max(
-      ...record.PackageTypesAndDimensions.map((x) => x.MaxWeight_kg),
-      0
-    );
     service["deliveryLocation"] = deliveryLocations;
-    service["width"] = maxWidth;
-    service["weight"] = maxWeight;
+    service["width"] = dimensions;
+    service["weight"] = weights;
     service["routes"] = routes;
     service["departureCountries"] = depCountries;
     service["destinationCountries"] = destCountries;

@@ -80,6 +80,11 @@ thead:first-child {
   overflow: hidden;
 }
 
+.serviceMatrix-table .service .badge {
+  margin-right: 10px;
+  font-size: 13px;
+}
+
 .serviceMatrix-table .service.highlight-cell {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;

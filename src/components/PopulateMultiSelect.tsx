@@ -53,25 +53,29 @@ const PopulateMultiSelect = (
         });
       }
     }
+    for (let width of row.original.width) {
+      if (!widths || !widths.some((x) => x.value === width.maxWidth)) {
+        widths.push({
+          value: width.maxWidth,
+          title: "< " + width.maxWidth + " cm",
+          subTitle: "",
+          optGroup: "Longest Side",
+          keyWords: width.maxWidth + " cm",
+        });
+      }
+    }
+    for (let weight of row.original.weight) {
+      if (!weights || !weights.some((x) => x.value === weight.maxWeight)) {
+        weights.push({
+          value: weight.maxWeight,
+          title: "< " + weight.maxWeight + " kg",
+          subTitle: "",
+          optGroup: "Weight",
+          keyWords: weight.maxWeight + " kg",
+        });
+      }
+    }
 
-    if (!widths || !widths.some((x) => x.value === row.original.width)) {
-      widths.push({
-        value: row.original.width,
-        title: "< " + row.original.width + " cm",
-        subTitle: "",
-        optGroup: "Longest Side",
-        keyWords: row.original.width + " cm",
-      });
-    }
-    if (!weights || !weights.some((x) => x.value === row.original.weight)) {
-      weights.push({
-        value: row.original.weight,
-        title: "< " + row.original.weight + " kg",
-        subTitle: "",
-        optGroup: "Weight",
-        keyWords: row.original.weight + " kg",
-      });
-    }
     if (
       !serviceGroups ||
       !serviceGroups.some((x) => x.value === row.original.serviceGroup)
