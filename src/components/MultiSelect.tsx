@@ -11,6 +11,7 @@ import { ReactComponent as AddonLogo } from "./icons/Addon_logo.svg";
 import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
 import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
 import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
+import { ReactComponent as ChevronIcon } from "./icons/ChevronIcon.svg";
 
 const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   const [selectedValues, setSelectedValues] = useState([]);
@@ -248,7 +249,78 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     }
   };
 
+  // handle options group header click event
+  // hide and show the options under clicked group
+  const handleHeaderClick = (id) => {
+    const node = document.querySelector(`#${id}`).parentElement
+      .nextElementSibling;
+    console.log(node.classList);
+    const classes = node.classList;
+    if (classes.contains("optGroup-collapsed")) {
+      node.classList.remove("optGroup-collapsed");
+    } else {
+      node.classList.add("optGroup-collapsed");
+    }
+  };
+
+  // Create custom GroupHeading component, which will wrap
+  // react-select GroupHeading component inside a div and
+  // register onClick event on that div
+  const CustomGroupHeading = (props) => {
+    return (
+      <div
+        className="group-heading-wrapper"
+        onClick={() => handleHeaderClick(props.id)}
+      >
+        <components.GroupHeading {...props}>
+          <span className="option_header">
+            {props.data.label === "Delivery Location"
+              ? renderSwitch("Pickup")
+              : renderSwitch(props.data.label)}{" "}
+            {t(props.data.label)}
+          </span>
+          <span className="group-handle">
+            <ChevronIcon
+              title="ChevronIcon"
+              className="ChevronIcon"
+              key="ChevronIcon"
+            />
+          </span>
+        </components.GroupHeading>
+      </div>
+    );
+  };
+
   const customFilter = (option, searchText) => {
+    if (searchText) {
+      let nodes: any = document.querySelectorAll(
+        "#react-select-2-listbox .group-heading-wrapper"
+      );
+      for (let node of nodes) {
+        let target = node.nextElementSibling;
+        let classes = target.classList;
+        if (!classes.contains("optGroup-collapsed")) {
+          target.classList.add("optGroup-collapsed");
+        }
+      }
+    }
+
+    // else if (searchText !== "") {
+    //   let nodes: any = document.querySelectorAll(
+    //     "#react-select-2-listbox .group-heading-wrapper"
+    //   );
+    //   if (nodes.length > 0) {
+    //     for (let node of nodes) {
+    //       if (node !== null) {
+    //         let target = node.nextElementSibling;
+    //         let classes = target.classList;
+    //         if (classes.contains("optGroup-collapsed")) {
+    //           target.classList.remove("optGroup-collapsed");
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
     if (option.data.keyWords.toLowerCase().includes(searchText.toLowerCase())) {
       return true;
     } else {
@@ -342,23 +414,42 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       ...styles,
       borderRadius: "16px",
       zIndex: 9999,
+      border: "2px solid #3b4a57",
+    }),
+    menuList: (styles) => ({
+      ...styles,
+      maxHeight: "360px",
     }),
     option: (provided, state) => ({
       ...provided,
       padding: 10,
       backgroundColor:
-        state.isFocused || state.isSelected ? "#e0e0e0" : "transparent",
+        state.isFocused || state.isSelected ? "#ececec" : "transparent",
       "&:hover": {
-        backgroundColor: "#e0e0e0",
+        backgroundColor: "#ececec",
       },
+    }),
+    group: (provided, state) => ({
+      ...provided,
+      padding: 0,
     }),
     groupHeading: (provided, state) => ({
       ...provided,
+      "&:hover": {
+        borderBottom: "2px solid #000",
+        transition: "all 0.3s ease-in-out",
+        backgroundColor: "#f2f2f2",
+        borderRadius: "8px",
+      },
       borderBottom: "2px solid #e0e0e0",
       backgroundColor: "#fff",
       color: "#000",
       textAlign: "left",
-      fontWeight: 700,
+      fontWeight: 500,
+      paddingTop: "7px",
+      paddingBottom: "7px",
+      textTransform: "none",
+      fontSize: "13px",
     }),
     control: (provided: Record<string, unknown>, state: any) => ({
       ...provided,
@@ -399,7 +490,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       getOptionLabel={(options: any) => {
         return `${options.title} ${options.subTitle}`;
       }}
-      components={{ MultiValue, Option }}
+      components={{ MultiValue, Option, GroupHeading: CustomGroupHeading }}
       filterOption={customFilter}
     />
   );
