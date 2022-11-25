@@ -12,27 +12,41 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -43,7 +57,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3101"
+          "PropertyValue": "3101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -52,7 +68,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodIBAN",
-          "PropertyValue": "FI2112345600000785"
+          "PropertyValue": "FI2112345600000785",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -61,7 +79,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodBIC",
-          "PropertyValue": "NDEAFIHH"
+          "PropertyValue": "NDEAFIHH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -70,7 +90,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodValue",
-          "PropertyValue": "123.50"
+          "PropertyValue": "123.50",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -79,7 +101,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "currencyCode",
-          "PropertyValue": "EUR"
+          "PropertyValue": "EUR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -88,7 +112,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "CodReference",
-          "PropertyValue": "1234123456898"
+          "PropertyValue": "1234123456898",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -97,7 +123,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3101"
+          "PropertyValue": "3101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -106,7 +134,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodBIC",
-          "PropertyValue": "NDEAFIHH"
+          "PropertyValue": "NDEAFIHH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -115,7 +145,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodIBAN",
-          "PropertyValue": "FI2112345600000785"
+          "PropertyValue": "FI2112345600000785",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -124,7 +156,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CodValue",
-          "PropertyValue": "00012350"
+          "PropertyValue": "00012350",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -133,7 +167,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "CurrencyCode",
-          "PropertyValue": "EUR"
+          "PropertyValue": "EUR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -142,7 +178,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "CodReference",
-          "PropertyValue": "1234123456898"
+          "PropertyValue": "1234123456898",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -151,7 +189,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "COD"
+          "PropertyValue": "COD",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -160,7 +200,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "amount",
-          "PropertyValue": "123.50"
+          "PropertyValue": "123.50",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -169,7 +211,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "accounttype",
-          "PropertyValue": "IBAN"
+          "PropertyValue": "IBAN",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -178,7 +222,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "account",
-          "PropertyValue": "FI2112345600000785"
+          "PropertyValue": "FI2112345600000785",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -187,7 +233,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "bank",
-          "PropertyValue": "BANKFIHH"
+          "PropertyValue": "BANKFIHH",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -204,7 +252,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "ALL"
+          "Country": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -215,7 +265,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3102"
+          "PropertyValue": "3102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -224,7 +276,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3102"
+          "PropertyValue": "3102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -233,7 +287,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "CONS"
+          "PropertyValue": "CONS",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -250,7 +306,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "ALL"
+          "Country": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -261,7 +319,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3103"
+          "PropertyValue": "3103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -270,7 +330,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3103"
+          "PropertyValue": "3103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -279,7 +341,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "OPAY"
+          "PropertyValue": "OPAY",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -288,7 +352,9 @@
           "Mandatory": true,
           "MessagePosition": "DELIVERY",
           "PropertyName": "Party",
-          "PropertyValue": "PAYER"
+          "PropertyValue": "PAYER",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -297,7 +363,9 @@
           "Mandatory": true,
           "MessagePosition": "PAYER",
           "PropertyName": "role",
-          "PropertyValue": "PAYER"
+          "PropertyValue": "PAYER",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -306,7 +374,9 @@
           "Mandatory": true,
           "MessagePosition": "PAYER",
           "PropertyName": "Account",
-          "PropertyValue": "666666"
+          "PropertyValue": "666666",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -315,7 +385,9 @@
           "Mandatory": true,
           "MessagePosition": "PAYER",
           "PropertyName": "type",
-          "PropertyValue": "CONTRACT"
+          "PropertyValue": "CONTRACT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -324,7 +396,9 @@
           "Mandatory": true,
           "MessagePosition": "PAYER",
           "PropertyName": "Name1",
-          "PropertyValue": "Payer Name"
+          "PropertyValue": "Payer Name",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -341,7 +415,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "ALL"
+          "Country": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -352,7 +428,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3104"
+          "PropertyValue": "3104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -361,7 +439,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "FRAG"
+          "PropertyValue": "FRAG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -370,7 +450,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3104"
+          "PropertyValue": "3104",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -387,7 +469,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -398,7 +482,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3105"
+          "PropertyValue": "3105",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -407,7 +493,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3105"
+          "PropertyValue": "3105",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -416,7 +504,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "REG"
+          "PropertyValue": "REG",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -432,30 +522,46 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3101"
+          "Addon": "3101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3115"
+          "Addon": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3167"
+          "Addon": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3168"
+          "Addon": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -466,7 +572,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3106"
+          "PropertyValue": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -475,7 +583,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3106"
+          "PropertyValue": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -484,7 +594,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSAT"
+          "PropertyValue": "DLVSAT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -510,36 +622,56 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3166"
+          "Addon": "3166",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3198"
+          "Addon": "3198",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "SE"
+          "Country": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -550,7 +682,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3115"
+          "PropertyValue": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -559,7 +693,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -568,7 +704,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -577,7 +715,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3115"
+          "PropertyValue": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -586,7 +726,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -595,7 +737,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSPC"
+          "PropertyValue": "DLVSPC",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -604,7 +748,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -620,39 +766,61 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3115"
+          "Addon": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3167"
+          "Addon": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3168"
+          "Addon": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -663,7 +831,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3116"
+          "PropertyValue": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -672,7 +842,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -681,7 +853,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -690,7 +864,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3116"
+          "PropertyValue": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -699,7 +875,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -708,7 +886,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINST"
+          "PropertyValue": "DLVINST",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -717,7 +897,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -733,39 +915,61 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3101"
+          "Addon": "3101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3115"
+          "Addon": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3163"
+          "Addon": "3163",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3166"
+          "Addon": "3166",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3167"
+          "Addon": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3168"
+          "Addon": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -776,7 +980,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3119"
+          "PropertyValue": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -785,7 +991,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -794,7 +1002,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -803,7 +1013,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3119"
+          "PropertyValue": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -812,7 +1024,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -821,7 +1035,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSORT"
+          "PropertyValue": "DLVSORT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -830,7 +1046,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -857,19 +1075,29 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "SE"
+          "Country": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -880,7 +1108,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3137"
+          "PropertyValue": "3137",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -889,7 +1119,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3137"
+          "PropertyValue": "3137",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -898,7 +1130,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "RECYCLE"
+          "PropertyValue": "RECYCLE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -925,16 +1159,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -945,7 +1187,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3139"
+          "PropertyValue": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -954,7 +1198,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -963,7 +1209,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -972,7 +1220,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3139"
+          "PropertyValue": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -981,7 +1231,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -990,7 +1242,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "NOT"
+          "PropertyValue": "NOT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -999,7 +1253,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1023,22 +1279,43 @@
       "LabelMarking": "43",
       "Home": true,
       "Pudo": true,
-      "ExcludedAdditionalServices": [],
+      "ExcludedAdditionalServices": [
+        {
+          "Addon": "3175",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        },
+        {
+          "Addon": "3162",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
+        }
+      ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "DK"
+          "Country": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1049,7 +1326,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3143"
+          "PropertyValue": "3143",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1058,7 +1337,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "LimitedQuantityWeight",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1067,7 +1348,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3143"
+          "PropertyValue": "3143",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1076,7 +1359,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "LimitedQuantityWeight",
-          "PropertyValue": "00000234"
+          "PropertyValue": "00000234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1085,7 +1370,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1094,7 +1381,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "FDNGPP"
+          "PropertyValue": "FDNGPP",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1103,7 +1392,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "netWeight",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1112,7 +1403,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1129,7 +1422,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1140,7 +1435,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3146"
+          "PropertyValue": "3146",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1149,7 +1446,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3146"
+          "PropertyValue": "3146",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1158,7 +1457,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "REMIPOST"
+          "PropertyValue": "REMIPOST",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1175,7 +1476,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -1193,7 +1496,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1204,7 +1509,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3155"
+          "PropertyValue": "3155",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1213,7 +1520,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3155"
+          "PropertyValue": "3155",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1222,7 +1531,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "RBLOCK"
+          "PropertyValue": "RBLOCK",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1238,24 +1549,41 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3175"
+          "Addon": "3175",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": "2022-11-01"
+        },
+        {
+          "Addon": "3143",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1266,7 +1594,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3162"
+          "PropertyValue": "3162",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1275,7 +1605,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "RegulationsCode",
-          "PropertyValue": "ADR"
+          "PropertyValue": "ADR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1284,7 +1616,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "UnNo",
-          "PropertyValue": "0016"
+          "PropertyValue": "0016",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1293,7 +1627,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "MainDanger",
-          "PropertyValue": "2.1"
+          "PropertyValue": "2.1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1302,7 +1638,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "TotalQuantity",
-          "PropertyValue": "5.000"
+          "PropertyValue": "5.000",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1311,7 +1649,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "unit",
-          "PropertyValue": "LTR"
+          "PropertyValue": "LTR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1320,7 +1660,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ProperShippingName",
-          "PropertyValue": "Alcohol, N.O.S."
+          "PropertyValue": "Alcohol, N.O.S.",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1329,7 +1671,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "SubsidiaryRisk",
-          "PropertyValue": "4.2"
+          "PropertyValue": "4.2",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1338,7 +1682,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "PackingGroup",
-          "PropertyValue": "II"
+          "PropertyValue": "II",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1347,7 +1693,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "NoDgPackages",
-          "PropertyValue": "1"
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1356,7 +1704,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "PackingDescription",
-          "PropertyValue": "steel drum"
+          "PropertyValue": "steel drum",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1365,7 +1715,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "TechnicalDescription",
-          "PropertyValue": "Methanol dioxide"
+          "PropertyValue": "Methanol dioxide",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1374,7 +1726,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "MarinePollutant",
-          "PropertyValue": "false"
+          "PropertyValue": "false",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1383,7 +1737,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "Provisions",
-          "PropertyValue": "C5000D"
+          "PropertyValue": "C5000D",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1392,7 +1748,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3162"
+          "PropertyValue": "3162",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1401,7 +1759,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "UnNo",
-          "PropertyValue": "0016"
+          "PropertyValue": "0016",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1410,7 +1770,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ProperShippingName",
-          "PropertyValue": "Alcohols, N.O.S."
+          "PropertyValue": "Alcohols, N.O.S.",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1419,7 +1781,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "MainDanger",
-          "PropertyValue": "2.1"
+          "PropertyValue": "2.1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1428,7 +1792,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "TotalQuantity",
-          "PropertyValue": "5"
+          "PropertyValue": "5",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1437,7 +1803,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "unit",
-          "PropertyValue": "LTR"
+          "PropertyValue": "LTR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1446,7 +1814,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "SubsidiaryRisk",
-          "PropertyValue": "4.2"
+          "PropertyValue": "4.2",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1455,7 +1825,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "PackingGroup",
-          "PropertyValue": "II"
+          "PropertyValue": "II",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1464,7 +1836,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "NoDgPackages",
-          "PropertyValue": "1"
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1473,7 +1847,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "PackingDescription",
-          "PropertyValue": "steel drum"
+          "PropertyValue": "steel drum",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1482,7 +1858,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "TechnicalDescription",
-          "PropertyValue": "Methanol dioxide"
+          "PropertyValue": "Methanol dioxide",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1491,7 +1869,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "MarinePollutant",
-          "PropertyValue": "N"
+          "PropertyValue": "N",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1500,7 +1880,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "TunnelCode",
-          "PropertyValue": "C5000D"
+          "PropertyValue": "C5000D",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1509,7 +1891,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DNG"
+          "PropertyValue": "DNG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1518,7 +1902,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "unCode",
-          "PropertyValue": "0016"
+          "PropertyValue": "0016",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1527,7 +1913,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "description",
-          "PropertyValue": "Alcohols, N.O.S."
+          "PropertyValue": "Alcohols, N.O.S.",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1536,7 +1924,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "adrClass",
-          "PropertyValue": "2.1"
+          "PropertyValue": "2.1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1545,7 +1935,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "netWeight",
-          "PropertyValue": "5"
+          "PropertyValue": "5",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1554,7 +1946,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "declarant",
-          "PropertyValue": "senders name"
+          "PropertyValue": "senders name",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1563,7 +1957,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1572,7 +1968,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "hazardCode",
-          "PropertyValue": "4.2"
+          "PropertyValue": "4.2",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1581,7 +1979,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "packageCode",
-          "PropertyValue": "II"
+          "PropertyValue": "II",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1590,7 +1990,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "quantity",
-          "PropertyValue": "1"
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1599,7 +2001,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "packageType",
-          "PropertyValue": "steel drum"
+          "PropertyValue": "steel drum",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1608,7 +2012,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "technicalDescr",
-          "PropertyValue": "Methanol dioxide"
+          "PropertyValue": "Methanol dioxide",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1617,7 +2023,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "mpCode",
-          "PropertyValue": "N"
+          "PropertyValue": "N",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1626,7 +2034,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "trCode",
-          "PropertyValue": "C5000D"
+          "PropertyValue": "C5000D",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1642,24 +2052,36 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1670,7 +2092,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3163"
+          "PropertyValue": "3163",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1679,7 +2103,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3163"
+          "PropertyValue": "3163",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1688,7 +2114,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PERS"
+          "PropertyValue": "PERS",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1704,30 +2132,46 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3101"
+          "Addon": "3101",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3163"
+          "Addon": "3163",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3167"
+          "Addon": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3168"
+          "Addon": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "ALL"
+          "Country": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1738,7 +2182,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3164"
+          "PropertyValue": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1747,7 +2193,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3164"
+          "PropertyValue": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1756,7 +2204,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVNOPOD"
+          "PropertyValue": "DLVNOPOD",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1773,7 +2223,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1784,7 +2236,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3165"
+          "PropertyValue": "3165",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1793,7 +2247,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3165"
+          "PropertyValue": "3165",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1802,7 +2258,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "RETNEXT"
+          "PropertyValue": "RETNEXT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1818,30 +2276,46 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3115"
+          "Addon": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1852,7 +2326,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3166"
+          "PropertyValue": "3166",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1861,7 +2337,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -1870,7 +2348,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1879,7 +2359,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3166"
+          "PropertyValue": "3166",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1888,7 +2370,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1897,7 +2381,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVCALL"
+          "PropertyValue": "DLVCALL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1906,7 +2392,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1922,39 +2410,61 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3168"
+          "Addon": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "SE"
+          "Country": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -1965,7 +2475,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3167"
+          "PropertyValue": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -1974,7 +2486,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3167"
+          "PropertyValue": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -1983,7 +2497,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINPKG"
+          "PropertyValue": "DLVINPKG",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -1999,36 +2515,56 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3106"
+          "Addon": "3106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3116"
+          "Addon": "3116",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3164"
+          "Addon": "3164",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3167"
+          "Addon": "3167",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2039,7 +2575,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3168"
+          "PropertyValue": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2048,7 +2586,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3168"
+          "PropertyValue": "3168",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2057,7 +2597,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINUNP"
+          "PropertyValue": "DLVINUNP",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2074,16 +2616,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2094,7 +2644,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3169"
+          "PropertyValue": "3169",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -2103,7 +2655,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -2112,7 +2666,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2121,7 +2677,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3169"
+          "PropertyValue": "3169",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2130,7 +2688,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2139,7 +2699,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PUPDEP"
+          "PropertyValue": "PUPDEP",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2148,7 +2710,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2164,24 +2728,36 @@
       "Pudo": true,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3119"
+          "Addon": "3119",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2192,7 +2768,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3170"
+          "PropertyValue": "3170",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -2201,7 +2779,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -2210,7 +2790,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2219,7 +2801,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3170"
+          "PropertyValue": "3170",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2228,7 +2812,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "ContactMobile",
-          "PropertyValue": "3580007654321"
+          "PropertyValue": "3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2237,7 +2823,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PRENOT"
+          "PropertyValue": "PRENOT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2246,7 +2834,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2263,16 +2853,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2283,7 +2881,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3171"
+          "PropertyValue": "3171",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2292,7 +2892,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3171"
+          "PropertyValue": "3171",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2301,7 +2903,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "WARM"
+          "PropertyValue": "WARM",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2328,7 +2932,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "ALL"
+          "Country": "ALL",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2339,7 +2945,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3174"
+          "PropertyValue": "3174",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2348,7 +2956,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3174"
+          "PropertyValue": "3174",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2357,7 +2967,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "SPTR"
+          "PropertyValue": "SPTR",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2370,24 +2982,34 @@
       "DescriptionFI": "Palvelu mahdollistaa vaarallisten aineiden kuljetuksesta (VAK) annetussa laissa säädetyn rajoitetussa määrin pakattujen vaarallisten aineiden lain mukaisen kuljettamisen perille päätuotteen palvelualuerekisterin mukaisesti. Lisäpalvelu ilmenee osoitekortilta, josta käy ilmi myös LQ-bruttomassa ja kollimäärä sekä rajoitetun määrän mukaisesta LQ-lipukkeesta ja VAK-teipistä.",
       "LabelMarking": "75",
       "Home": true,
-      "Pudo": true,
+      "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3162"
+          "Addon": "3143",
+          "StartDate": "2022-08-01",
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2398,7 +3020,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3175"
+          "PropertyValue": "3175",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
@@ -2407,7 +3031,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "LimitedQuantityWeight",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2416,7 +3042,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3175"
+          "PropertyValue": "3175",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2425,7 +3053,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "LimitedQuantityWeight",
-          "PropertyValue": "00000234"
+          "PropertyValue": "00000234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2434,7 +3064,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DNG"
+          "PropertyValue": "DNG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2443,7 +3075,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "limitedQuantities",
-          "PropertyValue": "TRUE"
+          "PropertyValue": "TRUE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2452,7 +3086,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "declarant",
-          "PropertyValue": "senders name"
+          "PropertyValue": "senders name",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2461,7 +3097,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "netWeight",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2477,21 +3115,31 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3139"
+          "Addon": "3139",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -2502,7 +3150,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "3176"
+          "PropertyValue": "3176",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "WAYBILD16A",
@@ -2511,7 +3161,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "AdditionalServices",
-          "PropertyValue": "3176"
+          "PropertyValue": "3176",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -2520,7 +3172,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "NOTLTR"
+          "PropertyValue": "NOTLTR",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -2537,16 +3191,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2564,16 +3226,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2591,16 +3261,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2618,16 +3296,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2645,16 +3331,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2672,16 +3366,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2699,16 +3401,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2726,16 +3436,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2753,16 +3471,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2780,16 +3506,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2807,16 +3541,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2834,16 +3576,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2861,16 +3611,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2888,16 +3646,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2915,16 +3681,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2941,21 +3715,31 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3115"
+          "Addon": "3115",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -2973,16 +3757,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3009,12 +3801,16 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3373"
+          "Addon": "3373",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "SE"
+          "Country": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3041,15 +3837,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "3372"
+          "Addon": "3372",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "DK"
+          "Country": "DK",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "SE"
+          "Country": "SE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3067,16 +3869,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3094,13 +3904,19 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3118,16 +3934,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3145,16 +3969,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3172,16 +4004,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3190,7 +4030,7 @@
       "ServiceCode": "3413",
       "ExternalServiceCodes": [],
       "DisplayNameEN": "Equipment installation Robot vacuum",
-      "DisplayNameFI": "Laiteasennus Robottipölynimuri",
+      "DisplayNameFI": "Laiteasennus Robottip��lynimuri",
       "DescriptionEN": "Equipment installation Robot vacuum",
       "DescriptionFI": "Laiteasennus Robottipölynimuri",
       "LabelMarking": null,
@@ -3199,16 +4039,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3226,16 +4074,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3253,16 +4109,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3280,16 +4144,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3307,16 +4179,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3334,16 +4214,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3361,16 +4249,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3388,16 +4284,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3415,16 +4319,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3442,16 +4354,24 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "EE"
+          "Country": "EE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LV"
+          "Country": "LV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Country": "LT"
+          "Country": "LT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": []
@@ -3468,21 +4388,31 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3493,7 +4423,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5100"
+          "PropertyValue": "5100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3502,7 +4434,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVT"
+          "PropertyValue": "DLVT",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3518,18 +4452,26 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3540,7 +4482,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5102"
+          "PropertyValue": "5102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3549,7 +4493,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "WARM"
+          "PropertyValue": "WARM",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3565,24 +4511,36 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5104"
+          "Addon": "5104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3593,7 +4551,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5103"
+          "PropertyValue": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3602,7 +4562,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3611,7 +4573,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3620,7 +4584,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVCALL"
+          "PropertyValue": "DLVCALL",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3629,7 +4595,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3645,21 +4613,31 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5103"
+          "Addon": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3670,7 +4648,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5104"
+          "PropertyValue": "5104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3679,7 +4659,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3688,7 +4670,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3697,7 +4681,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVPRIV"
+          "PropertyValue": "DLVPRIV",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3706,7 +4692,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3723,7 +4711,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3734,7 +4724,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5105"
+          "PropertyValue": "5105",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3743,7 +4735,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINST"
+          "PropertyValue": "DLVINST",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3760,7 +4754,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3771,7 +4767,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5106"
+          "PropertyValue": "5106",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3780,7 +4778,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINPKG"
+          "PropertyValue": "DLVINPKG",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3797,7 +4797,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3808,7 +4810,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5107"
+          "PropertyValue": "5107",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3817,7 +4821,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "RECYCLE"
+          "PropertyValue": "RECYCLE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3834,7 +4840,9 @@
       "ExcludedAdditionalServices": [],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3845,7 +4853,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5108"
+          "PropertyValue": "5108",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3854,7 +4864,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "RETPACK"
+          "PropertyValue": "RETPACK",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3870,12 +4882,16 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3886,7 +4902,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5109"
+          "PropertyValue": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3895,7 +4913,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3904,7 +4924,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3913,7 +4935,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVDEP"
+          "PropertyValue": "DLVDEP",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -3922,7 +4946,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -3938,39 +4964,61 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5100"
+          "Addon": "5100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5103"
+          "Addon": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5104"
+          "Addon": "5104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5234"
+          "Addon": "5234",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -3981,7 +5029,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5111"
+          "PropertyValue": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3990,7 +5040,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -3999,7 +5051,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4008,7 +5062,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PUPDEP"
+          "PropertyValue": "PUPDEP",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4017,7 +5073,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4033,18 +5091,26 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4055,7 +5121,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5214"
+          "PropertyValue": "5214",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4064,7 +5132,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "CARRYIN"
+          "PropertyValue": "CARRYIN",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4080,21 +5150,31 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4105,7 +5185,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5222"
+          "PropertyValue": "5222",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4114,7 +5196,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PERS"
+          "PropertyValue": "PERS",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4130,24 +5214,36 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5222"
+          "Addon": "5222",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4158,7 +5254,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5223"
+          "PropertyValue": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4167,7 +5265,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVNOPOD"
+          "PropertyValue": "DLVNOPOD",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4183,27 +5283,41 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5100"
+          "Addon": "5100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5103"
+          "Addon": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5214"
+          "Addon": "5214",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4214,7 +5328,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5224"
+          "PropertyValue": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4223,7 +5339,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4232,7 +5350,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4241,7 +5361,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSPC"
+          "PropertyValue": "DLVSPC",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4250,7 +5372,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4266,39 +5390,61 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5100"
+          "Addon": "5100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5103"
+          "Addon": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5104"
+          "Addon": "5104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5222"
+          "Addon": "5222",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4309,7 +5455,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5225"
+          "PropertyValue": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4318,7 +5466,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4327,7 +5477,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4336,7 +5488,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSORT"
+          "PropertyValue": "DLVSORT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4345,7 +5499,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4361,30 +5517,46 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4395,7 +5567,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5227"
+          "PropertyValue": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4404,15 +5578,17 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVINUNP"
+          "PropertyValue": "DLVINUNP",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
     {
       "ServiceCode": "5228",
       "ExternalServiceCodes": [],
-      "DisplayNameEN": "Crane Delivery Service",
-      "DisplayNameFI": "Nosturipalvelu",
+      "DisplayNameEN": "Crane Delivery",
+      "DisplayNameFI": "Jakelu nosturilla",
       "DescriptionEN": "Delivery of freight shipments is made using crane equipment. The Crane service is available for shipment batches weighing under 5,000 kg, and a single load cannot weigh more than 2,500 kg. One weekday of additional delivery time is reserved for Crane Delivery.",
       "DescriptionFI": "Rahtilähetysten nouto ja/tai jakelu tehdään nosturikalustolla. Nosturipalvelu on saatavissa alle 5000 rahdituskilon lähetyserille ja yksittäisen kollin paino ei saa ylittää 2500 kiloa. Nosturikuljetukseen varataan yksi arkipäivä ylimääräistä kuljetusaikaa. ",
       "LabelMarking": null,
@@ -4420,27 +5596,41 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5102"
+          "Addon": "5102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4451,7 +5641,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5228"
+          "PropertyValue": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4460,7 +5652,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4469,7 +5663,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4478,7 +5674,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "TECH"
+          "PropertyValue": "TECH",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4487,7 +5685,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4503,48 +5703,76 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5100"
+          "Addon": "5100",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5102"
+          "Addon": "5102",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5103"
+          "Addon": "5103",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5104"
+          "Addon": "5104",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5111"
+          "Addon": "5111",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5222"
+          "Addon": "5222",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5224"
+          "Addon": "5224",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4555,7 +5783,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5229"
+          "PropertyValue": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4564,7 +5794,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "WASTE"
+          "PropertyValue": "WASTE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4580,18 +5812,26 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5227"
+          "Addon": "5227",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4602,7 +5842,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5230"
+          "PropertyValue": "5230",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4611,7 +5853,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "SPTR"
+          "PropertyValue": "SPTR",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4627,15 +5871,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5236"
+          "Addon": "5236",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4646,7 +5896,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5234"
+          "PropertyValue": "5234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4655,7 +5907,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4664,7 +5918,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4673,7 +5929,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVTREQ"
+          "PropertyValue": "DLVTREQ",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4682,15 +5940,17 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
     {
       "ServiceCode": "5235",
       "ExternalServiceCodes": [],
-      "DisplayNameEN": "Call Before Delivery",
-      "DisplayNameFI": "Soitto ennen jakelua",
+      "DisplayNameEN": "Call Before Pickup",
+      "DisplayNameFI": "Soitto ennen noutoa",
       "DescriptionEN": "In the call before delivery / pick-up service, the sender or recipient must be contacted before the start of the route or at least one hour before arrival. The sender or recipient will be informed of the estimated time of arrival. The service is also well suited for shipments expected by the installer.",
       "DescriptionFI": "Soitto ennen jakelua/noutoa -lisäpalvelussa lähettäjään tai vastaanottajaan tulee ottaa yhteyttä ennen reitin alkua tai vähintään tunti ennen saapumista. Lähettäjälle tai vastaanottajalle informoidaan arvioitu saapumisaika. Palvelu sopii myös hyvin lähetyksille joita odottaa kohteessa asentaja.",
       "LabelMarking": null,
@@ -4698,15 +5958,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5236"
+          "Addon": "5236",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4717,7 +5983,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5235"
+          "PropertyValue": "5235",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4726,7 +5994,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4735,7 +6005,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4744,7 +6016,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DLVSORT"
+          "PropertyValue": "DLVSORT",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4753,7 +6027,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4769,15 +6045,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5235"
+          "Addon": "5235",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4788,7 +6070,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5236"
+          "PropertyValue": "5236",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4797,7 +6081,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4806,7 +6092,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4815,7 +6103,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "PRIVPUP"
+          "PropertyValue": "PRIVPUP",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4824,7 +6114,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4840,15 +6132,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5109"
+          "Addon": "5109",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5228"
+          "Addon": "5228",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4859,7 +6157,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5237"
+          "PropertyValue": "5237",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4868,7 +6168,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "ContactChannel",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4877,7 +6179,9 @@
           "Mandatory": true,
           "MessagePosition": "CONSIGNEE",
           "PropertyName": "channel",
-          "PropertyValue": "MOBILE"
+          "PropertyValue": "MOBILE",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4893,18 +6197,26 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5223"
+          "Addon": "5223",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5225"
+          "Addon": "5225",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4915,7 +6227,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5238"
+          "PropertyValue": "5238",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -4931,15 +6245,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5503"
+          "Addon": "5503",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -4950,7 +6270,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5502"
+          "PropertyValue": "5502",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -4959,7 +6281,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "LimitedQuantity",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4968,7 +6292,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DNG"
+          "PropertyValue": "DNG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4977,7 +6303,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "limitedQuantities",
-          "PropertyValue": "TRUE"
+          "PropertyValue": "TRUE",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4986,7 +6314,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "declarant",
-          "PropertyValue": "senders name"
+          "PropertyValue": "senders name",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -4995,7 +6325,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "netWeight",
-          "PropertyValue": "0.234"
+          "PropertyValue": "0.234",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     },
@@ -5011,15 +6343,21 @@
       "Pudo": false,
       "ExcludedAdditionalServices": [
         {
-          "Addon": "5229"
+          "Addon": "5229",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
-          "Addon": "5502"
+          "Addon": "5502",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "AvailableCountries": [
         {
-          "Country": "FI"
+          "Country": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ],
       "Fields": [
@@ -5030,7 +6368,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "Service",
-          "PropertyValue": "5503"
+          "PropertyValue": "5503",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5039,7 +6379,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "DangerousGoodsItem",
-          "PropertyValue": "ADR"
+          "PropertyValue": "ADR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5048,7 +6390,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "RegulationsCode",
-          "PropertyValue": "0016"
+          "PropertyValue": "0016",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5057,7 +6401,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "UnNo",
-          "PropertyValue": "2.1"
+          "PropertyValue": "2.1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5066,7 +6412,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "PackingDescription",
-          "PropertyValue": "5.000"
+          "PropertyValue": "5.000",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5075,7 +6423,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "TotalQuantity",
-          "PropertyValue": "LTR"
+          "PropertyValue": "LTR",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5084,7 +6434,9 @@
           "Mandatory": true,
           "MessagePosition": null,
           "PropertyName": "unit",
-          "PropertyValue": "Alcohol, N.O.S."
+          "PropertyValue": "Alcohol, N.O.S.",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5093,7 +6445,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "MainDanger",
-          "PropertyValue": "4.2"
+          "PropertyValue": "4.2",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5102,7 +6456,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "SubsidiaryRisk",
-          "PropertyValue": "II"
+          "PropertyValue": "II",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5111,7 +6467,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "PackingGroup",
-          "PropertyValue": "1"
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5120,7 +6478,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "NoDgPackages",
-          "PropertyValue": "steel drum"
+          "PropertyValue": "steel drum",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5129,7 +6489,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "ProperShippingName",
-          "PropertyValue": "Methanol dioxide"
+          "PropertyValue": "Methanol dioxide",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5138,7 +6500,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "TechnicalDescription",
-          "PropertyValue": "false"
+          "PropertyValue": "false",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "POSTRA_FREIGHT",
@@ -5147,7 +6511,9 @@
           "Mandatory": false,
           "MessagePosition": null,
           "PropertyName": "Waste",
-          "PropertyValue": "C5000D"
+          "PropertyValue": "C5000D",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5156,7 +6522,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "id",
-          "PropertyValue": "DNG"
+          "PropertyValue": "DNG",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5165,7 +6533,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "unCode",
-          "PropertyValue": "0016"
+          "PropertyValue": "0016",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5174,7 +6544,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "description",
-          "PropertyValue": "Alcohols, N.O.S."
+          "PropertyValue": "Alcohols, N.O.S.",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5183,7 +6555,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "adrClass",
-          "PropertyValue": "2.1"
+          "PropertyValue": "2.1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5192,7 +6566,9 @@
           "Mandatory": true,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "netWeight",
-          "PropertyValue": "5"
+          "PropertyValue": "5",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5201,7 +6577,9 @@
           "Mandatory": true,
           "MessagePosition": "addons",
           "PropertyName": "declarant",
-          "PropertyValue": "senders name"
+          "PropertyValue": "senders name",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5210,7 +6588,9 @@
           "Mandatory": true,
           "MessagePosition": "receiver",
           "PropertyName": "mobile",
-          "PropertyValue": "+3580007654321"
+          "PropertyValue": "+3580007654321",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5219,7 +6599,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "hazardCode",
-          "PropertyValue": "4.2"
+          "PropertyValue": "4.2",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5228,7 +6610,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "packageCode",
-          "PropertyValue": "II"
+          "PropertyValue": "II",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5237,7 +6621,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "quantity",
-          "PropertyValue": "1"
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5246,7 +6632,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "packageType",
-          "PropertyValue": "steel drum"
+          "PropertyValue": "steel drum",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5255,7 +6643,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "technicalDescr",
-          "PropertyValue": "Methanol dioxide"
+          "PropertyValue": "Methanol dioxide",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5264,7 +6654,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "mpCode",
-          "PropertyValue": "N"
+          "PropertyValue": "N",
+          "StartDate": null,
+          "ExpirationDate": null
         },
         {
           "MessageFormat": "SMARTSHIP",
@@ -5273,7 +6665,9 @@
           "Mandatory": false,
           "MessagePosition": "dangerousGoods",
           "PropertyName": "trCode",
-          "PropertyValue": "C5000D"
+          "PropertyValue": "C5000D",
+          "StartDate": null,
+          "ExpirationDate": null
         }
       ]
     }

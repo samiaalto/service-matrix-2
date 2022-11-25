@@ -150,6 +150,46 @@ input[type="checkbox"].form-check-input:checked:focus {
   width: 100%;
   font-weight: 700;
 }
+
+.group-handle {
+  display: inline-block;
+  height: 28px;
+  position: absolute;
+  right: 25px;
+  transform: rotate(-90deg);
+  transition: all var(--speed);
+}
+
+.group-handle svg {
+  width: 7px;
+  fill: gray !important;
+}
+
+.lp-copy-sel__group-heading:hover .group-handle,
+.group-handle svg {
+  transform: rotate(0deg);
+  transition: all var(--speed);
+  fill: black !important;
+}
+
+.group-heading-wrapper {
+  padding-left: 10px;
+  padding-right: 5px;
+  width: calc(100% - 10px);
+}
+
+.group-heading-wrapper + div {
+  display: none !important;
+}
+
+.group-heading-wrapper + div.optGroup-collapsed {
+  display: block !important;
+}
+
+.lp-copy-sel__option {
+  padding-left: 25px !important;
+}
+
 .option_info {
   font-size: 10px;
 }

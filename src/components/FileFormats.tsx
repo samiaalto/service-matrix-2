@@ -16,8 +16,8 @@ const FileFormats = ({
   ffRowData,
   fileFormats,
 }) => {
-  const history = [];
   console.log(selected);
+  const history = [];
   if (selected.format) {
     for (const format of fileFormats.records) {
       if (format.Name === selected.format) {
