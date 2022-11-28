@@ -255,12 +255,19 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   const handleHeaderClick = (id) => {
     const node = document.querySelector(`#${id}`).parentElement
       .nextElementSibling;
-    console.log(node.classList);
     const classes = node.classList;
     if (classes.contains("optGroup-collapsed")) {
       node.classList.remove("optGroup-collapsed");
     } else {
       node.classList.add("optGroup-collapsed");
+    }
+
+    const nodeHeader = document.querySelector(`#${id}`);
+    const headerClasses = nodeHeader.classList;
+    if (headerClasses.contains("menu-collapsed")) {
+      nodeHeader.classList.remove("menu-collapsed");
+    } else {
+      nodeHeader.classList.add("menu-collapsed");
     }
   };
 
@@ -300,8 +307,13 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       for (let node of nodes) {
         let target = node.nextElementSibling;
         let classes = target.classList;
+        let targetHeader = node.firstElementChild;
+        let headerClasses = node.classList;
         if (!classes.contains("optGroup-collapsed")) {
           target.classList.add("optGroup-collapsed");
+        }
+        if (!headerClasses.contains("menu-collapsed")) {
+          targetHeader.classList.add("menu-collapsed");
         }
       }
     } else if (searchText === "") {
@@ -313,8 +325,14 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
           if (node !== null) {
             let target = node.nextElementSibling;
             let classes = target.classList;
+            let targetHeader = node.firstElementChild;
+            let headerClasses = node.classList;
             if (classes.contains("optGroup-collapsed")) {
               target.classList.remove("optGroup-collapsed");
+            }
+
+            if (headerClasses.contains("menu-collapsed")) {
+              targetHeader.classList.remove("menu-collapsed");
             }
           }
         }
@@ -422,6 +440,26 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     menuList: (styles) => ({
       ...styles,
       maxHeight: "360px",
+    }),
+    dropdownIndicator: (base, state) => ({
+      ...base,
+      transition: "all .3s ease",
+      transform: state.isFocused ? "rotate(180deg)" : "rotate(0deg)",
+      color: state.isFocused ? "#000" : "gray",
+      "&:hover": {
+        transform: "rotate(90deg)",
+        color: "#000",
+      },
+    }),
+    clearIndicator: (base, state) => ({
+      ...base,
+      transition: "all .3s ease",
+      color: "gray",
+      transform: "rotate(0deg)",
+      "&:hover": {
+        transform: "rotate(180deg)",
+        color: "#000",
+      },
     }),
     option: (provided, state) => ({
       ...provided,

@@ -165,10 +165,19 @@ input[type="checkbox"].form-check-input:checked:focus {
   fill: gray !important;
 }
 
-.lp-copy-sel__group-heading:hover .group-handle,
-.group-handle svg {
+.lp-copy-sel__group-heading:hover .group-handle {
   transform: rotate(0deg);
   transition: all var(--speed);
+  fill: black !important;
+}
+
+.lp-copy-sel__group-heading.menu-collapsed .group-handle {
+  transform: rotate(90deg);
+  transition: all var(--speed);
+}
+
+.lp-copy-sel__group-heading:hover .group-handle svg,
+.lp-copy-sel__group-heading.menu-collapsed .group-handle svg {
   fill: black !important;
 }
 
