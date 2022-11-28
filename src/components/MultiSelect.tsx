@@ -18,6 +18,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   const [initialValues, setInitialValues] = useState([]);
   const [initialLoad, setInitialLoad] = useState(true);
   const [preset, setPreset] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const onSelection = (e) => {
     onChange(e);
@@ -291,7 +292,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     );
   };
 
-  const customFilter = (option, searchText) => {
+  useEffect(() => {
     if (searchText) {
       let nodes: any = document.querySelectorAll(
         "#react-select-2-listbox .group-heading-wrapper"
@@ -303,24 +304,26 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
           target.classList.add("optGroup-collapsed");
         }
       }
+    } else if (searchText === "") {
+      let nodes: any = document.querySelectorAll(
+        "#react-select-2-listbox .group-heading-wrapper"
+      );
+      if (nodes.length > 0) {
+        for (let node of nodes) {
+          if (node !== null) {
+            let target = node.nextElementSibling;
+            let classes = target.classList;
+            if (classes.contains("optGroup-collapsed")) {
+              target.classList.remove("optGroup-collapsed");
+            }
+          }
+        }
+      }
     }
+  }, [searchText]);
 
-    // else if (searchText !== "") {
-    //   let nodes: any = document.querySelectorAll(
-    //     "#react-select-2-listbox .group-heading-wrapper"
-    //   );
-    //   if (nodes.length > 0) {
-    //     for (let node of nodes) {
-    //       if (node !== null) {
-    //         let target = node.nextElementSibling;
-    //         let classes = target.classList;
-    //         if (classes.contains("optGroup-collapsed")) {
-    //           target.classList.remove("optGroup-collapsed");
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+  const customFilter = (option, searchText) => {
+    setSearchText(searchText);
     if (option.data.keyWords.toLowerCase().includes(searchText.toLowerCase())) {
       return true;
     } else {
