@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Select from "./Select";
 import Filter from "./Filter";
 import { Table, Tabs, Tab, Row, Col } from "react-bootstrap";
-import { useState } from "react";
 
 const FileFormats = ({
   t,
@@ -16,7 +15,7 @@ const FileFormats = ({
   ffRowData,
   fileFormats,
 }) => {
-  console.log(selected);
+  //console.log(selected);
   const history = [];
   if (selected.format) {
     for (const format of fileFormats.records) {

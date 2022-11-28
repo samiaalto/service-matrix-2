@@ -1,5 +1,3 @@
-import Button from "./Button";
-
 const MapRows = (
   services,
   additionalServices,
@@ -11,15 +9,6 @@ const MapRows = (
   let rows = [];
   let serviceGroups = [];
 
-  let allAddons = {
-    serviceName: t("Service"),
-    serviceButton: " ",
-    serviceCode: t("Code"),
-    serviceGroup: [],
-    keyWords: "keywords",
-    departureCountries: " ",
-    destinationCountries: " ",
-  };
   for (let record of services.records) {
     let service = {};
 
@@ -28,15 +17,6 @@ const MapRows = (
     }
 
     service["serviceName"] = record.ServiceCode;
-    //service['serviceButton'] = (
-    //  <Button
-    //    title=""
-    //    type="select"
-    //    onClick={(e) => {
-    //      serviceSelection(record.ServiceCode);
-    //    }}
-    //  />
-    //);
     let deliveryLocations = [];
 
     if (record.Pudo) {
@@ -53,7 +33,6 @@ const MapRows = (
     service["serviceButton"] = false;
     service["serviceCode"] = record.ServiceCode;
     service["serviceGroup"] = record.ServiceGroup;
-    // service['serviceGroup'] = [record.ServiceGroup];
     service["keyWords"] = record.DisplayNameEN + " " + record.DisplayNameFI;
 
     let depCountries = [];
@@ -65,9 +44,6 @@ const MapRows = (
       depCountries.push(route.DepartureCountry);
       destCountries.push(route.DestinationCountry);
       routes.push(route.DepartureCountry + "-" + route.DestinationCountry);
-      //for (let destination of route.DestinationCountries) {
-      //  destCountries.push(destination.Country);
-      //}
     }
 
     let dimensions = [];
@@ -117,7 +93,6 @@ const MapRows = (
 
     let keyWordAddons = "";
     for (let addon of additionalServices.records) {
-      //allAddons[addon.ServiceCode] = addon.ServiceCode;
       if (
         record.AdditionalServices.some((e) => e.Addon === addon.ServiceCode)
       ) {
@@ -137,14 +112,8 @@ const MapRows = (
       }
     }
     service["additionalServices"] = addons;
-    //service["keyWords"] =
-    //  record.DisplayNameEN + " " + record.DisplayNameFI + " " + keyWordAddons;
     rows.push(service);
   }
-  //allAddons['serviceGroup'] = serviceGroups;
-  //let out = (...allAddons ...rows)
-  //rows = [allAddons, ...rows];
-  //console.log(rows);
   return setRowData(rows);
 };
 

@@ -1,36 +1,18 @@
 import {
-  Column,
-  Table,
   useReactTable,
   ColumnFiltersState,
   getCoreRowModel,
   getFilteredRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
-  ColumnDef,
   flexRender,
-  RowData,
   FilterFn,
 } from "@tanstack/react-table";
-import {
-  useState,
-  useReducer,
-  useEffect,
-  useCallback,
-  useRef,
-  useMemo,
-} from "react";
+import { useState, useEffect, useMemo } from "react";
 import "./styles/FFTable_styles.css";
 import AllowedValues from "./AllowedValues";
 
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils";
-
-declare module "@tanstack/react-table" {
-  interface TableMeta<TData extends RowData> {
-    updateData: (rowIndex: number, columnId: string, value: unknown) => void;
-    selection: (rowIndex: number, columnId: string, value: unknown) => void;
-  }
-}
 
 declare module "@tanstack/table-core" {
   interface FilterFns {
@@ -88,22 +70,6 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   return itemRank.passed;
 };
 
-function useSkipper() {
-  const shouldSkipRef = useRef(true);
-  const shouldSkip = shouldSkipRef.current;
-
-  // Wrap a function with this to skip a pagination reset temporarily
-  const skip = useCallback(() => {
-    shouldSkipRef.current = false;
-  }, []);
-
-  useEffect(() => {
-    shouldSkipRef.current = true;
-  });
-
-  return [shouldSkip, skip] as const;
-}
-
 function FFTable({
   t,
   defaultData,
@@ -111,8 +77,7 @@ function FFTable({
   selectedFormat,
   glblFilter,
 }) {
-  const [data, setData] = useState(() => [...defaultData]);
-  const [rows, setRows] = useState(0);
+  const [data] = useState(() => [...defaultData]);
   const [columns] = useState<typeof defaultColumns>(() => [...defaultColumns]);
   const [columnVisibility, setColumnVisibility] = useState({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -151,7 +116,7 @@ function FFTable({
     } else {
       setColumnVisibility({ format: false, tooltip: false, position: false });
     }
-  }, [selectedFormat]);
+  }, [selectedFormat, table]);
 
   useEffect(() => {
     setGlobalFilter(glblFilter || undefined);

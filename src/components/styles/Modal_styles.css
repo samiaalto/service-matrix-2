@@ -50,6 +50,24 @@
   border-bottom-right-radius: var(--border-radius);
 }
 
+.modal-footer .btn {
+  border-radius: 10px;
+}
+
+.modal-footer .btn:hover {
+  background-color: #3b4a57;
+  transition: all 0.3 ease-in-out;
+}
+
+.modal-footer .btn:focus {
+  outline: none !important;
+  -webkit-appearance: none !important;
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .modal-text-header {
   font-weight: 500;
   padding-top: 20px;
@@ -97,5 +115,5 @@
 
 .example_col,
 .example_title {
-  max-width: 100px;
+  max-width: 200px;
 }

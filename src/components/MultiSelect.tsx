@@ -18,6 +18,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   const [initialValues, setInitialValues] = useState([]);
   const [initialLoad, setInitialLoad] = useState(true);
   const [preset, setPreset] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const onSelection = (e) => {
     onChange(e);
@@ -37,7 +38,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       setInitialLoad(false);
       setInitialValues(data);
     }
-  }, [data]);
+  }, [data, initialLoad]);
 
   useEffect(() => {
     let options = [];
@@ -139,7 +140,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     if (options.length > 0) {
       setSelectedValues(options);
     }
-  }, [selected]);
+  }, [selected, initialValues, preset]);
 
   useEffect(() => {
     if (
@@ -254,12 +255,19 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
   const handleHeaderClick = (id) => {
     const node = document.querySelector(`#${id}`).parentElement
       .nextElementSibling;
-    console.log(node.classList);
     const classes = node.classList;
     if (classes.contains("optGroup-collapsed")) {
       node.classList.remove("optGroup-collapsed");
     } else {
       node.classList.add("optGroup-collapsed");
+    }
+
+    const nodeHeader = document.querySelector(`#${id}`);
+    const headerClasses = nodeHeader.classList;
+    if (headerClasses.contains("menu-collapsed")) {
+      nodeHeader.classList.remove("menu-collapsed");
+    } else {
+      nodeHeader.classList.add("menu-collapsed");
     }
   };
 
@@ -291,7 +299,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     );
   };
 
-  const customFilter = (option, searchText) => {
+  useEffect(() => {
     if (searchText) {
       let nodes: any = document.querySelectorAll(
         "#react-select-2-listbox .group-heading-wrapper"
@@ -299,28 +307,41 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       for (let node of nodes) {
         let target = node.nextElementSibling;
         let classes = target.classList;
+        let targetHeader = node.firstElementChild;
+        let headerClasses = node.classList;
         if (!classes.contains("optGroup-collapsed")) {
           target.classList.add("optGroup-collapsed");
         }
+        if (!headerClasses.contains("menu-collapsed")) {
+          targetHeader.classList.add("menu-collapsed");
+        }
+      }
+    } else if (searchText === "") {
+      let nodes: any = document.querySelectorAll(
+        "#react-select-2-listbox .group-heading-wrapper"
+      );
+      if (nodes.length > 0) {
+        for (let node of nodes) {
+          if (node !== null) {
+            let target = node.nextElementSibling;
+            let classes = target.classList;
+            let targetHeader = node.firstElementChild;
+            let headerClasses = node.classList;
+            if (classes.contains("optGroup-collapsed")) {
+              target.classList.remove("optGroup-collapsed");
+            }
+
+            if (headerClasses.contains("menu-collapsed")) {
+              targetHeader.classList.remove("menu-collapsed");
+            }
+          }
+        }
       }
     }
+  }, [searchText]);
 
-    // else if (searchText !== "") {
-    //   let nodes: any = document.querySelectorAll(
-    //     "#react-select-2-listbox .group-heading-wrapper"
-    //   );
-    //   if (nodes.length > 0) {
-    //     for (let node of nodes) {
-    //       if (node !== null) {
-    //         let target = node.nextElementSibling;
-    //         let classes = target.classList;
-    //         if (classes.contains("optGroup-collapsed")) {
-    //           target.classList.remove("optGroup-collapsed");
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+  const customFilter = (option, searchText) => {
+    setSearchText(searchText);
     if (option.data.keyWords.toLowerCase().includes(searchText.toLowerCase())) {
       return true;
     } else {
@@ -336,7 +357,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
           placement="top"
           overlay={
             <Tooltip key={"tooltip_" + props.data.title}>
-              {props.data.optGroup}
+              {t(props.data.optGroup)}
             </Tooltip>
           }
         >
@@ -412,13 +433,35 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     }),
     menu: (styles) => ({
       ...styles,
+      marginTop: "5px",
       borderRadius: "16px",
       zIndex: 9999,
       border: "2px solid #3b4a57",
+      boxShadow: "0 0 8px 3px rgba(57, 75, 88, 0.3)",
     }),
     menuList: (styles) => ({
       ...styles,
       maxHeight: "360px",
+    }),
+    dropdownIndicator: (base, state) => ({
+      ...base,
+      transition: "all .3s ease",
+      transform: state.isFocused ? "rotate(180deg)" : "rotate(0deg)",
+      color: state.isFocused ? "#000" : "gray",
+      "&:hover": {
+        transform: "rotate(90deg)",
+        color: "#000",
+      },
+    }),
+    clearIndicator: (base, state) => ({
+      ...base,
+      transition: "all .3s ease",
+      color: "gray",
+      transform: "rotate(0deg)",
+      "&:hover": {
+        transform: "rotate(180deg)",
+        color: "#000",
+      },
     }),
     option: (provided, state) => ({
       ...provided,
@@ -427,6 +470,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         state.isFocused || state.isSelected ? "#ececec" : "transparent",
       "&:hover": {
         backgroundColor: "#ececec",
+        cursor: "pointer",
       },
     }),
     group: (provided, state) => ({
@@ -440,6 +484,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         transition: "all 0.3s ease-in-out",
         backgroundColor: "#f2f2f2",
         borderRadius: "8px",
+        cursor: "pointer",
       },
       borderBottom: "2px solid #e0e0e0",
       backgroundColor: "#fff",

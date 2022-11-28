@@ -64,7 +64,6 @@ const MessageGenerator = (
   let labelData = {};
   let labelAddons = [];
   let addons = [];
-  let depIndex = -1;
   let destIndex = -1;
 
   addonArr = selected.addons;
@@ -363,7 +362,7 @@ const MessageGenerator = (
       }
     }
   }
-  console.log(labelAddons);
+
   let d = new Date();
   labelData["dateTime"] =
     d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();

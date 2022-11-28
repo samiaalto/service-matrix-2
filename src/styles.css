@@ -4,8 +4,7 @@
   text-align: center;
 }
 
-html,
-body {
+html {
   overflow: hidden;
 }
 
@@ -13,7 +12,6 @@ body {
   height: 100vh;
   width: 100vw;
   padding: 5px;
-  overflow: hidden;
 }
 
 .container-fluid {
@@ -52,6 +50,7 @@ body {
 }
 
 input[type="checkbox"].form-check-input {
+  cursor: pointer;
   clip: unset;
   clip-path: unset;
   width: 35px;
@@ -145,6 +144,18 @@ input[type="checkbox"].form-check-input:checked:focus {
   border-color: blue;
 }
 
+.lp-copy-sel__control:hover {
+  cursor: pointer;
+}
+
+.lp-copy-sel__control:hover
+  > .lp-copy-sel__indicators
+  > .lp-copy-sel__dropdown-indicator {
+  transform: rotate(90deg);
+  color: #000;
+  transition: all var(--speed);
+}
+
 .option_header {
   display: inline-block;
   width: 100%;
@@ -165,10 +176,24 @@ input[type="checkbox"].form-check-input:checked:focus {
   fill: gray !important;
 }
 
-.lp-copy-sel__group-heading:hover .group-handle,
-.group-handle svg {
+.lp-copy-sel__group-heading:hover .group-handle {
   transform: rotate(0deg);
   transition: all var(--speed);
+  fill: black !important;
+}
+
+.lp-copy-sel__group-heading.menu-collapsed .group-handle {
+  transform: rotate(90deg);
+  transition: all var(--speed);
+}
+
+.lp-copy-sel__group-heading.menu-collapsed:hover .group-handle {
+  transform: rotate(0deg);
+  transition: all var(--speed);
+}
+
+.lp-copy-sel__group-heading:hover .group-handle svg,
+.lp-copy-sel__group-heading.menu-collapsed .group-handle svg {
   fill: black !important;
 }
 

@@ -18,6 +18,7 @@
 .dropdown-menu {
   min-width: 110px;
   border-radius: 16px;
+  border: 2px solid #3b4a57;
 }
 
 .dropdown-menu > .active,
@@ -27,6 +28,22 @@
   font-weight: 700;
 }
 
+.dropdown > .dropdown-toggle::after {
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown:hover > .dropdown-toggle::after {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown.show > .dropdown-toggle::after {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+
 .dropdown-menu.show {
   z-index: 9999;
+  box-shadow: 0 0 6px 2px rgba(57, 75, 88, 0.3);
 }

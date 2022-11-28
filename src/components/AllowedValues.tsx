@@ -3,9 +3,9 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 const AllowedValues = ({ data, t }) => {
-  const [listItems, setListItems] = useState(data);
+  const [listItems] = useState(data);
   const [showAll, setShowAll] = useState(false);
-  const [showItem, setShowItem] = useState(4);
+  const [showItem] = useState(4);
 
   const loadCount = showAll ? listItems.length : showItem;
   return (
