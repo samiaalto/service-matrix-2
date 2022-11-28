@@ -363,7 +363,7 @@ const MessageGenerator = (
       }
     }
   }
-  console.log(labelAddons);
+
   let d = new Date();
   labelData["dateTime"] =
     d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();

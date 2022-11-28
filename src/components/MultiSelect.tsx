@@ -433,6 +433,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     }),
     menu: (styles) => ({
       ...styles,
+      marginTop: "5px",
       borderRadius: "16px",
       zIndex: 9999,
       border: "2px solid #3b4a57",

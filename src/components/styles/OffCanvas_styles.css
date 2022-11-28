@@ -21,6 +21,14 @@
   position: relative;
   top: -15px;
   z-index: 5;
+  transform: rotate(0deg);
+  transition: all var(--speed);
+}
+
+.offcanvas-header .btn-close:hover {
+  transform: rotate(180deg);
+  transition: all var(--speed);
+  color: #000;
 }
 
 .offcanvas-header .btn-close:focus {

@@ -780,7 +780,7 @@ const App = (props: AppProps) => {
   }, [loaded]);
 
   useEffect(() => {
-    console.log(selected);
+    //console.log(selected);
   }, [selected]);
 
   useEffect(() => {
@@ -841,7 +841,7 @@ const App = (props: AppProps) => {
               a.MaxDepth_cm -
               (b.MaxWeight_kg + b.MaxWidth_cm + b.MaxHeight_cm + b.MaxDepth_cm)
           );
-          console.log(dimensions);
+          //console.log(dimensions);
           for (const route of record.Routes) {
             routes.push(route);
           }
