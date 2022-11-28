@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from "react";
+import { useCallback, memo } from "react";
 import { Header } from "./Header";
 
 const HeaderRowComponent = ({ onCellClick, t, headerGroup, allCols }) => {

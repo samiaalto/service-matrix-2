@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from "react";
+import { useCallback, memo } from "react";
 import { Cell } from "./Cell";
 
 const RowComponent = ({ row, onCellClick, t, highlightRow }) => {

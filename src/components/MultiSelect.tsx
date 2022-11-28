@@ -38,7 +38,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       setInitialLoad(false);
       setInitialValues(data);
     }
-  }, [data]);
+  }, [data, initialLoad]);
 
   useEffect(() => {
     let options = [];
@@ -140,7 +140,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     if (options.length > 0) {
       setSelectedValues(options);
     }
-  }, [selected]);
+  }, [selected, initialValues, preset]);
 
   useEffect(() => {
     if (
@@ -357,7 +357,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
           placement="top"
           overlay={
             <Tooltip key={"tooltip_" + props.data.title}>
-              {props.data.optGroup}
+              {t(props.data.optGroup)}
             </Tooltip>
           }
         >
@@ -437,6 +437,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       borderRadius: "16px",
       zIndex: 9999,
       border: "2px solid #3b4a57",
+      boxShadow: "0 0 8px 3px rgba(57, 75, 88, 0.3)",
     }),
     menuList: (styles) => ({
       ...styles,
@@ -469,6 +470,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         state.isFocused || state.isSelected ? "#ececec" : "transparent",
       "&:hover": {
         backgroundColor: "#ececec",
+        cursor: "pointer",
       },
     }),
     group: (provided, state) => ({
@@ -482,6 +484,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         transition: "all 0.3s ease-in-out",
         backgroundColor: "#f2f2f2",
         borderRadius: "8px",
+        cursor: "pointer",
       },
       borderBottom: "2px solid #e0e0e0",
       backgroundColor: "#fff",

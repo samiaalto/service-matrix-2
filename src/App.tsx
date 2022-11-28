@@ -797,6 +797,12 @@ const App = (props: AppProps) => {
     if (!isAvailable && selected.deliveryLocation === "Pickup") {
       isAvailable = true;
     }
+    if (
+      (isAvailable && selected.width > 100) ||
+      (isAvailable && selected.weight > 25)
+    ) {
+      isAvailable = false;
+    }
     setSelected((prevState) => ({
       ...prevState,
       pudoAvailable: isAvailable,

@@ -50,6 +50,9 @@ let en = {
   version: "Version History",
   showAll: "Show whole list >>",
   hideAll: "Show less >>",
+  Weight: "Weight per colli",
+  "Longest Side": "Longest side of colli",
+  "'Available Countries'": "Available Countries",
   "'Show equipment'": "Show Equipment Installation services",
   BOTH: "Service is available when sending shipments to pickup point chosen by the recipient and to recipient home address.",
   HOME: "Service is available when sending shipments to recipient home address.",
@@ -120,6 +123,20 @@ let fi = {
   Availability: "Saatavuus",
   showAll: "Näytä koko lista >>",
   hideAll: "Sulje lista >>",
+  Weight: "Kollin paino",
+  Routes: "Reitit",
+  Dimensions: "Mittatiedot",
+  Width: "Leveys",
+  Depth: "Syvyys",
+  Height: "Korkeus",
+  Circumference: "Ympärysmitta",
+  "Longest Side": "Kollin pisin sivu",
+  "Delivery Location": "Toimituspaikka",
+  "Service Group": "Palveluryhmä",
+  "Departure Country": "Lähtömaa",
+  "Destination Country": "Kohdemaa",
+  "Additional Service": "Lisäpalvelu",
+  "'Available Countries'": "Sallitut maat",
   "'Show equipment'": "Näytä laiteasennuspalvelut",
   BOTH: "Lisäpalvelu on saatavilla asiakkaan valitsemaan noutopisteeseen sekä asiakkaan osoitteeseen lähetettäessä.",
   HOME: "Lisäpalvelu on saatavilla ainoastaan asiakkaan osoitteeseen lähetettäessä.",
@@ -230,7 +247,7 @@ function loadLanguages(language: string) {
       }
     }
   }
-  console.log(result);
+  //console.log(result);
   return result;
 }
 

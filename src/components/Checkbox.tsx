@@ -1,7 +1,6 @@
 import "./styles/Checkbox_styles.css";
 import { useEffect, useState } from "react";
 import { animated, useSpring, useChain, useSpringRef } from "react-spring";
-import { IsAny } from "@tanstack/table-core";
 
 interface checkboxProps {
   title: string;
@@ -18,7 +17,7 @@ const Checkbox = ({
   onClick,
   row: { index },
   column: { id },
-  value
+  value,
 }: checkboxProps) => {
   const [isChecked, setIsChecked] = useState(false);
   const [checkMarkLength, setCheckMarkLenght] = useState(null);
@@ -28,11 +27,11 @@ const Checkbox = ({
 
   const checkboxAnimationStyle = useSpring({
     backgroundColor: isChecked ? "#394b58" : "transparent",
-    ref: checkboxAnimationRef
+    ref: checkboxAnimationRef,
   });
   const checkMarkAnimationStyle = useSpring({
     x: isChecked ? 0 : checkMarkLength,
-    ref: checkMarkAnimationRef
+    ref: checkMarkAnimationRef,
   });
 
   useChain(
@@ -47,7 +46,7 @@ const Checkbox = ({
     onClick({
       row: index,
       column: id,
-      isChecked: !isChecked
+      isChecked: !isChecked,
     });
   }
 

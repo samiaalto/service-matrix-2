@@ -106,10 +106,10 @@ const ModalWindow = ({
                             <thead>
                               <tr key={"routes_header"}>
                                 <th key={"routes_departure"}>
-                                  {t("Departure")}
+                                  {t("Departure Country")}
                                 </th>
                                 <th key={"routes_destination"}>
-                                  {t("Destination")}
+                                  {t("Destination Country")}
                                 </th>
                               </tr>
                             </thead>
@@ -242,7 +242,7 @@ const ModalWindow = ({
                       ) ? (
                         <tr key={"dimensions_circumference"}>
                           <td key={"dimension_circumference_header"}>
-                            {t("Cirmumference") + " (cm)"}
+                            {t("Circumference") + " (cm)"}
                           </td>
                           {data.dimensions.map(
                             (dimension: Dimension, i: number) => (
@@ -355,9 +355,6 @@ const ModalWindow = ({
                     <Table className="modal-tech-table">
                       <thead>
                         <tr key={"fields_header"}>
-                          <td key={"fields_header_name"}>
-                            {t("'Attribute Name'")}
-                          </td>
                           <td
                             key={"fields_header_title"}
                             className="attribute_title"
@@ -384,7 +381,6 @@ const ModalWindow = ({
                       <tbody>
                         {data.fields.POSTRA.map((item, i) => (
                           <tr key={"field_row_" + i}>
-                            <td key={"field_name_" + i}></td>
                             <td
                               key={"field_attribute_" + i}
                               className="attribute_col"
@@ -416,12 +412,9 @@ const ModalWindow = ({
                 )}
                 {data.fields.SMARTSHIP ? (
                   <Tab eventKey="smartship" title="Smartship">
-                    <Table className="modal-table">
+                    <Table className="modal-tech-table">
                       <thead>
                         <tr key={"fields_header"}>
-                          <td key={"fields_header_name"}>
-                            {t("'Attribute Name'")}
-                          </td>
                           <td
                             key={"fields_header_title"}
                             className="attribute_title"
@@ -448,7 +441,6 @@ const ModalWindow = ({
                       <tbody>
                         {data.fields.SMARTSHIP.map((item, i) => (
                           <tr key={"field_row_" + i}>
-                            <td key={"field_name_" + i}></td>
                             <td
                               key={"field_attribute_" + i}
                               className="attribute_col"
@@ -481,12 +473,9 @@ const ModalWindow = ({
 
                 {data.fields.WAYBILD16A ? (
                   <Tab eventKey="waybil" title="Waybild16a">
-                    <Table className="modal-table">
+                    <Table className="modal-tech-table">
                       <thead>
                         <tr key={"fields_header"}>
-                          <td key={"fields_header_name"}>
-                            {t("'Attribute Name'")}
-                          </td>
                           <td
                             key={"fields_header_title"}
                             className="attribute_title"
@@ -513,7 +502,6 @@ const ModalWindow = ({
                       <tbody>
                         {data.fields.WAYBILD16A.map((item, i) => (
                           <tr key={"field_row_" + i}>
-                            <td key={"field_name_" + i}></td>
                             <td
                               key={"field_attribute_" + i}
                               className="attribute_col"

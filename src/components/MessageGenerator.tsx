@@ -64,7 +64,6 @@ const MessageGenerator = (
   let labelData = {};
   let labelAddons = [];
   let addons = [];
-  let depIndex = -1;
   let destIndex = -1;
 
   addonArr = selected.addons;
