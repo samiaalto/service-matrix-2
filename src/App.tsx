@@ -1235,7 +1235,11 @@ const App = (props: AppProps) => {
                   </Row>
                 </div>
                 {columnData.length > 0 ? (
-                  <div className="content">
+                  <div
+                    className={
+                      selected.offCanvasOpen ? "content open" : "content"
+                    }
+                  >
                     <TanStackTable
                       t={t}
                       defaultColumns={columnData}

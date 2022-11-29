@@ -95,6 +95,12 @@ input[type="checkbox"].form-check-input:checked:focus {
 .content {
   padding: 0;
   margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.content.open {
+  margin-right: 49em;
+  transition: all 0.3s ease-in-out;
 }
 
 .MatrixContainer {
