@@ -4,7 +4,8 @@
   text-align: center;
 }
 
-html {
+html,
+body {
   overflow: hidden;
 }
 
@@ -29,7 +30,7 @@ body {
 
 .appcontainer {
   padding: 0px 0px 50px 0px;
-  height: calc(100vh - 83px);
+  height: calc(100vh - 93px);
   z-index: 2;
 }
 
@@ -83,6 +84,7 @@ input[type="checkbox"].form-check-input:checked:focus {
 }
 
 .controls .form-check label {
+  cursor: pointer;
   padding-left: 8px;
   padding-top: 4px;
   font-size: 13px;

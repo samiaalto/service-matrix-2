@@ -398,6 +398,7 @@ const App = (props: AppProps) => {
     updatedSearchParams.delete("service");
     updatedSearchParams.delete("addons");
     updatedSearchParams.delete("pudo");
+    updatedSearchParams.delete("modalOpen");
     updatedSearchParams.delete("offCanvasOpen");
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
@@ -412,6 +413,7 @@ const App = (props: AppProps) => {
       addons: [],
       pudo: false,
       pickupOrder: false,
+      modalOpen: false,
       offCanvasOpen: false,
       offCanvasTab: "",
       showOptional: false,
