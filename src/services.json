@@ -10,6 +10,7 @@
       "LabelType": "FREIGHT",
       "LabelName": "Rahti",
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -148,6 +149,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -167,6 +169,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -186,6 +189,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -205,6 +209,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 250,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -224,6 +229,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -243,6 +249,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 500,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -262,6 +269,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -281,6 +289,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -300,6 +309,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -319,6 +329,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -338,6 +349,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -357,6 +369,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -376,6 +389,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -395,6 +409,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -414,6 +429,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -433,6 +449,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -452,6 +469,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -471,6 +489,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -490,6 +509,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -509,6 +529,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -528,6 +549,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -547,6 +569,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -566,6 +589,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -585,6 +609,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         }
       ]
@@ -609,6 +634,7 @@
       "LabelType": "UPU",
       "LabelName": "Priority",
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS,HOME",
       "Pudo": false,
       "Home": true,
       "Business": true,
@@ -807,6 +833,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 30,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -821,6 +848,7 @@
       "LabelType": "UPU",
       "LabelName": "EMS",
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS,HOME",
       "Pudo": false,
       "Home": true,
       "Business": true,
@@ -1201,6 +1229,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 30,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME,POSTOFFICE",
           "AdditionalServiceCode": null
         }
       ]
@@ -1234,6 +1263,7 @@
       "LabelType": "PARCEL",
       "LabelName": "Express-Paketti Aamuksi",
       "ProcessNumber": "09",
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -1359,6 +1389,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -1392,6 +1423,7 @@
       "LabelType": "PARCEL",
       "LabelName": "Express-Paketti",
       "ProcessNumber": "14",
+      "DeliveryLocation": "BUSINESS,POSTOFFICE,LOCKER",
       "Pudo": true,
       "Home": false,
       "Business": true,
@@ -1578,6 +1610,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -1597,6 +1630,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": {
             "Addon": "3174"
           }
@@ -1632,6 +1666,7 @@
       "LabelType": "PARCEL",
       "LabelName": "Postipaketti",
       "ProcessNumber": "16",
+      "DeliveryLocation": "LOCKER,POSTOFFICE",
       "Pudo": true,
       "Home": false,
       "Business": false,
@@ -1793,6 +1828,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -1812,6 +1848,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 260,
+          "DeliveryLocation": "LOCKER",
           "AdditionalServiceCode": null
         },
         {
@@ -1831,6 +1868,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME,POSTOFFICE",
           "AdditionalServiceCode": {
             "Addon": "3174"
           }
@@ -1866,6 +1904,7 @@
       "LabelType": "PARCEL",
       "LabelName": "Kotipaketti",
       "ProcessNumber": "21",
+      "DeliveryLocation": "HOME",
       "Pudo": false,
       "Home": true,
       "Business": false,
@@ -2013,6 +2052,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -2046,6 +2086,7 @@
       "LabelType": "PARCEL",
       "LabelName": "Palautus",
       "ProcessNumber": "14",
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -2133,6 +2174,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -2166,6 +2208,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "00",
+      "DeliveryLocation": "HOME,BUSINESS",
       "Pudo": false,
       "Home": true,
       "Business": true,
@@ -2300,6 +2343,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 25,
           "Circumference_cm": 300,
+          "DeliveryLocation": "POSTOFFICE,BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2319,6 +2363,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": {
             "Addon": "3174"
           }
@@ -2345,6 +2390,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "00",
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -2461,6 +2507,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2480,6 +2527,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -2499,6 +2547,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 250,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2518,6 +2567,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2537,6 +2587,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -2556,6 +2607,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 500,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -2575,6 +2627,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -2599,6 +2652,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "09",
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -2712,6 +2766,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2731,6 +2786,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -2750,6 +2806,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 250,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2769,6 +2826,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2788,6 +2846,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -2807,6 +2866,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 500,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -2826,6 +2886,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -2850,6 +2911,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "14",
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -2973,6 +3035,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -2992,6 +3055,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -3011,6 +3075,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 250,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -3030,6 +3095,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -3049,6 +3115,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -3068,6 +3135,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 500,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -3087,6 +3155,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -3111,6 +3180,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "21",
+      "DeliveryLocation": "HOME,BUSINESS",
       "Pudo": false,
       "Home": true,
       "Business": true,
@@ -3281,6 +3351,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -3300,6 +3371,7 @@
           "MinWeight_kg": null,
           "MaxWeight_kg": null,
           "Circumference_cm": null,
+          "DeliveryLocation": null,
           "AdditionalServiceCode": null
         },
         {
@@ -3319,6 +3391,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 250,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -3338,6 +3411,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -3357,6 +3431,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -3376,6 +3451,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 500,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -3395,6 +3471,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 1000,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -3419,6 +3496,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -4337,6 +4415,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -4361,6 +4440,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -4661,6 +4741,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 740,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -4680,6 +4761,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 370,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -4704,6 +4786,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -4842,6 +4925,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 740,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -4861,6 +4945,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 370,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -4885,6 +4970,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS,HOME",
       "Pudo": false,
       "Home": true,
       "Business": true,
@@ -5071,6 +5157,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 740,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -5090,6 +5177,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 370,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -5114,6 +5202,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "HOME,LOCKER,POSTOFFICE",
       "Pudo": true,
       "Home": true,
       "Business": false,
@@ -5213,6 +5302,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": null,
+          "DeliveryLocation": "POSTOFFICE,HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -5232,6 +5322,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": null,
+          "DeliveryLocation": "LOCKER",
           "AdditionalServiceCode": null
         }
       ]
@@ -5256,6 +5347,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -5367,6 +5459,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": null,
+          "DeliveryLocation": "POSTOFFICE,HOME,BUSINESS",
           "AdditionalServiceCode": null
         },
         {
@@ -5386,6 +5479,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 35,
           "Circumference_cm": null,
+          "DeliveryLocation": "LOCKER",
           "AdditionalServiceCode": null
         }
       ]
@@ -5410,6 +5504,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -5548,6 +5643,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 740,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -5567,6 +5663,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 370,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -5600,6 +5697,7 @@
       "LabelType": "BRING",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "LOCKER,POSTOFFICE",
       "Pudo": true,
       "Home": false,
       "Business": false,
@@ -5806,6 +5904,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "LOCKER",
           "AdditionalServiceCode": null
         },
         {
@@ -5825,6 +5924,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -5858,6 +5958,7 @@
       "LabelType": "BRING",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "HOME",
       "Pudo": false,
       "Home": true,
       "Business": false,
@@ -5993,6 +6094,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -6026,6 +6128,7 @@
       "LabelType": "BRING",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "HOME",
       "Pudo": false,
       "Home": true,
       "Business": false,
@@ -6155,6 +6258,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 750,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -6174,6 +6278,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 400,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -6207,6 +6312,7 @@
       "LabelType": "BRING",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -6321,6 +6427,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "LOCKER",
           "AdditionalServiceCode": null
         },
         {
@@ -6340,6 +6447,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -6359,6 +6467,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 20,
           "Circumference_cm": 300,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -6392,6 +6501,7 @@
       "LabelType": "BRING",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -6479,6 +6589,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 750,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -6498,6 +6609,7 @@
           "MinWeight_kg": 1,
           "MaxWeight_kg": 400,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -6522,6 +6634,7 @@
       "LabelType": "PARCEL",
       "LabelName": null,
       "ProcessNumber": "P",
+      "DeliveryLocation": "HOME",
       "Pudo": false,
       "Home": true,
       "Business": false,
@@ -6600,6 +6713,7 @@
           "MinWeight_kg": 0,
           "MaxWeight_kg": 2,
           "Circumference_cm": null,
+          "DeliveryLocation": "HOME",
           "AdditionalServiceCode": null
         }
       ]
@@ -6624,6 +6738,7 @@
       "LabelType": "PARCELCONNECT",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "HOME",
       "Pudo": false,
       "Home": true,
       "Business": false,
@@ -6957,6 +7072,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 31.5,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -6976,6 +7092,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 31.5,
           "Circumference_cm": 360,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": {
             "Addon": "3174"
           }
@@ -7002,6 +7119,7 @@
       "LabelType": "PARCELCONNECT",
       "LabelName": null,
       "ProcessNumber": null,
+      "DeliveryLocation": "BUSINESS",
       "Pudo": false,
       "Home": false,
       "Business": true,
@@ -7323,6 +7441,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 31.5,
           "Circumference_cm": null,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": null
         },
         {
@@ -7342,6 +7461,7 @@
           "MinWeight_kg": 0.1,
           "MaxWeight_kg": 31.5,
           "Circumference_cm": 360,
+          "DeliveryLocation": "BUSINESS,HOME",
           "AdditionalServiceCode": {
             "Addon": "3174"
           }

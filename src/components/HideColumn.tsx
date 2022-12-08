@@ -42,7 +42,10 @@ const hideColumn = (
         isAvailable = false;
       }
     }
-    if (addonService.ServiceCode === addon && selected.pudo) {
+    if (
+      addonService.ServiceCode === addon &&
+      selected.deliveryLocation === "LOCKER"
+    ) {
       isAvailable = addonService.Pudo;
     }
   }

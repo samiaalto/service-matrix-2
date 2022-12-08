@@ -109,7 +109,7 @@ input[type="checkbox"].form-check-input:checked:focus {
   width: 100%;
   height: calc(100vh - 170px);
   overflow: auto;
-  margin-top: -80px;
+  margin-top: -50px;
 }
 
 .FFContainer {

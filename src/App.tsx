@@ -1201,6 +1201,7 @@ const App = (props: AppProps) => {
                       />
                     </Col>
                   </Row>
+                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
@@ -1213,7 +1214,6 @@ const App = (props: AppProps) => {
                       />
                     </Col>
                   </Row>
-                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
