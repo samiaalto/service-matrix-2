@@ -21,7 +21,11 @@ interface Dimension {
 
 interface Route {
   DepartureCountry: string;
-  DestinationCountry: string;
+  DestinationCountries: any;
+}
+
+interface Destination {
+  Country: string;
 }
 
 interface Addon {
@@ -115,12 +119,24 @@ const ModalWindow = ({
                             </thead>
                             <tbody>
                               {data.routes.map((route: Route, i: number) => (
-                                <tr key={"row_" + i}>
+                                <tr
+                                  key={"row_" + i}
+                                  className="routes-departure"
+                                >
                                   <td key={"dep_" + i}>
                                     {t(route.DepartureCountry)}
                                   </td>
-                                  <td key={"des_" + i}>
-                                    {t(route.DestinationCountry)}
+                                  <td
+                                    key={"des_" + i}
+                                    className="routes-destination"
+                                  >
+                                    {route.DestinationCountries.map(
+                                      (destination: any, i: number) => (
+                                        <div key={"destination_" + i}>
+                                          {t(destination.Country)}
+                                        </div>
+                                      )
+                                    )}
                                   </td>
                                 </tr>
                               ))}

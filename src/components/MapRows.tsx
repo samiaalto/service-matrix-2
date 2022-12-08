@@ -42,8 +42,10 @@ const MapRows = (
 
     for (let route of record.Routes) {
       depCountries.push(route.DepartureCountry);
-      destCountries.push(route.DestinationCountry);
-      routes.push(route.DepartureCountry + "-" + route.DestinationCountry);
+      for (let destination of route.DestinationCountries) {
+        destCountries.push(destination.Country);
+        routes.push(route.DepartureCountry + "-" + destination.Country);
+      }
     }
 
     let dimensions = [];

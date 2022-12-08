@@ -65,6 +65,7 @@ const MessageGenerator = (
   let labelAddons = [];
   let addons = [];
   let destIndex = -1;
+  let nonEu = false;
 
   addonArr = selected.addons;
 
@@ -147,6 +148,9 @@ const MessageGenerator = (
   for (let [index, country] of countries.records.entries()) {
     if (country.CountryCode === dest) {
       destIndex = index;
+      if (!country.Eu) {
+        nonEu = true;
+      }
       if (selected.pudo) {
         labelData["receiverName2"] = country.Name2;
       }
@@ -265,6 +269,8 @@ const MessageGenerator = (
             mandatory = true;
           } else if (selected.pudo && field.PropertyName === "Country") {
             value = countries.records[destIndex].CountryCode;
+            mandatory = true;
+          } else if (nonEu && field.AdditionalInfo === "non-EU") {
             mandatory = true;
           }
           serviceProps.push({
@@ -845,7 +851,7 @@ const MessageGenerator = (
                 usedPropsJSON.push(index);
 
                 let newPath = obj.Path;
-                //console.log(newPath);
+
                 if (objParent.Type === "Array") {
                   if (!indexes.hasOwnProperty(objParent.Name)) {
                     indexes[objParent.Name] = 0;
@@ -853,12 +859,15 @@ const MessageGenerator = (
                       indexes[val] = 0;
                     }
                   } else if (indexes.hasOwnProperty(objParent.Name)) {
-                    indexes[objParent.Name] = indexes[objParent.Name] + 1;
+                    if (obj.Name === "weight" || objParent.Name === "lines") {
+                      indexes[objParent.Name] = 0;
+                    } else {
+                      indexes[objParent.Name] = indexes[objParent.Name] + 1;
+                    }
                     if (obj.Name === "id") {
                       indexes[val] = indexes[objParent.Name];
                     }
                   }
-
                   let path = obj.Path.split(".");
 
                   for (const index of Object.keys(indexes)) {
@@ -939,6 +948,7 @@ const MessageGenerator = (
                   //path[elIndex + 1] = indexes[index];
                 }
               }
+
               newPath = path.join(".");
             } else {
               let path = obj.Path.split(".");
@@ -1134,7 +1144,7 @@ const MessageGenerator = (
   }
 
   //console.log(indexes);
-  //console.log(outJSON);
+  console.log(outJSON);
   //console.log(outTXT);
   //console.log(outXML);
 

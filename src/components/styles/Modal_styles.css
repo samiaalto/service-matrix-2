@@ -97,6 +97,10 @@
   overflow: auto;
 }
 
+.routes-departure {
+  vertical-align: middle;
+}
+
 .modal-tech-table td {
   padding: 2px;
   border: 0;
