@@ -19,16 +19,18 @@ const MapRows = (
     service["serviceName"] = record.ServiceCode;
     let deliveryLocations = [];
 
-    if (record.Pudo) {
-      deliveryLocations.push("Pickup");
-    }
+    //  if (record.Pudo) {
+    //    deliveryLocations.push("Pickup");
+    //  }
 
-    if (record.Home) {
-      deliveryLocations.push("HomeDelivery");
-    }
-    if (record.Business) {
-      deliveryLocations.push("BusinessDelivery");
-    }
+    //  if (record.Home) {
+    //    deliveryLocations.push("HomeDelivery");
+    //  }
+    //  if (record.Business) {
+    //    deliveryLocations.push("BusinessDelivery");
+    //  }
+
+    deliveryLocations = record.DeliveryLocation.split(",");
 
     service["serviceButton"] = false;
     service["serviceCode"] = record.ServiceCode;
@@ -58,6 +60,10 @@ const MapRows = (
         item.MaxDepth_cm,
         item.MaxWidth_cm
       );
+      let locations = [];
+      if (item.DeliveryLocation) {
+        locations = item.DeliveryLocation.split(",");
+      }
       let maxWidth = Math.max(...itemDimensions, 0);
       if (item.MaxHeight_cm !== null) {
         dimensions.push({
@@ -65,22 +71,17 @@ const MapRows = (
           addon:
             item.AdditionalServiceCode !== null
               ? item.AdditionalServiceCode.Addon
-              : item.DimensionName.indexOf("locker") > -1
-              ? "APT"
               : null,
+          locations: locations,
         });
-        if (
-          weights.length === 0 ||
-          weights.some((e) => e.maxWeight !== item.MaxWeight_kg)
-        ) {
+        if (item.MaxWeight_kg !== null) {
           weights.push({
             maxWeight: item.MaxWeight_kg,
             addon:
               item.AdditionalServiceCode !== null
                 ? item.AdditionalServiceCode.Addon
-                : item.DimensionName.indexOf("locker") > -1
-                ? "APT"
                 : null,
+            locations: locations,
           });
         }
       }

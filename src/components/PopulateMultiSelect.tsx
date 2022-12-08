@@ -54,7 +54,17 @@ const PopulateMultiSelect = (
       }
     }
     for (let width of row.original.width) {
-      if (!widths || !widths.some((x) => x.value === width.maxWidth)) {
+      if (
+        (!selected.deliveryLocation && !widths) ||
+        (typeof selected.deliveryLocation === "undefined" && !widths) ||
+        (width.locations.includes(selected.deliveryLocation) && !widths) ||
+        (!selected.deliveryLocation &&
+          !widths.some((x) => x.value === width.maxWidth)) ||
+        (typeof selected.deliveryLocation === "undefined" &&
+          !widths.some((x) => x.value === width.maxWidth)) ||
+        (width.locations.includes(selected.deliveryLocation) &&
+          !widths.some((x) => x.value === width.maxWidth))
+      ) {
         widths.push({
           value: width.maxWidth,
           title: "< " + width.maxWidth + " cm",
@@ -65,7 +75,17 @@ const PopulateMultiSelect = (
       }
     }
     for (let weight of row.original.weight) {
-      if (!weights || !weights.some((x) => x.value === weight.maxWeight)) {
+      if (
+        (!selected.deliveryLocation && !weights) ||
+        (typeof selected.deliveryLocation === "undefined" && !weights) ||
+        (weight.locations.includes(selected.deliveryLocation) && !weights) ||
+        (!selected.deliveryLocation &&
+          !weights.some((x) => x.value === weight.maxWeight)) ||
+        (typeof selected.deliveryLocation === "undefined" &&
+          !weights.some((x) => x.value === weight.maxWeight)) ||
+        (weight.locations.includes(selected.deliveryLocation) &&
+          !weights.some((x) => x.value === weight.maxWeight))
+      ) {
         weights.push({
           value: weight.maxWeight,
           title: "< " + weight.maxWeight + " kg",
@@ -99,8 +119,10 @@ const PopulateMultiSelect = (
       });
     }
     if (
-      typeof selected.deliveryLocation === "undefined" ||
-      !selected.deliveryLocation
+      (typeof selected.deliveryLocation === "undefined" &&
+        typeof selected.width === "undefined" &&
+        typeof selected.weight === "undefined") ||
+      (!selected.deliveryLocation && !selected.width && !selected.weight)
     ) {
       for (let location of row.original.deliveryLocation) {
         if (
@@ -108,9 +130,9 @@ const PopulateMultiSelect = (
           !deliveryLocations.some((x) => x.value === location)
         ) {
           let keyWords;
-          if (location === "Pickup") {
+          if (location === "LOCKER" || location === "POSTOFFICE") {
             keyWords = "Pickup Picked Nouto Noudettava";
-          } else if (location === "HomeDelivery") {
+          } else if (location === "HOME") {
             keyWords = "Home delivery delivered koti kotiin toimitettava";
           } else {
             keyWords =
@@ -118,14 +140,79 @@ const PopulateMultiSelect = (
           }
           deliveryLocations.push({
             value: location,
-            title: location,
+            title: location + "_title",
             subTitle: location + "_desc",
             optGroup: "Delivery Location",
             keyWords: keyWords,
           });
         }
       }
+    } else if (
+      (typeof selected.deliveryLocation === "undefined" &&
+        typeof selected.weight !== "undefined") ||
+      (!selected.deliveryLocation && selected.weight)
+    ) {
+      for (let loc of row.original.weight) {
+        if (loc.maxWeight === selected.weight) {
+          for (let location of loc.locations) {
+            if (
+              !deliveryLocations ||
+              !deliveryLocations.some((x) => x.value === location)
+            ) {
+              let keyWords;
+              if (location === "LOCKER" || location === "POSTOFFICE") {
+                keyWords = "Pickup Picked Nouto Noudettava";
+              } else if (location === "HOME") {
+                keyWords = "Home delivery delivered koti kotiin toimitettava";
+              } else {
+                keyWords =
+                  "Business delivery delivered yritys yritykseen toimitettava";
+              }
+              deliveryLocations.push({
+                value: location,
+                title: location + "_title",
+                subTitle: location + "_desc",
+                optGroup: "Delivery Location",
+                keyWords: keyWords,
+              });
+            }
+          }
+        }
+      }
+    } else if (
+      (typeof selected.deliveryLocation === "undefined" &&
+        typeof selected.width !== "undefined") ||
+      (!selected.deliveryLocation && selected.width)
+    ) {
+      for (let loc of row.original.width) {
+        if (loc.maxWidth === selected.width) {
+          for (let location of loc.locations) {
+            if (
+              !deliveryLocations ||
+              !deliveryLocations.some((x) => x.value === location)
+            ) {
+              let keyWords;
+              if (location === "LOCKER" || location === "POSTOFFICE") {
+                keyWords = "Pickup Picked Nouto Noudettava";
+              } else if (location === "HOME") {
+                keyWords = "Home delivery delivered koti kotiin toimitettava";
+              } else {
+                keyWords =
+                  "Business delivery delivered yritys yritykseen toimitettava";
+              }
+              deliveryLocations.push({
+                value: location,
+                title: location + "_title",
+                subTitle: location + "_desc",
+                optGroup: "Delivery Location",
+                keyWords: keyWords,
+              });
+            }
+          }
+        }
+      }
     }
+
     for (let country of row.original.routes) {
       let separator = country.indexOf("-");
       let index = countries.records.findIndex(

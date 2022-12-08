@@ -11,6 +11,7 @@ import { ReactComponent as AddonLogo } from "./icons/Addon_logo.svg";
 import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
 import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
 import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
+import { ReactComponent as PostiLogo } from "./icons/Posti_logo.svg";
 import { ReactComponent as ChevronIcon } from "./icons/ChevronIcon.svg";
 
 const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
@@ -142,39 +143,6 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     }
   }, [selected, initialValues, preset]);
 
-  useEffect(() => {
-    if (
-      typeof selected.deliveryLocation !== "undefined" &&
-      selected.deliveryLocation !== ""
-    ) {
-      for (let item of initialValues) {
-        for (let option of item.options) {
-          if (option.value === selected.deliveryLocation) {
-            setSelectedValues((prevState) => {
-              let found = false;
-              const newState = prevState.map((obj) => {
-                if (obj.value === "Pickup") {
-                  found = true;
-                  return { ...obj, option };
-                }
-                return obj;
-              });
-
-              return found ? newState : [...prevState, option];
-            });
-          }
-        }
-      }
-    } else if (
-      typeof selected.deliveryLocation === "undefined" ||
-      selected.deliveryLocation === ""
-    ) {
-      setSelectedValues((prevState) => [
-        ...prevState.filter((x) => x.value !== "Pickup"),
-      ]);
-    }
-  }, [selected.pudo]);
-
   const renderSwitch = (param) => {
     switch (param) {
       case "Departure Country":
@@ -225,11 +193,11 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         return (
           <AddonLogo title="AddonLogo" className="AddonLogo" key="AddonLogo" />
         );
-      case "HomeDelivery":
+      case "HOME":
         return (
           <HomeLogo title="HomeLogo" className="HomeLogo" key="HomeLogo" />
         );
-      case "BusinessDelivery":
+      case "BUSINESS":
         return (
           <BusinessLogo
             title="BusinessLogo"
@@ -237,7 +205,15 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
             key="BusinessLogo"
           />
         );
-      case "Pickup":
+      case "POSTOFFICE":
+        return (
+          <PostiLogo
+            title="PostOfficetLogo"
+            className="PostOfficeLogo"
+            key="PostOfficeLogo"
+          />
+        );
+      case "LOCKER":
         return (
           <PickupLogo
             title="PickupLogo"
@@ -283,7 +259,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         <components.GroupHeading {...props}>
           <span className="option_header">
             {props.data.label === "Delivery Location"
-              ? renderSwitch("Pickup")
+              ? renderSwitch("LOCKER")
               : renderSwitch(props.data.label)}{" "}
             {t(props.data.label)}
           </span>

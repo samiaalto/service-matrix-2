@@ -31,7 +31,10 @@ const CellComponent = ({
   let weightFilter: number;
   let widthFilter: number;
   let showMessage = false;
+  let weights = [];
+  let widths = [];
   let message = "";
+  let addon = "";
   if (service.columnFiltersMeta.hasOwnProperty("weight")) {
     weightFilter = service.columnFiltersMeta.weight.itemRank.rankedValue;
   }
@@ -42,7 +45,6 @@ const CellComponent = ({
     service.columnFilters.hasOwnProperty("weight") &&
     typeof weightFilter !== "undefined"
   ) {
-    let weights = [];
     for (let item of service.original.weight) {
       if (
         item.maxWeight === weightFilter &&
@@ -51,26 +53,17 @@ const CellComponent = ({
       ) {
         showMessage = true;
         weights.push(item.maxWeight);
+        addon = item.addon;
       } else {
         weights.push(item.maxWeight);
       }
     }
     weights.sort((a, b) => parseFloat(a) - parseFloat(b));
-    let index = weights.indexOf(weightFilter);
-    message =
-      "Additional service " +
-      t("3174") +
-      " (3174) is required when upgrading from " +
-      weights[index - 1] +
-      " kg to " +
-      weightFilter +
-      " kg";
   }
   if (
     service.columnFilters.hasOwnProperty("width") &&
     typeof widthFilter !== "undefined"
   ) {
-    let widths = [];
     for (let item of service.original.width) {
       if (
         item.maxWidth === widthFilter &&
@@ -79,20 +72,59 @@ const CellComponent = ({
       ) {
         showMessage = true;
         widths.push(item.maxWidth);
+        addon = item.addon;
       } else {
         widths.push(item.maxWidth);
       }
     }
     widths.sort((a, b) => parseFloat(a) - parseFloat(b));
-    let index = widths.indexOf(widthFilter);
-    message =
-      "Additional service " +
-      t("3174") +
-      " (3174) is required when upgrading from " +
-      widths[index - 1] +
-      " cm to " +
-      widthFilter +
-      " cm";
+  }
+
+  if (weights.length > 0 || widths.length > 0) {
+    let wIndex = weights.indexOf(weightFilter) - 1;
+    let index = widths.indexOf(widthFilter) - 1;
+
+    if (index > -1 && wIndex > -1) {
+      message =
+        t("Additional service") +
+        " " +
+        t(addon) +
+        " ( " +
+        addon +
+        ") " +
+        t("is required when colli weight exceeds") +
+        " " +
+        weights[wIndex] +
+        " kg " +
+        " " +
+        t("and longest side of the colli exceeds") +
+        widths[index] +
+        " cm";
+    } else if (wIndex > -1 && index < 0) {
+      message =
+        t("Additional service") +
+        " " +
+        t(addon) +
+        " ( " +
+        addon +
+        ") " +
+        t("is required when colli weight exceeds") +
+        " " +
+        weights[wIndex] +
+        " kg";
+    } else {
+      message =
+        t("Additional service") +
+        " " +
+        t(addon) +
+        " ( " +
+        addon +
+        ") " +
+        t("is required when longest side of the colli exceeds") +
+        " " +
+        widths[index] +
+        " cm";
+    }
   }
 
   return (
@@ -165,7 +197,7 @@ const CellComponent = ({
                   placement="top"
                   overlay={
                     <Tooltip key={columnId + rowIndex}>
-                      <b>NOTE!</b>
+                      <b>{t("NOTE")}!</b>
                       <br />
                       {message}
                     </Tooltip>
@@ -209,11 +241,7 @@ const CellComponent = ({
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
         >
-          <Button
-            title=""
-            type="select"
-            onClick={(e) => console.log("click")}
-          />
+          <Button title="" type="select" onClick={(e) => e} />
         </td>
       ) : columnId === "serviceButton" && value !== true ? (
         <td
@@ -222,11 +250,7 @@ const CellComponent = ({
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
         >
-          <Button
-            title=""
-            type="select"
-            onClick={(e) => console.log("click")}
-          />
+          <Button title="" type="select" onClick={(e) => e} />
         </td>
       ) : value !== undefined && value !== null ? (
         <td

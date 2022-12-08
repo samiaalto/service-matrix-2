@@ -519,7 +519,7 @@ const MessageGenerator = (
                 if (record.Records[next].ExampleValue === "time") {
                   value = {
                     ["@" + record.Records[next].Name]:
-                      sampleValues || val !== "" ? "12:00:00+03:00" : "",
+                      sampleValues || val !== "" ? "12:00:00+03:00***" : "",
                     "#text":
                       val !== ""
                         ? val
@@ -568,7 +568,7 @@ const MessageGenerator = (
                   if (record.Records[next + 1].ExampleValue === "time") {
                     value = Object.assign(value, {
                       ["@" + record.Records[next + 1].Name]: sampleValues
-                        ? "16:00:00+03:00"
+                        ? "16:00:00+03:00***"
                         : "",
                       "#text": sampleValues
                         ? new Date().toISOString().split("T")[0]
@@ -901,15 +901,15 @@ const MessageGenerator = (
                 val = prop.value + "***";
                 // Set the attributes
 
-                let value = "";
+                let value;
 
                 if (sampleValues) {
                   if (obj.ExampleValue === "dateTime") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else if (obj.ExampleValue === "date") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else if (obj.ExampleValue === "time") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else {
                     value = obj.ExampleValue;
                   }
@@ -999,6 +999,10 @@ const MessageGenerator = (
               value = val;
             }
 
+            if (obj.Type === "Number" && value) {
+              //console.log(value)
+              value = Number(value);
+            }
             // Set the element in to the tree
 
             if (
@@ -1169,9 +1173,44 @@ const MessageGenerator = (
     return newLines;
   };
 
+  function isFloat(n) {
+    return parseFloat(n.match(/^-?\d*(\.\d+)?$/)) > 0;
+  }
+
+  const fixLines = (data) => {
+    let newLines = [];
+    let lines = data.split("\n");
+
+    for (let [index, line] of lines.entries()) {
+      if (line.includes("***")) {
+        let fix = line.replace("***", "");
+        let valueStart = fix.indexOf(': "');
+        let valueEnd = fix.lastIndexOf('"');
+        let value = fix.substring(valueStart + 3, valueEnd);
+        if (isFloat(value) && !value.startsWith("00")) {
+          fix =
+            fix.substring(0, valueStart + 2) +
+            value +
+            fix.substring(valueEnd + 1, fix.length);
+        } else if (value === "TRUE" || value === "FALSE") {
+          fix =
+            fix.substring(0, valueStart + 2) +
+            value.toLowerCase() +
+            fix.substring(valueEnd + 1, fix.length);
+        }
+        //console.log(value);
+        newLines.push(fix);
+      } else {
+        newLines.push(line);
+      }
+    }
+    return newLines.join("\n");
+  };
+
   const formattedXML = formatXml(xml, "  ");
   const linesXML = findNewLines(formattedXML);
   const linesJSON = findNewLines(formattedJSON);
+  const test = fixLines(formattedJSON);
 
   return {
     POSTRA: {
@@ -1179,7 +1218,7 @@ const MessageGenerator = (
       newLines: linesXML,
     },
     SMARTSHIP: {
-      message: formattedJSON.replaceAll("***", ""),
+      message: test,
       newLines: linesJSON,
     },
     WAYBILD16A: outTXT,

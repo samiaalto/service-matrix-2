@@ -33,9 +33,14 @@ let en = {
     "Pickup point chosen by the recipient",
   "'Pickup order'": "Pickup order",
   samples_tooltip: "Show sample messages and labels",
-  HomeDelivery: "Delivered home",
-  BusinessDelivery: "Delivered to business",
-  Pickup: "Delivered to a pickup point",
+  HOME_title: "Delivered home",
+  BUSINESS_title: "Delivered to business",
+  POSTOFFICE_title: "Delivered to a pickup point",
+  LOCKER_title: "Delivered to a locker",
+  HOME_desc: "Delivered home on weekdays before 9 p.m.",
+  BUSINESS_desc: "Delivered to business on weekdays before 4 p.m.",
+  POSTOFFICE_desc: "Delivered to a post office or a pickup point",
+  LOCKER_desc: "Delivered to an automated parcel locker",
   Label: "Label",
   Type: "Type",
   Repeat: "Repeat",
@@ -99,10 +104,14 @@ let fi = {
     "Vastaanottajan valitsema noutopiste",
   "'Pickup order'": "Noutotilaus",
   samples_tooltip: "Näytä mallisanomat ja osoitekorttimalli",
-  HomeDelivery: "Kotiin toimitettava lähetys",
-  BusinessDelivery: "Yritykseen toimitettava lähetys",
-  BusinessDelivery_desc: "Toimitetaan yritykseen arkipäivinä klo 16 mennessä",
-  Pickup: "Noudettava lähetys",
+  HOME_title: "Kotiin toimitettava lähetys",
+  HOME_desc: "Toimitetaan kotiin arkipäivinä klo 21 mennessä",
+  BUSINESS_title: "Yritykseen toimitettava lähetys",
+  BUSINESS_desc: "Toimitetaan yritykseen arkipäivinä klo 16 mennessä",
+  POSTOFFICE_title: "Toimipisteestä noudettava lähetys",
+  POSTOFFICE_desc: "Postitoimipaikasta tai noutopisteestä noudettava lähetys",
+  LOCKER_title: "Pakettiautomaatista noudettava lähetys",
+  LOCKER_desc: "Pakettiautomaatista noudettava lähetys",
   Label: "Osoitekortti",
   Type: "Tyyppi",
   Repeat: "Toisto",
@@ -153,6 +162,13 @@ let fi = {
   "'Select pickup point'": "Valitse noutopiste",
   "'Remove selection'": "Poista valinta",
   "'No results for filter value'": "Ei tuloksia hakuarvolla",
+  "Additional service": "Lisäpalvelu",
+  "is required when colli weight exceeds":
+    "on lisättävä, kun kollin paino ylittää",
+  "is required when longest side of the colli exceeds":
+    "on lisättävä, kun kollin pisin sivu ylittää",
+  "and longest side of the colli exceeds": "sekä kollin pisin sivu ylittää",
+  NOTE: "HUOM",
 };
 
 function loadLanguages(language: string) {
@@ -168,9 +184,17 @@ function loadLanguages(language: string) {
     if (language === "EN") {
       result[record.ServiceCode] = record.DisplayNameEN;
       result[record.ServiceCode + "_tooltip"] = record.DescriptionEN;
+      if (!result[record.ServiceGroup + "_desc"]) {
+        result[record.ServiceGroup + "_desc"] =
+          record.ServiceGroupDescriptionEN;
+      }
     } else {
       result[record.ServiceCode] = record.DisplayNameFI;
       result[record.ServiceCode + "_tooltip"] = record.DescriptionFI;
+      if (!result[record.ServiceGroup + "_desc"]) {
+        result[record.ServiceGroup + "_desc"] =
+          record.ServiceGroupDescriptionFI;
+      }
     }
     for (let type of record.PackageTypesAndDimensions) {
       if (language === "EN") {
