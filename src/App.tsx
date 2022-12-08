@@ -94,6 +94,7 @@ const App = (props: AppProps) => {
     showSamples: true,
     showOptional: false,
     showInstallation: false,
+    instAvailable: true,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -403,7 +404,6 @@ const App = (props: AppProps) => {
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
     updatedSearchParams.delete("showSamples");
-    updatedSearchParams.delete("deliveryLocation");
     updatedSearchParams.delete("showInstallation");
     setParams(updatedSearchParams.toString());
 
@@ -418,7 +418,6 @@ const App = (props: AppProps) => {
       offCanvasTab: "",
       showOptional: false,
       showSamples: true,
-      deliveryLocation: "",
       showInstallation: false,
     }));
 
@@ -604,6 +603,31 @@ const App = (props: AppProps) => {
         data.services,
         data.additionalServices
       );
+
+      let isAvailable = false;
+      let columns = [];
+      for (let column of columnData) {
+        if (column.footer === "EQUIPMENT") {
+          columns.push(column.id);
+        }
+      }
+      for (const row of filteredRowData["rows"]) {
+        for (const [key, value] of Object.entries(row.original)) {
+          if (
+            (columns.includes(key) && value === true) ||
+            (columns.includes(key) && value === false)
+          ) {
+            isAvailable = true;
+          }
+        }
+      }
+      if (selected.deliveryLocation === "LOCKER") {
+        isAvailable = false;
+      }
+      setSelected((prevState) => ({
+        ...prevState,
+        instAvailable: isAvailable,
+      }));
     }
     if (rowData.length > 0 && Object.entries(filteredRowData).length > 0) {
       for (const [key] of Object.entries(rowData[0])) {
@@ -1198,6 +1222,7 @@ const App = (props: AppProps) => {
                         label={t("'Show equipment'")}
                         checked={selected.showInstallation}
                         onChange={handleShowInstallation}
+                        disabled={!selected.instAvailable}
                       />
                     </Col>
                   </Row>
