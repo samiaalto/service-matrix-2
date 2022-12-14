@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import {
+  Container,
+  Nav,
+  Navbar,
+  NavDropdown,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import "./styles/NavBar_styles.css";
+import { ReactComponent as TourLogo } from "./icons/Tour_logo.svg";
 
 const NavBar = ({
   navMatrix,
@@ -11,6 +19,7 @@ const NavBar = ({
   navDropEn,
   navDropFi,
   selectedLang,
+  startTour,
   value,
 }) => {
   const handleSelect = (e) => {
@@ -28,6 +37,7 @@ const NavBar = ({
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav defaultActiveKey="ServiceMatrix" className="me-auto">
             <Nav.Link
+              className="ServiceMatrix_tab"
               as={Link}
               to="/service-matrix-2/ServiceMatrix"
               eventKey="ServiceMatrix"
@@ -35,6 +45,7 @@ const NavBar = ({
               {navMatrix}
             </Nav.Link>
             <Nav.Link
+              className="FileFormats_tab"
               as={Link}
               to="/service-matrix-2/FileFormats"
               eventKey="FileFormats"
@@ -52,6 +63,17 @@ const NavBar = ({
               <NavDropdown.Item eventKey="fi">{navDropFi}</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <OverlayTrigger
+            key={"tooltip_TourLogo"}
+            placement="bottom"
+            overlay={
+              <Tooltip key={"tooltip_TourLogo"}>{"Start tour here"}</Tooltip>
+            }
+          >
+            <div className="start-tour" onClick={startTour}>
+              <TourLogo title="" className="TourLogo" key="TourLogo" />
+            </div>
+          </OverlayTrigger>
         </Navbar.Collapse>
       </Container>
     </Navbar>

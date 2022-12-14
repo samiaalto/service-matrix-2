@@ -46,6 +46,7 @@ const FileFormats = ({
                 }}
                 data={formats}
                 t={t}
+                placeholder={t("'Select File Format'")}
               />
             </Col>
             <Col xs={6} sm={4} md={4}>

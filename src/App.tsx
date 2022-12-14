@@ -34,6 +34,7 @@ import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
 import TanStackTable from "./components/table/Table";
 import populateSelect from "./components/PopulateSelect";
+import Tour from "./components/Tour";
 
 /* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
@@ -69,6 +70,7 @@ const App = (props: AppProps) => {
   const [columnData, setColumnData] = useState([]);
   const [selected, setSelected] = useState({
     service: "",
+    selectedService: "",
     addons: [],
     serviceFilter: "",
     serviceGroup: "",
@@ -78,6 +80,7 @@ const App = (props: AppProps) => {
     deliveryLocation: "",
     departure: "",
     destination: "",
+    filterOpen: false,
     pudo: false,
     pudoAvailable: true,
     pickupOrder: false,
@@ -95,6 +98,7 @@ const App = (props: AppProps) => {
     showOptional: false,
     showInstallation: false,
     instAvailable: true,
+    startTour: false,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -999,8 +1003,79 @@ const App = (props: AppProps) => {
     [filteredRowData]
   );
 
+  const startTour = () => {
+    setSelected((prevState) => ({
+      ...prevState,
+      startTour: !prevState.startTour,
+    }));
+  };
+
   return (
     <div className="App">
+      <Tour
+        startTour={selected.startTour}
+        t={t}
+        tourCommands={(e) => {
+          console.log(e);
+          if (e === "openModalService") {
+            callModal("2102", data.services, data.additionalServices);
+            setSelected((prevState) => ({
+              ...prevState,
+              modalTab: "postra",
+            }));
+          } else if (e === "openModalAddon") {
+            callModal("3101", data.services, data.additionalServices);
+            setSelected((prevState) => ({
+              ...prevState,
+              modalTab: "postra",
+            }));
+          } else if (e === "closeModal") {
+            closeModal();
+          } else if (e === "filterOpen") {
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: true,
+            }));
+          } else if (e === "filterClose") {
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: false,
+              departure: "FI",
+              destination: "FI",
+              weight: 35,
+            }));
+          } else if (e === "serviceSelection") {
+            handleServiceSelection(4, true);
+          } else if (e === "addonSelection") {
+            handleSelection({
+              row: 4,
+              service: "2102",
+              addon: "3174",
+              value: true,
+            });
+            setupdateRows([{ row: 4, column: "3174", value: true }]);
+          } else if (e === "openOffCanvas") {
+            openOffCanvas();
+          } else if (e === "offCanvasTab") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "postra",
+            }));
+          } else if (e === "closeOffCanvas") {
+            closeOffCanvas();
+          } else if (e === "reset") {
+            handleReset();
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: false,
+              departure: "",
+              destination: "",
+              weight: "",
+              startTour: false,
+            }));
+          }
+        }}
+      />
       <Alert t={t} data={selected.alertData} />
       <Modal
         t={t}
@@ -1019,6 +1094,7 @@ const App = (props: AppProps) => {
         navDropEn={t("English")}
         navDropFi={t("Finnish")}
         value={selected.lang}
+        startTour={startTour}
       />
       <Container fluid>
         <Routes>
@@ -1047,6 +1123,13 @@ const App = (props: AppProps) => {
                       <Select
                         selected={loaded ? selected : ""}
                         data={multiSelectData}
+                        setFilterOpen={(e) =>
+                          setSelected((prevState) => ({
+                            ...prevState,
+                            filterOpen: e,
+                          }))
+                        }
+                        filterOpen={selected.filterOpen}
                         isMulti={true}
                         t={t}
                         onChange={(e) => {

@@ -1,6 +1,6 @@
 import Select, { components, StylesConfig } from "react-select";
 
-const select = ({ onChange, data, t }) => {
+const select = ({ onChange, data, t, placeholder }) => {
   const SingleValue = (props) => {
     return (
       <components.SingleValue {...props}>
@@ -71,7 +71,7 @@ const select = ({ onChange, data, t }) => {
       closeMenuOnSelect={true}
       isMulti={false}
       onChange={onChange}
-      placeholder={t("'Select File Format'")}
+      placeholder={placeholder}
       className="fileFormat"
       classNamePrefix="lp-copy-sel"
       getOptionLabel={(options: any) => {

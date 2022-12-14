@@ -73,6 +73,14 @@ let en = {
   "'Select pickup point'": "Select pickup point",
   "'Remove selection'": "Remove selection",
   "'No results for filter value'": "No results for filter value",
+  Navbar_txt:
+    "This is the Navigation bar. It contains the options to switch language and move between Service Matrix and File Formats tabs.",
+  Navbar_Matrix_txt:
+    "Service Matrix tab contains the Posti service portfolio and the ability to ",
+  Navbar_FileFormats_txt: "File Formats tab contains the message descriptions.",
+  Navbar_Language_txt: "Switch language",
+  Welcome_txt:
+    "Welcome to use Posti Service Matrix! The purpose of this application is to introduce you to Posti service portfolio and familiarize you with the ways to intergrate with Posti. Jump to a specific topic on the tour by clicking on the menu or click next to get the whole tour experience.",
 };
 
 let fi = {
@@ -169,6 +177,10 @@ let fi = {
     "on lisättävä, kun kollin pisin sivu ylittää",
   "and longest side of the colli exceeds": "sekä kollin pisin sivu ylittää",
   NOTE: "HUOM",
+  Navigation: "Navigointi",
+  Navbar: "Navigointivalikko",
+  Next: "Seuraava",
+  Back: "Edellinen",
 };
 
 function loadLanguages(language: string) {

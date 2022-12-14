@@ -53,7 +53,7 @@ const HeaderComponent = ({
             <th
               key={header.id}
               colSpan={header.colSpan}
-              className="headerTitle"
+              className={"headerTitle headerTitle" + header.column.id}
               onClick={() =>
                 onClick(highlightRow, "modal" + columnIndex, header.column.id)
               }
