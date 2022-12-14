@@ -34,6 +34,7 @@ import MessageGenerator from "./components/MessageGenerator";
 import NavBar from "./components/NavBar";
 import TanStackTable from "./components/table/Table";
 import populateSelect from "./components/PopulateSelect";
+import Tour from "./components/Tour";
 
 /* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
@@ -69,6 +70,7 @@ const App = (props: AppProps) => {
   const [columnData, setColumnData] = useState([]);
   const [selected, setSelected] = useState({
     service: "",
+    selectedService: "",
     addons: [],
     serviceFilter: "",
     serviceGroup: "",
@@ -78,6 +80,7 @@ const App = (props: AppProps) => {
     deliveryLocation: "",
     departure: "",
     destination: "",
+    filterOpen: false,
     pudo: false,
     pudoAvailable: true,
     pickupOrder: false,
@@ -94,6 +97,8 @@ const App = (props: AppProps) => {
     showSamples: true,
     showOptional: false,
     showInstallation: false,
+    instAvailable: true,
+    startTour: false,
     labelData: {},
     POSTRA: {},
     SMARTSHIP: {},
@@ -398,11 +403,11 @@ const App = (props: AppProps) => {
     updatedSearchParams.delete("service");
     updatedSearchParams.delete("addons");
     updatedSearchParams.delete("pudo");
+    updatedSearchParams.delete("modalOpen");
     updatedSearchParams.delete("offCanvasOpen");
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
     updatedSearchParams.delete("showSamples");
-    updatedSearchParams.delete("deliveryLocation");
     updatedSearchParams.delete("showInstallation");
     setParams(updatedSearchParams.toString());
 
@@ -412,11 +417,11 @@ const App = (props: AppProps) => {
       addons: [],
       pudo: false,
       pickupOrder: false,
+      modalOpen: false,
       offCanvasOpen: false,
       offCanvasTab: "",
       showOptional: false,
       showSamples: true,
-      deliveryLocation: "",
       showInstallation: false,
     }));
 
@@ -602,6 +607,31 @@ const App = (props: AppProps) => {
         data.services,
         data.additionalServices
       );
+
+      let isAvailable = false;
+      let columns = [];
+      for (let column of columnData) {
+        if (column.footer === "EQUIPMENT") {
+          columns.push(column.id);
+        }
+      }
+      for (const row of filteredRowData["rows"]) {
+        for (const [key, value] of Object.entries(row.original)) {
+          if (
+            (columns.includes(key) && value === true) ||
+            (columns.includes(key) && value === false)
+          ) {
+            isAvailable = true;
+          }
+        }
+      }
+      if (selected.deliveryLocation === "LOCKER") {
+        isAvailable = false;
+      }
+      setSelected((prevState) => ({
+        ...prevState,
+        instAvailable: isAvailable,
+      }));
     }
     if (rowData.length > 0 && Object.entries(filteredRowData).length > 0) {
       for (const [key] of Object.entries(rowData[0])) {
@@ -973,8 +1003,79 @@ const App = (props: AppProps) => {
     [filteredRowData]
   );
 
+  const startTour = () => {
+    setSelected((prevState) => ({
+      ...prevState,
+      startTour: !prevState.startTour,
+    }));
+  };
+
   return (
     <div className="App">
+      <Tour
+        startTour={selected.startTour}
+        t={t}
+        tourCommands={(e) => {
+          console.log(e);
+          if (e === "openModalService") {
+            callModal("2102", data.services, data.additionalServices);
+            setSelected((prevState) => ({
+              ...prevState,
+              modalTab: "postra",
+            }));
+          } else if (e === "openModalAddon") {
+            callModal("3101", data.services, data.additionalServices);
+            setSelected((prevState) => ({
+              ...prevState,
+              modalTab: "postra",
+            }));
+          } else if (e === "closeModal") {
+            closeModal();
+          } else if (e === "filterOpen") {
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: true,
+            }));
+          } else if (e === "filterClose") {
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: false,
+              departure: "FI",
+              destination: "FI",
+              weight: 35,
+            }));
+          } else if (e === "serviceSelection") {
+            handleServiceSelection(4, true);
+          } else if (e === "addonSelection") {
+            handleSelection({
+              row: 4,
+              service: "2102",
+              addon: "3174",
+              value: true,
+            });
+            setupdateRows([{ row: 4, column: "3174", value: true }]);
+          } else if (e === "openOffCanvas") {
+            openOffCanvas();
+          } else if (e === "offCanvasTab") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "postra",
+            }));
+          } else if (e === "closeOffCanvas") {
+            closeOffCanvas();
+          } else if (e === "reset") {
+            handleReset();
+            setSelected((prevState) => ({
+              ...prevState,
+              filterOpen: false,
+              departure: "",
+              destination: "",
+              weight: "",
+              startTour: false,
+            }));
+          }
+        }}
+      />
       <Alert t={t} data={selected.alertData} />
       <Modal
         t={t}
@@ -993,6 +1094,7 @@ const App = (props: AppProps) => {
         navDropEn={t("English")}
         navDropFi={t("Finnish")}
         value={selected.lang}
+        startTour={startTour}
       />
       <Container fluid>
         <Routes>
@@ -1021,6 +1123,13 @@ const App = (props: AppProps) => {
                       <Select
                         selected={loaded ? selected : ""}
                         data={multiSelectData}
+                        setFilterOpen={(e) =>
+                          setSelected((prevState) => ({
+                            ...prevState,
+                            filterOpen: e,
+                          }))
+                        }
+                        filterOpen={selected.filterOpen}
                         isMulti={true}
                         t={t}
                         onChange={(e) => {
@@ -1196,9 +1305,11 @@ const App = (props: AppProps) => {
                         label={t("'Show equipment'")}
                         checked={selected.showInstallation}
                         onChange={handleShowInstallation}
+                        disabled={!selected.instAvailable}
                       />
                     </Col>
                   </Row>
+                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
@@ -1211,7 +1322,6 @@ const App = (props: AppProps) => {
                       />
                     </Col>
                   </Row>
-                  {/*
                   <Row>
                     <Col className="pickupOptions">
                       <Form.Check
@@ -1235,7 +1345,11 @@ const App = (props: AppProps) => {
                   </Row>
                 </div>
                 {columnData.length > 0 ? (
-                  <div className="content">
+                  <div
+                    className={
+                      selected.offCanvasOpen ? "content open" : "content"
+                    }
+                  >
                     <TanStackTable
                       t={t}
                       defaultColumns={columnData}

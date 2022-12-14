@@ -91,7 +91,8 @@ const MapFFRows = (services, additionalServices, fileFormats, setFfRowData) => {
 
       if (
         (attribute.Name === "type" && parent === "PackageQuantity") ||
-        attribute.Name === "PackageType"
+        attribute.Name === "PackageType" ||
+        attribute.Name === "packageCode"
       ) {
         for (let service of services.records) {
           for (let type of service.PackageTypesAndDimensions) {

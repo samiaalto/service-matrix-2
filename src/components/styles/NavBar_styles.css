@@ -1,5 +1,63 @@
 .color-nav {
   background-color: #fff;
+  width: 100vw !important;
+}
+
+.navbar {
+  width: 100vw !important;
+}
+
+.navbar > .container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw !important;
+}
+
+.start-tour {
+  margin-left: 0px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-tour:hover {
+  background-color: #3b4a57;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-tour > svg {
+  fill: #868686;
+  margin-top: 8px;
+  margin-left: 8px;
+  width: 35px;
+  height: 35px;
+}
+
+.start-tour:hover > svg {
+  fill: #fff;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 1400px;
+  }
 }
 
 .nav-link {
@@ -46,4 +104,14 @@
 .dropdown-menu.show {
   z-index: 9999;
   box-shadow: 0 0 6px 2px rgba(57, 75, 88, 0.3);
+}
+
+.navbar-nav > .form-check {
+  display: inline-block;
+  padding-top: 6px;
+  margin-left: 20px;
+}
+
+.navbar-nav > .form-check > label {
+  padding-left: 10px;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Select, { components, StylesConfig } from "react-select";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { ReactComponent as DepartureLogo } from "./icons/Departure_logo.svg";
@@ -11,9 +11,19 @@ import { ReactComponent as AddonLogo } from "./icons/Addon_logo.svg";
 import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
 import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
 import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
+import { ReactComponent as PostiLogo } from "./icons/Posti_logo.svg";
 import { ReactComponent as ChevronIcon } from "./icons/ChevronIcon.svg";
 
-const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
+const MultiSelect = ({
+  onChange,
+  isMulti,
+  data,
+  t,
+  selected,
+  filterOpen,
+  setFilterOpen,
+}) => {
+  const selectRef = useRef<any>(null);
   const [selectedValues, setSelectedValues] = useState([]);
   const [initialValues, setInitialValues] = useState([]);
   const [initialLoad, setInitialLoad] = useState(true);
@@ -42,8 +52,8 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
 
   useEffect(() => {
     let options = [];
-    if (!preset && initialValues.length > 0) {
-      setPreset(true);
+    if (initialValues.length > 0) {
+      //setPreset(true);
 
       for (let item of initialValues) {
         if (
@@ -137,43 +147,8 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       }
     }
 
-    if (options.length > 0) {
-      setSelectedValues(options);
-    }
+    setSelectedValues(options);
   }, [selected, initialValues, preset]);
-
-  useEffect(() => {
-    if (
-      typeof selected.deliveryLocation !== "undefined" &&
-      selected.deliveryLocation !== ""
-    ) {
-      for (let item of initialValues) {
-        for (let option of item.options) {
-          if (option.value === selected.deliveryLocation) {
-            setSelectedValues((prevState) => {
-              let found = false;
-              const newState = prevState.map((obj) => {
-                if (obj.value === "Pickup") {
-                  found = true;
-                  return { ...obj, option };
-                }
-                return obj;
-              });
-
-              return found ? newState : [...prevState, option];
-            });
-          }
-        }
-      }
-    } else if (
-      typeof selected.deliveryLocation === "undefined" ||
-      selected.deliveryLocation === ""
-    ) {
-      setSelectedValues((prevState) => [
-        ...prevState.filter((x) => x.value !== "Pickup"),
-      ]);
-    }
-  }, [selected.pudo]);
 
   const renderSwitch = (param) => {
     switch (param) {
@@ -225,11 +200,11 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         return (
           <AddonLogo title="AddonLogo" className="AddonLogo" key="AddonLogo" />
         );
-      case "HomeDelivery":
+      case "HOME":
         return (
           <HomeLogo title="HomeLogo" className="HomeLogo" key="HomeLogo" />
         );
-      case "BusinessDelivery":
+      case "BUSINESS":
         return (
           <BusinessLogo
             title="BusinessLogo"
@@ -237,7 +212,15 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
             key="BusinessLogo"
           />
         );
-      case "Pickup":
+      case "POSTOFFICE":
+        return (
+          <PostiLogo
+            title="PostOfficetLogo"
+            className="PostOfficeLogo"
+            key="PostOfficeLogo"
+          />
+        );
+      case "LOCKER":
         return (
           <PickupLogo
             title="PickupLogo"
@@ -271,6 +254,14 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     }
   };
 
+  const handleFocus = () => {
+    setFilterOpen(true);
+  };
+
+  const handleBlur = () => {
+    setFilterOpen(false);
+  };
+
   // Create custom GroupHeading component, which will wrap
   // react-select GroupHeading component inside a div and
   // register onClick event on that div
@@ -283,7 +274,7 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
         <components.GroupHeading {...props}>
           <span className="option_header">
             {props.data.label === "Delivery Location"
-              ? renderSwitch("Pickup")
+              ? renderSwitch("LOCKER")
               : renderSwitch(props.data.label)}{" "}
             {t(props.data.label)}
           </span>
@@ -480,9 +471,9 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
     groupHeading: (provided, state) => ({
       ...provided,
       "&:hover": {
-        borderBottom: "2px solid #000",
+        borderBottom: "2px solid #ececec",
         transition: "all 0.3s ease-in-out",
-        backgroundColor: "#f2f2f2",
+        backgroundColor: "#ececec",
         borderRadius: "8px",
         cursor: "pointer",
       },
@@ -523,11 +514,13 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
 
   return (
     <Select
+      ref={selectRef}
       value={selectedValues}
       styles={customStyles}
       options={data}
       closeMenuOnSelect={false}
       isMulti={isMulti}
+      menuIsOpen={filterOpen}
       onChange={onSelection}
       placeholder={t("'Filter data'")}
       className={"matrix"}
@@ -537,6 +530,8 @@ const MultiSelect = ({ onChange, isMulti, data, t, selected }) => {
       }}
       components={{ MultiValue, Option, GroupHeading: CustomGroupHeading }}
       filterOption={customFilter}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     />
   );
 };

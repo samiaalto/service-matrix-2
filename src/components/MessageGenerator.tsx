@@ -65,6 +65,7 @@ const MessageGenerator = (
   let labelAddons = [];
   let addons = [];
   let destIndex = -1;
+  let nonEu = false;
 
   addonArr = selected.addons;
 
@@ -147,6 +148,9 @@ const MessageGenerator = (
   for (let [index, country] of countries.records.entries()) {
     if (country.CountryCode === dest) {
       destIndex = index;
+      if (!country.Eu) {
+        nonEu = true;
+      }
       if (selected.pudo) {
         labelData["receiverName2"] = country.Name2;
       }
@@ -265,6 +269,8 @@ const MessageGenerator = (
             mandatory = true;
           } else if (selected.pudo && field.PropertyName === "Country") {
             value = countries.records[destIndex].CountryCode;
+            mandatory = true;
+          } else if (nonEu && field.AdditionalInfo === "non-EU") {
             mandatory = true;
           }
           serviceProps.push({
@@ -513,7 +519,7 @@ const MessageGenerator = (
                 if (record.Records[next].ExampleValue === "time") {
                   value = {
                     ["@" + record.Records[next].Name]:
-                      sampleValues || val !== "" ? "12:00:00+03:00" : "",
+                      sampleValues || val !== "" ? "12:00:00+03:00***" : "",
                     "#text":
                       val !== ""
                         ? val
@@ -562,7 +568,7 @@ const MessageGenerator = (
                   if (record.Records[next + 1].ExampleValue === "time") {
                     value = Object.assign(value, {
                       ["@" + record.Records[next + 1].Name]: sampleValues
-                        ? "16:00:00+03:00"
+                        ? "16:00:00+03:00***"
                         : "",
                       "#text": sampleValues
                         ? new Date().toISOString().split("T")[0]
@@ -845,7 +851,7 @@ const MessageGenerator = (
                 usedPropsJSON.push(index);
 
                 let newPath = obj.Path;
-                //console.log(newPath);
+
                 if (objParent.Type === "Array") {
                   if (!indexes.hasOwnProperty(objParent.Name)) {
                     indexes[objParent.Name] = 0;
@@ -853,12 +859,15 @@ const MessageGenerator = (
                       indexes[val] = 0;
                     }
                   } else if (indexes.hasOwnProperty(objParent.Name)) {
-                    indexes[objParent.Name] = indexes[objParent.Name] + 1;
+                    if (obj.Name === "weight" || objParent.Name === "lines") {
+                      indexes[objParent.Name] = 0;
+                    } else {
+                      indexes[objParent.Name] = indexes[objParent.Name] + 1;
+                    }
                     if (obj.Name === "id") {
                       indexes[val] = indexes[objParent.Name];
                     }
                   }
-
                   let path = obj.Path.split(".");
 
                   for (const index of Object.keys(indexes)) {
@@ -892,15 +901,15 @@ const MessageGenerator = (
                 val = prop.value + "***";
                 // Set the attributes
 
-                let value = "";
+                let value;
 
                 if (sampleValues) {
                   if (obj.ExampleValue === "dateTime") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else if (obj.ExampleValue === "date") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else if (obj.ExampleValue === "time") {
-                    value = new Date().toISOString().split(".")[0];
+                    value = new Date().toISOString().split(".")[0] + "***";
                   } else {
                     value = obj.ExampleValue;
                   }
@@ -939,6 +948,7 @@ const MessageGenerator = (
                   //path[elIndex + 1] = indexes[index];
                 }
               }
+
               newPath = path.join(".");
             } else {
               let path = obj.Path.split(".");
@@ -989,6 +999,10 @@ const MessageGenerator = (
               value = val;
             }
 
+            if (obj.Type === "Number" && value) {
+              //console.log(value)
+              value = Number(value);
+            }
             // Set the element in to the tree
 
             if (
@@ -1134,7 +1148,7 @@ const MessageGenerator = (
   }
 
   //console.log(indexes);
-  //console.log(outJSON);
+  console.log(outJSON);
   //console.log(outTXT);
   //console.log(outXML);
 
@@ -1159,9 +1173,44 @@ const MessageGenerator = (
     return newLines;
   };
 
+  function isFloat(n) {
+    return parseFloat(n.match(/^-?\d*(\.\d+)?$/)) > 0;
+  }
+
+  const fixLines = (data) => {
+    let newLines = [];
+    let lines = data.split("\n");
+
+    for (let [index, line] of lines.entries()) {
+      if (line.includes("***")) {
+        let fix = line.replace("***", "");
+        let valueStart = fix.indexOf(': "');
+        let valueEnd = fix.lastIndexOf('"');
+        let value = fix.substring(valueStart + 3, valueEnd);
+        if (isFloat(value) && !value.startsWith("00")) {
+          fix =
+            fix.substring(0, valueStart + 2) +
+            value +
+            fix.substring(valueEnd + 1, fix.length);
+        } else if (value === "TRUE" || value === "FALSE") {
+          fix =
+            fix.substring(0, valueStart + 2) +
+            value.toLowerCase() +
+            fix.substring(valueEnd + 1, fix.length);
+        }
+        //console.log(value);
+        newLines.push(fix);
+      } else {
+        newLines.push(line);
+      }
+    }
+    return newLines.join("\n");
+  };
+
   const formattedXML = formatXml(xml, "  ");
   const linesXML = findNewLines(formattedXML);
   const linesJSON = findNewLines(formattedJSON);
+  const test = fixLines(formattedJSON);
 
   return {
     POSTRA: {
@@ -1169,7 +1218,7 @@ const MessageGenerator = (
       newLines: linesXML,
     },
     SMARTSHIP: {
-      message: formattedJSON.replaceAll("***", ""),
+      message: test,
       newLines: linesJSON,
     },
     WAYBILD16A: outTXT,

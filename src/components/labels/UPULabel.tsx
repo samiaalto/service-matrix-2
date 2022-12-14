@@ -459,9 +459,7 @@ const UPULabel = ({ data }) => {
                       placement="top"
                       overlay={overlay("goodsType-value", "UPU")}
                     >
-                      <Col xs={1} className="addonbox">
-                        X
-                      </Col>
+                      <Col xs={1} className="addonbox"></Col>
                     </OverlayTrigger>
                     <OverlayTrigger
                       placement="top"
@@ -489,7 +487,9 @@ const UPULabel = ({ data }) => {
                       placement="top"
                       overlay={overlay("goodsType-value", "UPU")}
                     >
-                      <Col xs={1} className="addonbox"></Col>
+                      <Col xs={1} className="addonbox">
+                        X
+                      </Col>
                     </OverlayTrigger>
                     <OverlayTrigger
                       placement="top"
@@ -547,9 +547,7 @@ const UPULabel = ({ data }) => {
                 <Row className="otherPayerHeading">
                   return to the sender immediately renvoyer à l'expéditeur
                   immédiatement
-                  <Col xs={2} className="addonbox">
-                    X
-                  </Col>
+                  <Col xs={2} className="addonbox"></Col>
                 </Row>
               </OverlayTrigger>
             </Col>
@@ -560,7 +558,7 @@ const UPULabel = ({ data }) => {
               >
                 <Row className="otherPayerHeading">
                   by air par avion
-                  <Col className="addonbox"></Col>
+                  <Col className="addonbox">X</Col>
                 </Row>
               </OverlayTrigger>
             </Col>
