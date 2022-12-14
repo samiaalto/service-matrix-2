@@ -391,7 +391,20 @@ const Tour = ({ startTour, t, tourCommands }) => {
 
   const test = (data: any) => {
     const { action, index, status, type } = data;
-    if (index === 6) {
+    if (index === 1 && action !== "update") {
+      tourCommands("reset");
+      setState((prevState) => ({
+        ...prevState,
+        run: true,
+      }));
+    } else if (index === 1 && action === "update") {
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+        }));
+      }, 400);
+    } else if (index === 6) {
       tourCommands("filterOpen");
       setTimeout(() => {
         setState((prevState) => ({
@@ -480,8 +493,17 @@ const Tour = ({ startTour, t, tourCommands }) => {
         }));
       }, 400);
     }
-    if (action === "skip") {
+    if (index > 0 && action === "skip") {
       tourCommands("reset");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: false,
+          stepIndex: 0,
+        }));
+      }, 400);
+    } else if (index === 0 && action === "skip") {
+      tourCommands("skip");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,

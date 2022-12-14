@@ -108,7 +108,7 @@ let en = {
   Filter_clear_txt:
     "All the selected filtering options can be removed by clicking on the global clear button. This will not affect Service Matrix selections.",
   Welcome_txt:
-    "Welcome to use Posti Service Matrix! The purpose of this application is to introduce you to Posti service portfolio and familiarize you with the ways to intergrate with Posti. Jump to a specific topic on the tour by clicking on the menu or click next to get the whole tour experience.",
+    "Welcome to use Posti Service Matrix! The purpose of this application is to introduce you to Posti service portfolio and familiarize you with the ways to intergrate with Posti. Jump to a specific topic on the tour by clicking on the menu or click next to get the whole tour experience. NOTE! Your choices in the filter and on the Service Matrix will be reset if you proceed.",
   ServiceMatrix_txt:
     "This is the Service Matrix. In service matrix you can see which additional services are available for each service. The interactive service Matrix filters out the excluded additional services by clicking checkboxes. There is also additional information about the additional services and services by clicking on the service name.",
   ServiceMatrix_installation_txt:
@@ -262,7 +262,7 @@ let fi = {
     "Tietuemuodot-osiossa opit mitä tietoja sovelluksessa on saatavilla eri Postin tukemista tietuemuodoista",
   thankyou: "Kiitos",
   Welcome_txt:
-    "Tervetuloa käyttämään Postin Palvelumatriisia! Sovelluksen tarkoituksena on tutustuttaa sinut Postin palveluportfolioon ja auttaa integroitumaan Postin kuljetuspalveluihin. Alla olevasta valikosta voit hypätä juuri sinua kiinnostavaan aiheeseen ja klikkaamalla Seuraava -painiketta pääset kokemaan koko esittelyn.",
+    "Tervetuloa käyttämään Postin Palvelumatriisia! Sovelluksen tarkoituksena on tutustuttaa sinut Postin palveluportfolioon ja auttaa integroitumaan Postin kuljetuspalveluihin. Alla olevasta valikosta voit hypätä juuri sinua kiinnostavaan aiheeseen ja klikkaamalla Seuraava -painiketta pääset kokemaan koko esittelyn. HUOM! Suodattimeen ja Palvelumatriisiin tekemäsi valinnat poistetaan jos jatkat esittelyyn.",
   welcome: "Tervetuloa",
   Navbar_txt:
     "Tässä on navigointivalikko. Navigointivalikosta löytyy kielivalinta sekä siirtymät Palvelumatriisi- ja Tietuemuotovälilehtien välillä.",

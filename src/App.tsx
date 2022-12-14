@@ -1004,13 +1004,8 @@ const App = (props: AppProps) => {
   );
 
   const startTour = () => {
-    handleReset();
     setSelected((prevState) => ({
       ...prevState,
-      filterOpen: false,
-      departure: undefined,
-      destination: undefined,
-      weight: undefined,
       startTour: !prevState.startTour,
     }));
   };
@@ -1074,6 +1069,11 @@ const App = (props: AppProps) => {
               departure: undefined,
               destination: undefined,
               weight: undefined,
+              startTour: false,
+            }));
+          } else if (e === "skip") {
+            setSelected((prevState) => ({
+              ...prevState,
               startTour: false,
             }));
           }
