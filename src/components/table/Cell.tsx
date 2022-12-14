@@ -142,7 +142,7 @@ const CellComponent = ({
           }
         >
           <td
-            className="service selected"
+            className={"service" + value + " service selected"}
             onClick={onCellClick}
             onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
             ref={ref}
@@ -185,7 +185,7 @@ const CellComponent = ({
           }
         >
           <td
-            className="service"
+            className={"service" + value + " service"}
             onClick={onCellClick}
             onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
             ref={ref}
@@ -236,7 +236,11 @@ const CellComponent = ({
         </td>
       ) : columnId === "serviceButton" && value === true ? (
         <td
-          className="serviceButton selected"
+          className={
+            "serviceButton" +
+            service.original.serviceName +
+            " serviceButton selected"
+          }
           onClick={onCellClick}
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
@@ -245,7 +249,9 @@ const CellComponent = ({
         </td>
       ) : columnId === "serviceButton" && value !== true ? (
         <td
-          className="serviceButton"
+          className={
+            "serviceButton" + service.original.serviceName + " serviceButton"
+          }
           onClick={onCellClick}
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
@@ -254,7 +260,9 @@ const CellComponent = ({
         </td>
       ) : value !== undefined && value !== null ? (
         <td
-          className="check"
+          className={
+            "check " + "checkbox" + service.original.serviceName + columnId
+          }
           onMouseEnter={() => emitter.highlight(highlightRow, columnIndex)}
           ref={ref}
         >
