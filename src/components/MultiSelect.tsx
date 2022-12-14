@@ -32,7 +32,7 @@ const MultiSelect = ({
 
   const onSelection = (e) => {
     onChange(e);
-    setSelectedValues(e);
+    //setSelectedValues(e);
   };
 
   useEffect(() => {

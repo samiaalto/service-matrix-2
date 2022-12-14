@@ -21,6 +21,7 @@ const NavBar = ({
   selectedLang,
   startTour,
   value,
+  navTour,
 }) => {
   const handleSelect = (e) => {
     selectedLang(e);
@@ -66,9 +67,7 @@ const NavBar = ({
           <OverlayTrigger
             key={"tooltip_TourLogo"}
             placement="bottom"
-            overlay={
-              <Tooltip key={"tooltip_TourLogo"}>{"Start tour here"}</Tooltip>
-            }
+            overlay={<Tooltip key={"tooltip_TourLogo"}>{navTour}</Tooltip>}
           >
             <div className="start-tour" onClick={startTour}>
               <TourLogo title="" className="TourLogo" key="TourLogo" />

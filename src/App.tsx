@@ -1061,16 +1061,19 @@ const App = (props: AppProps) => {
               ...prevState,
               offCanvasTab: "postra",
             }));
-          } else if (e === "closeOffCanvas") {
-            closeOffCanvas();
           } else if (e === "reset") {
             handleReset();
             setSelected((prevState) => ({
               ...prevState,
               filterOpen: false,
-              departure: "",
-              destination: "",
-              weight: "",
+              departure: undefined,
+              destination: undefined,
+              weight: undefined,
+              startTour: false,
+            }));
+          } else if (e === "skip") {
+            setSelected((prevState) => ({
+              ...prevState,
               startTour: false,
             }));
           }
@@ -1093,6 +1096,7 @@ const App = (props: AppProps) => {
         navFormat={t("'File Formats'")}
         navDropEn={t("English")}
         navDropFi={t("Finnish")}
+        navTour={t("StartTour")}
         value={selected.lang}
         startTour={startTour}
       />
