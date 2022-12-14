@@ -18,115 +18,106 @@ const Tour = ({ startTour, t, tourCommands }) => {
   const TOUR_STEPS: any = [
     {
       target: ".navbar",
-      title: "Welcome",
+      title: "welcome",
       content: "Welcome_txt",
       disableBeacon: true,
       placement: "center",
     },
     {
       target: ".navbar",
-      title: "Navigation",
+      title: "navigation",
       content: "Navbar_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".ServiceMatrix_tab",
-      title: "Navigation",
+      title: "navigation",
       content: "Navbar_Matrix_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".FileFormats_tab",
-      title: "Navigation",
+      title: "navigation",
       content: "Navbar_FileFormats_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".nav-item.dropdown",
-      title: "Navigation",
+      title: "navigation",
       content: "Navbar_Language_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".lp-copy-sel__control",
-      title: "Filtering",
-      content:
-        "Here's a filter to filter services by service attributes like departure country or weight of a colli in the shipment. You can start typing to search attributes in all supported languages or open up the menu and scrolling the options. The filter will automatically refresh after each selection to match the service offering.",
+      title: "filtering",
+      content: "Filter_input_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".lp-copy-sel__menu",
-      title: "Filtering",
-      content:
-        "Here are the filtering options: Departure Country, Destination Country, Weight per colli, Longest side of the colli, Delivery Location, Service Group, Service and Additional Service",
+      title: "filtering",
+      content: "Filter_menu_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".lp-copy-sel__multi-value",
-      title: "Filtering",
-      content:
-        "Selected options can be found here and cleared by clicking on the clear button one by one found on each selection.",
+      title: "filtering",
+      content: "Filter_value_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".lp-copy-sel__clear-indicator",
-      title: "Filtering",
-      content:
-        "All the selected options can be removed by clicking on the global clear button.",
+      title: "filtering",
+      content: "Filter_clear_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".MatrixContainer",
-      title: "Service Matrix",
-      content:
-        "This is the Service Matrix. In service matrix you can see which additional services are available for each service. The interactive service Matrix filters out the excluded additional services by clicking checkboxes. There is also additional information about the additional services and services by clicking on the service name.",
+      title: "serviceMatrix",
+      content: "ServiceMatrix_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".pickupOptions",
-      title: "Service Matrix",
-      content: "You can filter out installation services using this switch.",
+      title: "serviceMatrix",
+      content: "ServiceMatrix_installation_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".resetButton",
-      title: "Service Matrix",
-      content:
-        "Reset button will reset the choices made in the Service Matrix but leave the filtering choises intact.",
+      title: "serviceMatrix",
+      content: "ServiceMatrix_reset_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".service2102",
-      title: "Services",
-      content:
-        "Services are located on the left hand side bar of the Service Matrix. You can click on the service name to get more information about the service.",
+      title: "services",
+      content: "Services_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".modal-dialog",
-      title: "Services",
-      content:
-        "On the popup you can see more detailed information about the additional service in case. The description, availability, routes and colli dimensions. Also technical integration instructions can be found on each service.",
+      title: "services",
+      content: "Services_modal_txt",
       disableBeacon: true,
       placement: "center",
     },
     {
       target: ".modal-tech-table",
-      title: "Services",
-      content:
-        "On the technical instructions table you can see the mandatory fields needed in the integration message in order to use this service.",
+      title: "services",
+      content: "Services_modal_tech_txt",
       disableBeacon: true,
       placement: "auto",
       styles: {
@@ -137,49 +128,43 @@ const Tour = ({ startTour, t, tourCommands }) => {
     },
     {
       target: ".serviceButton2102",
-      title: "Services",
-      content:
-        "Service button allows you to deactivate other services and filter out the additional services not applicable to the selected service.",
+      title: "services",
+      content: "Services_button_txt",
       disableBeacon: true,
       placement: "top",
     },
     {
       target: ".service2102 .badge",
-      title: "Services",
-      content:
-        "In some cases you might expreience a warning. In this case to be able to send collis which weight more than 25 kg activating an additional service is required.",
+      title: "services",
+      content: "Services_badge_txt",
       disableBeacon: true,
       placement: "top",
     },
     {
       target: ".checkbox21023174",
-      title: "Services",
-      content:
-        "By activating the required additional service the warning is removed.",
+      title: "services",
+      content: "Services_check_txt",
       disableBeacon: true,
       placement: "top",
     },
     {
       target: ".headerTitle3101",
-      title: "Additional Services",
-      content:
-        "Additional Services are located in the top bar of the Service Matrix. You can click the additional service to see more information on it.",
+      title: "additionalServices",
+      content: "AdditionalServices_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".modal-dialog",
-      title: "Additional Services",
-      content:
-        "On the popup you can see more detailed information about the additional service in case. The description, availability, available countries and mandatory information. Also technical integration instructions can be found on each additional service.",
+      title: "additionalServices",
+      content: "AdditionalServices_modal_txt",
       disableBeacon: true,
       placement: "center",
     },
     {
       target: ".modal-tech-table",
-      title: "Additional Services",
-      content:
-        "On the technical instructions table you can see the mandatory fields needed in the integration message in order to use this additional service.",
+      title: "additionalServices",
+      content: "AdditionalServices_modal_tech_txt",
       disableBeacon: true,
       placement: "auto",
       styles: {
@@ -190,32 +175,29 @@ const Tour = ({ startTour, t, tourCommands }) => {
     },
     {
       target: ".samples",
-      title: "Samples",
-      content:
-        "In the samples section you can see how choices are affecting the messages and label.",
+      title: "samples",
+      content: "Samples_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".offcanvas",
-      title: "Samples",
-      content:
-        "Here you can see the label. Hovering your mouse on top of the items on the label you can see the item specifications ie. barcode specifications.",
+      title: "samples",
+      content: "Samples_label_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".offcanvas",
-      title: "Samples",
-      content:
-        "By choosing other tabs you can see the example message generated based on your service and additional service choices in the Service Matrix section. The mandatory changes are highlighted in message.",
+      title: "samples",
+      content: "Samples_message_txt",
       disableBeacon: true,
       placement: "auto",
     },
     {
       target: ".navbar",
-      title: "Thank you",
-      content: "Hope you enjoy using Posti Service Matrix!",
+      title: "thankyou",
+      content: "Thankyou_txt",
       disableBeacon: true,
       placement: "center",
       styles: {
@@ -304,7 +286,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
               {t(step.title)}
             </Col>
             <Col sm={2} className="tour-position">
-              {"(" + (index + 1) + "/" + size + ")"}
+              {index + 1 + " / " + size}
             </Col>
           </>
         )}
@@ -333,7 +315,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
                     stepIndex: e.value,
                   }));
                 }}
-                placeholder={t("Jump to a topic")}
+                placeholder={t("JumpToTopic")}
               />
             </Row>
           </div>
@@ -346,7 +328,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
         <Col>
           {!isLastStep && (
             <button className="tour-skip" {...skipProps}>
-              {t("Skip tour")}
+              {t("skipTour")}
             </button>
           )}
         </Col>
