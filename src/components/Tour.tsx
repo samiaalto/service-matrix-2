@@ -255,6 +255,13 @@ const Tour = ({ startTour, t, tourCommands }) => {
 
   const [state, setState] = useState({
     run: false,
+    filterOpen: false,
+    selected: false,
+    serviceModal: false,
+    serviceSelection: false,
+    addonSelection: false,
+    addonModal: false,
+    offCanvas: false,
     stepIndex: 0,
     steps: TOUR_STEPS,
   });
@@ -301,7 +308,12 @@ const Tour = ({ startTour, t, tourCommands }) => {
                 t={t}
                 onChange={(e) => {
                   if (e.value >= 7) {
-                    tourCommands("filterClose");
+                    tourCommands("setSelected");
+                    setState((prevState) => ({
+                      ...prevState,
+                      run: true,
+                      selected: true,
+                    }));
                   }
                   if (e.value >= 15) {
                     tourCommands("serviceSelection");
@@ -391,86 +403,223 @@ const Tour = ({ startTour, t, tourCommands }) => {
 
   const test = (data: any) => {
     const { action, index, status, type } = data;
-    if (index === 1 && action !== "update") {
+    console.log(index, action);
+    if (index === 1 && action === "next") {
       tourCommands("reset");
       setState((prevState) => ({
         ...prevState,
         run: true,
       }));
-    } else if (index === 1 && action === "update") {
+    } else if (index === 1 && action !== "next") {
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
         }));
       }, 400);
-    } else if (index === 6) {
+    } else if (
+      index === 6 &&
+      action === "next" &&
+      !state.filterOpen &&
+      !state.selected
+    ) {
       tourCommands("filterOpen");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          filterOpen: true,
         }));
       }, 400);
-    } else if (index === 7 && action !== "update") {
+    } else if (
+      index === 6 &&
+      action === "prev" &&
+      state.filterOpen &&
+      !state.selected
+    ) {
       tourCommands("filterClose");
-    } else if (index === 7 && action === "update") {
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          filterOpen: false,
         }));
       }, 400);
-    } else if (index === 13) {
+    } else if (
+      index === 7 &&
+      action === "next" &&
+      state.filterOpen &&
+      !state.selected
+    ) {
+      tourCommands("filterClose");
+      tourCommands("setSelected");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          filterOpen: false,
+          selected: true,
+        }));
+      }, 400);
+    } else if (
+      index === 6 &&
+      action === "prev" &&
+      !state.filterOpen &&
+      state.selected
+    ) {
+      tourCommands("filterOpen");
+      tourCommands("unsetSelected");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          filterOpen: true,
+          selected: false,
+        }));
+      }, 400);
+    } else if (index === 8 && !state.selected) {
+      tourCommands("setSelected");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          filterOpen: false,
+          selected: true,
+        }));
+      }, 400);
+    } else if (index === 13 && action === "next" && !state.serviceModal) {
       tourCommands("openModalService");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          serviceModal: true,
         }));
       }, 400);
-    } else if (index === 15) {
+    } else if (index === 13 && action === "prev" && state.serviceModal) {
+      tourCommands("closeModal");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          serviceModal: false,
+        }));
+      }, 400);
+    } else if (
+      index === 15 &&
+      action === "next" &&
+      state.serviceModal &&
+      !state.serviceSelection
+    ) {
       tourCommands("closeModal");
       tourCommands("serviceSelection");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          serviceModal: false,
+          serviceSelection: true,
         }));
       }, 400);
-    } else if (index === 17 && action !== "update") {
-      setTimeout(() => {
-        setState((prevState) => ({
-          ...prevState,
-          run: true,
-        }));
-      }, 400);
-    } else if (index === 17 && action === "update") {
-      tourCommands("addonSelection");
-      setTimeout(() => {
-        setState((prevState) => ({
-          ...prevState,
-          run: true,
-        }));
-      }, 400);
-    } else if (index === 19) {
-      tourCommands("openModalAddon");
-      setTimeout(() => {
-        setState((prevState) => ({
-          ...prevState,
-          run: true,
-        }));
-      }, 400);
-    } else if (index === 21) {
+    } else if (
+      index === 15 &&
+      action === "next" &&
+      state.serviceModal &&
+      state.serviceSelection
+    ) {
       tourCommands("closeModal");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          serviceModal: false,
+          serviceSelection: true,
         }));
       }, 400);
-    } else if (index === 22) {
+    } else if (index === 14 && action === "prev") {
+      tourCommands("openModalService");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          serviceModal: true,
+        }));
+      }, 400);
+    } else if (index === 17 && action === "next" && !state.addonSelection) {
+      tourCommands("addonSelection");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonSelection: true,
+        }));
+      }, 400);
+    } else if (index === 17 && action === "prev" && state.addonSelection) {
+      tourCommands("addonUnselection");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonSelection: false,
+        }));
+      }, 400);
+    } else if (index === 19 && action === "next" && !state.addonModal) {
+      tourCommands("openModalAddon");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonModal: true,
+        }));
+      }, 400);
+    } else if (index === 19 && action === "prev" && state.addonModal) {
+      tourCommands("closeModal");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonModal: false,
+        }));
+      }, 400);
+    } else if (index === 21 && action === "next" && state.addonModal) {
+      tourCommands("closeModal");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonModal: false,
+        }));
+      }, 400);
+    } else if (index === 20 && action === "prev" && !state.addonModal) {
+      tourCommands("openModalAddon");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          addonModal: true,
+        }));
+      }, 400);
+    } else if (index === 22 && action === "next" && !state.offCanvas) {
       tourCommands("openOffCanvas");
+      tourCommands("offCanvasTabLabel");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          offCanvas: true,
+        }));
+      }, 400);
+    } else if (index === 21 && action === "prev" && state.offCanvas) {
+      tourCommands("closeOffCanvas");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          offCanvas: false,
+        }));
+      }, 400);
+    } else if (index === 22 && action === "prev") {
+      tourCommands("offCanvasTabLabel");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
@@ -478,7 +627,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
         }));
       }, 400);
     } else if (index === 23) {
-      tourCommands("offCanvasTab");
+      tourCommands("offCanvasTabPostra");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,

@@ -1040,12 +1040,25 @@ const App = (props: AppProps) => {
             setSelected((prevState) => ({
               ...prevState,
               filterOpen: false,
+            }));
+          } else if (e === "setSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
               departure: "FI",
               destination: "FI",
               weight: 35,
             }));
+          } else if (e === "unsetSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              departure: "",
+              destination: "",
+              weight: "",
+            }));
           } else if (e === "serviceSelection") {
             handleServiceSelection(4, true);
+          } else if (e === "serviceUnselection") {
+            handleServiceSelection(4, false);
           } else if (e === "addonSelection") {
             handleSelection({
               row: 4,
@@ -1054,9 +1067,28 @@ const App = (props: AppProps) => {
               value: true,
             });
             setupdateRows([{ row: 4, column: "3174", value: true }]);
+          } else if (e === "addonUnselection") {
+            handleSelection({
+              row: 4,
+              service: "2102",
+              addon: "3174",
+              value: false,
+            });
+            setupdateRows([{ row: 4, column: "3174", value: false }]);
           } else if (e === "openOffCanvas") {
             openOffCanvas();
-          } else if (e === "offCanvasTab") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "label",
+            }));
+          } else if (e === "closeOffCanvas") {
+            closeOffCanvas();
+          } else if (e === "offCanvasTabLabel") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "label",
+            }));
+          } else if (e === "offCanvasTabPostra") {
             setSelected((prevState) => ({
               ...prevState,
               offCanvasTab: "postra",
