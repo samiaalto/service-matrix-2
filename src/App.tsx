@@ -1093,6 +1093,30 @@ const App = (props: AppProps) => {
               ...prevState,
               offCanvasTab: "postra",
             }));
+          } else if (e === "fileFormats") {
+            navigate("/service-matrix-2/FileFormats", { replace: true });
+          } else if (e === "serviceMatrix") {
+            navigate("/service-matrix-2/ServiceMatrix", { replace: true });
+          } else if (e === "formatSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              format: "POSTRA_PARCEL",
+            }));
+          } else if (e === "formatUnselected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              format: "",
+            }));
+          } else if (e === "setFormatFilter") {
+            setSelected((prevState) => ({
+              ...prevState,
+              formatFilter: "Service",
+            }));
+          } else if (e === "unsetFormatFilter") {
+            setSelected((prevState) => ({
+              ...prevState,
+              formatFilter: "",
+            }));
           } else if (e === "reset") {
             handleReset();
             setSelected((prevState) => ({
@@ -1103,6 +1127,7 @@ const App = (props: AppProps) => {
               weight: undefined,
               startTour: false,
             }));
+            navigate("/service-matrix-2/ServiceMatrix", { replace: true });
           } else if (e === "skip") {
             setSelected((prevState) => ({
               ...prevState,

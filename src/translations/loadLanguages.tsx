@@ -139,6 +139,16 @@ let en = {
     "Here you can see the label. Hovering your mouse on top of the items on the label you can see the item specifications ie. barcode specifications.",
   Samples_message_txt:
     "By choosing other tabs you can see the example message generated based on your service and additional service choices in the Service Matrix section. The mandatory changes are highlighted in message.",
+  Fileformats_txt:
+    "In the File Formats section you will be able to learn more about the different integration file formats supported by Posti. You will find the full file format descriptions and schemas here.",
+  Fileformats_dropdown_txt:
+    "Browse the Posti supported file formats in this drop down. By selecting a file format you will get more information about it.",
+  Fileformats_tabs_txt:
+    "You can browse the message specification, version history and schema for the selected file format here.",
+  Fileformats_specs_txt:
+    "The full file format specification for the selected file format can be found here. There is information about the attribute name, compulsoriness, type, position and the description of attribute. Allowed values can also be found in the description of the attribute.",
+  Fileformats_filter_txt:
+    "You can filter the data in the file format specifications tab by typing here.",
   Thankyou_txt: "Hope you enjoy using Posti Service Matrix!",
   welcome: "Welcome",
   thankyou: "Thank you",
@@ -309,6 +319,16 @@ let fi = {
     "Tässä näet osoitekortin mallin. Viemällä hiiren tietueen esim. viivakoodin päälle näet tietuekuvauksen.",
   Samples_message_txt:
     "Valitsemalla tietuemuodon näet esimerkkisanoman, joka on generoitu Palvelumatriisissa tekemiesi valintojen pohjalta. Pakolliset kentät on korostettu sanomalla.",
+  Fileformats_txt:
+    "Tietuemuodot-osiossa voit tutustua Postin tukemien integraatiotietuemallien kuvauksiin. Tästä osiosta löydät myös tietuemallien scheman.",
+  Fileformats_dropdown_txt:
+    "Voit selata Postin tukemia tietumuotoja tässä alasvetovalikossa. Valittuasi tietuemuodon, saat siitä lisätietoja.",
+  Fileformats_tabs_txt:
+    "Löydät tästä valikosta valitun tietuemuodon sanomakuvauksen, versiohistorian ja scheman.",
+  Fileformats_specs_txt:
+    "Valitun tietuemuodon sanomakuvaus löytyy tästä. Se sisältää attribuutin nimen, pakollisuuden, toiston, tyypin, position ja kuvauksen. Attribuutin sallitut arvot esitetään kuvauksessa.",
+  Fileformats_filter_txt:
+    "Voit hakea tietoa suodattimella valitun tietuemuodon kuvauksesta.",
   Thankyou_txt: "Toivottavasti nautit Palvelumatriisista!",
   JumpToTopic: "Hyppää aiheeseen",
   skipTour: "Poistu esittelystä",

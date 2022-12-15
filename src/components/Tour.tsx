@@ -1,18 +1,10 @@
-import JoyRide, {
-  ACTIONS,
-  CallBackProps,
-  EVENTS,
-  STATUS,
-  Step,
-  TooltipRenderProps,
-} from "react-joyride";
+import JoyRide from "react-joyride";
 import { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import "./styles/Tour_styles.css";
 import { ReactComponent as ChevronIcon } from "./icons/ChevronIcon.svg";
 import Select from "./Select";
 
-// Tour component
 const Tour = ({ startTour, t, tourCommands }) => {
   // Tour steps
   const TOUR_STEPS: any = [
@@ -195,6 +187,41 @@ const Tour = ({ startTour, t, tourCommands }) => {
       placement: "auto",
     },
     {
+      target: ".appcontainer",
+      title: "fileFormats",
+      content: "Fileformats_txt",
+      disableBeacon: true,
+      placement: "auto",
+    },
+    {
+      target: ".lp-copy-sel__control",
+      title: "fileFormats",
+      content: "Fileformats_dropdown_txt",
+      disableBeacon: true,
+      placement: "auto",
+    },
+    {
+      target: ".ff-tabs",
+      title: "fileFormats",
+      content: "Fileformats_tabs_txt",
+      disableBeacon: true,
+      placement: "auto",
+    },
+    {
+      target: ".ff-table",
+      title: "fileFormats",
+      content: "Fileformats_specs_txt",
+      disableBeacon: true,
+      placement: "auto",
+    },
+    {
+      target: ".filter-wrapper",
+      title: "fileFormats",
+      content: "Fileformats_filter_txt",
+      disableBeacon: true,
+      placement: "auto",
+    },
+    {
       target: ".navbar",
       title: "thankyou",
       content: "Thankyou_txt",
@@ -246,7 +273,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
       keyWords: "",
     },
     {
-      value: 5,
+      value: 24,
       title: "fileFormats",
       subTitle: "fileFormats_desc",
       keyWords: "",
@@ -262,6 +289,9 @@ const Tour = ({ startTour, t, tourCommands }) => {
     addonSelection: false,
     addonModal: false,
     offCanvas: false,
+    fileFormats: false,
+    formatSelected: false,
+    formatFilter: false,
     stepIndex: 0,
     steps: TOUR_STEPS,
   });
@@ -347,7 +377,7 @@ const Tour = ({ startTour, t, tourCommands }) => {
         <Col>
           <Row>
             <Col>
-              {index > 0 && !isLastStep && (
+              {index > 0 && (
                 <button
                   className="tour-back"
                   {...backProps}
@@ -634,11 +664,58 @@ const Tour = ({ startTour, t, tourCommands }) => {
           run: true,
         }));
       }, 400);
-    } else if (index === 24 && action !== "update") {
+    } else if (index === 24 && action === "next" && !state.fileFormats) {
+      tourCommands("fileFormats");
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
           run: true,
+          fileFormats: true,
+        }));
+      }, 400);
+    } else if (index === 24 && action === "prev" && state.fileFormats) {
+      tourCommands("serviceMatrix");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          fileFormats: false,
+        }));
+      }, 400);
+    } else if (index === 26 && action === "next" && !state.formatSelected) {
+      tourCommands("formatSelected");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          formatSelected: true,
+        }));
+      }, 400);
+    } else if (index === 26 && action === "prev" && state.formatSelected) {
+      tourCommands("formatUnselected");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          formatSelected: false,
+        }));
+      }, 400);
+    } else if (index === 28 && action === "next" && !state.formatFilter) {
+      tourCommands("setFormatFilter");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          formatFilter: true,
+        }));
+      }, 400);
+    } else if (index === 27 && action === "prev" && state.formatFilter) {
+      tourCommands("unsetFormatFilter");
+      setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          run: true,
+          formatFilter: false,
         }));
       }, 400);
     }
@@ -647,7 +724,16 @@ const Tour = ({ startTour, t, tourCommands }) => {
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
-          run: false,
+          filterOpen: false,
+          selected: false,
+          serviceModal: false,
+          serviceSelection: false,
+          addonSelection: false,
+          addonModal: false,
+          offCanvas: false,
+          fileFormats: false,
+          formatSelected: false,
+          formatFilter: false,
           stepIndex: 0,
         }));
       }, 400);
@@ -656,7 +742,16 @@ const Tour = ({ startTour, t, tourCommands }) => {
       setTimeout(() => {
         setState((prevState) => ({
           ...prevState,
-          run: false,
+          filterOpen: false,
+          selected: false,
+          serviceModal: false,
+          serviceSelection: false,
+          addonSelection: false,
+          addonModal: false,
+          offCanvas: false,
+          fileFormats: false,
+          formatSelected: false,
+          formatFilter: false,
           stepIndex: 0,
         }));
       }, 400);
