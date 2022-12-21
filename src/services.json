@@ -294,23 +294,25 @@
         },
         {
           "PackageType": "CC",
-          "DimensionName": null,
+          "DimensionName": "Freight colli (Bulky)",
           "DisplayNameEN": "Colli",
           "DisplayNameFI": "Kolli",
           "DescriptionEN": "Colli (undefined)",
           "DescriptionFI": "Kolli ",
           "MessageFormat": "POSTRA_FREIGHT",
-          "MinWidth_cm": null,
-          "MaxWidth_cm": null,
-          "MinHeight_cm": null,
-          "MaxHeight_cm": null,
-          "MinDepth_cm": null,
-          "MaxDepth_cm": null,
-          "MinWeight_kg": null,
-          "MaxWeight_kg": null,
+          "MinWidth_cm": 1,
+          "MaxWidth_cm": 700,
+          "MinHeight_cm": 1,
+          "MaxHeight_cm": 700,
+          "MinDepth_cm": 1,
+          "MaxDepth_cm": 700,
+          "MinWeight_kg": 1,
+          "MaxWeight_kg": 1000,
           "Circumference_cm": null,
-          "DeliveryLocation": null,
-          "AdditionalServiceCode": null
+          "DeliveryLocation": "BUSINESS,HOME",
+          "AdditionalServiceCode": {
+            "Addon": "5230"
+          }
         },
         {
           "PackageType": "DR",
@@ -5787,17 +5789,6 @@
           "ExpirationDate": null
         },
         {
-          "MessageFormat": "WAYBILD16A",
-          "AdditionalInfo": "Package record",
-          "Sample": "2351",
-          "Mandatory": true,
-          "MessagePosition": null,
-          "PropertyName": "ServiceCode",
-          "PropertyValue": "2351",
-          "StartDate": null,
-          "ExpirationDate": null
-        },
-        {
           "MessageFormat": "SMARTSHIP",
           "AdditionalInfo": null,
           "Sample": "\"id\": \"PO2351\"",
@@ -5882,6 +5873,138 @@
           "MessagePosition": "DELIVERY",
           "PropertyName": "Country",
           "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"RETURN\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "RETURN",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Return Terminal</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name1",
+          "PropertyValue": "Return Terminal",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>Name 2</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name2",
+          "PropertyValue": "Name 2",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Return Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Street1",
+          "PropertyValue": "Return Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "City",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Country",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"phone\": \"+358401234567\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "phone",
+          "PropertyValue": "+358401234567",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"email\": \"ricky@receiver.com\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "email",
+          "PropertyValue": "ricky@receiver.com",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"quickId\": \"SEB087922710\"",
+          "Mandatory": true,
+          "MessagePosition": "agent",
+          "PropertyName": "quickId",
+          "PropertyValue": "SEB087922710",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"weight\": 1",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "weight",
+          "PropertyValue": "1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"weight\": 100",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "weight",
+          "PropertyValue": "100",
           "StartDate": null,
           "ExpirationDate": null
         }
@@ -6054,17 +6177,6 @@
           "ExpirationDate": null
         },
         {
-          "MessageFormat": "WAYBILD16A",
-          "AdditionalInfo": "Package record",
-          "Sample": "2352",
-          "Mandatory": true,
-          "MessagePosition": null,
-          "PropertyName": "ServiceCode",
-          "PropertyValue": "2352",
-          "StartDate": null,
-          "ExpirationDate": null
-        },
-        {
           "MessageFormat": "SMARTSHIP",
           "AdditionalInfo": null,
           "Sample": "\"id\": \"PO2352\"",
@@ -6072,6 +6184,105 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2352",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"RETURN\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "RETURN",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Return Terminal</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name1",
+          "PropertyValue": "Return Terminal",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>Name 2</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name2",
+          "PropertyValue": "Name 2",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Return Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Street1",
+          "PropertyValue": "Return Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "City",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Country",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"phone\": \"+358401234567\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "phone",
+          "PropertyValue": "+358401234567",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"email\": \"ricky@receiver.com\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "email",
+          "PropertyValue": "ricky@receiver.com",
           "StartDate": null,
           "ExpirationDate": null
         }
@@ -6218,17 +6429,6 @@
           "ExpirationDate": null
         },
         {
-          "MessageFormat": "WAYBILD16A",
-          "AdditionalInfo": "Package record",
-          "Sample": "2354",
-          "Mandatory": true,
-          "MessagePosition": null,
-          "PropertyName": "ServiceCode",
-          "PropertyValue": "2354",
-          "StartDate": null,
-          "ExpirationDate": null
-        },
-        {
           "MessageFormat": "SMARTSHIP",
           "AdditionalInfo": null,
           "Sample": "\"id\": \"PO2354\"",
@@ -6236,6 +6436,127 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2354",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"RETURN\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "RETURN",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Return Terminal</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name1",
+          "PropertyValue": "Return Terminal",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>Name 2</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name2",
+          "PropertyValue": "Name 2",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Return Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Street1",
+          "PropertyValue": "Return Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "City",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Country",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"phone\": \"+358401234567\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "phone",
+          "PropertyValue": "+358401234567",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"email\": \"ricky@receiver.com\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "email",
+          "PropertyValue": "ricky@receiver.com",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"volume\": 0.31",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "volume",
+          "PropertyValue": "0.31",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"weight\": 100",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "weight",
+          "PropertyValue": "100",
           "StartDate": null,
           "ExpirationDate": null
         }
@@ -6387,17 +6708,6 @@
           "ExpirationDate": null
         },
         {
-          "MessageFormat": "WAYBILD16A",
-          "AdditionalInfo": "Package record",
-          "Sample": "2358",
-          "Mandatory": true,
-          "MessagePosition": null,
-          "PropertyName": "ServiceCode",
-          "PropertyValue": "2358",
-          "StartDate": null,
-          "ExpirationDate": null
-        },
-        {
           "MessageFormat": "SMARTSHIP",
           "AdditionalInfo": null,
           "Sample": "\"id\": \"PO2358\"",
@@ -6405,6 +6715,105 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2358",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"RETURN\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "RETURN",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Return Terminal</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name1",
+          "PropertyValue": "Return Terminal",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>Name 2</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name2",
+          "PropertyValue": "Name 2",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Return Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Street1",
+          "PropertyValue": "Return Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "City",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Country",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"phone\": \"+358401234567\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "phone",
+          "PropertyValue": "+358401234567",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"email\": \"ricky@receiver.com\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "email",
+          "PropertyValue": "ricky@receiver.com",
           "StartDate": null,
           "ExpirationDate": null
         }
@@ -6549,17 +6958,6 @@
           "ExpirationDate": null
         },
         {
-          "MessageFormat": "WAYBILD16A",
-          "AdditionalInfo": "Package record",
-          "Sample": "2359",
-          "Mandatory": true,
-          "MessagePosition": null,
-          "PropertyName": "ServiceCode",
-          "PropertyValue": "2359",
-          "StartDate": null,
-          "ExpirationDate": null
-        },
-        {
           "MessageFormat": "SMARTSHIP",
           "AdditionalInfo": null,
           "Sample": "\"id\": \"PO2359\"",
@@ -6567,6 +6965,127 @@
           "MessagePosition": "service",
           "PropertyName": "id",
           "PropertyValue": "PO2359",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Party role=\"RETURN\"></Party>",
+          "Mandatory": false,
+          "MessagePosition": "DELIVERY",
+          "PropertyName": "Party",
+          "PropertyValue": "RETURN",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name1>Return Terminal</Name1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name1",
+          "PropertyValue": "Return Terminal",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Name2>Name 2</Name2>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Name2",
+          "PropertyValue": "Name 2",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<StreetAddress1>Return Address 1</StreetAddress1>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Street1",
+          "PropertyValue": "Return Address 1",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<PostalCode>33100</PostalCode>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Postcode",
+          "PropertyValue": "33100",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<City>Tampere</City>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "City",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": "APT",
+          "Sample": "<Country>FI</Country>",
+          "Mandatory": false,
+          "MessagePosition": "RETURN",
+          "PropertyName": "Country",
+          "PropertyValue": "FI",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"phone\": \"+358401234567\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "phone",
+          "PropertyValue": "+358401234567",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"email\": \"ricky@receiver.com\"",
+          "Mandatory": true,
+          "MessagePosition": "receiver",
+          "PropertyName": "email",
+          "PropertyValue": "ricky@receiver.com",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"volume\": 0.31",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "volume",
+          "PropertyValue": "0.31",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"weight\": 100",
+          "Mandatory": true,
+          "MessagePosition": "parcels",
+          "PropertyName": "weight",
+          "PropertyValue": "100",
           "StartDate": null,
           "ExpirationDate": null
         }

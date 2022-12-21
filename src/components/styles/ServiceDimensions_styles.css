@@ -9,7 +9,7 @@
 
 .dimensions-div {
   position: relative;
-  max-height: 360px;
+  max-height: 390px;
   width: 509px;
   padding: 5px;
 }
@@ -331,6 +331,25 @@
   transform: translate(-168px, -328px) rotate(0deg);
 }
 
+.ef_CC_height {
+  display: none;
+}
+.ef_CC_width {
+  display: none;
+}
+
+.ef_CC_depth {
+  display: none;
+}
+
+.ef_CC_weight {
+  display: none;
+}
+
+.ef_CC_type {
+  display: none;
+}
+
 .field_bulky {
   display: inline-block;
   position: relative;
@@ -342,4 +361,11 @@
   position: relative;
   font-weight: 500;
   top: -50px;
+}
+
+.field_bulky_2004 {
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  top: -60px;
 }

@@ -151,7 +151,7 @@ const MessageGenerator = (
       if (!country.Eu) {
         nonEu = true;
       }
-      if (selected.pudo) {
+      if (selected.deliveryLocation === "LOCKER") {
         labelData["receiverName2"] = country.Name2;
       }
       labelData["receiverAddress1"] = country.Address;
@@ -231,6 +231,14 @@ const MessageGenerator = (
             bringLabelName = ext.DisplayNameEN;
             bringServiceCode = ext.ServiceCode;
           }
+          if (selected.service === "2354" && addonArr.includes("3115")) {
+            bringLabelName = "Home Delivery Indoor";
+            bringServiceCode = "2870";
+          }
+          if (selected.service === "2358" && addonArr.includes("3174")) {
+            bringLabelName = "Home Delivery Parcel Return";
+            bringServiceCode = "0348";
+          }
         }
       }
 
@@ -245,31 +253,240 @@ const MessageGenerator = (
           let value = field.PropertyValue;
           let mandatory = field.Mandatory;
 
-          if (selected.pudo && field.PropertyName === "Name2") {
+          if (
+            selected.deliveryLocation === "LOCKER" &&
+            field.PropertyName === "Name2" &&
+            field.MessagePosition !== "RETURN"
+          ) {
             value = countries.records[destIndex].Name2;
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "Service") {
-            mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "ContactChannel") {
-            labelData["receiverPhone"] = "+3580007654321";
-            mandatory = true;
           } else if (
-            (selected.pudo && field.PropertyName === "Party") ||
-            (selected.pudo && field.PropertyName === "Name1")
+            selected.deliveryLocation === "LOCKER" &&
+            field.PropertyName === "Service"
           ) {
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "Street1") {
-            value = countries.records[destIndex].Address;
+          } else if (
+            selected.deliveryLocation === "LOCKER" &&
+            field.PropertyName === "ContactChannel"
+          ) {
+            labelData["receiverPhone"] = "+3580007654321";
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "Postcode") {
-            value = countries.records[destIndex].PostalCode;
+          } else if (field.PropertyName === "Party") {
             mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "City") {
-            value = countries.records[destIndex].City;
-            mandatory = true;
-          } else if (selected.pudo && field.PropertyName === "Country") {
-            value = countries.records[destIndex].CountryCode;
-            mandatory = true;
+          } else if (field.PropertyName === "Name1") {
+            if (
+              (field.MessagePosition === "RETURN" &&
+                dest === "SE" &&
+                selected.departure === "FI") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "FI" &&
+                selected.departure === "SE")
+            ) {
+              value = "Posti RK 90 c/o Bring";
+              labelData["returnName"] = value;
+              mandatory = true;
+              if (selected.service !== "2354" && selected.service !== "2359") {
+                labelData["receiverCustomerNo"] = "00132984";
+              } else {
+                labelData["receiverCustomerNo"] = "20010156386";
+              }
+            } else if (
+              (field.MessagePosition === "RETURN" &&
+                dest === "EE" &&
+                selected.departure === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "SE" &&
+                selected.departure === "EE") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "LT" &&
+                selected.departure === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "SE" &&
+                selected.departure === "LT") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "LV" &&
+                selected.departure === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "SE" &&
+                selected.departure === "LT")
+            ) {
+              value = "Itella Baltics c/o Bring";
+              labelData["returnName"] = value;
+              mandatory = true;
+              if (selected.departure === "EE" || dest === "EE") {
+                if (
+                  selected.service !== "2354" &&
+                  selected.service !== "2359"
+                ) {
+                  labelData["receiverCustomerNo"] = "01057077";
+                } else {
+                  labelData["receiverCustomerNo"] = "20010156279";
+                }
+              } else if (selected.departure === "LT" || dest === "LT") {
+                if (
+                  selected.service !== "2354" &&
+                  selected.service !== "2359"
+                ) {
+                  labelData["receiverCustomerNo"] = "01057078";
+                } else {
+                  labelData["receiverCustomerNo"] = "20010156337";
+                }
+              } else if (selected.departure === "LV" || dest === "LV") {
+                if (
+                  selected.service !== "2354" &&
+                  selected.service !== "2359"
+                ) {
+                  labelData["receiverCustomerNo"] = "01057079";
+                } else {
+                  labelData["receiverCustomerNo"] = "20010156287";
+                }
+              }
+            } else if (
+              (field.MessagePosition === "RETURN" &&
+                dest === "DK" &&
+                selected.departure === "FI") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "FI" &&
+                selected.departure === "DK")
+            ) {
+              value = "Posti RK 90 c/o Bring SE";
+              labelData["returnName"] = value;
+              mandatory = true;
+              if (selected.service !== "2354" && selected.service !== "2359") {
+                labelData["receiverCustomerNo"] = "00132984";
+              }
+            } else if (
+              (field.MessagePosition === "RETURN" &&
+                dest === "EE" &&
+                selected.departure === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "DK" &&
+                selected.departure === "EE") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "LT" &&
+                selected.departure === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "DK" &&
+                selected.departure === "LT") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "LV" &&
+                selected.departure === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                dest === "DK" &&
+                selected.departure === "LV")
+            ) {
+              value = "Itella Baltics c/o Bring SE";
+              labelData["returnName"] = value;
+              mandatory = true;
+              if (selected.departure === "EE" || dest === "EE") {
+                labelData["receiverCustomerNo"] = "01057077";
+              } else if (selected.departure === "LT" || dest === "LT") {
+                labelData["receiverCustomerNo"] = "01057078";
+              } else if (selected.departure === "LV" || dest === "LV") {
+                labelData["receiverCustomerNo"] = "01057079";
+              }
+            } else if (
+              selected.deliveryLocation === "LOCKER" ||
+              field.MessagePosition === "DELIVERY"
+            ) {
+              mandatory = true;
+            }
+          } else if (field.PropertyName === "Street1") {
+            if (
+              (field.MessagePosition === "RETURN" && dest === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "SE")
+            ) {
+              value = "Bordsvägen 3";
+              labelData["returnAddress1"] = value;
+              mandatory = true;
+            } else if (
+              (field.MessagePosition === "RETURN" && dest === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "DK")
+            ) {
+              value = "Ventrupparken 4";
+              labelData["returnAddress1"] = value;
+              mandatory = true;
+            } else if (
+              selected.deliveryLocation === "LOCKER" ||
+              field.MessagePosition === "DELIVERY"
+            ) {
+              value = countries.records[destIndex].Address;
+              mandatory = true;
+            }
+          } else if (field.PropertyName === "Postcode") {
+            if (
+              (field.MessagePosition === "RETURN" && dest === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "SE")
+            ) {
+              value = "55810";
+              labelData["returnPostalCode"] = value;
+              mandatory = true;
+            } else if (
+              (field.MessagePosition === "RETURN" && dest === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "DK")
+            ) {
+              value = "2670";
+              labelData["returnPostalCode"] = value;
+              mandatory = true;
+            } else if (
+              selected.deliveryLocation === "LOCKER" ||
+              field.MessagePosition === "DELIVERY"
+            ) {
+              value = countries.records[destIndex].PostalCode;
+              mandatory = true;
+            }
+          } else if (field.PropertyName === "City") {
+            if (
+              (field.MessagePosition === "RETURN" && dest === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "SE")
+            ) {
+              value = "Jönköping";
+              labelData["returnPostOffice"] = value;
+              mandatory = true;
+            } else if (
+              (field.MessagePosition === "RETURN" && dest === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "DK")
+            ) {
+              value = "Greve";
+              labelData["returnPostOffice"] = value;
+              mandatory = true;
+            } else if (
+              selected.deliveryLocation === "LOCKER" ||
+              field.MessagePosition === "DELIVERY"
+            ) {
+              value = countries.records[destIndex].City;
+              mandatory = true;
+            }
+          } else if (field.PropertyName === "Country") {
+            if (
+              (field.MessagePosition === "RETURN" && dest === "SE") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "SE")
+            ) {
+              value = "SE";
+              labelData["returnCountryCode"] = value;
+              mandatory = true;
+            } else if (
+              (field.MessagePosition === "RETURN" && dest === "DK") ||
+              (field.MessagePosition === "RETURN" &&
+                selected.departure === "DK")
+            ) {
+              value = "DK";
+              labelData["returnCountryCode"] = value;
+              mandatory = true;
+            } else if (
+              selected.deliveryLocation === "LOCKER" ||
+              field.MessagePosition === "DELIVERY"
+            ) {
+              value = countries.records[destIndex].CountryCode;
+              mandatory = true;
+            }
           } else if (nonEu && field.AdditionalInfo === "non-EU") {
             mandatory = true;
           }
@@ -293,8 +510,14 @@ const MessageGenerator = (
           for (let ext of record.ExternalServiceCodes) {
             if (ext.ExternalSystem === "BRING") {
               if (ext.ServiceCode === "0003") {
-                bringLabelName = ext.DisplayNameEN + " 0,234 KG BRUTTO";
+                bringLabelName = ext.DisplayNameEN + " 0.234kg Gross";
                 bringServiceCode = ext.ServiceCode;
+              } else if (ext.ServiceCode === "2870") {
+                bringLabelName = "";
+                bringServiceCode = "";
+              } else if (ext.ServiceCode === "0348") {
+                bringLabelName = "";
+                bringServiceCode = "";
               } else {
                 bringLabelName = ext.DisplayNameEN;
                 bringServiceCode = ext.ServiceCode;
@@ -368,7 +591,6 @@ const MessageGenerator = (
       }
     }
   }
-
   let d = new Date();
   labelData["dateTime"] =
     d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
@@ -386,10 +608,14 @@ const MessageGenerator = (
   let usedPropsJSON = [];
   let usedPropsTXT = [];
 
-  //console.log(serviceProps);
+  console.log(serviceProps);
 
   for (const record of fileFormats.records) {
-    if (serviceProps.some((e) => e.format === record.Name)) {
+    if (
+      serviceProps.some(
+        (e) => e.format === record.Name && e.property !== "AdditionalServices"
+      )
+    ) {
       for (let i = 0; i < record.Records.length; i++) {
         if (record.MessageFormat === "XML") {
           // Determine new path for the element
@@ -859,7 +1085,11 @@ const MessageGenerator = (
                       indexes[val] = 0;
                     }
                   } else if (indexes.hasOwnProperty(objParent.Name)) {
-                    if (obj.Name === "weight" || objParent.Name === "lines") {
+                    if (
+                      obj.Name === "weight" ||
+                      obj.Name === "volume" ||
+                      objParent.Name === "lines"
+                    ) {
                       indexes[objParent.Name] = 0;
                     } else {
                       indexes[objParent.Name] = indexes[objParent.Name] + 1;

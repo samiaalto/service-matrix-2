@@ -428,6 +428,22 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                         >
                           {dimension.DisplayNameEN}
                         </span>
+                        {dimension.AdditionalServiceCode !== null ? (
+                          <span
+                            key={"field_bulky" + i}
+                            className="field_bulky_2004"
+                          >
+                            {"NOTE! With additional service " +
+                              t(dimension.AdditionalServiceCode.Addon) +
+                              " max. length " +
+                              dimension.MaxWidth_cm +
+                              " cm. Separate agreement is needed when colli length exceeds  " +
+                              dimension.MaxWidth_cm +
+                              " cm."}
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </>
                     ) : (
                       ""

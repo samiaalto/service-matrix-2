@@ -347,9 +347,19 @@ const Tour = ({ startTour, t, tourCommands }) => {
                   }
                   if (e.value >= 15) {
                     tourCommands("serviceSelection");
+                    setState((prevState) => ({
+                      ...prevState,
+                      run: true,
+                      serviceSelection: true,
+                    }));
                   }
                   if (e.value >= 18) {
                     tourCommands("addonSelection");
+                    setState((prevState) => ({
+                      ...prevState,
+                      run: true,
+                      addonSelection: true,
+                    }));
                   }
                   setState((prevState) => ({
                     ...prevState,

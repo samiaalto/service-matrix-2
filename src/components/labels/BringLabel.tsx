@@ -103,8 +103,8 @@ const BringLabel = ({ data }) => {
                     overlay={overlay("returnName", "BRING")}
                   >
                     <div className="returnName">
-                      {data.labelData.senderName
-                        ? data.labelData.senderName
+                      {data.labelData.returnName
+                        ? data.labelData.returnName
                         : "Sandy Sender"}
                     </div>
                   </OverlayTrigger>
@@ -116,8 +116,8 @@ const BringLabel = ({ data }) => {
                     overlay={overlay("returnName2", "BRING")}
                   >
                     <div className="returnName2">
-                      {data.labelData.senderName2
-                        ? data.labelData.senderName2
+                      {data.labelData.returnName2
+                        ? data.labelData.returnName2
                         : ""}
                     </div>
                   </OverlayTrigger>
@@ -128,7 +128,11 @@ const BringLabel = ({ data }) => {
                     placement="top"
                     overlay={overlay("returnAddress1", "BRING")}
                   >
-                    <div className="returnAddress1">Return Street 123</div>
+                    <div className="returnAddress1">
+                      {data.labelData.returnAddress1
+                        ? data.labelData.returnAddress1
+                        : "Return Street 123"}
+                    </div>
                   </OverlayTrigger>
                 </Row>
                 <Row>
@@ -145,11 +149,11 @@ const BringLabel = ({ data }) => {
                     overlay={overlay("returnPostalCode", "BRING")}
                   >
                     <Col xs={6} className="returnPostalCode">
-                      {data.labelData.senderCountryCode
-                        ? data.labelData.senderCountryCode + "-"
+                      {data.labelData.returnCountryCode
+                        ? data.labelData.returnCountryCode + "-"
                         : "FI-"}
-                      {data.labelData.senderPostalCode
-                        ? data.labelData.senderPostalCode
+                      {data.labelData.returnPostalCode
+                        ? data.labelData.returnPostalCode
                         : "00230"}
                     </Col>
                   </OverlayTrigger>
@@ -158,8 +162,8 @@ const BringLabel = ({ data }) => {
                     overlay={overlay("returnPostOffice", "BRING")}
                   >
                     <Col className="returnPostOffice">
-                      {data.labelData.senderPostOffice
-                        ? data.labelData.senderPostOffice.toUpperCase()
+                      {data.labelData.returnPostOffice
+                        ? data.labelData.returnPostOffice.toUpperCase()
                         : "HELSINKI"}
                     </Col>
                   </OverlayTrigger>
@@ -280,7 +284,9 @@ const BringLabel = ({ data }) => {
                   <div className="freightReceiverName">
                     {data.labelData.receiverName
                       ? data.labelData.receiverName
-                      : "Ricky Receiver"}
+                      : data.service !== "2358" && data.service !== "2359"
+                      ? "Ricky Receiver"
+                      : data.labelData.returnName}
                   </div>
                 </OverlayTrigger>
               </Row>
@@ -290,9 +296,11 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverName2", "BRING")}
                 >
                   <div className="freightReceiverName2">
-                    {data.labelData.receiverName2
+                    {data.labelData.receiverName2 &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverName2
-                      : ""}
+                      : data.labelData.returnName2}
                   </div>
                 </OverlayTrigger>
               </Row>
@@ -302,9 +310,11 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverAddress1", "BRING")}
                 >
                   <div className="freightReceiverAddress1">
-                    {data.labelData.receiverAddress1
+                    {data.labelData.receiverAddress1 &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverAddress1
-                      : "Postintaival 7"}
+                      : data.labelData.returnAddress1}
                   </div>
                 </OverlayTrigger>
               </Row>
@@ -314,9 +324,11 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverAddress2", "BRING")}
                 >
                   <div className="freightReceiverAddress2">
-                    {data.labelData.receiverAddress2
+                    {data.labelData.receiverAddress2 &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverAddress2
-                      : ""}
+                      : data.labelData.returnAddress2}
                   </div>
                 </OverlayTrigger>
               </Row>
@@ -326,12 +338,16 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverPostalCode", "BRING")}
                 >
                   <Col xs={4} className="freightReceiverPostalCode">
-                    {data.labelData.receiverCountryCode
+                    {data.labelData.receiverCountryCode &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverCountryCode + "-"
-                      : "FI-"}
-                    {data.labelData.receiverPostalCode
+                      : data.labelData.returnCountryCode + "-"}
+                    {data.labelData.receiverPostalCode &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverPostalCode
-                      : "00230"}
+                      : data.labelData.returnPostalCode}
                   </Col>
                 </OverlayTrigger>
                 <OverlayTrigger
@@ -339,9 +355,11 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverPostOffice", "BRING")}
                 >
                   <Col xs={6} className="freightReceiverPostOffice">
-                    {data.labelData.receiverPostOffice
+                    {data.labelData.receiverPostOffice &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverPostOffice.toUpperCase()
-                      : "HELSINKI"}
+                      : data.labelData.returnPostOffice.toUpperCase()}
                   </Col>
                 </OverlayTrigger>
               </Row>
@@ -351,9 +369,11 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("receiverCountry", "BRING")}
                 >
                   <Col xs={4} className="freightReceiverCountry">
-                    {data.labelData.receiverCountry
+                    {data.labelData.receiverCountry &&
+                    data.service !== "2358" &&
+                    data.service !== "2359"
                       ? data.labelData.receiverCountry.toUpperCase()
-                      : "FINLAND"}
+                      : data.labelData.senderCountry.toUpperCase()}
                   </Col>
                 </OverlayTrigger>
               </Row>
@@ -472,7 +492,14 @@ const BringLabel = ({ data }) => {
                 </OverlayTrigger>
               </Row>
             </Col>
-            <Col xs={4} className="bringRecipient">
+            <Col
+              xs={4}
+              className={
+                data.service === "2352" || data.service === "2354"
+                  ? "bringRecipient hidden"
+                  : "bringRecipient"
+              }
+            >
               <OverlayTrigger
                 placement="top"
                 overlay={overlay("recipient-label", "BRING")}
@@ -487,8 +514,8 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientName", "BRING")}
                 >
                   <div className="bringRecipientName">
-                    {data.labelData.recipientName
-                      ? data.labelData.recipientName
+                    {data.labelData.receiverName
+                      ? data.labelData.receiverName
                       : "Ricky Receiver"}
                   </div>
                 </OverlayTrigger>
@@ -499,8 +526,8 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientName2", "BRING")}
                 >
                   <div className="bringRecipientName2">
-                    {data.labelData.recipientName2
-                      ? data.labelData.recipientName2
+                    {data.labelData.receiverName2
+                      ? data.labelData.receiverName2
                       : ""}
                   </div>
                 </OverlayTrigger>
@@ -511,8 +538,8 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientAddress1", "BRING")}
                 >
                   <div className="bringRecipientAddress1">
-                    {data.labelData.recipientAddress1
-                      ? data.labelData.recipientAddress1
+                    {data.labelData.receiverAddress1
+                      ? data.labelData.receiverAddress1
                       : "Postintaival 7"}
                   </div>
                 </OverlayTrigger>
@@ -523,8 +550,8 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientAddress2", "BRING")}
                 >
                   <div className="bringRecipientAddress2">
-                    {data.labelData.recipientAddress2
-                      ? data.labelData.recipientAddress2
+                    {data.labelData.receiverAddress2
+                      ? data.labelData.receiverAddress2
                       : ""}
                   </div>
                 </OverlayTrigger>
@@ -548,7 +575,9 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientPostOffice", "BRING")}
                 >
                   <Col xs={6} className="bringRecipientPostOffice">
-                    HELSINKI
+                    {data.labelData.receiverPostOffice
+                      ? data.labelData.receiverPostOffice
+                      : "HELSINKI"}
                   </Col>
                 </OverlayTrigger>
               </Row>
@@ -558,7 +587,9 @@ const BringLabel = ({ data }) => {
                   overlay={overlay("recipientCountry", "BRING")}
                 >
                   <Col xs={4} className="bringRecipientCountry">
-                    FINLAND
+                    {data.labelData.receiverCountry
+                      ? data.labelData.receiverCountry.toUpperCase()
+                      : "FINLAND"}
                   </Col>
                 </OverlayTrigger>
               </Row>

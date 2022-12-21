@@ -104,7 +104,7 @@ const App = (props: AppProps) => {
     SMARTSHIP: {},
     WAYBILD16A: {},
   });
-
+  const [currentState, setCurrentState] = useState({});
   const [ffRowData, setFfRowData] = useState([]);
   const [ffColumnData, setFfColumnData] = useState([
     {
@@ -431,6 +431,7 @@ const App = (props: AppProps) => {
   const handleServiceSelection = (index, isSelected) => {
     let service;
     let update = [];
+
     if (isSelected) {
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
@@ -594,7 +595,9 @@ const App = (props: AppProps) => {
     selected.addons,
     selected.showSamples,
     selected.showOptional,
-    selected.pudo,
+    selected.deliveryLocation,
+    selected.departure,
+    selected.destination,
   ]);
 
   useEffect(() => {
@@ -615,6 +618,7 @@ const App = (props: AppProps) => {
           columns.push(column.id);
         }
       }
+      let update = [];
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
           if (
@@ -623,7 +627,49 @@ const App = (props: AppProps) => {
           ) {
             isAvailable = true;
           }
+          if (
+            selected.destination !== "" &&
+            typeof selected.destination !== "undefined"
+          ) {
+            for (let service of data.services["records"]) {
+              if (service.ServiceCode === row.original.serviceCode) {
+                for (let additionalService of service.AdditionalServices) {
+                  if (key === additionalService.Addon) {
+                    if (
+                      additionalService.AvailableCountries &&
+                      !additionalService.AvailableCountries.some(
+                        (country) =>
+                          country.Country === selected.destination ||
+                          country.Country === "ALL"
+                      ) &&
+                      value !== null
+                    ) {
+                      console.log("YES, " + key + " " + value);
+                      update.push({ row: row.index, column: key, value: null });
+                    } else if (
+                      additionalService.AvailableCountries &&
+                      additionalService.AvailableCountries.some(
+                        (country) =>
+                          country.Country === selected.destination ||
+                          country.Country === "ALL"
+                      ) &&
+                      value === null
+                    ) {
+                      update.push({
+                        row: row.index,
+                        column: key,
+                        value: false,
+                      });
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+      }
+      if (update.length > 0) {
+        setupdateRows(update);
       }
       if (selected.deliveryLocation === "LOCKER") {
         isAvailable = false;
@@ -1008,7 +1054,12 @@ const App = (props: AppProps) => {
       ...prevState,
       startTour: !prevState.startTour,
     }));
+    setCurrentState(selected);
   };
+
+  useEffect(() => {
+    console.log(currentState);
+  }, [currentState]);
 
   return (
     <div className="App">
@@ -1125,6 +1176,7 @@ const App = (props: AppProps) => {
               departure: undefined,
               destination: undefined,
               weight: undefined,
+              addonsFilter: [],
               startTour: false,
             }));
             navigate("/service-matrix-2/ServiceMatrix", { replace: true });
