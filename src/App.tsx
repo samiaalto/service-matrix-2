@@ -89,6 +89,7 @@ const App = (props: AppProps) => {
     formatFilter: "",
     ffTab: "",
     modalOpen: false,
+    modalService: "",
     modalData: {},
     showAlert: false,
     alertData: [],
@@ -465,12 +466,12 @@ const App = (props: AppProps) => {
           }
         }
       }
-      updateSearchParams("service", service);
+      updateSearchParams("selectedService", service);
     } else {
       handleReset();
       setSelected((prevState) => ({
         ...prevState,
-        service: "",
+        selectedService: "",
       }));
     }
     if (update.length > 0) {
@@ -478,7 +479,7 @@ const App = (props: AppProps) => {
       setupdateRows(update);
       setSelected((prevState) => ({
         ...prevState,
-        service: service,
+        selectedService: service,
       }));
     }
   };
@@ -768,7 +769,10 @@ const App = (props: AppProps) => {
       }
 
       for (let [i, row] of rowData.entries()) {
-        if (row.serviceCode === URLparams.service) {
+        if (
+          row.serviceCode === URLparams.service ||
+          row.serviceCode === URLparams.selectedService
+        ) {
           serviceIndex = i;
         }
       }
@@ -801,17 +805,41 @@ const App = (props: AppProps) => {
             disableExcluded(serviceIndex, addon, true);
           }
         }
-      }
-      setTimeout(() => {
-        if (getBool(URLparams.modalOpen) === true) {
-          callModal(
-            data.services["records"][serviceIndex].ServiceCode,
-            data.services,
-            data.additionalServices
-          );
+        if (URLparams.selectedService !== "") {
+          for (const row of filteredRowData["rows"]) {
+            for (const [key, value] of Object.entries(row.original)) {
+              if (row.index === serviceIndex && key === "serviceButton") {
+                update.push({
+                  row: row.index,
+                  column: key,
+                  value: true,
+                });
+              } else if (
+                (row.index !== serviceIndex && value === true) ||
+                (row.index !== serviceIndex && value === false)
+              ) {
+                update.push({ row: row.index, column: key, value: null });
+              }
+            }
+          }
         }
+      }
+
+      if (
+        getBool(URLparams.modalOpen) === true &&
+        URLparams.modalService !== ""
+      ) {
+        callModal(
+          URLparams.modalService,
+          data.services,
+          data.additionalServices
+        );
+      }
+
+      setTimeout(() => {
         setupdateRows(update);
       }, 500);
+
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
@@ -988,15 +1016,25 @@ const App = (props: AppProps) => {
       }
     }
 
+    let updatedSearchParams = new URLSearchParams(params.toString());
+    updatedSearchParams.set("modalOpen", "true");
+    updatedSearchParams.set("modalService", value);
+
+    setParams(updatedSearchParams.toString());
     setSelected((prevState) => ({
       ...prevState,
       modalOpen: true,
+      modalService: value,
       modalData: data,
     }));
-    updateSearchParams("modalOpen", true);
   };
 
   const closeModal = () => {
+    //  let updatedSearchParams = new URLSearchParams(params.toString());
+    //  updatedSearchParams.delete("modalOpen");
+    //  updatedSearchParams.delete("modalService", value);
+
+    //  setParams(updatedSearchParams.toString());
     setSelected((prevState) => ({
       ...prevState,
       modalOpen: false,
