@@ -402,9 +402,12 @@ const App = (props: AppProps) => {
   const handleReset = () => {
     let updatedSearchParams = new URLSearchParams(params.toString());
     updatedSearchParams.delete("service");
+    updatedSearchParams.delete("selectedService");
     updatedSearchParams.delete("addons");
     updatedSearchParams.delete("pudo");
     updatedSearchParams.delete("modalOpen");
+    updatedSearchParams.delete("modalService");
+    updatedSearchParams.delete("modalTab");
     updatedSearchParams.delete("offCanvasOpen");
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
@@ -415,10 +418,13 @@ const App = (props: AppProps) => {
     setSelected((prevState) => ({
       ...prevState,
       service: "",
+      selectedService: "",
       addons: [],
       pudo: false,
       pickupOrder: false,
       modalOpen: false,
+      modalService: "",
+      modalTab: "",
       offCanvasOpen: false,
       offCanvasTab: "",
       showOptional: false,
@@ -622,10 +628,7 @@ const App = (props: AppProps) => {
       let update = [];
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
-          if (
-            (columns.includes(key) && value === true) ||
-            (columns.includes(key) && value === false)
-          ) {
+          if (columns.includes(key) && value !== null) {
             isAvailable = true;
           }
           if (
@@ -635,32 +638,53 @@ const App = (props: AppProps) => {
             for (let service of data.services["records"]) {
               if (service.ServiceCode === row.original.serviceCode) {
                 for (let additionalService of service.AdditionalServices) {
-                  if (key === additionalService.Addon) {
+                  if (
+                    key === additionalService.Addon &&
+                    additionalService.AvailableCountries.length > 0
+                  ) {
                     if (
-                      additionalService.AvailableCountries &&
-                      !additionalService.AvailableCountries.some(
+                      additionalService.AvailableCountries.some(
                         (country) =>
                           country.Country === selected.destination ||
                           country.Country === "ALL"
                       ) &&
                       value !== null
                     ) {
-                      console.log("YES, " + key + " " + value);
+                      //  console.log(
+                      //    "YES, " + service.ServiceCode + " " + key + " " + value
+                      //  );
                       update.push({ row: row.index, column: key, value: null });
                     } else if (
-                      additionalService.AvailableCountries &&
-                      additionalService.AvailableCountries.some(
+                      !additionalService.AvailableCountries.some(
                         (country) =>
                           country.Country === selected.destination ||
                           country.Country === "ALL"
                       ) &&
                       value === null
                     ) {
-                      update.push({
-                        row: row.index,
-                        column: key,
-                        value: false,
-                      });
+                      if (
+                        selected.selectedService !== "" &&
+                        row.original.serviceCode === selected.selectedService
+                      ) {
+                        console.log(row.original.serviceCode);
+                        update.push({
+                          row: row.index,
+                          column: key,
+                          value: false,
+                        });
+                      } else if (selected.selectedService === "") {
+                        console.log(
+                          "TÄÄLLÄ " +
+                            selected.selectedService +
+                            " " +
+                            row.original.serviceCode
+                        );
+                        update.push({
+                          row: row.index,
+                          column: key,
+                          value: false,
+                        });
+                      }
                     }
                   }
                 }
@@ -702,6 +726,7 @@ const App = (props: AppProps) => {
     filteredRowData,
     selected.departure,
     selected.destination,
+    selected.selectedService,
     selected.serviceFilter,
     selected.addonsFilter,
     selected.showInstallation,
@@ -754,7 +779,14 @@ const App = (props: AppProps) => {
         for (const service of data.services["records"]) {
           if (service.ServiceCode === URLparams.service) {
             for (const addon of service.AdditionalServices) {
-              serviceAddons.push(addon.Addon);
+              if (
+                !addon.AvailableCountries.some(
+                  (e) => e.Country === URLparams.destination
+                )
+              ) {
+                console.log(addon);
+                serviceAddons.push(addon.Addon);
+              }
             }
           }
         }
@@ -847,6 +879,7 @@ const App = (props: AppProps) => {
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
         service: URLparams.service,
+        selectedService: URLparams.selectedService,
         serviceFilter: URLparams.serviceFilter,
         addons: selectedAddons,
         addonsFilter: filteredAddons,
