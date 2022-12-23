@@ -9,7 +9,7 @@
 
 .dimensions-div {
   position: relative;
-  max-height: 360px;
+  max-height: 390px;
   width: 509px;
   padding: 5px;
 }
@@ -73,6 +73,35 @@
   display: inline-block;
   position: relative;
   transform: translate(60px, -200px) rotate(0deg);
+}
+
+.ems_height {
+  display: inline-block;
+  position: relative;
+  transform: translate(90px, -170px) rotate(-90deg);
+}
+.ems_width {
+  display: inline-block;
+  position: relative;
+  transform: translate(110px, -55px) rotate(25deg);
+}
+
+.ems_depth {
+  display: inline-block;
+  position: relative;
+  transform: translate(180px, -25px) rotate(-31deg);
+}
+
+.ems_weight {
+  display: inline-block;
+  position: relative;
+  transform: translate(-40px, -260px) rotate(0deg);
+}
+
+.ems_circum {
+  display: inline-block;
+  position: relative;
+  transform: translate(70px, -230px) rotate(0deg);
 }
 
 .pp_apt_height {
@@ -164,6 +193,39 @@
   width: 120px;
   line-height: 1;
   transform: translate(140px, -530px) rotate(-47deg);
+}
+
+.sd_PickupLogo_pb {
+  position: relative;
+  height: 45px;
+  transform: translate(-65px, -315px) rotate(-47deg);
+}
+
+.sd_PickupLogo_pb_txt {
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  transform: translate(190px, -410px) rotate(-47deg);
+}
+
+.sd_PickupLogo_pb > path,
+.sd_DestinationLogo_pb > g > path {
+  fill: orange !important;
+}
+
+.sd_DestinationLogo_pb {
+  position: relative;
+  height: 45px;
+  transform: translate(-95px, -425px) rotate(-45deg);
+}
+
+.sd_DestinationLogo_pb_txt {
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  width: 120px;
+  line-height: 1;
+  transform: translate(150px, -515px) rotate(-47deg);
 }
 
 .ef_CW_height {
@@ -331,6 +393,91 @@
   transform: translate(-168px, -328px) rotate(0deg);
 }
 
+.ef_CC_height {
+  display: none;
+}
+.ef_CC_width {
+  display: none;
+}
+
+.ef_CC_depth {
+  display: none;
+}
+
+.ef_CC_weight {
+  display: none;
+}
+
+.ef_CC_type {
+  display: none;
+}
+
+.if_HP_height {
+  display: inline-block;
+  position: relative;
+  transform: translate(165px, -190px) rotate(-90deg);
+}
+.if_HP_width {
+  display: inline-block;
+  position: relative;
+  transform: translate(140px, -90px) rotate(26deg);
+}
+
+.if_HP_depth {
+  display: inline-block;
+  position: relative;
+  transform: translate(160px, -80px) rotate(-28deg);
+}
+
+.if_HP_weight {
+  display: inline-block;
+  position: relative;
+  transform: translate(18px, -290px) rotate(-50deg);
+}
+
+.if_HP_type {
+  display: inline-block;
+  position: relative;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1;
+  max-width: 40px;
+  transform: translate(-53px, -240px) rotate(0deg);
+}
+
+.if_EUR_height {
+  display: inline-block;
+  position: relative;
+  transform: translate(-146px, -192px) rotate(-90deg);
+}
+.if_EUR_width {
+  display: inline-block;
+  position: relative;
+  transform: translate(-160px, -65px) rotate(26deg);
+}
+
+.if_EUR_depth {
+  display: inline-block;
+  position: relative;
+  transform: translate(-120px, -53px) rotate(-28deg);
+}
+
+.if_EUR_weight {
+  display: inline-block;
+  position: relative;
+  transform: translate(167px, -310px) rotate(-50deg);
+}
+
+.if_EUR_type {
+  display: inline-block;
+  position: relative;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1;
+  max-width: 40px;
+  transform: translate(96px, -265px) rotate(0deg);
+}
+
 .field_bulky {
   display: inline-block;
   position: relative;
@@ -342,4 +489,11 @@
   position: relative;
   font-weight: 500;
   top: -50px;
+}
+
+.field_bulky_2004 {
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  top: -60px;
 }

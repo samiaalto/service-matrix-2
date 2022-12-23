@@ -78,7 +78,7 @@ const FileFormats = ({
             }}
             className="mb-3 ff-tabs"
           >
-            <Tab eventKey="specs" title={t("specs")}>
+            <Tab eventKey="specs" className="specs" title={t("specs")}>
               <FFTable
                 t={t}
                 defaultColumns={ffColumnData}
@@ -88,7 +88,7 @@ const FileFormats = ({
               />
             </Tab>
             {history.length > 0 ? (
-              <Tab eventKey="version" title={t("version")}>
+              <Tab eventKey="version" className="version" title={t("version")}>
                 <div className="FFContainer">
                   <Table className="ff-table">
                     <thead>
@@ -116,7 +116,7 @@ const FileFormats = ({
               ""
             )}
             {selected.format && selected.format.substring(0, 6) === "POSTRA" ? (
-              <Tab eventKey="schema" title="Schema">
+              <Tab eventKey="schema" className="schema" title="Schema">
                 <div className="FFContainer">
                   <div className="dl-schema">
                     <div className="schema-txt">Download schema files</div>

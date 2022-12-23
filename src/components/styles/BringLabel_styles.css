@@ -13,7 +13,8 @@
   margin: 10px;
 }
 
-.bringParties.hidden {
+.bringParties.hidden,
+.bringRecipient.hidden {
   display: none;
 }
 .labelPreview .bringProduct {

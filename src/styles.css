@@ -22,7 +22,7 @@ body {
   max-width: 1440px !important;
   color: #3b4a57;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
-  overflow: none;
+  overflow: hidden;
   border-radius: 16px;
   margin-left: auto;
   margin-right: auto;

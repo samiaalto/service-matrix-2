@@ -350,7 +350,7 @@
           "AdditionalInfo": null,
           "Sample": "<Party role=\"PAYER\"></Party>",
           "Mandatory": true,
-          "MessagePosition": "DELIVERY",
+          "MessagePosition": "RETURN",
           "PropertyName": "Party",
           "PropertyValue": "PAYER",
           "StartDate": null,
@@ -397,6 +397,17 @@
           "MessagePosition": "PAYER",
           "PropertyName": "Name1",
           "PropertyValue": "Payer Name",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"custNo\": 666666",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "custNo",
+          "PropertyValue": "666666",
           "StartDate": null,
           "ExpirationDate": null
         }
@@ -1057,7 +1068,7 @@
       "ExternalServiceCodes": [
         {
           "ServiceCode": "1123",
-          "DisplayNameEN": "Returning of packaging / Unwrapping",
+          "DisplayNameEN": "Recycling Standardized",
           "DisplayNameFI": null,
           "ExternalSystem": "BRING",
           "Internal": false,
@@ -2400,7 +2411,17 @@
     },
     {
       "ServiceCode": "3167",
-      "ExternalServiceCodes": [],
+      "ExternalServiceCodes": [
+        {
+          "ServiceCode": "1139",
+          "DisplayNameEN": "Return of packaging/Unwrapping",
+          "DisplayNameFI": null,
+          "ExternalSystem": "BRING",
+          "Internal": false,
+          "StartDate": null,
+          "ExpirationDate": null
+        }
+      ],
       "DisplayNameEN": "Transport Packaging Removal",
       "DisplayNameFI": "Purku kuljetuspakkauksesta",
       "DescriptionEN": "The service is suitable for use when the recipient wants the parcel shipment to be unpacked from the transport package or the cargo consignment from the transport platform to a separately specified one place and the packaging materials to be removed, for proper recycling.",
@@ -4312,14 +4333,37 @@
           "ExpirationDate": null
         }
       ],
-      "Fields": []
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3372</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3372",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"SIGN\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "SIGN",
+          "StartDate": null,
+          "ExpirationDate": null
+        }
+      ]
     },
     {
       "ServiceCode": "3373",
       "ExternalServiceCodes": [
         {
           "ServiceCode": "1133",
-          "DisplayNameEN": "Recycling Standardized",
+          "DisplayNameEN": "ID Required",
           "DisplayNameFI": null,
           "ExternalSystem": "BRING",
           "Internal": false,
@@ -4353,7 +4397,30 @@
           "ExpirationDate": null
         }
       ],
-      "Fields": []
+      "Fields": [
+        {
+          "MessageFormat": "POSTRA_PARCEL",
+          "AdditionalInfo": null,
+          "Sample": "<Service>3373</Service>",
+          "Mandatory": true,
+          "MessagePosition": null,
+          "PropertyName": "Service",
+          "PropertyValue": "3373",
+          "StartDate": null,
+          "ExpirationDate": null
+        },
+        {
+          "MessageFormat": "SMARTSHIP",
+          "AdditionalInfo": null,
+          "Sample": "\"id\": \"IDCHK\"",
+          "Mandatory": true,
+          "MessagePosition": "addons",
+          "PropertyName": "id",
+          "PropertyValue": "IDCHK",
+          "StartDate": null,
+          "ExpirationDate": null
+        }
+      ]
     },
     {
       "ServiceCode": "3376",

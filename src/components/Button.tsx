@@ -42,14 +42,12 @@ function ResetButton({ title, type, onClick }: buttonProps) {
   }
 
   return (
-    <div className={"btn-wrapper " + type}>
-      <div
-        tabIndex={0}
-        className="btn-header"
-        role="button"
-        onKeyPress={(el) => handleOnClick(el)}
-        onClick={(el) => handleOnClick(el)}
-      >
+    <div
+      className={"btn-wrapper " + type}
+      onKeyPress={(el) => handleOnClick(el)}
+      onClick={(el) => handleOnClick(el)}
+    >
+      <div tabIndex={0} className="btn-header" role="button">
         <div className="btn-header_title">
           <p className="btn-header_title--bold">{title}</p>
         </div>
