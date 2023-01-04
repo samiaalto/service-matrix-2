@@ -35,6 +35,16 @@ const CellComponent = ({
   let widths = [];
   let message = "";
   let addon = "";
+  let int = false;
+
+  if (
+    !service.columnFilters.hasOwnProperty("routes") &&
+    service.original.serviceGroup === "INTERNATIONAL"
+  ) {
+    showMessage = true;
+    int = true;
+  }
+
   if (service.columnFiltersMeta.hasOwnProperty("weight")) {
     weightFilter = service.columnFiltersMeta.weight.itemRank.rankedValue;
   }
@@ -80,11 +90,11 @@ const CellComponent = ({
     widths.sort((a, b) => parseFloat(a) - parseFloat(b));
   }
 
-  if (weights.length > 0 || widths.length > 0) {
+  if (weights.length > 0 || widths.length > 0 || int) {
     let wIndex = weights.indexOf(weightFilter) - 1;
     let index = widths.indexOf(widthFilter) - 1;
 
-    if (index > -1 && wIndex > -1) {
+    if (index > -1 && wIndex > -1 && addon !== "") {
       message =
         t("Additional service") +
         " " +
@@ -99,8 +109,8 @@ const CellComponent = ({
         " " +
         t("and longest side of the colli exceeds") +
         widths[index] +
-        " cm";
-    } else if (wIndex > -1 && index < 0) {
+        " cm. ";
+    } else if (wIndex > -1 && index < 0 && addon !== "") {
       message =
         t("Additional service") +
         " " +
@@ -111,8 +121,8 @@ const CellComponent = ({
         t("is required when colli weight exceeds") +
         " " +
         weights[wIndex] +
-        " kg";
-    } else {
+        " kg. ";
+    } else if (wIndex < 0 && index > -1 && addon !== "") {
       message =
         t("Additional service") +
         " " +
@@ -123,7 +133,12 @@ const CellComponent = ({
         t("is required when longest side of the colli exceeds") +
         " " +
         widths[index] +
-        " cm";
+        " cm. ";
+    }
+    if (int) {
+      message =
+        message +
+        "Please choose departure and destination countries in the filter section in order to see the available additional services on the given route.";
     }
   }
 

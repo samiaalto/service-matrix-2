@@ -24,31 +24,31 @@ const hideColumn = (
     }
   }
 
-  for (let addonService of additionalServices.records) {
-    if (
-      addonService.ServiceCode === addon &&
-      selected.destination !== "" &&
-      typeof selected.destination !== "undefined"
-    ) {
-      if (
-        addonService.AvailableCountries.some(
-          (country) =>
-            country.Country === selected.destination ||
-            country.Country === "ALL"
-        )
-      ) {
-        isAvailable = true;
-      } else {
-        isAvailable = false;
-      }
-    }
-    if (
-      addonService.ServiceCode === addon &&
-      selected.deliveryLocation === "LOCKER"
-    ) {
-      isAvailable = addonService.Pudo;
-    }
-  }
+  //  for (let addonService of additionalServices.records) {
+  //    if (
+  //      addonService.ServiceCode === addon &&
+  //      selected.destination !== "" &&
+  //      typeof selected.destination !== "undefined"
+  //    ) {
+  //      if (
+  //        addonService.AvailableCountries.some(
+  //          (country) =>
+  //            country.Country === selected.destination ||
+  //            country.Country === "ALL"
+  //        )
+  //      ) {
+  //        isAvailable = true;
+  //      } else {
+  //        isAvailable = false;
+  //      }
+  //    }
+  //    if (
+  //      addonService.ServiceCode === addon &&
+  //      selected.deliveryLocation === "LOCKER"
+  //    ) {
+  //      isAvailable = addonService.Pudo;
+  //    }
+  //  }
 
   if (emptyCount === filteredData["rows"].length) {
     //hide column

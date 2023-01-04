@@ -59,10 +59,14 @@ let en = {
   "Longest Side": "Longest side of colli",
   "'Available Countries'": "Available Countries",
   "'Show equipment'": "Show Equipment Installation services",
-  BOTH: "Service is available when sending shipments to pickup point chosen by the recipient and to recipient home address.",
+  "HOME,LOCKER":
+    "Service is available when sending shipments to pickup point chosen by the recipient and to recipient home address.",
   HOME: "Service is available when sending shipments to recipient home address.",
   BUSINESS: "Service is available when sending shipments to business address.",
-  PUDO: "Service is available when sending shipments to pickup point chosen by the recipient.",
+  "BUSINESS,HOME":
+    "Service is available when sending shipments to home or business addresses.",
+  LOCKER:
+    "Service is available when sending shipments to pickup point chosen by the recipient.",
   "'in parameter'": "in parameter",
   "'Unsupported value'": "Unsupported value",
   "'Unable to set filters'": "Unable to set filters",

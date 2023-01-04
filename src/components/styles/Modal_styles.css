@@ -74,6 +74,22 @@
   padding-top: 20px;
 }
 
+.modal-text-availability-logo {
+  height: 35px;
+  display: block;
+  margin: auto;
+}
+
+.modal-text-availability-logo > svg {
+  height: 35px;
+}
+
+.modal-text-availability {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
 .modal-content .nav-tabs {
   border: 0;
 }

@@ -478,6 +478,7 @@ const App = (props: AppProps) => {
       setSelected((prevState) => ({
         ...prevState,
         selectedService: "",
+        service: "",
       }));
     }
     if (update.length > 0) {
@@ -486,6 +487,7 @@ const App = (props: AppProps) => {
       setSelected((prevState) => ({
         ...prevState,
         selectedService: service,
+        service: service,
       }));
     }
   };
@@ -633,57 +635,59 @@ const App = (props: AppProps) => {
           }
           if (
             selected.destination !== "" &&
-            typeof selected.destination !== "undefined"
+            typeof selected.destination !== "undefined" &&
+            selected.departure !== "" &&
+            typeof selected.departure !== "undefined"
           ) {
             for (let service of data.services["records"]) {
               if (service.ServiceCode === row.original.serviceCode) {
-                for (let additionalService of service.AdditionalServices) {
-                  if (
-                    key === additionalService.Addon &&
-                    additionalService.AvailableCountries.length > 0
-                  ) {
-                    if (
-                      additionalService.AvailableCountries.some(
-                        (country) =>
-                          country.Country === selected.destination ||
-                          country.Country === "ALL"
-                      ) &&
-                      value !== null
-                    ) {
-                      //  console.log(
-                      //    "YES, " + service.ServiceCode + " " + key + " " + value
-                      //  );
-                      update.push({ row: row.index, column: key, value: null });
-                    } else if (
-                      !additionalService.AvailableCountries.some(
-                        (country) =>
-                          country.Country === selected.destination ||
-                          country.Country === "ALL"
-                      ) &&
-                      value === null
-                    ) {
+                for (let route of service.Routes) {
+                  if (route.DepartureCountry === selected.departure) {
+                    for (let destination of route.DestinationCountries) {
                       if (
-                        selected.selectedService !== "" &&
-                        row.original.serviceCode === selected.selectedService
+                        destination.Country === selected.destination &&
+                        destination.ExcludedAdditionalServices.some(
+                          (e) => e.Addon === key
+                        ) &&
+                        value !== null
                       ) {
-                        console.log(row.original.serviceCode);
+                        console.log(key, value);
                         update.push({
                           row: row.index,
                           column: key,
-                          value: false,
+                          value: null,
                         });
-                      } else if (selected.selectedService === "") {
-                        console.log(
-                          "TÄÄLLÄ " +
-                            selected.selectedService +
-                            " " +
-                            row.original.serviceCode
-                        );
-                        update.push({
-                          row: row.index,
-                          column: key,
-                          value: false,
-                        });
+                      } else if (
+                        destination.Country === selected.destination &&
+                        !destination.ExcludedAdditionalServices.some(
+                          (e) => e.Addon === key
+                        ) &&
+                        value === null
+                      ) {
+                        if (
+                          selected.selectedService !== "" &&
+                          row.original.serviceCode ===
+                            selected.selectedService &&
+                          key !== "serviceButton"
+                        ) {
+                          update.push({
+                            row: row.index,
+                            column: key,
+                            value: false,
+                          });
+                        } else if (selected.selectedService === "") {
+                          //  console.log(
+                          //    "TÄÄLLÄ " +
+                          //      selected.selectedService +
+                          //      " " +
+                          //      row.original.serviceCode
+                          //  );
+                          update.push({
+                            row: row.index,
+                            column: key,
+                            value: false,
+                          });
+                        }
                       }
                     }
                   }
@@ -779,13 +783,20 @@ const App = (props: AppProps) => {
         for (const service of data.services["records"]) {
           if (service.ServiceCode === URLparams.service) {
             for (const addon of service.AdditionalServices) {
-              if (
-                !addon.AvailableCountries.some(
-                  (e) => e.Country === URLparams.destination
-                )
-              ) {
-                console.log(addon);
-                serviceAddons.push(addon.Addon);
+              for (let route of service.Routes) {
+                if (route.DepartureCountry === URLparams.departure) {
+                  for (let destination of route.DestinationCountries) {
+                    if (
+                      destination.Country === URLparams.destination &&
+                      !destination.ExcludedAdditionalServices.some(
+                        (e) => e.Addon === addon.Addon
+                      )
+                    ) {
+                      console.log(addon.Addon);
+                      serviceAddons.push(addon.Addon);
+                    }
+                  }
+                }
               }
             }
           }
@@ -968,11 +979,7 @@ const App = (props: AppProps) => {
           let routes = [];
           data["title"] = record.ServiceCode;
           data["description"] = record.ServiceCode + "_tooltip";
-          data["availability"] = {
-            pudo: record.Pudo,
-            home: record.Home,
-            business: record.Business,
-          };
+          data["availability"] = record.DeliveryLocation.split(",");
           for (const dimension of record.PackageTypesAndDimensions) {
             dimensions.push(dimension);
           }
@@ -1011,7 +1018,15 @@ const App = (props: AppProps) => {
           let countries = [];
           let mandatory = "";
           data["fields"] = {};
-          data["availability"] = { pudo: record.Pudo, home: record.Home };
+          let availability = [];
+
+          if (record.Home) {
+            availability.push("BUSINESS", "HOME");
+          }
+          if (record.Pudo) {
+            availability.push("LOCKER", "POSTOFFICE");
+          }
+          data["availability"] = availability;
           data["title"] = record.ServiceCode;
           data["description"] = record.ServiceCode + "_tooltip";
           for (const addon of record.ExcludedAdditionalServices) {
@@ -1391,6 +1406,7 @@ const App = (props: AppProps) => {
                             if (des) {
                               updatedSearchParams.set("destination", des);
                             } else {
+                              handleReset();
                               updatedSearchParams.delete("destination");
                             }
                             if (w) {
