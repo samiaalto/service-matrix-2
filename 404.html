@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    let urlparams = (new URL(location.href)).searchParams;
+    let newLocation = '/service-matrix-2/#' + window.location.pathname.replace('/service-matrix-2', '') + '?' + urlparams;
+    window.location.href = newLocation;
+  </script>
+</html>
