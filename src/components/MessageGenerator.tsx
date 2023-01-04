@@ -160,6 +160,17 @@ const MessageGenerator = (
       labelData["receiverCountryCode"] = country.CountryCode;
       labelData["receiverCountry"] = country.DisplayNameEN;
 
+      let service = selected.service === "2711" ? "70" : "72";
+      let addon = addonArr.includes("3101") ? "002" : "000";
+      labelData["routingCode"] =
+        "2L" +
+        country.CountryCode +
+        country.PostalCode +
+        "+" +
+        service +
+        "000" +
+        addon;
+
       serviceProps.push(
         {
           format: "XML",
@@ -486,6 +497,25 @@ const MessageGenerator = (
             ) {
               value = countries.records[destIndex].CountryCode;
               mandatory = true;
+            }
+          } else if (field.PropertyName === "RoutingCode") {
+            let service = selected.service === "2711" ? "70" : "72";
+            let addon = addonArr.includes("3101") ? "002" : "000";
+            value =
+              "2L" +
+              dest +
+              countries.records[destIndex].PostalCode +
+              "+" +
+              service +
+              "000" +
+              addon;
+            if (
+              countries.records[destIndex].CountryCode === "EE" ||
+              countries.records[destIndex].CountryCode === "LT" ||
+              countries.records[destIndex].CountryCode === "LV" ||
+              countries.records[destIndex].CountryCode === "FI"
+            ) {
+              mandatory = false;
             }
           } else if (nonEu && field.AdditionalInfo === "non-EU") {
             mandatory = true;

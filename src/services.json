@@ -10779,8 +10779,8 @@
         },
         {
           "MessageFormat": "POSTRA_PARCEL",
-          "AdditionalInfo": null,
-          "Sample": "<RoutingCode>2LAT79172+70000000</RoutingCode>",
+          "AdditionalInfo": "Mandatory when destination is not FI, EE, LT or LV",
+          "Sample": "<RoutingCode>2LAT1010+70000000</RoutingCode>",
           "ExpirationDate": null,
           "Mandatory": true,
           "MessagePosition": null,

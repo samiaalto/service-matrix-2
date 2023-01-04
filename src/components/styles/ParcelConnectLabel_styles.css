@@ -106,16 +106,30 @@
   border-top: 1px solid #000;
 }
 
-.nndLogo {
+.codAmount {
+  padding-top: 15px;
+  font-weight: 700;
   border-right: 4px solid #000;
+}
+
+.nndValue.cod {
+  margin-top: 0px;
+  padding-top: 14px;
+  width: 100px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 500;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 .nndValue {
   margin-top: 5px;
+  padding-top: 0;
   text-align: center;
   width: 70px;
   font-size: 25px;
   font-weight: 700;
+  text-align: center;
   background-color: #000;
   color: #fff;
 }
@@ -161,6 +175,11 @@
   margin-top: 0px;
   display: flex;
   justify-content: center;
+}
+
+.pcRoutingBarcode.hidden,
+.pcRoutingBarcodeValue.hidden {
+  display: none;
 }
 
 .pcTrackingBarcodeValue,

@@ -354,9 +354,23 @@ const ParcelConnectLabel = ({ data }) => {
               overlay={overlay("nndLogo", "PARCELCONNECT")}
             >
               <Col className="nndLogo">
-                <div className="nndValue">NND</div>
+                <div
+                  className={
+                    data.labelData.addons.some((e) => e.labelMarking === "1")
+                      ? "nndValue cod"
+                      : "nndValue"
+                  }
+                >
+                  {data.labelData.addons.some((e) => e.labelMarking === "1")
+                    ? "COD"
+                    : "NND"}
+                </div>
               </Col>
             </OverlayTrigger>
+            <Col className="codAmount">
+              {data.labelData.codAmount ? data.labelData.codAmount + " €" : ""}
+            </Col>
+            <Col></Col>
             <Col></Col>
           </Row>
 
@@ -522,8 +536,24 @@ const ParcelConnectLabel = ({ data }) => {
               placement="top"
               overlay={overlay("routingBarcode", "PARCELCONNECT")}
             >
-              <div className="pcRoutingBarcode">
-                <Barcode value="2LFI00230+7200000" displayValue={false} />
+              <div
+                className={
+                  data.labelData.receiverCountryCode === "EE" ||
+                  data.labelData.receiverCountryCode === "LT" ||
+                  data.labelData.receiverCountryCode === "LV" ||
+                  data.labelData.receiverCountryCode === "FI"
+                    ? "pcRoutingBarcode hidden"
+                    : "pcRoutingBarcode"
+                }
+              >
+                <Barcode
+                  value={
+                    data.labelData.routingCode
+                      ? data.labelData.routingCode
+                      : "2LFI00230+7200000"
+                  }
+                  displayValue={false}
+                />
               </div>
             </OverlayTrigger>
           </Row>
@@ -532,7 +562,26 @@ const ParcelConnectLabel = ({ data }) => {
               placement="top"
               overlay={overlay("routingBarcode-value", "PARCELCONNECT")}
             >
-              <div className="pcRoutingBarcodeValue">(2L)FI00230+7200000</div>
+              <div
+                className={
+                  data.labelData.receiverCountryCode === "EE" ||
+                  data.labelData.receiverCountryCode === "LT" ||
+                  data.labelData.receiverCountryCode === "LV" ||
+                  data.labelData.receiverCountryCode === "FI"
+                    ? "pcRoutingBarcodeValue hidden"
+                    : "pcRoutingBarcodeValue"
+                }
+              >
+                {data.labelData.routingCode
+                  ? "(" +
+                    data.labelData.routingCode.substring(0, 2) +
+                    ")" +
+                    data.labelData.routingCode.substring(
+                      2,
+                      data.labelData.routingCode.length
+                    )
+                  : "(2L)FI00230+7200000"}
+              </div>
             </OverlayTrigger>
           </Row>
           <Row>
