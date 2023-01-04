@@ -1,6 +1,10 @@
 import { Modal, Button, Row, Col, Table, Tabs, Tab } from "react-bootstrap";
 import "./styles/Modal_styles.css";
 import ServiceDimensions from "./ServiceDimensions";
+import { ReactComponent as HomeLogo } from "./icons/Home_logo.svg";
+import { ReactComponent as BusinessLogo } from "./icons/Office_logo.svg";
+import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
+import { ReactComponent as PostiLogo } from "./icons/Posti_logo.svg";
 
 interface Dimension {
   MinHeight_cm: number;
@@ -17,6 +21,7 @@ interface Dimension {
   DisplayNameEN: string;
   AdditionalServiceCode: any;
   DimensionName: string;
+  DeliveryLocation: string;
 }
 
 interface Route {
@@ -41,6 +46,26 @@ const ModalWindow = ({
   setSelected,
   updateSearchParams,
 }) => {
+  const renderSwitch = (param) => {
+    switch (param) {
+      case "HOME":
+        return <HomeLogo title="" className="HomeLogo" key="HomeLogo" />;
+      case "BUSINESS":
+        return (
+          <BusinessLogo title="" className="BusinessLogo" key="BusinessLogo" />
+        );
+      case "POSTOFFICE":
+        return (
+          <PostiLogo title="" className="PostOfficeLogo" key="PostOfficeLogo" />
+        );
+      case "LOCKER":
+        return <PickupLogo title="" className="PickupLogo" key="PickupLogo" />;
+      default:
+        return "";
+    }
+  };
+  
+
   return (
     <>
       <Modal show={openModal} onHide={closeModal}>
@@ -64,36 +89,16 @@ const ModalWindow = ({
                           {t("Availability")}
                         </Col>
                       </Row>
-                      {data.availability.pudo && data.availability.home ? (
+                      {data.availability.map((location: any, i: number) => (
                         <Row>
-                          <Col className="modal-text">{t("BOTH")}</Col>
+                          <Col xs={1} className="modal-text-availability-logo">
+                            {renderSwitch(location)}
+                          </Col>
+                          <Col className="modal-text-availability">
+                            {t(location + "_title")}
+                          </Col>
                         </Row>
-                      ) : (
-                        ""
-                      )}
-                      {!data.availability.pudo && data.availability.home ? (
-                        <Row>
-                          <Col className="modal-text">{t("HOME")}</Col>
-                        </Row>
-                      ) : (
-                        ""
-                      )}
-                      {data.availability.pudo && !data.availability.home ? (
-                        <Row>
-                          <Col className="modal-text">{t("PUDO")}</Col>
-                        </Row>
-                      ) : (
-                        ""
-                      )}
-                      {!data.availability.pudo &&
-                      !data.availability.home &&
-                      data.availability.business ? (
-                        <Row>
-                          <Col className="modal-text">{t("BUSINESS")}</Col>
-                        </Row>
-                      ) : (
-                        ""
-                      )}
+                      ))}
                     </>
                   ) : (
                     ""
@@ -172,8 +177,7 @@ const ModalWindow = ({
                                   ? dimension.DisplayNameEN +
                                     " with " +
                                     t(dimension.AdditionalServiceCode.Addon)
-                                  : dimension.DimensionName.indexOf("locker") >
-                                    -1
+                                  : dimension.DeliveryLocation === "LOCKER"
                                   ? dimension.DisplayNameEN +
                                     " to parcel locker"
                                   : dimension.DisplayNameEN}
@@ -288,6 +292,27 @@ const ModalWindow = ({
               </Row>
               <Row className="modal-text">
                 <Col> {t(data.description)}</Col>
+                {data.availability ? (
+                    <>
+                      <Row>
+                        <Col className="modal-text-header">
+                          {t("Availability")}
+                        </Col>
+                      </Row>
+                      {data.availability.map((location: any, i: number) => (
+                        <Row>
+                          <Col xs={1} className="modal-text-availability-logo">
+                            {renderSwitch(location)}
+                          </Col>
+                          <Col className="modal-text-availability">
+                            {t(location + "_title")}
+                          </Col>
+                        </Row>
+                      ))}
+                    </>
+                  ) : (
+                    ""
+                  )}
               </Row>
             </>
           ) : (

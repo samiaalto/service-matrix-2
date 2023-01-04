@@ -335,6 +335,11 @@ const MultiSelect = ({
     setSearchText(searchText);
     if (option.data.keyWords.toLowerCase().includes(searchText.toLowerCase())) {
       return true;
+    } else if (
+      option.data.value > Number(searchText) &&
+      option.data.value < 2000
+    ) {
+      return true;
     } else {
       return false;
     }
@@ -476,6 +481,7 @@ const MultiSelect = ({
         backgroundColor: "#ececec",
         borderRadius: "8px",
         cursor: "pointer",
+        boxShadow: "1px 2px 5px 0px rgba(57, 75, 88, 0.4)",
       },
       borderBottom: "2px solid #e0e0e0",
       backgroundColor: "#fff",

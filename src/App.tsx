@@ -89,6 +89,7 @@ const App = (props: AppProps) => {
     formatFilter: "",
     ffTab: "",
     modalOpen: false,
+    modalService: "",
     modalData: {},
     showAlert: false,
     alertData: [],
@@ -104,7 +105,7 @@ const App = (props: AppProps) => {
     SMARTSHIP: {},
     WAYBILD16A: {},
   });
-
+  const [currentState, setCurrentState] = useState({});
   const [ffRowData, setFfRowData] = useState([]);
   const [ffColumnData, setFfColumnData] = useState([
     {
@@ -401,9 +402,12 @@ const App = (props: AppProps) => {
   const handleReset = () => {
     let updatedSearchParams = new URLSearchParams(params.toString());
     updatedSearchParams.delete("service");
+    updatedSearchParams.delete("selectedService");
     updatedSearchParams.delete("addons");
     updatedSearchParams.delete("pudo");
     updatedSearchParams.delete("modalOpen");
+    updatedSearchParams.delete("modalService");
+    updatedSearchParams.delete("modalTab");
     updatedSearchParams.delete("offCanvasOpen");
     updatedSearchParams.delete("offCanvasTab");
     updatedSearchParams.delete("showOptional");
@@ -414,10 +418,13 @@ const App = (props: AppProps) => {
     setSelected((prevState) => ({
       ...prevState,
       service: "",
+      selectedService: "",
       addons: [],
       pudo: false,
       pickupOrder: false,
       modalOpen: false,
+      modalService: "",
+      modalTab: "",
       offCanvasOpen: false,
       offCanvasTab: "",
       showOptional: false,
@@ -431,6 +438,7 @@ const App = (props: AppProps) => {
   const handleServiceSelection = (index, isSelected) => {
     let service;
     let update = [];
+
     if (isSelected) {
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
@@ -464,11 +472,12 @@ const App = (props: AppProps) => {
           }
         }
       }
-      updateSearchParams("service", service);
+      updateSearchParams("selectedService", service);
     } else {
       handleReset();
       setSelected((prevState) => ({
         ...prevState,
+        selectedService: "",
         service: "",
       }));
     }
@@ -477,6 +486,7 @@ const App = (props: AppProps) => {
       setupdateRows(update);
       setSelected((prevState) => ({
         ...prevState,
+        selectedService: service,
         service: service,
       }));
     }
@@ -594,7 +604,9 @@ const App = (props: AppProps) => {
     selected.addons,
     selected.showSamples,
     selected.showOptional,
-    selected.pudo,
+    selected.deliveryLocation,
+    selected.departure,
+    selected.destination,
   ]);
 
   useEffect(() => {
@@ -615,15 +627,78 @@ const App = (props: AppProps) => {
           columns.push(column.id);
         }
       }
+      let update = [];
       for (const row of filteredRowData["rows"]) {
         for (const [key, value] of Object.entries(row.original)) {
-          if (
-            (columns.includes(key) && value === true) ||
-            (columns.includes(key) && value === false)
-          ) {
+          if (columns.includes(key) && value !== null) {
             isAvailable = true;
           }
+          if (
+            selected.destination !== "" &&
+            typeof selected.destination !== "undefined" &&
+            selected.departure !== "" &&
+            typeof selected.departure !== "undefined"
+          ) {
+            for (let service of data.services["records"]) {
+              if (service.ServiceCode === row.original.serviceCode) {
+                for (let route of service.Routes) {
+                  if (route.DepartureCountry === selected.departure) {
+                    for (let destination of route.DestinationCountries) {
+                      if (
+                        destination.Country === selected.destination &&
+                        destination.ExcludedAdditionalServices.some(
+                          (e) => e.Addon === key
+                        ) &&
+                        value !== null
+                      ) {
+                        console.log(key, value);
+                        update.push({
+                          row: row.index,
+                          column: key,
+                          value: null,
+                        });
+                      } else if (
+                        destination.Country === selected.destination &&
+                        !destination.ExcludedAdditionalServices.some(
+                          (e) => e.Addon === key
+                        ) &&
+                        value === null
+                      ) {
+                        if (
+                          selected.selectedService !== "" &&
+                          row.original.serviceCode ===
+                            selected.selectedService &&
+                          key !== "serviceButton"
+                        ) {
+                          update.push({
+                            row: row.index,
+                            column: key,
+                            value: false,
+                          });
+                        } else if (selected.selectedService === "") {
+                          //  console.log(
+                          //    "TÄÄLLÄ " +
+                          //      selected.selectedService +
+                          //      " " +
+                          //      row.original.serviceCode
+                          //  );
+                          update.push({
+                            row: row.index,
+                            column: key,
+                            value: false,
+                          });
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+      }
+      if (update.length > 0) {
+        setupdateRows(update);
       }
       if (selected.deliveryLocation === "LOCKER") {
         isAvailable = false;
@@ -655,6 +730,7 @@ const App = (props: AppProps) => {
     filteredRowData,
     selected.departure,
     selected.destination,
+    selected.selectedService,
     selected.serviceFilter,
     selected.addonsFilter,
     selected.showInstallation,
@@ -707,7 +783,21 @@ const App = (props: AppProps) => {
         for (const service of data.services["records"]) {
           if (service.ServiceCode === URLparams.service) {
             for (const addon of service.AdditionalServices) {
-              serviceAddons.push(addon.Addon);
+              for (let route of service.Routes) {
+                if (route.DepartureCountry === URLparams.departure) {
+                  for (let destination of route.DestinationCountries) {
+                    if (
+                      destination.Country === URLparams.destination &&
+                      !destination.ExcludedAdditionalServices.some(
+                        (e) => e.Addon === addon.Addon
+                      )
+                    ) {
+                      console.log(addon.Addon);
+                      serviceAddons.push(addon.Addon);
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -722,7 +812,10 @@ const App = (props: AppProps) => {
       }
 
       for (let [i, row] of rowData.entries()) {
-        if (row.serviceCode === URLparams.service) {
+        if (
+          row.serviceCode === URLparams.service ||
+          row.serviceCode === URLparams.selectedService
+        ) {
           serviceIndex = i;
         }
       }
@@ -755,17 +848,41 @@ const App = (props: AppProps) => {
             disableExcluded(serviceIndex, addon, true);
           }
         }
-      }
-      setTimeout(() => {
-        if (getBool(URLparams.modalOpen) === true) {
-          callModal(
-            data.services["records"][serviceIndex].ServiceCode,
-            data.services,
-            data.additionalServices
-          );
+        if (URLparams.selectedService !== "") {
+          for (const row of filteredRowData["rows"]) {
+            for (const [key, value] of Object.entries(row.original)) {
+              if (row.index === serviceIndex && key === "serviceButton") {
+                update.push({
+                  row: row.index,
+                  column: key,
+                  value: true,
+                });
+              } else if (
+                (row.index !== serviceIndex && value === true) ||
+                (row.index !== serviceIndex && value === false)
+              ) {
+                update.push({ row: row.index, column: key, value: null });
+              }
+            }
+          }
         }
+      }
+
+      if (
+        getBool(URLparams.modalOpen) === true &&
+        URLparams.modalService !== ""
+      ) {
+        callModal(
+          URLparams.modalService,
+          data.services,
+          data.additionalServices
+        );
+      }
+
+      setTimeout(() => {
         setupdateRows(update);
       }, 500);
+
       //setSelectedDepartureCountry(departure);
       //setSelectedDestinationCountry(destination);
 
@@ -773,6 +890,7 @@ const App = (props: AppProps) => {
         ...prevState,
         serviceGroup: URLparams.serviceGroup,
         service: URLparams.service,
+        selectedService: URLparams.selectedService,
         serviceFilter: URLparams.serviceFilter,
         addons: selectedAddons,
         addonsFilter: filteredAddons,
@@ -861,11 +979,7 @@ const App = (props: AppProps) => {
           let routes = [];
           data["title"] = record.ServiceCode;
           data["description"] = record.ServiceCode + "_tooltip";
-          data["availability"] = {
-            pudo: record.Pudo,
-            home: record.Home,
-            business: record.Business,
-          };
+          data["availability"] = record.DeliveryLocation.split(",");
           for (const dimension of record.PackageTypesAndDimensions) {
             dimensions.push(dimension);
           }
@@ -904,7 +1018,15 @@ const App = (props: AppProps) => {
           let countries = [];
           let mandatory = "";
           data["fields"] = {};
-          data["availability"] = { pudo: record.Pudo, home: record.Home };
+          let availability = [];
+
+          if (record.Home) {
+            availability.push("BUSINESS", "HOME");
+          }
+          if (record.Pudo) {
+            availability.push("LOCKER", "POSTOFFICE");
+          }
+          data["availability"] = availability;
           data["title"] = record.ServiceCode;
           data["description"] = record.ServiceCode + "_tooltip";
           for (const addon of record.ExcludedAdditionalServices) {
@@ -942,15 +1064,25 @@ const App = (props: AppProps) => {
       }
     }
 
+    let updatedSearchParams = new URLSearchParams(params.toString());
+    updatedSearchParams.set("modalOpen", "true");
+    updatedSearchParams.set("modalService", value);
+
+    setParams(updatedSearchParams.toString());
     setSelected((prevState) => ({
       ...prevState,
       modalOpen: true,
+      modalService: value,
       modalData: data,
     }));
-    updateSearchParams("modalOpen", true);
   };
 
   const closeModal = () => {
+    //  let updatedSearchParams = new URLSearchParams(params.toString());
+    //  updatedSearchParams.delete("modalOpen");
+    //  updatedSearchParams.delete("modalService", value);
+
+    //  setParams(updatedSearchParams.toString());
     setSelected((prevState) => ({
       ...prevState,
       modalOpen: false,
@@ -1008,7 +1140,12 @@ const App = (props: AppProps) => {
       ...prevState,
       startTour: !prevState.startTour,
     }));
+    setCurrentState(selected);
   };
+
+  useEffect(() => {
+    console.log(currentState);
+  }, [currentState]);
 
   return (
     <div className="App">
@@ -1040,12 +1177,25 @@ const App = (props: AppProps) => {
             setSelected((prevState) => ({
               ...prevState,
               filterOpen: false,
+            }));
+          } else if (e === "setSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
               departure: "FI",
               destination: "FI",
               weight: 35,
             }));
+          } else if (e === "unsetSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              departure: "",
+              destination: "",
+              weight: "",
+            }));
           } else if (e === "serviceSelection") {
             handleServiceSelection(4, true);
+          } else if (e === "serviceUnselection") {
+            handleServiceSelection(4, false);
           } else if (e === "addonSelection") {
             handleSelection({
               row: 4,
@@ -1054,12 +1204,55 @@ const App = (props: AppProps) => {
               value: true,
             });
             setupdateRows([{ row: 4, column: "3174", value: true }]);
+          } else if (e === "addonUnselection") {
+            handleSelection({
+              row: 4,
+              service: "2102",
+              addon: "3174",
+              value: false,
+            });
+            setupdateRows([{ row: 4, column: "3174", value: false }]);
           } else if (e === "openOffCanvas") {
             openOffCanvas();
-          } else if (e === "offCanvasTab") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "label",
+            }));
+          } else if (e === "closeOffCanvas") {
+            closeOffCanvas();
+          } else if (e === "offCanvasTabLabel") {
+            setSelected((prevState) => ({
+              ...prevState,
+              offCanvasTab: "label",
+            }));
+          } else if (e === "offCanvasTabPostra") {
             setSelected((prevState) => ({
               ...prevState,
               offCanvasTab: "postra",
+            }));
+          } else if (e === "fileFormats") {
+            navigate("/service-matrix-2/FileFormats", { replace: true });
+          } else if (e === "serviceMatrix") {
+            navigate("/service-matrix-2/ServiceMatrix", { replace: true });
+          } else if (e === "formatSelected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              format: "POSTRA_PARCEL",
+            }));
+          } else if (e === "formatUnselected") {
+            setSelected((prevState) => ({
+              ...prevState,
+              format: "",
+            }));
+          } else if (e === "setFormatFilter") {
+            setSelected((prevState) => ({
+              ...prevState,
+              formatFilter: "Service",
+            }));
+          } else if (e === "unsetFormatFilter") {
+            setSelected((prevState) => ({
+              ...prevState,
+              formatFilter: "",
             }));
           } else if (e === "reset") {
             handleReset();
@@ -1069,8 +1262,10 @@ const App = (props: AppProps) => {
               departure: undefined,
               destination: undefined,
               weight: undefined,
+              addonsFilter: [],
               startTour: false,
             }));
+            navigate("/service-matrix-2/ServiceMatrix", { replace: true });
           } else if (e === "skip") {
             setSelected((prevState) => ({
               ...prevState,
@@ -1211,6 +1406,7 @@ const App = (props: AppProps) => {
                             if (des) {
                               updatedSearchParams.set("destination", des);
                             } else {
+                              handleReset();
                               updatedSearchParams.delete("destination");
                             }
                             if (w) {

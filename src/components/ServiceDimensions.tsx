@@ -2,6 +2,8 @@ import "./styles/ServiceDimensions_styles.css";
 import { ReactComponent as SmallParcel } from "./icons/SmallParcel.svg";
 import { ReactComponent as PostalParcel } from "./icons/PostalParcel.svg";
 import { ReactComponent as HomeParcel } from "./icons/HomeParcel.svg";
+import { ReactComponent as EmptyParcel } from "./icons/EmptyParcel.svg";
+import { ReactComponent as IntPallet } from "./icons/IntPallet.svg";
 import { ReactComponent as ExpressParcel } from "./icons/ExpressParcel.svg";
 import { ReactComponent as ExpressFreight } from "./icons/ExpressFreight.svg";
 import { ReactComponent as PickupLogo } from "./icons/Pickup_logo.svg";
@@ -22,6 +24,7 @@ interface Dimension {
   DimensionName: string;
   AdditionalServiceCode: any;
   DisplayNameEN: string;
+  DeliveryLocation: string;
 }
 
 const ServiceDimensions = ({ service, dimensions, t }) => {
@@ -80,12 +83,18 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
           </div>
         </div>
       );
-    } else if (param === "2101" || param === "2102" || param === "2124") {
+    } else if (
+      param === "2101" ||
+      param === "2102" ||
+      param === "2124" ||
+      param === "2711" ||
+      param === "2718"
+    ) {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
             <ExpressParcel
-              title="ExpressParcel"
+              title=""
               className="ExpressParcel"
               key="ExpressParcel"
             />
@@ -173,12 +182,12 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
           </div>
         </div>
       );
-    } else if (param === "2103") {
+    } else if (param === "2103" || param === "2331" || param === "2351") {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
             <PostalParcel
-              title="PostalParcel"
+              title=""
               className="PostalParcel"
               key="PostalParcel"
             />
@@ -189,7 +198,7 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                       <span
                         key={"field_dimension_height_" + i}
                         className={
-                          dimension.DimensionName === "Parcel to parcel locker"
+                          dimension.DeliveryLocation === "LOCKER"
                             ? "pp_apt_height"
                             : "pp_height"
                         }
@@ -206,7 +215,7 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                       <span
                         key={"field_dimension_width_" + i}
                         className={
-                          dimension.DimensionName === "Parcel to parcel locker"
+                          dimension.DeliveryLocation === "LOCKER"
                             ? "pp_apt_width"
                             : "pp_width"
                         }
@@ -223,7 +232,7 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                       <span
                         key={"field_dimension_depth_" + i}
                         className={
-                          dimension.DimensionName === "Parcel to parcel locker"
+                          dimension.DeliveryLocation === "LOCKER"
                             ? "pp_apt_depth"
                             : "pp_depth"
                         }
@@ -240,7 +249,7 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                       <span
                         key={"field_dimension_weight_" + i}
                         className={
-                          dimension.DimensionName === "Parcel to parcel locker"
+                          dimension.DeliveryLocation === "LOCKER"
                             ? "pp_apt_weight"
                             : "pp_weight"
                         }
@@ -257,7 +266,7 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                       <span
                         key={"field_dimension_circumference_" + i}
                         className={
-                          dimension.DimensionName === "Parcel to parcel locker"
+                          dimension.DeliveryLocation === "LOCKER"
                             ? "pp_apt_circum"
                             : "pp_circum"
                         }
@@ -279,22 +288,6 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                             dimension.MaxWidth_cm +
                             " cm"}
                         </span>
-                        <PickupLogo
-                          title="PickupLogo"
-                          className="sd_PickupLogo"
-                          key="PickupLogo"
-                        />
-                        <span className="sd_PickupLogo_txt">
-                          To a parcel locker
-                        </span>
-                        <DestinationLogo
-                          title="DestinationLogo"
-                          className="sd_DestinationLogo"
-                          key="DestinationLogo"
-                        />
-                        <span className="sd_DestinationLogo_txt">
-                          Picked up or to a service point
-                        </span>
                       </>
                     ) : (
                       ""
@@ -302,10 +295,42 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                   </>
                 ))
               : ""}
+            <PickupLogo
+              title=""
+              className={
+                param === "2103" ? "sd_PickupLogo" : "sd_PickupLogo_pb"
+              }
+              key="PickupLogo"
+            />
+            <span
+              className={
+                param === "2103" ? "sd_PickupLogo_txt" : "sd_PickupLogo_pb_txt"
+              }
+            >
+              To a parcel locker
+            </span>
+            <DestinationLogo
+              title=""
+              className={
+                param === "2103"
+                  ? "sd_DestinationLogo"
+                  : "sd_DestinationLogo_pb"
+              }
+              key="DestinationLogo"
+            />
+            <span
+              className={
+                param === "2103"
+                  ? "sd_DestinationLogo_txt"
+                  : "sd_DestinationLogo_pb_txt"
+              }
+            >
+              Picked up or to a service point
+            </span>
           </div>
         </div>
       );
-    } else if (param === "2104") {
+    } else if (param === "2104" || param === "2352") {
       return (
         <div className="dimensions-container">
           <div className="dimensions-div">
@@ -356,6 +381,67 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                     <span
                       key={"field_dimension_circumference_" + i}
                       className="ep_circum"
+                    >
+                      {dimension.Circumference_cm + " cm"}
+                    </span>
+                  </>
+                ))
+              : ""}
+          </div>
+        </div>
+      );
+    } else if (
+      param === "2017" ||
+      param === "2015" ||
+      param === "2108" ||
+      param === "2317"
+    ) {
+      return (
+        <div className="dimensions-container">
+          <div className="dimensions-div">
+            <EmptyParcel title="" className="EmptyParcel" key="EmptyParcel" />
+            {dimensions
+              ? dimensions.map((dimension: Dimension, i: number) => (
+                  <>
+                    <span
+                      key={"field_dimension_height_" + i}
+                      className="ems_height"
+                    >
+                      {dimension.MinHeight_cm +
+                        " - " +
+                        dimension.MaxHeight_cm +
+                        " cm"}
+                    </span>
+                    <span
+                      key={"field_dimension_width_" + i}
+                      className="ems_width"
+                    >
+                      {dimension.MinWidth_cm +
+                        " - " +
+                        dimension.MaxWidth_cm +
+                        " cm"}
+                    </span>
+                    <span
+                      key={"field_dimension_depth_" + i}
+                      className="ems_depth"
+                    >
+                      {dimension.MinDepth_cm +
+                        " - " +
+                        dimension.MaxDepth_cm +
+                        " cm"}
+                    </span>
+                    <span
+                      key={"field_dimension_weight_" + i}
+                      className="ems_weight"
+                    >
+                      {dimension.MinWeight_kg +
+                        " - " +
+                        dimension.MaxWeight_kg +
+                        " kg"}
+                    </span>
+                    <span
+                      key={"field_dimension_circumference_" + i}
+                      className="ems_circum"
                     >
                       {dimension.Circumference_cm + " cm"}
                     </span>
@@ -428,6 +514,93 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
                         >
                           {dimension.DisplayNameEN}
                         </span>
+                        {dimension.AdditionalServiceCode !== null ? (
+                          <span
+                            key={"field_bulky" + i}
+                            className="field_bulky_2004"
+                          >
+                            {"NOTE! With additional service " +
+                              t(dimension.AdditionalServiceCode.Addon) +
+                              " max. length " +
+                              dimension.MaxWidth_cm +
+                              " cm. Separate agreement is required when colli length exceeds  " +
+                              dimension.MaxWidth_cm +
+                              " cm."}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </>
+                ))
+              : ""}
+          </div>
+        </div>
+      );
+    } else if (
+      param === "2354" ||
+      param === "2318" ||
+      param === "2329" ||
+      param === "2330" ||
+      param === "2331" ||
+      param === "2341" ||
+      param === "2359"
+    ) {
+      return (
+        <div className="dimensions-container">
+          <div className="dimensions-div">
+            <IntPallet title="" className="IntPallet" key="IntPallet" />
+            {dimensions
+              ? dimensions.map((dimension: Dimension, i: number) => (
+                  <>
+                    {dimension.MinHeight_cm !== null &&
+                    dimension.MessageFormat.substring(0, 6) === "POSTRA" ? (
+                      <>
+                        <span
+                          key={"field_dimension_height_" + i}
+                          className={"if_" + dimension.PackageType + "_height"}
+                        >
+                          {dimension.MinHeight_cm +
+                            " - " +
+                            dimension.MaxHeight_cm +
+                            " cm"}
+                        </span>
+                        <span
+                          key={"field_dimension_width_" + i}
+                          className={"if_" + dimension.PackageType + "_width"}
+                        >
+                          {dimension.MinWidth_cm +
+                            " - " +
+                            dimension.MaxWidth_cm +
+                            " cm"}
+                        </span>
+                        <span
+                          key={"field_dimension_depth_" + i}
+                          className={"if_" + dimension.PackageType + "_depth"}
+                        >
+                          {dimension.MinDepth_cm +
+                            " - " +
+                            dimension.MaxDepth_cm +
+                            " cm"}
+                        </span>
+                        <span
+                          key={"field_dimension_weight_" + i}
+                          className={"if_" + dimension.PackageType + "_weight"}
+                        >
+                          {dimension.MinWeight_kg +
+                            " - " +
+                            dimension.MaxWeight_kg +
+                            " kg"}
+                        </span>
+                        <span
+                          key={"field_dimension_type_" + i}
+                          className={"if_" + dimension.PackageType + "_type"}
+                        >
+                          {dimension.DisplayNameEN}
+                        </span>
                       </>
                     ) : (
                       ""
@@ -440,7 +613,6 @@ const ServiceDimensions = ({ service, dimensions, t }) => {
       );
     }
   };
-
   return <>{renderSwitch(service)}</>;
 };
 
